@@ -1,0 +1,11 @@
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+To build Xen dom0 version, you need create dummy file named build-dom0 by hand.
+
+# touch /usr/local/xigmanas/build-dom0
+
+Other steps are same as x64 version. Please read README and related wiki.

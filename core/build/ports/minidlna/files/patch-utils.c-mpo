@@ -1,0 +1,11 @@
+--- utils.c.orig	2017-05-17 22:55:17.000000000 +0200
++++ utils.c	2017-06-23 16:00:58.957252000 +0200
+@@ -418,7 +418,7 @@
+ int
+ is_image(const char * file)
+ {
+-	return (ends_with(file, ".jpg") || ends_with(file, ".jpeg"));
++	return (ends_with(file, ".jpg") || ends_with(file, ".jpeg") || ends_with(file, ".mpo"));
+ }
+ 
+ int

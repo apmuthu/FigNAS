@@ -1,0 +1,110 @@
+#!/usr/local/bin/php
+<?php
+/*
+	capacitycheck.zfs
+
+	Part of XigmaNAS (https://www.xigmanas.com).
+	Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+	All rights reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice, this
+	   list of conditions and the following disclaimer.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	   this list of conditions and the following disclaimer in the documentation
+	   and/or other materials provided with the distribution.
+
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+	WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+	DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+	ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+	(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+	LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+	ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+	The views and conclusions contained in the software and documentation are those
+	of the authors and should not be interpreted as representing official policies
+	of XigmaNAS, either expressed or implied.
+*/
+require_once 'config.inc';
+require_once 'functions.inc';
+require_once 'email.inc';
+
+$exit_code = 0;
+$argv_options = getopt('hsm:');
+if(isset($argv_options['h'])):
+	$helptext = ''
+	. 'Name:' . PHP_EOL
+	. '  ' . basename(__FILE__) . PHP_EOL
+	. 'Description:' . PHP_EOL
+	. '  Checks and reports the capacity of all ZFS pools. If the capacity of a ZFS pool is higher than 80% an alert email is sent.' . PHP_EOL
+	. '  Sends an email report.' . PHP_EOL
+	. 'Options:' . PHP_EOL
+	. '  -h : print this help text and exit.' . PHP_EOL
+	. '  -s : send success email as well.' . PHP_EOL
+	. '  -m address : use alternative email address(es) instead of the email address(es) defined in the WebGUI' . PHP_EOL;
+	fwrite(STDOUT,$helptext);
+	exit($exit_code);
+endif;
+//	showtime
+$sphere = &array_make_branch($config,'zfs','settings');
+$body_rows = [];
+$issue_found = false;
+$send_email = false;
+$a_pool_info = [];
+$return_value = 0;
+//	capacity warning threshold
+$cwt_min = 80;
+$cwt_default = 80;
+$cwt_max = 89;
+$cwt = filter_var($sphere['capacity_warning'] ?? $cwt_default,FILTER_VALIDATE_INT,['options' => ['default' => $cwt_default,'min_range' => $cwt_min,'max_range' => $ctw_max]]);
+//	capacity critical threshold
+$cct_min = 90;
+$cct_default = 90;
+$cct_max = 95;
+$cct = filter_var($sphere['capacity_critical'] ?? $cct_default,FILTER_VALIDATE_INT,['options' => ['default' => $cct_default,'min_range' => $cct_min,'max_range' => $cct_max]]);
+//	collect pool capacity information
+$cmd = '/sbin/zpool list -Hp -o name,cap';
+mwexec2($cmd,$a_pool_info,$return_value);
+//	check each pool
+foreach($a_pool_info as $r_pool_info):
+	list($pool_name,$pool_capacity) = array_pad(explode("\t",$r_pool_info),2,'');
+	$pool_capacity = (int)$pool_capacity;
+	if($pool_capacity >= $cct):
+		$body_rows[] = sprintf('Critical: The capacity of pool <%s> is at %s%%.',$pool_name,$pool_capacity);
+		$issue_found = true;
+	elseif($pool_capacity >= $cwt):
+		$body_rows[] = sprintf('Warning: The capacity of pool <%s> is at %s%%.',$pool_name,$pool_capacity);
+		$issue_found = true;
+	else:
+		$body_rows[] = sprintf('Information: The capacity of pool <%s> is at %s%%.',$pool_name,$pool_capacity);
+		$issue_found = false;
+	endif;
+endforeach;
+//	compile and send email if an issue was found or the force report option was set
+if($issue_found): // send alert email
+	$subject = '[ALERT] %h: Pool capacity check detected one or more issues.';
+	$send_email = true;
+	$exit_code = 1;
+elseif(isset($argv_options['s'])): // send success email
+	$subject = '[SUCCESS] %h: Pool capacity check completed successfully.';
+	$send_email = true;
+	$exit_code = 0;
+else:
+	$subject = '';
+	$send_email = false;
+	$exit_code = 0;
+endif;
+if($send_email):
+	$body = implode(PHP_EOL,$body_rows);
+	$error = 0;
+	@email_send($argv_options['m'] ?? $config['system']['email']['sendto'] ?? $config['statusreport']['to'] ?? '',$subject,$body,$error);
+endif;
+exit($exit_code);
+?>

@@ -1,0 +1,8 @@
+# printcap
+# This empty printcap file is used by bsnmpd to prevent bsnmpd from logging errors.
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+

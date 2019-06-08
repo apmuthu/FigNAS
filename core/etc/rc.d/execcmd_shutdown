@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Execute shutdown commands
+#
+
+# PROVIDE: execcmd_shutdown
+# REQUIRE: LOGIN
+# KEYWORD: nostart shutdown
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+if [ -x /etc/rc.d.php/shutdown ]; then
+	eval /etc/rc.d.php/shutdown
+fi
+
+# Execute all commands.
+/usr/local/bin/xml sel -t -m "//rc/shutdown/cmd" \
+	-v "." \
+	-i "position() <= last()" -n -b \
+	${configxml_file} | /usr/local/bin/xml unesc | \
+	while read _cmd; do
+		eval ${_cmd}
+	done
+
+# Execute all commands from config 2.8.
+/usr/local/bin/xml sel -t -m "//rc/param[typeid=3 and enable]/value" \
+	-v "." \
+	-i "position() <= last()" -n -b \
+	${configxml_file} | /usr/local/bin/xml unesc | \
+	while read _cmd; do
+		eval ${_cmd}
+	done

@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# $FreeBSD: /etc/rc.d/root
+# Changes: Remove original code from root_start.
+#
+
+# PROVIDE: root
+# REQUIRE: fsck
+# KEYWORD: nojail
+
+. /etc/rc.subr
+
+name="root"
+start_cmd="root_start"
+stop_cmd=":"
+
+root_start()
+{
+	# Currently this script is used as dummy.
+}
+
+load_rc_config $name
+run_rc_command "$1"

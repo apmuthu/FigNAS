@@ -1,0 +1,789 @@
+#!/bin/sh
+#
+# /etc/rc.firmware
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# Script usage: rc.firmware <args> [<file>]
+# Where <args> can take the following values:
+# - enable: Create a 320MB ram drive in ${FTMP}
+# - disable: Erase ram drive
+# - upgrade <file> : Do an embedded release (IMG file) upgrade using the file <file>
+# - fullupgrade <file> : Do a full release (TGZ file) upgrade using the file <file>
+#
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+# Gather upload folder
+load_rc_config_var lighttpd lighttpd_uploaddir
+
+SIZEMFS="384M"
+PLATFORM=$(cat /etc/platform)
+XARCH=$(cat /etc/platform | cut -d'-' -f1)
+ARCH=$(/usr/bin/uname -m)
+CFDEVICE=$(cat /etc/cfdevice)
+SKIP=$(expr \( 1 \* 1024 \* 1024 \) / \( 32 \* 1024 \))
+FTMP="${lighttpd_uploaddir:-/var/tmp}/ftmp"
+ARG="$2"
+
+# Required for boot environment upgrade.
+ROOTFS=$(mount | awk '/ \/ / {print $1}')
+SYSBACKUP="/tmp/sysbackup"
+ZROOT="zroot"
+DATASET="/ROOT"
+BOOTPOOL="bootpool"
+BENAME="upgrade"
+BEPATH="/var/tmp/be_upgrade"
+DIRNOSCHG="bin lib libexec sbin usr"
+
+enable_upgrade() {
+	program="FW_Enable"
+	/usr/bin/logger -t "${program}" -p console.info "processing."
+#
+	topic="create in-memory file system"
+	/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+	# Create efficient memory file system.
+	if ! df | grep -qw ${FTMP}; then
+		if [ -d ${FTMP} ]; then
+			# Set the memory file system size according the platform.
+			if [ "${PLATFORM}" = "x64-full" ]; then
+				# Available system memory is the only tmpfs limit.
+				/sbin/mount -t tmpfs -o mode=1777 tmpfs ${FTMP} > /dev/null 2>&1
+			else
+				# The tmpfs is limited by the predefined variable.
+				/sbin/mount -t tmpfs -o size=${SIZEMFS},mode=1777 tmpfs ${FTMP} > /dev/null 2>&1
+			fi
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - mount command failed."
+				exit 1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed because of missing folder."
+			exit 1
+		fi
+	else
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - success (already existing)."
+	fi
+	/usr/bin/logger -t "${program}" -p console.info "success."
+}
+
+disable_upgrade() {
+	program="FW_Disable"
+	/usr/bin/logger -t "${program}" -p console.info "processing."
+#
+	topic="unmount in-memory file system"
+	/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+	# Get the md device.
+	mdid=$(/sbin/mount -p | /usr/bin/grep ${FTMP} | /usr/bin/awk '{print $1}')
+#
+	# Umount in-memory file system.
+	if df | grep -qw ${FTMP}; then
+		/sbin/umount -f ${FTMP} > /dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - unmount command failed."
+			exit 1
+		else:
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	else
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - success (already gone)."
+	fi
+	/usr/bin/logger -t "${program}" -p console.info "success."
+}
+
+embedded_upgrade() {
+	program="FW_Upgrade"
+	/usr/bin/logger -t "${program}" -p console.info "processing."
+#
+	# set error code
+	RESULT=0
+#
+	# wait 5 seconds
+	sleep 5
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="check firmware image"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ ! -r "${ARG}" ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - firmware image not found."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="testing firmware image"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/usr/bin/xz -t "${ARG}" 2>&1
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - firmware image is corrupted."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="create backup folder"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		mkdir /tmp/configbak
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	CONFSUM=""
+	if [ ${RESULT} -eq 0 ]; then
+		topic="checksum config.xml"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -f /conf/config.xml ]; then
+			CONFSUM=$(sha256 /conf/config.xml | cut -d= -f2)
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	CONFSUM_BK=""
+	if [ ${RESULT} -eq 0 ]; then
+		topic="backup conf folder"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -n "$(ls -A /conf)" ]; then
+			cp -p /conf/* /tmp/configbak
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				if [ -n ${CONFSUM} ]; then
+					CONFSUM_BK=$(sha256 /tmp/configbak/config.xml | cut -d= -f2)
+				fi
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="verify checksum of config.xml"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ ! ${CONFSUM_BK} == ${CONFSUM} ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="backup boot.config"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -f /cf/boot.config ]; then
+			cp -p /cf/boot.config /tmp/configbak
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="backup loader.conf.local"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -f /cf/boot/loader.conf.local ]; then
+			cp -p /cf/boot/loader.conf.local /tmp/configbak
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="unmount /cf"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/sbin/umount -f /cf
+		if [ $? -ne 0 ]; then # successfully?
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="unpack and write firmware image"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/usr/bin/xz -cdv "${ARG}" | /bin/dd of=/dev/${CFDEVICE} ibs=32k obs=32k skip=${SKIP} > /dev/null 2>&1
+		if [ $? -ne 0 ]; then # successfully?
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed to install firmware on /dev/${CFDEVICE}."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+#	unmount tmpfs
+	/sbin/umount -f ${FTMP} > /dev/null 2>&1
+#
+	if [ ${RESULT} -eq 0 ]; then
+		sync
+		sleep 2
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="expand boot file system"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/sbin/growfs -y /dev/${CFDEVICE} > /dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		sync
+		sleep 2
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		RESULT=1
+#		try rw mount
+		if [ ${RESULT} -ne 0 ]; then
+			RESULT=0
+			topic="mount /cf in read-write mode"
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+			/sbin/mount -w -o noatime /cf
+			if [ $? -ne  0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		fi
+#		try update rw mount
+		if [ ${RESULT} -ne 0 ]; then
+			RESULT=0
+			topic="update mount /cf to read-write mode"
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+			/sbin/mount -u -o noatime -w /cf
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		fi
+#		try force rw mount
+		if [ ${RESULT} -ne 0 ]; then
+			RESULT=0
+			topic="force mount /cf in read-write mode"
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+			/sbin/mount -f -w -o noatime /cf
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		fi
+#		try update force rw mount
+		if [ ${RESULT} -ne 0 ]; then
+			RESULT=0
+			topic="force update mount /cf to read-write mode"
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+			/sbin/mount -u -f -o noatime -w /cf
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="restore conf folder"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -n "$(ls -A /tmp/configbak)" ]; then
+			cp -p /tmp/configbak/* /conf
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="restore boot.config"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -f /conf/boot.config ]; then
+			mv /conf/boot.config /cf
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="restore loader.conf.local"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -f /conf/loader.conf.local ]; then
+			mv /conf/loader.conf.local /cf/boot
+			if [ $? -ne 0 ]; then
+				/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+				RESULT=1
+			else
+				/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+			fi
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		sync
+		sleep 2
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="unmount /cf"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/sbin/umount -f /cf
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="mount /cf in read-only mode"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		/sbin/mount -r /cf
+		if [ $? -ne 0 ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	CONFSUM_NEW=""
+	if [ ${RESULT} -eq 0 ]; then
+		topic="checksum restored config.xml"
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ -n ${CONFSUM} ]; then
+			CONFSUM_NEW=$(sha256 /conf/config.xml | cut -d= -f2)
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - skipped."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		topic="verify checksum of config.xml."
+		/usr/bin/logger -t "${program}" -p console.debug "${topic} - processing."
+#
+		if [ ! ${CONFSUM_NEW} == ${CONFSUM} ]; then
+			/usr/bin/logger -t "${program}" -p console.err "${topic} - failed."
+			RESULT=1
+		else
+			/usr/bin/logger -t "${program}" -p console.debug "${topic} - success."
+		fi
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		rm -r /tmp/configbak
+	fi
+#
+	if [ ${RESULT} -eq 0 ]; then
+		/usr/bin/logger -t "${program}" -p console.info "success."
+		/usr/bin/logger -t "${program}" -p console.info "running post upgrade tasks."
+		/usr/local/bin/xml sel -t -m "//rc/param[typeid=971 and enable]/value" \
+			-v "." \
+			-i "position() <= last()" -n -b \
+			${configxml_file} | /usr/local/bin/xml unesc | \
+			while read _cmd; do
+				eval ${_cmd}
+			done
+		/usr/bin/logger -t "${program}" -p console.info "rebooting."
+		/sbin/shutdown -r now > /dev/null 2>&1
+	else
+		/usr/bin/logger -t "${program}" -p console.err "failed."
+		exit 1
+	fi
+}
+
+set_boot_path() {
+	# Set the proper boot path for zfs/mbr.
+	BOOTPATH=${BEPATH}
+	MBRPART=0
+	if [ -L '/boot' ] && [ -d '/boot' ]; then
+    	BOOTPOOL=$(readlink '/boot' | awk -F '/' '{print $1}')
+    	BOOTPROP=$(zpool list -H -o bootfs ${BOOTPOOL})
+    	if [ "${BOOTPROP}" = "-" ]; then
+        	BOOTPATH=/${BOOTPOOL}
+			MBRPART=1
+    	fi
+	fi
+}
+
+backup_chflags() {
+	# Dump chflag from common directories to files.
+	cd ${BEPATH}
+ 	for FILES in ${DIRNOSCHG}; do
+ 		/usr/sbin/mtree -q -P -c -p ${FILES} | /usr/bin/gzip > ${SYSBACKUP}/chflags.${BENAME}.${FILES}.gz
+ 	done
+	if [ 0 != $? ]; then
+		msg="ERROR: Failed to backup chflags."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+}
+
+remove_chflags() {
+	# Remove chflag from common directories.
+	cd ${BEPATH}
+ 	for FILES in ${DIRNOSCHG}; do
+ 		/bin/chflags -R noschg ${FILES}
+ 		/bin/chmod -R u+rw ${FILES}
+ 	done
+	if [ 0 != $? ]; then
+		msg="ERROR: Failed to remove chflags."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+}
+
+restore_chflags() {
+	# Restore chflag from previous files.
+	cd ${BEPATH}
+ 	for FILES in ${DIRNOSCHG}; do
+		/usr/bin/zcat ${SYSBACKUP}/chflags.${BENAME}.${FILES}.gz | /usr/sbin/mtree -q -P -U -p /${FILES}
+ 	done
+	if [ 0 != $? ]; then
+		msg="ERROR: Failed to restore chflags."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+}
+
+backup_sys_files() {
+	# Backup common system configuration files.
+	# Only files present in the firmware upgrade file are affected.
+	msg="Backup system configuration..."
+	/usr/bin/logger -p console.info "UPGRADE: ${msg}"
+
+	if [ ! -d "${SYSBACKUP}" ]; then
+		mkdir -p ${SYSBACKUP}
+	fi
+
+	if [ -f "${BOOTPATH}/boot/loader.conf" ]; then
+		cp -p ${BOOTPATH}/boot/loader.conf ${SYSBACKUP}/
+	fi
+	if [ -f "${BEPATH}/etc/rc.conf" ]; then
+		cp -p ${BEPATH}/etc/rc.conf ${SYSBACKUP}/
+	fi
+
+	# Keep a copy of the previous kernel on each upgrade.
+	if [ -d "${BOOTPATH}/boot/kernel" ]; then
+		if [ "${MBRPART}" = 1 ]; then
+			# Keep a copy of the previous kernel and append the date on mbr installs.
+			KDATE=$(date +%Y-%m-%d-%H%M)
+			mv ${BOOTPATH}/boot/kernel ${BOOTPATH}/boot/kernel.old.${KDATE}
+		else
+			if [ -d "${BOOTPATH}/boot/kernel.old" ]; then
+				# Keep only the current kernel per boot environment.
+				rm -rf ${BOOTPATH}/boot/kernel.old
+			fi
+			mv ${BOOTPATH}/boot/kernel ${BOOTPATH}/boot/kernel.old
+		fi
+	fi
+}
+
+restore_sys_files() {
+	# Restore previous backup files on the boot environment.
+	# Only files present in the firmware upgrade file are affected.
+	msg="Restore system configuration..."
+	/usr/bin/logger -p console.info "UPGRADE: ${msg}"
+
+	if [ -f "${SYSBACKUP}/loader.conf" ]; then
+		cp -pf ${SYSBACKUP}/loader.conf ${BOOTPATH}/boot/
+	fi
+	if [ -f "${SYSBACKUP}/rc.conf" ]; then
+		cp -pf ${SYSBACKUP}/rc.conf ${BEPATH}/etc/
+	fi
+}
+
+post_upgrade_config() {
+	# Check if zfs_enable is set to yes to automount our datasets on boot.
+	if [ -f "${BEPATH}/etc/rc.conf.local" ]; then
+		if ! sysrc -f ${BEPATH}/etc/rc.conf.local -qc zfs_enable="YES"; then
+			sysrc -f ${BEPATH}/etc/rc.conf.local zfs_enable="YES" > /dev/null 2>&1
+		fi
+	else
+		touch ${BEPATH}/etc/rc.conf.local
+		chmod 0644 ${BEPATH}/etc/rc.conf.local
+		sysrc -f ${BEPATH}/etc/rc.conf.local zfs_enable="YES" > /dev/null 2>&1
+	fi
+}
+
+disable_bootenv() {
+	# Unmount/destroy boot environment if upgrade failed.
+	/usr/local/sbin/beadm unmount -f ${BENAME}-${DATE}
+	/usr/local/sbin/beadm destroy -F ${BENAME}-${DATE}
+}
+
+full_upgrade() {
+	# Ensure the system is configured for boot environments.
+	if ! echo ${ROOTFS} | /usr/bin/grep -qw "${ZROOT}/ROOT"; then
+		msg="ERROR: This system does not boot from ZFS pool."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	elif ! zpool list -H -o bootfs | /usr/bin/grep -qw "${ZROOT}/ROOT"; then
+		msg="ERROR: This system is not configured for boot environments."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+
+	# Wait 2 seconds before proceed.
+	sleep 2
+
+	# Set the proper boot path for backup.
+	set_boot_path
+
+	msg="System upgrade in progress. Please wait..."
+	/usr/bin/logger -p console.info "UPGRADE: ${msg}"
+
+	# Check if firmware file exists.
+	if [ ! -r "${ARG}" ]; then
+		msg="ERROR: Firmware file does not exist."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+
+	# Test firmware file.
+	msg="Testing firmware file integrity..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+	/usr/bin/gunzip -t "${ARG}"
+	if [ 0 != $? ]; then
+		msg="ERROR: Firmware file is corrupted."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+
+	# Create and mount the new upgrade boot environment.
+	msg="Creating and mounting new boot environment..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+	DATE=$(date +%Y-%m-%d-%H%M%S)
+	/usr/local/sbin/beadm create ${BENAME}-${DATE}
+	/usr/local/sbin/beadm mount ${BENAME}-${DATE} ${BEPATH}
+	if [ 0 != $? ]; then
+		msg="ERROR: Unable to create/mount new boot environment."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		exit 1
+	fi
+
+	# Backup system configuration.
+	backup_sys_files
+	if [ 0 != $? ]; then
+		msg="ERROR: Failed to backup configuration."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		disable_bootenv
+		disable_upgrade
+		exit 1
+	fi
+
+	# Start upgrade script to remove obsolete files. This should be done
+	# before system is updated because it may happen that some files
+	# may be reintroduced in the system.
+	msg="Remove obsolete files..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+	${BEPATH}/etc/install/upgrade.sh clean ${BEPATH}
+
+	# Backup chflags before removal.
+	backup_chflags
+
+	# Remove chflags for protected files before upgrade process.
+	remove_chflags
+
+	# Install system files and discard unwanted folders/files.
+	msg="Upgrading system on new boot environment..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+
+	EXCLUDEBOOT=""
+	if [ "${MBRPART}" = 1 ]; then
+		msg="Extracting files for ${BOOTPOOL}..."
+		/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+		RESULT=1
+		EXCLUDEBOOT="--exclude=boot"
+		# Extract boot to /bootpool on ZFS/MBR installs since boot is a symlink.
+		/usr/bin/tar --keep-newer-files -v -x -U -P -f ${ARG} -C /${BOOTPOOL} boot > /dev/null 2>&1
+		RESULT=$?
+		if [ 0 != ${RESULT} ]; then
+			msg="ERROR: Failed file extraction for ${BOOTPOOL}."
+			/usr/bin/logger -p console.err "UPGRADE ${msg}"
+			disable_bootenv
+			disable_upgrade
+			exit 1
+		fi
+	fi
+
+	msg="Extracting files for ${ZROOT}..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+	RESULT=1
+	EXCLUDED="${EXCLUDEBOOT} --exclude=cf --exclude=conf --exclude=tmp --exclude=var --exclude=version"
+	/usr/bin/tar ${EXCLUDED} --keep-newer-files -v -x -U -P -f ${ARG} -C ${BEPATH} > /dev/null 2>&1
+	RESULT=$?
+	if [ 0 != ${RESULT} ]; then
+		msg="ERROR: Failed file extraction for ${ZROOT}."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		disable_bootenv
+		disable_upgrade
+		exit 1
+	else
+		# Restore system configuration.
+		restore_sys_files
+		if [ 0 != $? ]; then
+			msg="ERROR: Failed to restore configuration."
+			/usr/bin/logger -p console.err "UPGRADE ${msg}"
+			disable_bootenv
+			disable_upgrade
+			exit 1
+		fi
+
+		# Restore chflags after files extraction.
+		restore_chflags
+
+		# Post upgrade config checkings.
+		post_upgrade_config
+		if [ 0 != $? ]; then
+			msg="ERROR: Failed post upgrade configuration."
+			/usr/bin/logger -p console.err "UPGRADE ${msg}"
+			disable_bootenv
+			disable_upgrade
+			exit 1
+		fi
+
+		# Unmount and activate the new boot environment.
+		msg="Unmount and activate new boot environment..."
+		/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+		/usr/local/sbin/beadm unmount -f ${BENAME}-${DATE}
+
+		if [ "${MBRPART}" = 1 ]; then
+			if ! /usr/bin/grep -qw '${BOOTPOOL}' /usr/local/sbin/beadm; then
+				# Directly update the bootfs to point for the new boot environment on ZFS/MBR,
+				# this is due a known bug and/or limitation in the beadm utility.
+				zpool set bootfs=${ZROOT}${DATASET}/${BENAME}-${DATE} ${ZROOT}
+
+				# Update current loader.conf on ZFS/MBR since bootpool is shared across boot environments by default.
+				/usr/bin/sed -i '' -E 's|vfs.root.mountfrom="zfs:'${ROOTFS}'"|vfs.root.mountfrom="zfs:'${ZROOT}${DATASET}/${BENAME}-${DATE}'"|g' \
+				/${BOOTPOOL}/boot/loader.conf
+			else
+				# Use the beadm utility by default.
+				/usr/local/sbin/beadm activate ${BENAME}-${DATE}
+			fi
+		else
+			/usr/local/sbin/beadm activate ${BENAME}-${DATE}
+		fi
+
+		if [ 0 != $? ]; then
+			msg="ERROR: Failed to unmount/activate boot environment."
+			/usr/bin/logger -p console.err "UPGRADE ${msg}"
+			disable_bootenv
+			disable_upgrade
+			exit 1
+		fi
+		msg="System upgraded successfully."
+		/usr/bin/logger -p console.info "UPGRADE: ${msg}"
+	fi
+
+	# Cleanup and sync.
+	rm -Rf ${BEPATH}
+	rm -Rf ${SYSBACKUP}
+	rm -Rf /tmp/BE-${BENAME}-${DATE}.*
+	sync; sleep 2
+
+	# Reboot system if upgrade was successfully.
+	if [ 0 -eq ${RESULT} ]; then
+		msg="Running post upgrade tasks..."
+		/usr/bin/logger -p console.info "${msg}"
+		/usr/local/bin/xml sel -t -m "//rc/param[typeid=971 and enable]/value" \
+			-v "." \
+			-i "position() <= last()" -n -b \
+			${configxml_file} | /usr/local/bin/xml unesc | \
+			while read _cmd; do
+				eval ${_cmd}
+			done
+		msg="Rebooting server..."
+		/usr/bin/logger -p console.info "${msg}"
+		/sbin/shutdown -r now > /dev/null 2>&1
+	else
+		msg="System upgrade failed."
+		/usr/bin/logger -p console.err "${msg}"
+		exit 1
+	fi
+}
+
+case ${1} in
+	enable) enable_upgrade ;;
+	disable) disable_upgrade ;;
+	upgrade) embedded_upgrade ;;
+	fullupgrade) full_upgrade ;;
+	*) exit 1 ;;
+esac
+exit 0

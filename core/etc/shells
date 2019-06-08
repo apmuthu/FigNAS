@@ -1,0 +1,18 @@
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# $FreeBSD: src/etc/shells
+#
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/sh
+/bin/csh
+/bin/tcsh
+/sbin/nologin
+/usr/bin/scp
+/usr/local/bin/scponly
+/bin/bash

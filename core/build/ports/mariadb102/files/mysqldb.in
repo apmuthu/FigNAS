@@ -1,0 +1,141 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# mysqldb service
+#
+
+# PROVIDE: mysql
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+# XQUERY: --if "count(//mariadb/enable) > 0" --output "0" --break
+# RCVAR: mysqldb
+
+. /etc/rc.subr
+. /etc/util.subr
+. /etc/configxml.subr
+
+name="mysqldb"
+desc="mysqldb service"
+rcvar="mysqldb_enable"
+
+extra_commands="status mkconf"
+start_precmd="mysqldb_mkconf"
+start_cmd="mysqldb_start"
+stop_cmd="mysqldb_stop"
+status_cmd="mysqldb_status"
+mkconf_cmd="mysqldb_mkconf"
+
+mariadbhomedir=`configxml_get "//mariadb/homedir"`
+if [ "$mariadbhomedir" = "" ]; then
+    mariadbhomedir="/nonexistent"
+fi
+
+phpmyadmin_conf=${phpmyadmin_conf:-"/usr/local/www/phpMyAdmin/config.inc.php"}
+mysqldb_conf=${mysqldb_conf:-"${mariadbhomedir}/my.cnf"}
+mysql_user=${mysql_user:-"mysql"}
+mysql_group=${mysql_group:-"mysql"}
+mysqldb_ipaddr=${mysqldb_ipaddr:-"127.0.0.1"}
+
+mysqldb_mkconf()
+{
+	# Create mysql config minimum
+	cat /dev/null > ${mysqldb_conf}
+	chmod 600 ${mysqldb_conf}
+	/usr/local/bin/xml sel --template \
+		--match '//mariadb' \
+			--output "[mysqld]" --nl \
+			--output "server-id = 1" --nl \
+			--output "port = 3306" --nl \
+			--output "bind_address = ${mysqldb_ipaddr}" --nl \
+			--output "socket = /tmp/mysql.sock" --nl \
+			--output "init_connect = \"SET collation_connection = utf8mb4_unicode_ci\"" --nl \
+			--output "character-set-server = utf8mb4" --nl \
+			--output "collation-server = utf8mb4_unicode_ci" --nl \
+			--output "character-sets-dir = /usr/local/share/mysql/charsets" --nl \
+			--output "lc-messages-dir = /usr/local/share/mysql" --nl \
+			--match 'auxparam' \
+				--if 'position() < last() or string-length(.) > 0' \
+					--value-of '.' --nl \
+				--break \
+			--break \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc >> ${mysqldb_conf}
+
+	# Create symbolic link to homedir and create DB if not exist
+	unlink /var/db/mysql
+	ln -s "${mariadbhomedir}" /var/db/mysql
+	if [ ! -d "${mariadbhomedir}/mysql/." ]; then
+		if [ "$(df ${mariadbhomedir} | grep -E '/dev/x?md[0-9]|tmpfs')" ]; then
+			echo "Home folder on memory disk detected, unable to install core."
+			exit 1
+		else
+			/usr/local/bin/mysql_install_db --basedir=/usr/local --datadir=${mariadbhomedir} --force
+		fi
+	fi
+	chown -R ${mysql_user}:${mysql_group} ${mariadbhomedir}
+
+	# Create phpMyAdmin config
+	cat /dev/null > ${phpmyadmin_conf}
+	/usr/local/bin/xml sel --template \
+		--match '//mariadb' \
+			--output '<?php' --nl \
+			--if 'string-length(phrasecookieauth) > 0' \
+				--output "\$cfg['blowfish_secret'] = '" --value-of "phrasecookieauth" --output "';" --nl \
+			--break \
+			--output '$i = 0;' --nl \
+			--output '$i++;' --nl \
+			--output "\$cfg['Servers'][\$i]['auth_type'] = 'cookie';" --nl \
+			--output "\$cfg['Servers'][\$i]['host'] = '${mysqldb_ipaddr}';" --nl \
+			--output "\$cfg['Servers'][\$i]['connect_type'] = 'tcp';" --nl \
+			--output "\$cfg['Servers'][\$i]['compress'] = false;" --nl \
+			--output "\$cfg['Servers'][\$i]['extension'] = 'mysqli';" --nl \
+			--output "\$cfg['Servers'][\$i]['AllowNoPassword'] = true;" --nl \
+			--output "\$cfg['UploadDir'] = '';" --nl \
+			--output "\$cfg['SaveDir'] = '';" --nl \
+			--output "\$cfg['VersionCheck'] = false;" --nl \
+			--output "?>" --nl \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc >> ${phpmyadmin_conf}
+}
+
+mysqldb_start()
+{
+	echo "MySQL start..."
+	if [ -z "`/bin/pgrep mysqld`" ]; then
+		/usr/local/etc/rc.d/mysql-server onestart
+	else
+		/usr/local/etc/rc.d/mysql-server onerestart
+	fi
+}
+
+mysqldb_status()
+{
+	/usr/local/etc/rc.d/mysql-server onestatus
+}
+
+mysqldb_stop()
+{
+	local _wait
+
+	echo "MySQL stop..."
+	/usr/local/etc/rc.d/mysql-server onestop
+
+	# Waiting mysql-server shutdown
+	_wait=15
+	echo -n "Shutdown mysql-server"
+	while [ ${_wait} -gt 0 ]; do
+		echo -n "."
+		_wait=$((${_wait} - 1))
+		/bin/sleep 1
+		if [ -z "`/bin/pgrep mysqld`" ]; then
+			break
+		fi
+	done
+	echo ""
+}
+
+load_rc_config "${name}"
+run_rc_command "$1"

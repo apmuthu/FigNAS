@@ -1,0 +1,21 @@
+--- /usr/local/xigmanas/svn/build/ports/fuppes/work/fuppes-0.692/src/Makefile.am.orig	2011-09-22 10:45:44.000000000 +0200
++++ /usr/local/xigmanas/svn/build/ports/fuppes/work/fuppes-0.692/src/Makefile.am	2018-06-17 05:12:45.000000000 +0200
+@@ -14,15 +14,15 @@
+   ${PCRE_CFLAGS}\
+ 	-DFUPPES_DATADIR=\"$(datadir)/fuppes\" \
+ 	-DFUPPES_PLUGINDIR=\"$(libdir)/fuppes\" \
+-	-DFUPPES_LOCALSTATEDIR=\"$(localstatedir)/lib/fuppes\"
++	-DFUPPES_LOCALSTATEDIR=\"$(localstatedir)/fuppes\"
+ 
+ lib_LTLIBRARIES = libfuppes.la
+ 
+ bin_PROGRAMS = fuppes
+ 
+ fuppes_SOURCES = console_main.cpp
+-fuppes_LDADD = ./libfuppes.la $(LIBADD_DL)
+-fuppes_DEPENDENCIES = ./libfuppes.la
++fuppes_LDADD = libfuppes.la $(LIBADD_DL)
++fuppes_DEPENDENCIES = libfuppes.la
+ fuppes_LDFLAGS = \
+ 	$(FUPPES_LIBS)\
+ 	${UUID_LIBS}\

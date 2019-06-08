@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# PROVIDE: SYSTEMINIT
+
+#	This is a dummy dependency.

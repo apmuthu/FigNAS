@@ -1,0 +1,40 @@
+--- index.html.orig	2018-08-16 17:36:34.280300000 +0200
++++ index.html	2018-12-21 12:46:00.000000000 +0100
+@@ -11,7 +11,7 @@
+ 	<meta http-equiv="Cache-Control" content ="no-store, must-revalidate, max-age=0"/>
+ 	<meta http-equiv="Cache-Control" content ="post-check=0, pre-check=0"/>
+ 	<meta http-equiv="Pragma" content="no-cache"/>
+-
++	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 
+ 	<!-- Icon && title -->
+ 	<link rel="shortcut icon" href="images/vbox/OSE/VirtualBox_win.ico"/>
+@@ -96,6 +96,8 @@
+ 			 * If not, there is a PHP error somewhere.
+ 			 */
+ 			if(typeof trans != "function" || typeof __vboxLangData == "undefined") {
++			//if(true) {
++
+ 				trans = function(s){return s;};
+ 				vboxAlert("An unknown PHP error occurred. This is most likely a syntax error in\
+ 					config.php in phpVirtualBox's folder. The most common errors are an unclosed\
+@@ -106,8 +108,8 @@
+ 					 browser may display the PHP error message.</p>\
+ 					 <p>If find that this is not the case,\
+ 					 or have no idea what this error message means, please raise the issue\
+-					 at <a href='http://sourceforge.net/p/phpvirtualbox/discussion/help/'\
+-					 >http://sourceforge.net/p/phpvirtualbox/discussion/help/",{'width':'50%'});
++					 at <a target=_blank href='https://github.com/phpvirtualbox/phpvirtualbox/issues/'\
++					 >https://github.com/phpvirtualbox/phpvirtualbox/issues",{'width':'50%'});
+ 				return;
+ 			}
+ 			
+@@ -509,5 +511,6 @@
+ 	</tr>
+ </table>
+ </div>
++<div onclick="javascript:window.location.href='./';" style="height:100%; cursor:pointer;">&nbsp;</div> 
+ </body>
+-</html>
+\ No newline at end of file
++</html>

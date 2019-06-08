@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Universal addresses to RPC program number mapper
+#
+# $FreeBSD: /etc/rc.d/rpcbind	Revision 298514
+# Changes: Remove useless requirements named
+#
+
+# PROVIDE: rpcbind
+# REQUIRE: NETWORKING ntpdate syslogd
+# KEYWORD: shutdown
+# XQUERY: -i "count(//nfsd/enable) > 0" -o "0" -b
+# RCVAR: rpcbind
+
+. /etc/rc.subr
+
+name="rpcbind"
+desc="Universal addresses to RPC program number mapper"
+rcvar=rpcbind_enable
+command="/usr/sbin/${name}"
+
+load_rc_config $name
+run_rc_command "$1"

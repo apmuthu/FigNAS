@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# PROVIDE: moused
+# REQUIRE: DAEMON FILESYSTEMS
+# KEYWORD: nojail shutdown
+
+#	This is a dummy dependency,

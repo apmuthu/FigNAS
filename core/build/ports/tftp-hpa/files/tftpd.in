@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# tftpd service
+#
+
+# PROVIDE: tftpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+# XQUERY: --if "count(//tftpd/enable) > 0" --output "0" --break
+# RCVAR: tftpd
+
+. /etc/rc.subr
+. /etc/util.subr
+. /etc/configxml.subr
+
+name="tftpd"
+desc="tftpd service"
+rcvar=tftpd_enable
+
+load_rc_config "${name}"
+
+# Custom commands
+start_precmd="tftpd_prestart"
+
+# Defaults
+tftpd_enable=${tftpd_enable:-"NO"}
+command="/usr/local/libexec/in.${name}"
+command_args="-v -l"
+
+tftpd_prestart()
+{
+	local _command_args
+
+	# Create command args line.
+	_command_args=`/usr/local/bin/xml sel --template \
+		--match '//tftpd' \
+			--if 'count(allowfilecreation) > 0' \
+				--output ' -c' \
+			--break \
+			--if 'string-length(port) > 0' \
+				--value-of "concat(' -a :',port)" \
+			--break \
+			--if 'string-length(username) > 0' \
+				--value-of "concat(' -u ',username)" \
+			--break \
+			--if 'string-length(umask) > 0' \
+				--value-of "concat(' -U ',umask)" \
+			--break \
+			--if 'string-length(timeout) > 0' \
+				--value-of "concat(' -T ',timeout)" \
+			--break \
+			--if 'string-length(maxblocksize) > 0' \
+				--value-of "concat(' -B ',maxblocksize)" \
+			--break \
+			--if 'string-length(extraoptions) > 0' \
+				--value-of "concat(' ',extraoptions)" \
+			--break \
+			--value-of "concat(' -s \"',dir,'\"')" \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc`
+	command_args="${command_args} ${_command_args}"
+}
+run_rc_command "$1"

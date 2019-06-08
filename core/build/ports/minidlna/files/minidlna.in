@@ -1,0 +1,184 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# MiniDLNA Service
+#
+
+# PROVIDE: minidlna
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+# XQUERY: -i "count(//minidlna/enable) > 0" -o "0" -b
+# RCVAR: minidlna
+
+. /etc/rc.subr
+. /etc/configxml.subr
+. /etc/util.subr
+
+name="minidlna"
+desc="MiniDLNA Service"
+rcvar=minidlna_enable
+
+load_rc_config "${name}"
+
+# Custom commands
+command=/usr/local/sbin/${name}d
+mkconf_cmd="minidlna_mkconf"
+start_precmd="minidlna_prestart"
+stop_postcmd="minidlna_poststop"
+rescan_cmd="minidlna_rescan"
+extra_commands="mkconf rescan"
+
+# Defaults
+minidlna_uid=${minidlna_uid-"dlna"}
+minidlna_enable=${minidlna_enable:="NO"}
+minidlna_home=`configxml_get "//${name}/home"`
+minidlna_config_dir="/var/etc"
+scanner_indicator="/var/run/${name}/upnp-av.scan"
+minidlna_config=${minidlna_config_dir}/${name}.conf
+minidlna_logdir=${minidlna_logdir-"/var/log"}
+minidlna_rescan_timeout=${minidlna_rescan_timeout-"3600"}
+
+pidfile="/var/run/${name}/${name}.pid"
+command_args=" -P $pidfile -u $minidlna_uid -f $minidlna_config"
+
+minidlna_mkconf()
+{
+	_if=`configxml_get "//minidlna/if"`
+	_port=`configxml_get "//minidlna/port"`
+	if [ -z "${_port}" ]; then
+		_port="8200"
+	fi
+	_serial=`cat /etc/prd.revision`
+	_model=`/usr/local/sbin/minidlnad -V | awk '{print$2}'`
+	_ip_adress=`configxml_get "//interfaces/lan/ipaddr"`
+	if [ "${_ip_adress}" = "dhcp" ]; then
+		_ip_adress=`get_ipaddr inet ${_if}`
+	fi
+	/usr/local/bin/xml sel --template \
+		--match '//minidlna' \
+			--if 'string-length(name) > 0' \
+				--value-of 'concat("friendly_name=",name)' --nl \
+			--else \
+				--output 'friendly_name=minidlna' --nl \
+			--break \
+			--output "network_interface=${_if}" --nl \
+			--output "port=${_port}" --nl \
+			--output "serial=${_serial}" --nl \
+			--output "model_number=${_model}" --nl \
+			--if 'string-length(notify_int) > 0' \
+				--value-of 'concat("notify_interval=",notify_int)' --nl \
+			--break \
+			--if 'string-length(container) > 0' \
+				--value-of 'concat("root_container=",container)' --nl \
+			--break \
+			--if 'string-length(home) > 0' \
+				--value-of 'concat("db_dir=",home)' --nl \
+			--break \
+			--output "log_dir=${minidlna_logdir}" --nl \
+			--output 'log_level=general,artwork,database,inotify,scanner,metadata,http,ssdp' \
+			--if 'string-length(loglevel) > 0' \
+				--value-of 'concat(",tivo=",loglevel)' \
+			--break \
+			--nl \
+			--output 'album_art_names=Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg' --nl \
+			--output 'minissdpdsocket=/var/run/minissdpd.sock' --nl \
+			--output "presentation_url=http://${_ip_adress}:${_port}/status" --nl \
+			--if 'count(strict) > 0' \
+				--output 'strict_dlna=yes' --nl \
+			--else \
+				--output 'strict_dlna=no' --nl \
+			--break \
+			--if 'count(tivo) > 0' \
+				--output 'enable_tivo=yes' --nl \
+			--else \
+				--output 'enable_tivo=no' --nl \
+			--break \
+			--if 'count(inotify) > 0' \
+				--output 'inotify=yes' --nl \
+			--else \
+				--output 'inotify=no' --nl \
+			--break \
+			--if 'count(wide_links) > 0' \
+				--output 'wide_links=yes' --nl \
+			--else \
+				--output 'wide_links=no' --nl \
+			--break \
+			--if 'string-length(force_sort_criteria) > 0' \
+				--value-of 'concat("force_sort_criteria=",force_sort_criteria)' --nl \
+			--break \
+			--match '//minidlna/media/param[enable]' \
+				--if 'string-length(path) > 0' \
+					--output 'media_dir=' \
+					--if 'string-length(type) > 0' \
+						--value-of 'concat(type,",")' \
+					--break \
+					--value-of 'path' --nl \
+				--break \
+			--break \
+			--match 'auxparam' \
+				--if 'position() < last() or string-length(.) > 0' \
+					--value-of '.' --nl \
+				--break \
+			--break \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc > ${minidlna_config}
+}
+
+minidlna_prestart()
+{
+	local _if
+
+	minidlna_mkconf
+	_if=`configxml_get "//minidlna/if"`
+	NETSTATCHECK=`netstat -rn | grep 224.0.0.0 |wc -m`
+	if [ $NETSTATCHECK -gt 5 ]; then
+		/sbin/route -q delete 224.0.0.0/4  >/dev/null 2>&1
+	fi
+	/sbin/route add -net 239.0.0.0 -netmask 240.0.0.0 -interface ${_if} >/dev/null 2>&1
+	return 0
+}
+
+minidlna_poststop()
+{
+	/sbin/route -q delete 224.0.0.0/4 >/dev/null 2>&1
+	rm -f $pidfile
+	return 0
+}
+
+minidlna_rescan()
+{
+	minidlna_home=`configxml_get "//${name}/home"`
+	PID=`cat $pidfile`
+	kill $PID
+	minidlna_poststop
+	rm -f $pidfile
+	if [ -f ${minidlna_home}/files.db ]; then
+		rm -f ${minidlna_home}/files.db
+	fi
+	if [ -d ${minidlna_home}/art_cache ]; then
+		rm -fr ${minidlna_home}/art_cache
+	fi
+	$command $command_args
+	logger "rescan minidlna"
+	sleep 5
+	wait_on -t ${minidlna_rescan_timeout} $scanner_indicator
+	case $? in
+		0)
+			logger "minidlna rescan timeout"
+			;;
+		1)
+			logger "minidlna rescan completed"
+			sleep 5
+			#clean wrong daemons
+			process=`ps ax | grep sbin/minidlna | grep -v grep | awk '{print$1}'`
+			kill -s KILL ${process}
+			minidlna_prestart
+			$command $command_args
+			;;
+	esac
+}
+
+run_rc_command "$1"

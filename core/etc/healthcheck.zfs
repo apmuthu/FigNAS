@@ -1,0 +1,160 @@
+#!/usr/local/bin/php
+<?php
+/*
+	healthcheck.zfs
+
+	Part of XigmaNAS (https://www.xigmanas.com).
+	Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+	All rights reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice, this
+	   list of conditions and the following disclaimer.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	   this list of conditions and the following disclaimer in the documentation
+	   and/or other materials provided with the distribution.
+
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+	WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+	DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+	ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+	(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+	LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+	ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+	The views and conclusions contained in the software and documentation are those
+	of the authors and should not be interpreted as representing official policies
+	of XigmaNAS, either expressed or implied.
+*/
+require_once 'config.inc';
+require_once 'functions.inc';
+require_once 'email.inc';
+
+$argv_options = getopt('hsm:');
+if(isset($argv_options['h'])):
+	$helptext = ''
+	. 'Name:' . PHP_EOL
+	. '  ' . basename(__FILE__) . PHP_EOL
+	. 'Description:' . PHP_EOL
+	. '  Checks the status of all ZFS pools.' . PHP_EOL
+	. '  Checks all ZFS pools for read, write and checksum errors.' . PHP_EOL
+	. '  Sends an email report.' . PHP_EOL
+	. 'Options:' . PHP_EOL
+	. '  -h : print this help text and exit.' . PHP_EOL
+	. '  -s : send success email as well.' . PHP_EOL
+	. '  -m address : use alternative email address(es) instead of the email address(es) defined in the WebGUI' . PHP_EOL;
+	fwrite(STDOUT,$helptext);
+	exit(0);
+endif;
+//	showtime
+$body_rows = [];
+$issue_zfs = false;
+//	collect pool names
+$cmd = '/sbin/zpool list -H -o name';
+$pool_names = [];
+$return_value = 0;
+mwexec2($cmd,$pool_names,$return_value);
+//	scan each pool
+foreach($pool_names as $pool_name):
+	$issue_pool = false;
+	//	check for pool status 'ONLINE'. Any other status will cause an alert email.
+	$cmd = sprintf('/sbin/zpool list -H -o health %s',escapeshellarg($pool_name));
+	$output = [];
+	$return_value = 0;
+	mwexec2($cmd,$output,$return_value);
+	foreach($output as $row):
+		switch($row):
+			case 'ONLINE':
+				break;
+			default:
+				$body_rows[] = sprintf('The status of ZFS pool "%s" is %s.',$pool_name,$row);
+				$issue_pool = true;
+				break;
+			endswitch;
+	endforeach;
+	//	check for read, write or checksum errors.
+	$cmd = sprintf('/sbin/zpool status %s',escapeshellarg($pool_name));
+	$output = [];
+	$return_value = 0;
+	mwexec2($cmd,$output,$return_value);
+	$fun_starts_now = false;
+	$errors_read = false;
+	$errors_write = false;
+	$errors_checksum = false;
+	foreach($output as $row):
+		if(preg_match('/.*NAME.+STATE.+READ.+WRITE.+CKSUM/',$row)):
+			$fun_starts_now = true;
+			continue;
+		endif;
+		if($fun_starts_now):
+			$parameters = preg_split('/[\s]+/',$row,-1,PREG_SPLIT_NO_EMPTY);
+			if(4 < count($parameters)):
+				if(0 != (int)$parameters[2]):
+					$errors_read = true;
+					$issue_pool = true;
+				endif;
+				if(0 != (int)$parameters[3]):
+					$errors_write = true;
+					$issue_pool = true;
+				endif;
+				if(0 != (int)$parameters[4]):
+					$errors_checksum = true;
+					$issue_pool = true;
+				endif;
+			endif;
+		endif;
+	endforeach;
+	//	check pool read, write and checksum results
+	$error_types = [];
+	if($errors_read):
+		$error_types[] = 'read';
+	endif;
+	if($errors_write):
+		$error_types[] = 'write';
+	endif;
+	if($errors_checksum):
+		$error_types[] = 'checksum';
+	endif;
+	if(!empty($error_types)):
+		//	compile natural language string 
+		$last_element = array_pop($error_types);
+		if(empty($error_types)):
+			$error_string = sprintf('%s',$last_element);
+		else:
+			$error_string = sprintf('%s and %s',implode(', ',$error_types),$last_element); 
+		endif;
+		$body_rows[] = sprintf('ZFS Pool "%s" encountered %s errors.',$pool_name,$error_string); 
+	endif;
+	//	append pool status if an issue was found
+	if($issue_pool):
+		$body_rows[] = '';
+		foreach($output as $row):
+			$body_rows[] = $row;
+		endforeach;
+		$issue_zfs = true;
+	endif;
+endforeach;
+//	compile and send email if an issue was found or the force report option was set
+if($issue_zfs): // send alert email
+	$subject = '[ALERT] %h: ZFS pool health check detected one or more issues.';
+	$exit_code = 1;
+elseif(isset($argv_options['s'])): // send success email
+	$subject = '[SUCCESS] %h: ZFS pool health check completed successfully.';
+	$exit_code = 0;
+else:
+	$subject = '';
+	$exit_code = 0;
+endif;
+if(!empty($subject)):
+	$body = implode(PHP_EOL,$body_rows);
+	$error = 0;
+	@email_send($argv_options['m'] ?? $config['system']['email']['sendto'] ?? $config['statusreport']['to'] ?? '',$subject,$body,$error);
+endif;
+exit($exit_code);
+?>

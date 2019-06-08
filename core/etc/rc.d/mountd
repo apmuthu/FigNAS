@@ -1,0 +1,178 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Service remote NFS mount requests
+#
+# $FreeBSD: /releng/12.0/libexec/rc/rc.d/mountd		Revision 340470
+# Changes:	- Remove nfsserver quota
+# 		- Add mkconf command
+#
+
+# PROVIDE: mountd
+# REQUIRE: NETWORKING rpcbind
+# KEYWORD: nojail shutdown
+# XQUERY: --if 'count(//nfsd/enable) > 0' --output '0' --else --output '1'  --break
+# RCVAR: mountd
+
+. /etc/rc.subr
+. /etc/configxml.subr
+. /etc/util.subr
+
+name="mountd"
+desc="Service remote NFS mount requests"
+rcvar=mountd_enable
+
+command="/usr/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+mountd_config=${mountd_config:-"/var/etc/exports"}
+required_files="${mountd_config}"
+start_precmd="mountd_precmd"
+reload_cmd="mountd_prereload"
+mkconf_cmd="mountd_mkconf"
+extra_commands="reload mkconf"
+# clear existing exports file
+cat /dev/null > ${mountd_config}
+
+mountd_mkconf()
+{
+#	create export from config
+	/usr/local/bin/xml sel --template \
+		--match '//nfsd/export/param[enable]' \
+			--if 'string-length(path) > 0' \
+				--value-of 'path' \
+				--if 'count(opt_public) > 0' \
+					--output ' -public' \
+				--break \
+				--if 'count(opt_alldirs) > 0' \
+					--output ' -alldirs' \
+				--break \
+				--if 'count(opt_quiet) > 0' \
+					--output ' -quiet' \
+				--break \
+				--if 'count(opt_readonly) > 0' \
+					--output ' -ro' \
+				--break \
+				--if 'mapall="yes"' \
+					--output ' -mapall=' \
+				--elif 'mapall="no"' \
+					--output ' -maproot=' \
+				--break \
+				--if 'mapall="yes"' \
+					--if 'string-length(mapalltouser) > 0' \
+						--value-of "concat('\"',str:replace(mapalltouser,'\"',''),'\"')" \
+						--if 'mapalltogroups="nogroupcredentials"' \
+							--output ':' \
+						--elif 'mapalltogroups="specificgroupcredentials"' \
+							--match 'group' \
+								--if 'string-length(.) > 0' \
+									--value-of "concat(':\"',str:replace(.,'\"',''),'\"')" \
+								--break \
+							--break \
+						--break \
+					--else \
+						--output 'root' \
+					--break \
+				--elif 'mapall="no"' \
+					--if 'string-length(maproottouser) > 0' \
+						--value-of "concat('\"',str:replace(maproottouser,'\"',''),'\"')" \
+						--if 'maproottogroups="nogroupcredentials"' \
+							--output ':' \
+						--elif 'maproottogroups="specificgroupcredentials"' \
+							--match 'group' \
+								--if 'string-length(.) > 0' \
+									--value-of "concat(':\"',str:replace(.,'\"',''),'\"')" \
+								--break \
+							--break \
+						--break \
+					--else \
+						--output 'root' \
+					--break \
+				--break \
+				--if 'count(param) > 0' \
+					--output ' -sec=' \
+					--match 'param' \
+						--if 'string-length(.) > 0' \
+							--if 'position() > 1' \
+								--output ':' \
+							--break \
+							--value-of '.' \
+						--break \
+					--break \
+				--break \
+				--if 'string-length(network) > 0' \
+					--value-of 'concat(" -network ",network)' \
+				--break \
+				--nl \
+			--break \
+		--break \
+	${configxml_file} | /usr/local/bin/xml unesc >> ${mountd_config}
+#	create root from config
+	/usr/local/bin/xml sel --template \
+		--match '//nfsd/root/param[enable]' \
+			--if 'string-length(path) > 0' \
+				--value-of 'concat("V4: ",path)' \
+				--if 'count(param) > 0' \
+					--output ' -sec=' \
+					--match 'param' \
+						--if 'string-length(.) > 0' \
+							--if 'position() > 1' \
+								--output ':' \
+							--break \
+							--value-of '.' \
+						--break \
+					--break \
+				--break \
+				--if 'string-length(network) > 0' \
+					--value-of 'concat(" -network ",network)' \
+				--break \
+				--nl \
+			--break \
+		--break \
+	${configxml_file} | /usr/local/bin/xml unesc >> ${mountd_config}
+#	append auxparam to exports file
+	/usr/local/bin/xml sel --template \
+		--match '//nfsd/auxparam' \
+			--if 'position() < last() or string-length(.) > 0' \
+				--value-of '.' --nl \
+			--break \
+		--break \
+	${configxml_file} | /usr/local/bin/xml unesc >> ${mountd_config}
+}
+
+mountd_precmd()
+{
+	mountd_mkconf
+	if ! checkyesno rpcbind_enable  && ! /etc/rc.d/rpcbind forcestatus 1>/dev/null 2>&1; then
+		force_depend rpcbind || return 1
+	fi
+#	mountd flags will differ depending on rc.conf settings
+	if checkyesno nfs_server_enable ; then
+		if checkyesno weak_mountd_authentication; then
+			rc_flags="${mountd_flags} -n"
+		fi
+	else
+		if checkyesno mountd_enable; then
+			checkyesno weak_mountd_authentication && rc_flags="-n"
+		fi
+	fi
+	if checkyesno zfs_enable; then
+		rc_flags="${rc_flags} /etc/exports /etc/zfs/exports"
+	fi
+	rm -f /var/db/mountdtab
+	( umask 022 ; > /var/db/mountdtab )
+	return 0
+}
+
+mountd_prereload()
+{
+#	clear existing file
+	cat /dev/null > ${mountd_config}
+#	create configuration file
+	mountd_mkconf
+}
+
+load_rc_config $name
+run_rc_command "$1"

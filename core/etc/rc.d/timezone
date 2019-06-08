@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# timezone
+#
+
+# PROVIDE: timezone
+# BEFORE: CONFIG
+# REQUIRE: SYSTEMINIT
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+_timezone=`configxml_get "//system/timezone"`
+if [ -z "${_timezone}" ]; then
+	_timezone="Etc/UTC"
+fi
+
+/usr/bin/tar -xOf /usr/share/zoneinfo.txz "./${_timezone}" > /etc/localtime

@@ -1,0 +1,415 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Lighttpd Daemon
+#
+
+# PROVIDE: lighttpd
+# REQUIRE: htpasswd DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+. /etc/util.subr
+. /etc/configxml.subr
+
+name="lighttpd"
+desc="Lighttpd Daemon"
+rcvar=lighttpd_enable
+
+load_rc_config "${name}"
+
+# Custom commands
+start_precmd="lighttpd_mkconf"
+stop_postcmd="lighttpd_poststop"
+restart_precmd="lighttpd_check"
+reload_precmd="lighttpd_prereload"
+reload_postcmd="lighttpd_postreload"
+mkconf_cmd="lighttpd_mkconf"
+check_cmd="lighttpd_check"
+extra_commands="reload check mkconf"
+
+# Defaults
+lighttpd_enable=${lighttpd_enable:-"NO"}
+lighttpd_conf=${lighttpd_conf:-"/var/etc/lighttpd.conf"}
+lighttpd_certpem=${lighttpd_certpem:-"/var/etc/cert.pem"}
+lighttpd_docroot=${lighttpd_docroot:-"/usr/local/www"}
+lighttpd_server_maxwriteidle=${lighttpd_server_maxwriteidle:-"360"}
+lighttpd_pidfile=${lighttpd_pidfile:-"/var/run/${name}.pid"}
+lighttpd_forcehttpfile=${lighttpd_forcehttpfile:-"/var/run/${name}.forcehttp"}
+lighttpd_authrequire=${lighttpd_authrequire:-"NO"}
+lighttpd_uploaddir=${lighttpd_uploaddir:-"/var/tmp"}
+lighttpd_maxrequestsize=${lighttpd_maxrequestsize:-"524288"}
+command=/usr/local/sbin/lighttpd
+command_args="-f ${lighttpd_conf} -m /usr/local/lib/lighttpd"
+pidfile=${lighttpd_pidfile}
+sig_reload="-INT"
+
+if [ -L "${lighttpd_uploaddir}/ftmp" ]; then
+	rm -f "${lighttpd_uploaddir}/ftmp"
+fi
+if [ ! -d "${lighttpd_uploaddir}/ftmp" ]; then
+	mkdir -p "${lighttpd_uploaddir}/ftmp"
+fi
+chmod 1777 "${lighttpd_uploaddir}/ftmp"
+
+# FastCGI socket directory
+mkdir -p /var/tmp/fastcgi
+chmod 755 /var/tmp/fastcgi
+
+sslconfig() {
+	cat <<-SSLCONFIG
+		ssl.engine = "enable"
+		ssl.pemfile = "${lighttpd_certpem}"
+		ssl.use-sslv3 = "disable"
+	SSLCONFIG
+}
+
+lighttpd_mkconf()
+{
+	local _protocol _certificate _privatekey _tmpfile
+	local _ifn _ipaddr _ipv6addr _port
+	local _subnet _network _ipv6subnet _ipv6network _hostsallow
+
+	# get LAN interface
+	_ifn=`configxml_get "//interfaces/lan/if"`
+	_ifn=`get_if ${_ifn}`
+	# get IPv4 LAN address and network
+	_ipaddr=`configxml_get "//interfaces/lan/ipaddr"`
+	if [ "${_ipaddr}" = "dhcp" ]; then
+		_ipaddr=`get_ipaddr inet ${_ifn}`
+		_network=`get_network inet ${_ifn}`
+		if [ "${_ipaddr}" = "0.0.0.0" ]; then
+			echo "can't get DHCP address"
+			_network="0.0.0.0/0"
+		fi
+	else
+		_subnet=`configxml_get "//interfaces/lan/subnet"`
+		_network="${_ipaddr}/${_subnet}"
+	fi
+	# get IPv6 LAN address and network
+	_ipv6addr=""
+	_ipv6network=""
+	if configxml_isset "//interfaces/lan/ipv6_enable"; then
+		_ipv6addr=`configxml_get "//interfaces/lan/ipv6addr"`
+		if [ "${_ipv6addr}" = "auto" ]; then
+			_ipv6addr=`get_ipv6addr_nll ${_ifn}`
+			_ipv6network=`get_ipv6network_nll ${_ifn}`
+		else
+			_ipv6subnet=`configxml_get "//interfaces/lan/ipv6subnet"`
+			_ipv6network="${_ipv6addr}/${_ipv6subnet}"
+		fi
+	fi
+	# get protocol
+	_protocol=`configxml_get "//system/webgui/protocol"`
+	# default protocol to http when protocol has not been configured
+	if [ -z "${_protocol}" ]; then
+		_protocol="http"
+	fi
+	# set protocol to http when configuration is wrong
+	if [ "${_protocol}" != "http" ] && [ "${_protocol}" != "https" ]; then
+		_protocol="http"
+	fi
+	# reset protocol to http when forcehttpfile exists
+	if [ -f "${lighttpd_forcehttpfile}" ]; then
+		_protocol="http"
+	fi
+	# get port
+	_port=`configxml_get "//system/webgui/port"`
+	# default port to standard ports if it's not defined
+	if [ -z "${_port}" ]; then
+		if [ "${_protocol}" = "https" ]; then
+			_port="443"
+		else
+			_port="80"
+		fi
+	fi
+	# force port 80 when forcehttpfile exists
+	if [ -f "${lighttpd_forcehttpfile}" ]; then
+		_port="80"
+	fi
+	# get hosts allow
+	_hostsallow=`configxml_get "//system/webgui/hostsallow"`
+	# blank hostsallow when forcehttpfile exists
+	if [ -f "${lighttpd_forcehttpfile}" ]; then
+		_hostsallow=""
+	fi
+	# fallback if hostsallow is not configured
+	if [ -z "${_hostsallow}" ]; then
+		# add IPv4 network
+		if [ -n "${_network}" ]; then
+			_hostsallow="${_hostsallow} ${_network}"
+		fi
+		# add IPv6 network
+		if [ -n "${_ipv6network}" ]; then
+			_hostsallow="${_hostsallow} ${_ipv6network}"
+		fi
+	fi
+	# add IPv4 localhost
+	if [ -n "${_network}" ]; then
+		_hostsallow="${_hostsallow} 127.0.0.1"
+	fi
+	# add IPv6 localhost
+	if [ -n "${_ipv6network}" ]; then
+		_hostsallow="${_hostsallow} ::1"
+	fi
+	# trim _hostsallow
+	_hostsallow="${_hostsallow#"${_hostsallow%%[![:space:]]*}"}"
+	# get hosts allow disable
+	_hostsallow_disable=0
+	if configxml_isset "//system/webgui/hostsallow_disable"; then
+		_hostsallow_disable=1
+	fi
+	# force enable webgui when forcehttpfile exists
+	if [ -f "${lighttpd_forcehttpfile}" ]; then
+		_hostsallow_disable=0
+	fi
+	# create lighttpd.conf file
+	cat <<EOF > ${lighttpd_conf}
+server.modules = (
+  "mod_access",
+  "mod_auth",
+  "mod_expire",
+  "mod_cgi",
+  "mod_fastcgi",
+  "mod_openssl",
+  "mod_setenv"
+ )
+server.document-root = "${lighttpd_docroot}"
+server.errorlog-use-syslog = "enable"
+#server.event-handler = "freebsd-kqueue"
+server.event-handler = "libev"
+server.max-write-idle = ${lighttpd_server_maxwriteidle}
+index-file.names = ( "index.php" )
+# set trust path
+setenv.add-environment = ( "PATH" => "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin" )
+\$HTTP["url"] =~ "\.(js|css|css.php|png|gif|jpg)$" {
+    expire.url = ( "" => "access plus 1 hours" )
+}
+# mimetype mapping
+mimetype.assign             = (
+  ".pdf"          =>      "application/pdf",
+  ".sig"          =>      "application/pgp-signature",
+  ".spl"          =>      "application/futuresplash",
+  ".class"        =>      "application/octet-stream",
+  ".ps"           =>      "application/postscript",
+  ".torrent"      =>      "application/x-bittorrent",
+  ".dvi"          =>      "application/x-dvi",
+  ".gz"           =>      "application/x-gzip",
+  ".pac"          =>      "application/x-ns-proxy-autoconfig",
+  ".swf"          =>      "application/x-shockwave-flash",
+  ".tar.gz"       =>      "application/x-tgz",
+  ".tgz"          =>      "application/x-tgz",
+  ".tar"          =>      "application/x-tar",
+  ".zip"          =>      "application/zip",
+  ".mp3"          =>      "audio/mpeg",
+  ".m3u"          =>      "audio/x-mpegurl",
+  ".wma"          =>      "audio/x-ms-wma",
+  ".wax"          =>      "audio/x-ms-wax",
+  ".ogg"          =>      "application/ogg",
+  ".wav"          =>      "audio/x-wav",
+  ".gif"          =>      "image/gif",
+  ".jar"          =>      "application/x-java-archive",
+  ".jpg"          =>      "image/jpeg",
+  ".jpeg"         =>      "image/jpeg",
+  ".png"          =>      "image/png",
+  ".svg"          =>      "image/svg+xml",
+  ".xbm"          =>      "image/x-xbitmap",
+  ".xpm"          =>      "image/x-xpixmap",
+  ".xwd"          =>      "image/x-xwindowdump",
+  ".css"          =>      "text/css",
+  ".html"         =>      "text/html",
+  ".htm"          =>      "text/html",
+  ".js"           =>      "text/javascript",
+  ".asc"          =>      "text/plain",
+  ".c"            =>      "text/plain",
+  ".cpp"          =>      "text/plain",
+  ".log"          =>      "text/plain",
+  ".conf"         =>      "text/plain",
+  ".text"         =>      "text/plain",
+  ".txt"          =>      "text/plain",
+  ".spec"         =>      "text/plain",
+  ".dtd"          =>      "text/xml",
+  ".xml"          =>      "text/xml",
+  ".mp4"          =>      "video/mp4",
+  ".mpg4"         =>      "video/mp4",
+  ".mpeg"         =>      "video/mpeg",
+  ".mpg"          =>      "video/mpeg",
+  ".mov"          =>      "video/quicktime",
+  ".qt"           =>      "video/quicktime",
+  ".avi"          =>      "video/x-msvideo",
+  ".asf"          =>      "video/x-ms-asf",
+  ".asx"          =>      "video/x-ms-asf",
+  ".wmv"          =>      "video/x-ms-wmv",
+  ".bz2"          =>      "application/x-bzip",
+  ".tbz"          =>      "application/x-bzip-compressed-tar",
+  ".tar.bz2"      =>      "application/x-bzip-compressed-tar",
+  ".rpm"          =>      "application/x-rpm",
+  # make the default mime type application/octet-stream.
+  ""              =>      "application/octet-stream",
+ )
+#url.access-deny = ( "~", ".inc", ".htpasswd" )
+static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )
+server.pid-file = "${pidfile}"
+#cgi.assign = (".php" => "/usr/local/bin/php-cgi")
+server.tag = "WebGUI"
+server.stream-response-body = 2
+ssl.read-ahead = "disable"
+
+# FastCGI
+fastcgi.server = ( ".php" =>
+  ( "localhost" =>
+    ( "socket" => "/var/tmp/fastcgi/php.socket",
+        "bin-path" => "/usr/local/bin/php-cgi",
+        "check-local" => "disable",
+        "bin-environment" => (
+            "PHP_FCGI_CHILDREN" => "2",
+            "PHP_FCGI_MAX_REQUESTS" => "500"
+        ),
+        "bin-copy-environment" => (
+            "PATH", "SHELL", "USER" ),
+        "broken-scriptfilename" => "enable",
+        "min-procs" => 1,
+        "max-procs" => 2,
+        "max-load-per-proc" => 90,
+        "idle-timeout" => 360,
+        "x-sendfile" => "enable"
+    )
+  )
+)
+EOF
+	# configure webgui for HTTP
+	if [ "${_protocol}" = "http" ]; then
+		# add IPv4 as bind
+		if [ -n "${_ipaddr}" ]; then
+			cat <<-EOF >> ${lighttpd_conf}
+				server.bind = "${_ipaddr}"
+				server.port = "${_port}"
+			EOF
+			# add IPv6 as socket if available
+			if [ -n "${_ipv6addr}" ]; then
+				cat <<-EOF >> ${lighttpd_conf}
+					\$SERVER["socket"] == "[${_ipv6addr}]:${_port}" { }
+				EOF
+			fi
+		# add IPv6 as bind
+		elif [ -n "${_ipv6addr}" ]; then
+			cat <<-EOF >> ${lighttpd_conf}
+				server.bind = "[${_ipv6addr}]"
+				server.port = "${_port}"
+			EOF
+		fi
+	fi
+	# configure webgui for HTTPS
+	if [ "${_protocol}" = "https" ]; then
+		_certificate=`configxml_get "//system/webgui/certificate"`
+		_privatekey=`configxml_get "//system/webgui/privatekey"`
+		# create /var/etc/cert.pem file
+		if [ -n "${_certificate}" -a -n "${_privatekey}" ]; then
+			_tmpfile=/tmp/lighttpd$$.tmp
+			echo "${_certificate}" > ${_tmpfile}
+			/usr/bin/uudecode -m -p -r ${_tmpfile} > ${lighttpd_certpem}
+			echo "" >> ${lighttpd_certpem}
+			echo "${_privatekey}" > ${_tmpfile}
+			/usr/bin/uudecode -m -p -r ${_tmpfile} >> ${lighttpd_certpem}
+			/bin/rm -f ${_tmpfile}
+		fi
+		[ -e ${lighttpd_certpem} ] && /bin/chmod 0600 ${lighttpd_certpem}
+		# add IPv4 as bind
+		if [ -n "${_ipaddr}" ]; then
+			cat <<-EOF >> ${lighttpd_conf}
+				server.bind = "${_ipaddr}"
+				server.port = "${_port}"
+				$(sslconfig)
+			EOF
+			# add IPv6 as socket if available
+			if [ -n "${_ipv6addr}" ]; then
+				cat <<-EOF >> ${lighttpd_conf}
+					\$SERVER["socket"] == "[${_ipv6addr}]:${_port}" {
+					$(sslconfig)
+					}
+				EOF
+			fi
+		# add IPv6 as bind
+		elif [ -n "${_ipv6addr}" ]; then
+			cat <<-EOF >> ${lighttpd_conf}
+				server.bind = "[${_ipv6addr}]"
+				server.port = "${_port}"
+				$(sslconfig)
+			EOF
+		fi
+	fi
+	# hosts allow
+	if [ $_hostsallow_disable -eq 0 ]; then
+		cat <<-EOF >> ${lighttpd_conf}
+			url.access-deny = ( "" )
+		EOF
+		for h in $_hostsallow; do
+			cat <<-EOF >> ${lighttpd_conf}
+				\$HTTP["remoteip"] == "$h" { url.access-deny = ( "~", ".inc", ".htpasswd" ) }
+			EOF
+		done
+	else
+		cat <<-EOF >> ${lighttpd_conf}
+			url.access-deny = ( "~", ".inc", ".htpasswd" )
+		EOF
+	fi
+	# set temporary directory
+	cat <<-EOF >> ${lighttpd_conf}
+		server.upload-dirs = ( "${lighttpd_uploaddir}/ftmp", "${lighttpd_uploaddir}" )
+		server.max-request-size = ${lighttpd_maxrequestsize}
+	EOF
+	# disable File Manager
+	if [ `configxml_get_count "//system/disablefm"` -gt 0 ]; then
+		cat <<-EOF >> ${lighttpd_conf}
+			\$HTTP["url"] =~ "^/quixplorer/" {
+				url.access-deny = ( "" )
+			}
+		EOF
+	fi
+	# Is authentication (RFC 2617) required?
+	if checkyesno lighttpd_authrequire; then
+		/usr/local/bin/xml sel -t \
+			-o "auth.backend = \"htpasswd\"" -n \
+			-o "auth.backend.htpasswd.userfile = \"${lighttpd_docroot}/.htpasswd\"" -n \
+			-o "auth.require = ( \"/\" => (" -n \
+			-o "  \"method\"  => \"basic\"," -n \
+			-v "concat('  \"realm\"   => \"',//system/hostname,'\",')" -n \
+			-o "  \"require\" => \"valid-user\"" -n \
+			-o "  )," -n \
+			-o ")" -n \
+			${configxml_file} | /usr/local/bin/xml unesc >> ${lighttpd_conf}
+	fi
+	# add auxparam
+	/usr/local/bin/xml sel -t -m "//system/webgui" \
+		-m "auxparam" \
+			-v "." -n \
+		-b \
+		${configxml_file} | /usr/local/bin/xml unesc >> ${lighttpd_conf}
+}
+
+lighttpd_check()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval "${command} ${command_args} -tt"
+}
+
+lighttpd_poststop()
+{
+	rm -f ${pidfile}
+}
+
+lighttpd_prereload()
+{
+	echo "Stopping ${name} and starting gracefully."
+}
+
+lighttpd_postreload()
+{
+	rm -f ${pidfile}
+	run_rc_command start
+}
+
+run_rc_command "$1"

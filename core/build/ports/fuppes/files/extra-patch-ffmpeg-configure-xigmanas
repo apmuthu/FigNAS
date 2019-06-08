@@ -1,0 +1,11 @@
+--- configure.orig	2017-07-06 23:44:11.520067000 +0900
++++ configure	2017-07-06 23:47:41.771631000 +0900
+@@ -6661,7 +6661,7 @@
+ SRC_PATH:=\$(SRC_PATH:.%=..%)
+ endif
+ CC_IDENT=$cc_ident
+-ARCH=$arch
++override ARCH=$arch
+ INTRINSICS=$intrinsics
+ CC=$cc
+ CXX=$cxx

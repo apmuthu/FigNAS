@@ -1,0 +1,11 @@
+--- ./icons.c.orig	2017-05-17 22:55:17.000000000 +0200
++++ ./icons.c	2017-06-23 14:17:53.626745000 +0200
+@@ -1101,6 +1101,8 @@
+              "\x6b\x4e\x7a\xe0\x6a\x0a\x51\xa2\x8a\x34\x51\x46\x8a\x28\xd1\x45\x1a\x28\xa3\x45\x14\x68\xa2\x8d"
+              "\x14\x51\xa2\x8a\x34\x51\x46\x8a\x28\xd1\x45\x1a\x28\xa3\x45\x14\x68\xa2\x8d\x14\x51\xa2\x8a\xff"
+              "\xd9";
++#elif defined(XigmaNAS)
++#include "xigmanas-icons.c"
+ #elif __FreeBSD__
+ /* Small Daemon PNG image */
+ unsigned char

@@ -1,0 +1,13 @@
+--- mDNSPosix/Makefile.orig	2016-11-23 00:27:25.000000000 +0900
++++ mDNSPosix/Makefile	2016-11-23 00:34:07.000000000 +0900
+@@ -517,3 +517,10 @@
+ $(OBJDIR)/%.l.o: $(SHAREDDIR)/%.l
+ 	$(FLEX) $(FLEXFLAGS_OS) -i             -o$(OBJDIR)/$*.l.c $<
+ 	$(CC) $(CFLAGS) -Wno-error -c -o $@ $(OBJDIR)/$*.l.c
++
++# XigmaNAS
++$(OBJDIR)/mDNSPosix.c.o: mDNSPosix.c
++	$(CC) $(CFLAGS_COMMON) $(CFLAGS_OS) -O0 -DMDNS_DEBUGMSGS=0 -c -o $@ $<
++
++$(OBJDIR)/mDNS.c.o: $(COREDIR)/mDNS.c
++	$(CC) $(CFLAGS_COMMON) $(CFLAGS_OS) -O0 -DMDNS_DEBUGMSGS=0 -c -o $@ $<

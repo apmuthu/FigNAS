@@ -1,0 +1,7 @@
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Dialog box title color
+title_color = (YELLOW,WHITE,ON)

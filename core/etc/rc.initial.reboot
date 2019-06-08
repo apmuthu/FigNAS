@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# rc.initial.reboot
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# Display dialog
+cdialog --defaultno --yesno "Do you really want to reboot the server?" 5 46
+
+case $? in
+	0)
+		/sbin/shutdown -r now >/dev/null;
+		;;
+	1)
+		;;
+	255)
+		;;
+esac

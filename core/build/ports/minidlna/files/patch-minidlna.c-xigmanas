@@ -1,0 +1,31 @@
+--- ./minidlna.c.orig	2017-06-23 15:06:34.948323000 +0200
++++ ./minidlna.c	2017-06-23 15:08:59.000000000 +0200
+@@ -240,6 +240,28 @@
+ 		}
+ 	}
+ 	fclose(info);
++#elif defined(XigmaNAS)
++	FILE *fp_name, *fp_platform;
++	char tmpbuf[64], tmpbuf2[64], *name, *platform;
++	name = platform = NULL;
++	fp_name = fopen("/etc/prd.name", "r");
++	if (fp_name != NULL)
++	{
++		name = fgets(tmpbuf, sizeof tmpbuf, fp_name);
++		name = trim(name);
++	}
++	fp_platform = fopen("/etc/platform", "r");
++	if (fp_platform != NULL)
++	{
++		platform = fgets(tmpbuf2, sizeof tmpbuf2, fp_platform);
++		platform = trim(platform);
++	}
++	fclose(fp_name);
++	fclose(fp_platform);
++	if (name != NULL && platform != NULL)
++		snprintf(buf+off, len-off, "%s %s", name, platform);
++	else if (name != NULL)
++		snprintf(buf+off, len-off, "%s", name);
+ #else
+ 	char * logname;
+ 	logname = getenv("LOGNAME");

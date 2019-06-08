@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# PROVIDE: CONFIG
+# REQUIRE: SYSTEMINIT
+# BEFORE: NETWORKING NETWORK
+
+#	This is a dummy dependency.

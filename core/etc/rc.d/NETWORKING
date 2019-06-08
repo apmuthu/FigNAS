@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# $FreeBSD: rc.d/NETWORKING
+# Changes: added REQUIRE: resolv, Removed REQUIRE: ppp ipfw stf faith REQUIRE: static_arp static_ndp
+#
+
+# PROVIDE: NETWORKING NETWORK
+# REQUIRE: CONFIG
+# REQUIRE: netif netoptions routing
+# REQUIRE: resolv
+
+#	This is a dummy dependency, for services which require networking
+#	to be operational before starting.

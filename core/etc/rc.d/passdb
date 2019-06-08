@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Configure passdb
+#
+
+# PROVIDE: passdb
+# BEFORE: smbd
+# KEYWORD: nostart
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+name="passdb"
+desc="Configure passdb configuration files"
+command="/usr/local/bin/pdbedit"
+
+load_rc_config "$name"
+
+#	defaults
+passdb_file=${passdb_file:-"/var/etc/private/passdb"}
+passdb_minuid=${passdb_minuid:-"1000"}
+passdb_mingid=${passdb_mingid:-"1000"}
+
+#	check Samba AD
+configxml_isset //sambaad/enable
+sambaad=$?
+if [ 0 -eq ${sambaad} ]; then
+	exit 0
+fi
+
+#	display message
+echo "Updating passdb."
+
+#	clear password database
+rm -rf ${passdb_file}
+
+#	generate Samba password database.
+
+#	process configured users
+_index=`configxml_get_count "//access/user"`
+while [ ${_index} -gt 0 ]; do
+	if configxml_isset "//access/user[${_index}]/enable"; then
+		_username=`configxml_get "//access/user[position()=${_index}]/login"`
+		_password=`configxml_get "//access/user[position()=${_index}]/passwordmd4"`
+		_uid=`configxml_get "//access/user[position()=${_index}]/id"`
+		if [ ${_uid} -ge ${passdb_minuid} ]; then
+			(/bin/echo "${_password}"; /bin/echo "${_password}") | ${command} -d 0 -t -a -u "${_username}" > /dev/null
+			${command} -d 0 -u "${_username}" --set-nt-hash "${_password}" > /dev/null
+		fi
+	fi
+	_index=$(( ${_index} - 1 ))
+done
+
+#	generate samba local group
+_logname=${LOGNAME}
+if [ -z "${_logname}" ]; then
+	_logname=`/usr/bin/id -un`
+fi
+
+#	builtin admin
+LOGNAME="${_logname}" /usr/local/bin/net groupmap add ntgroup="admin" unixgroup="admin" type=l > /dev/null
+
+#	process configured groups
+_index=`configxml_get_count "//access/group"`
+while [ ${_index} -gt 0 ]; do
+	_groupname=`configxml_get "//access/group[position()=${_index}]/name"`
+	_gid=`configxml_get "//access/group[position()=${_index}]/id"`
+	if [ ${_gid} -ge ${passdb_mingid} ]; then
+		LOGNAME="${_logname}" /usr/local/bin/net groupmap add ntgroup="${_groupname}" unixgroup="${_groupname}" type=l > /dev\null
+	fi
+	_index=$(( ${_index} - 1 ))
+done

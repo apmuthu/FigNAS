@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# msmtp configuration
+#
+
+# PROVIDE: msmtp
+# BEFORE: DAEMON
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+name="msmtp"
+desc="msmtp configuration"
+load_rc_config "${name}"
+
+# Defaults
+msmtp_config=${msmtp_config:-"/var/etc/msmtp.conf"}
+msmtprc=${msmtprc:-"/usr/local/etc/msmtprc"}
+
+# Create msmtp.conf configuration
+/usr/local/bin/xml sel -t \
+	-o "account default" -n \
+	-i "string-length(//system/domain) > 0" \
+		--if "string-length(//system/hostname) > 0" \
+			-v "concat('domain ',//system/hostname,'.',//system/domain)" -n \
+		--else \
+			-v "concat('domain ',//system/domain)" -n \
+		--break \
+	-b \
+	-i "string-length(//system/email/server) > 0" \
+		-v "concat('host ',//system/email/server)" -n \
+	-b \
+	-i "string-length(//system/email/port) > 0" \
+		-v "concat('port ',//system/email/port)" -n \
+	-b \
+	-o "protocol smtp" -n \
+	-i "string-length(//system/email/from) > 0" \
+		-v "concat('from ',//system/email/from)" -n \
+	-b \
+	-i "count(//system/email/auth) > 0" \
+		-i "string-length(//system/email/authmethod) > 0" \
+			-v "concat('auth ',//system/email/authmethod)" -n \
+		-b \
+		-i "string-length(//system/email/username) > 0" \
+			-v "concat('user ',//system/email/username)" -n \
+		-b \
+		-i "string-length(//system/email/password) > 0" \
+			-v "concat('password ',//system/email/password)" -n \
+		-b \
+	-b \
+	--if "count(//system/email/security) > 0" \
+		-o "tls on" -n \
+		--if "count(//system/email/starttls) > 0" \
+			-o "tls_starttls on" -n \
+		--else \
+			-o "tls_starttls off" -n \
+		--break \
+		--if "count(//system/email/tls_certcheck) > 0" \
+			--if "count(//system/email/tls_use_default_trust_file) > 0" \
+				-o "tls_trust_file /usr/local/etc/ssl/cert.pem" -n \
+			--elif "string-length(//system/email/tls_trust_file) > 0" \
+				-v "concat('tls_trust_file ',//system/email/tls_trust_file)" -n \
+			--break \
+			--if "string-length(//system/email/tls_fingerprint) > 0" \
+				-v "concat('tls_fingerprint ',//system/email/tls_fingerprint)" -n \
+			--break \
+			--if "string-length(//system/email/tls_crl_file) > 0" \
+				-v "concat('tls_crl_file ',//system/email/tls_crl_file)" -n \
+			--break \
+		--else \
+			-o "tls_certcheck off" -n \
+		--break \
+		--if "string-length(//system/email/tls_cert_file) > 0" \
+			-v "concat('tls_cert_file ',//system/email/tls_cert_file)" -n \
+		--break \
+		--if "string-length(//system/email/tls_key_file) > 0" \
+			-v "concat('tls_key_file ',//system/email/tls_key_file)" -n \
+		--break \
+	--else \
+		-o "tls off" -n \
+		-o "tls_starttls off" -n \
+	--break \
+	-o "syslog LOG_MAIL" -n \
+	${configxml_file} | /usr/local/bin/xml unesc > ${msmtp_config}
+
+# Set user permissions
+chmod 0600 ${msmtp_config}
+# for PHP mail()
+cp ${msmtp_config} ${msmtprc}
+chown root:www ${msmtprc}
+chmod 0640 ${msmtprc}

@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# raki: r)un a)uthorized k)ey i)nstaller
+# populate authorized keys of root and users into their authorized_keys file
+#
+
+# PROVIDE: raki
+# BEFORE: LOGIN
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+#	run root authorized keys installer
+rraki()
+{
+#	prepare variables
+	_login=${_login:-"root"}
+	if [ 0 -lt `configxml_get_count "//access/publickey/param[enable and login=\"${_login}\"]"` ]; then
+		_homedir=`/usr/bin/getent passwd "${_login}" | cut -d : -f 6`
+		_sshdir="${_homedir}/.ssh"
+		_akfile="${_sshdir}/authorized_keys"
+#		process only when _login and _homedir are not empty and _homedir exists and is not /mnt
+		if [ -n "${_login}" ] && [ -n "${_homedir}" ] && [ -d "${_homedir}" ] && [ "${_homedir}" != "/mnt" ]; then
+#			create .ssh folder if it doesn't exist
+			[ ! -d "${_sshdir}" ] && /bin/mkdir -m 4700 "${_sshdir}" && /usr/sbin/chown "${_login}" "${_sshdir}"
+#			prepare authorized_keys file
+			echo '# created by raki' > "${_akfile}"
+			/bin/chmod 600 "${_akfile}"
+			/usr/sbin/chown root "${_akfile}"
+#			populate public keys for root into authorized_keys file
+			/usr/local/bin/xml sel --template \
+				--match "//access/publickey/param[enable and login=\"${_login}\"]" \
+					--if 'string-length(publickey) > 0' \
+						--value-of 'publickey' --nl \
+					--break \
+				--break \
+				${configxml_file} | /usr/local/bin/xml unesc >> "${_akfile}"
+		fi
+	fi
+}
+
+#	run user authorized keys installer
+ruaki()
+{
+#	loop through users
+	_index=`configxml_get_count "//access/user"`
+	while [ ${_index} -gt 0 ]; do
+#		prepare variables
+		_login=`configxml_get "//access/user[position()=${_index}]/login"`
+		if [ 0 -lt `configxml_get_count "//access/publickey/param[enable and login=\"${_login}\"]"` ]; then
+			_homedir=`/usr/bin/getent passwd "${_login}" | cut -d : -f 6`
+			_sshdir="${_homedir}/.ssh"
+			_akfile="${_sshdir}/authorized_keys"
+#			process only when _login and _homedir are not empty and _homedir exists and is not /mnt
+			if [ -n "${_login}" ] && [ -n "${_homedir}" ] && [ -d "${_homedir}" ] && [ "${_homedir}" != "/mnt" ]; then
+#				create ssh folder if it doesn't exist
+				[ ! -d "${_sshdir}" ] && /bin/mkdir -m 4700 "${_sshdir}" && /usr/sbin/chown "${_login}" "${_sshdir}"
+#				prepare authorized_keys file
+				echo '# created by raki' > "${_akfile}"
+				/bin/chmod 600 "${_akfile}"
+				/usr/sbin/chown root "${_akfile}"
+#				populate public keys for user into authorized_keys file
+				/usr/local/bin/xml sel --template \
+					--match "//access/publickey/param[enable and login=\"${_login}\"]" \
+						--if 'string-length(publickey) > 0' \
+							--value-of 'publickey' --nl \
+						--break \
+					--break \
+					${configxml_file} | /usr/local/bin/xml unesc >> "${_akfile}"
+			fi
+		fi
+		_index=$(( ${_index} - 1 ))
+	done
+}
+
+rraki
+ruaki

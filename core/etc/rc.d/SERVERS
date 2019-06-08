@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+
+# PROVIDE: SERVERS
+# REQUIRE: mountcritremote
+
+#	This is a dummy dependency, for early-start servers relying on
+#	some basic configuration.

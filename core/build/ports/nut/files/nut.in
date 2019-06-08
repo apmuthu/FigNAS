@@ -1,0 +1,165 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# UPS Service
+#
+
+# PROVIDE: nut
+# REQUIRE: NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+# XQUERY: --if "count(//ups/enable) > 0" --output "0" --break
+# RCVAR: nut
+
+. /etc/rc.subr
+. /etc/configxml.subr
+. /etc/util.subr
+
+name="nut"
+desc="UPS Service"
+rcvar=nut_enable
+
+load_rc_config "${name}"
+
+# Custom commands
+extra_commands="mkconf"
+start_precmd="nut_prestart"
+stop_postcmd="nut_poststop"
+mkconf_cmd="nut_mkconf"
+
+# Defaults
+nut_enable=${nut_enable:-"NO"}
+nut_prefix=${nut_prefix:-"/usr/local"}
+nut_upsshut=${nut_upsshut:-"NO"}
+nut_nut_conf=${nut_nut_conf:-"/var/etc/nut.conf"}
+nut_ups_conf=${nut_ups_conf:-"/var/etc/ups.conf"}
+nut_upsd_conf=${nut_upsd_conf:-"/var/etc/upsd.conf"}
+nut_upsd_users=${nut_upsd_users:-"/var/etc/upsd.users"}
+nut_upsd_port=${nut_upsd_port:-"3493"}
+nut_upsd_maxage=${nut_upsd_maxage:-"15"}
+nut_upsd_maxconn=${nut_upsd_maxconn:-"1024"}
+nut_statedir=${nut_statedir:-"/var/db/${name}"}
+nut_runas=${nut_runas:-"root"}
+nut_flags=${nut_flags:-"-u ${nut_runas}"}
+nut_upsmon_user=${nut_upsmon_user:-"root"}
+required_dirs="/var/run ${nut_statedir}"
+required_files="${nut_ups_conf} ${nut_upsd_conf} ${nut_upsd_users}"
+command="${nut_prefix}/sbin/upsd"
+pidfile="/var/run/upsd.pid"
+
+_upsmode=`configxml_get "//ups/mode"`
+
+nut_mkconf()
+{
+	local _if _ip
+
+	############################
+	# Create nut.conf
+	/usr/local/bin/xml sel --template \
+		--match "//ups" \
+			--if "count(remotemonitor) = 0" \
+				--output "MODE = standalone" --nl \
+			--break \
+			--if "count(remotemonitor) > 0" \
+				--output "MODE = netserver" --nl \
+			--break \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc > ${nut_nut_conf}
+
+	############################
+	# Create ups.conf
+	/usr/local/bin/xml sel --template \
+		--match "//ups" \
+			--value-of "concat('[',upsname,']')" --nl \
+			--value-of "concat('	driver = ',driver)" --nl \
+			--value-of "concat('	port = ',port)" --nl \
+			--match "auxparam" \
+				--value-of "concat('	',.)" --nl \
+			--break \
+			--nl \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc > ${nut_ups_conf}
+	if configxml_isset //ups/ups2; then
+		/usr/local/bin/xml sel --template --match "//ups" \
+			--value-of "concat('[',ups2_upsname,']')" --nl \
+			--value-of "concat('	driver = ',ups2_driver)" --nl \
+			--value-of "concat('	port = ',ups2_port)" --nl \
+			--match "ups2_auxparam/auxparam" \
+				--value-of "concat('	',.)" --nl \
+			--break \
+			--nl \
+			${configxml_file} | /usr/local/bin/xml unesc >> ${nut_ups_conf}
+	fi
+
+	############################
+	# Create upsd.conf
+	cat <<EOF > ${nut_upsd_conf}
+MAXAGE ${nut_upsd_maxage}
+MAXCONN ${nut_upsd_maxconn}
+LISTEN 127.0.0.1 ${nut_upsd_port}
+LISTEN ::1 ${nut_upsd_port}
+EOF
+
+	# Add listening interface for remote monitoring
+	if configxml_isset //ups/remotemonitor; then
+		_if=`configxml_get "//interfaces/lan/if"`
+		_ip=`get_ipaddr inet ${_if}`
+		echo "LISTEN ${_ip} ${nut_upsd_port}" >> ${nut_upsd_conf}
+
+		#if configxml_isset //interfaces/lan/ipv6_enable; then
+		#	_ip=`get_ipaddr inet6 ${_if}`
+		#	echo "LISTEN ${_ip} ${nut_upsd_port}" >> ${nut_upsd_conf}
+		#fi
+	fi
+
+	############################
+	# Create upsd.users
+	# on master system
+	echo "" > ${nut_upsd_users}
+	if [ "master" = "${_upsmode}" ]; then
+		/usr/local/bin/xml sel --template \
+			--value-of "concat('[',//ups/masteruser,']')" --nl \
+			--value-of "concat('	password = ',//ups/masterpassword)" --nl \
+			--output "	actions = set" --nl \
+			--output "	instcmds = all" --nl \
+			--value-of "concat('	upsmon ',//ups/mode)" --nl \
+			--nl \
+			${configxml_file} | /usr/local/bin/xml unesc > ${nut_upsd_users}
+	fi
+    # on both master and slave system
+		/usr/local/bin/xml sel --template \
+			--value-of "concat('[',//ups/monitoruser,']')" --nl \
+			--value-of "concat('	password = ',//ups/monitorpassword)" --nl \
+			--output "	upsmon slave" --nl \
+			--nl \
+			${configxml_file} | /usr/local/bin/xml unesc >> ${nut_upsd_users}
+
+	chmod 0600 ${nut_nut_conf}
+	chmod 0600 ${nut_ups_conf}
+	chmod 0600 ${nut_upsd_conf}
+	chmod 0600 ${nut_upsd_users}
+}
+
+nut_prestart() {
+	${nut_prefix}/sbin/upsdrvctl -u ${nut_runas} start
+}
+
+nut_poststop() {
+	${nut_prefix}/sbin/upsdrvctl -u ${nut_runas} stop
+}
+
+# Prepare state dir
+mkdir -m 0600 ${nut_statedir} 2>/dev/null
+
+# Create required config file
+nut_mkconf
+
+if [ "slave" = "${_upsmode}" ]; then
+	nut_enable="NO"
+	rcvar=nut_enable
+fi
+
+run_rc_command "$1"

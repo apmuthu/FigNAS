@@ -1,0 +1,134 @@
+#!/bin/sh
+#
+# Part of XigmaNAS (https://www.xigmanas.com).
+# Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+# All rights reserved.
+#
+# Deamon iscsi_initiator
+
+# PROVIDE: iscsi_initiator
+# REQUIRE: NETWORKING netwait
+# BEFORE: mountcritremote
+# KEYWORD: shutdown
+# XQUERY: --if 'count(//iscsiinit/vdisk) > 0' --output '0' --break
+# RCVAR: iscsi_initiator
+
+. /etc/rc.subr
+. /etc/configxml.subr
+
+name="iscsi_initiator"
+desc="Deamon iscsi_initiator"
+rcvar=iscsi_initiator_enable
+
+load_rc_config "$name"
+
+# Custom commands
+mkconf_cmd="iscsi_initiator_mkconf"
+start_precmd="iscsi_initiator_prestart"
+start_cmd="iscsi_initiator_start"
+stop_cmd="iscsi_initiator_stop"
+extra_commands="mkconf"
+
+# Defaults
+iscsi_initiator_enable="${iscsi_initiator_enable:=NO}"
+command="/usr/bin/iscsictl"
+iscsi_initiator_conf="/etc/iscsi.conf"
+
+iscsi_initiator_mkconf()
+{
+	cat /dev/null > ${iscsi_initiator_conf}
+	chmod 600 ${iscsi_initiator_conf}
+
+	/usr/local/bin/xml sel --template \
+		--match '//iscsiinit/vdisk' \
+			--if 'string-length(name) > 0' \
+				--value-of 'normalize-space(name)' \
+				--output ' {' --nl \
+				--if 'string-length(sessionstate) > 0 and sessionstate="off"' \
+					--output 'enable = off' --nl \
+				--else \
+					--output 'enable = on' --nl \
+				--break \
+				--if 'string-length(authmethod) > 0' \
+					--value-of 'concat("authmethod = ",authmethod)' --nl \
+					--if 'authmethod="CHAP"' \
+						--if 'string-length(chapiname) > 0 and string-length(chapsecret) > 0' \
+							--if "contains(chapiname,'\"')" \
+								--output '# invalid character(s) were removed from chap name:' --nl \
+							--break \
+							--if "contains(chapsecret,'\"')" \
+								--output '# invalid character(s) were removed from chap secret:' --nl \
+							--break \
+							--value-of "concat('chapiname = \"',str:replace(chapiname,'\"',''),'\"')" --nl \
+							--value-of "concat('chapsecret = \"',str:replace(chapsecret,'\"',''),'\"')" --nl \
+							--if 'string-length(tgtchapname) > 0 and string-length(tgtchapsecret) > 0' \
+								--if "contains(tgtchapname,'\"')" \
+									--output '# invalid character(s) were removed from mutual chap name:' --nl \
+								--break \
+								--if "contains(tgtchapsecret,'\"')" \
+									--output '# invalid character(s) were removed from mutual chap secret:' --nl \
+								--break \
+								--value-of "concat('tgtchapname = \"',str:replace(tgtchapname,'\"',''),'\"')" --nl \
+								--value-of "concat('tgtchapsecret = \"',str:replace(tgtchapsecret,'\"',''),'\"')" --nl \
+							--break \
+						--break \
+					--break \
+				--break \
+				--if 'string-length(headerdigest) > 0' \
+					--value-of 'concat("headerdigest = ",headerdigest)' --nl \
+				--break \
+				--if 'string-length(datadigest) > 0' \
+					--value-of 'concat("datadigest = ",datadigest)' --nl \
+				--break \
+				--if 'string-length(initiatorname) > 0' \
+					--value-of 'concat("initiatorname = ",initiatorname)' --nl \
+				--break \
+				--if 'string-length(sessiontype) > 0 and sessiontype="discovery"' \
+					--output 'sessiontype = discovery' --nl \
+				--else \
+					--output 'sessiontype = normal' --nl \
+					--if 'string-length(targetname) > 0' \
+						--value-of 'concat("targetname = ",targetname)' --nl \
+					--break \
+				--break \
+				--if 'string-length(targetaddress) > 0' \
+					--value-of 'concat("targetaddress = ",targetaddress)' --nl \
+				--break \
+				--if 'string-length(offload) > 0' \
+					--value-of 'concat("offload = ",offload)' --nl \
+				--break \
+				--if 'string-length(protocol) > 0' \
+					--value-of 'concat("protocol = ",protocol)' --nl \
+				--break \
+				--match 'auxparam' \
+					--if 'position() < last() or string-length(.) > 0' \
+						--value-of '.' --nl \
+					--break \
+				--break \
+				--output '}' --nl \
+			--break \
+		--break \
+		${configxml_file} | /usr/local/bin/xml unesc >> ${iscsi_initiator_conf}
+}
+
+iscsi_initiator_prestart()
+{
+	iscsi_initiator_mkconf
+	if [ -z "`pgrep iscsid`" ]; then
+		/etc/rc.d/iscsid onestart
+	fi
+}
+
+iscsi_initiator_start()
+{
+	echo "Starting ${name}."
+#	add all targets
+	eval ${command} -Aa
+}
+iscsi_initiator_stop()
+{
+	echo "Stopping ${name}."
+#	remove all targets
+	eval ${command} -Ra
+}
+run_rc_command "$1"

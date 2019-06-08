@@ -1,0 +1,27 @@
+--- ./scanner.c.orig	2017-05-17 22:55:17.000000000 +0200
++++ ./scanner.c	2017-06-23 14:17:53.632492000 +0200
+@@ -826,6 +826,14 @@
+ 	if( flag )
+ 		fclose(flag);
+ #endif
++#ifdef XigmaNAS
++#ifndef SCAN_NOTIFY_FILE
++#define	SCAN_NOTIFY_FILE "/var/run/minidlna/upnp-av.scan"
++#endif
++	FILE *flag = fopen(SCAN_NOTIFY_FILE, "w");
++	if( flag )
++		fclose(flag);
++#endif
+ }
+ 
+ static void
+@@ -836,6 +844,9 @@
+ 		system("/bin/sh /ramfs/.rescan_done");
+ 	unlink("/ramfs/.upnp-av_scan");
+ #endif
++#ifdef XigmaNAS
++	unlink(SCAN_NOTIFY_FILE);
++#endif
+ }
+ 
+ /* rescan functions added by shrimpkin@sourceforge.net */
