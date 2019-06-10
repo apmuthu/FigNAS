@@ -30,7 +30,7 @@ rraki()
 #			prepare authorized_keys file
 			echo '# created by raki' > "${_akfile}"
 			/bin/chmod 600 "${_akfile}"
-			/usr/sbin/chown root "${_akfile}"
+			/usr/sbin/chown "${_login}" "${_akfile}"
 #			populate public keys for root into authorized_keys file
 			/usr/local/bin/xml sel --template \
 				--match "//access/publickey/param[enable and login=\"${_login}\"]" \
@@ -62,7 +62,7 @@ ruaki()
 #				prepare authorized_keys file
 				echo '# created by raki' > "${_akfile}"
 				/bin/chmod 600 "${_akfile}"
-				/usr/sbin/chown root "${_akfile}"
+				/usr/sbin/chown "${_login}" "${_akfile}"
 #				populate public keys for user into authorized_keys file
 				/usr/local/bin/xml sel --template \
 					--match "//access/publickey/param[enable and login=\"${_login}\"]" \
