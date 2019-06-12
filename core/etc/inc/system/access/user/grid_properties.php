@@ -150,7 +150,7 @@ class grid_properties extends myp\container_row {
 	public function init_user_portal_access(): myp\property_bool {
 		$property = $this->x_user_portal_access = new myp\property_bool();
 		$property->
-			set_name('user_portal_access')->
+			set_name('userportal')->
 			set_title(gettext('User Portal'));
 		return $property;
 	}

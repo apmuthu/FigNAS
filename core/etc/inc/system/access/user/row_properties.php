@@ -180,7 +180,7 @@ final class row_properties extends grid_properties {
 		$property->
 			set_caption($caption)->
 			set_defaultvalue(false)->
-			set_id('user_portal_access')->
+			set_id('userportal')->
 			filter_use_default();
 		return $property;
 	}
