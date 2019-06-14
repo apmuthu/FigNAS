@@ -15,8 +15,9 @@
 . /etc/configxml.subr
 
 #	run root authorized keys installer
-rraki()
-{
+rraki() {
+	local _login _homedir _sshdir _akfile
+
 #	prepare variables
 	_login=${_login:-"root"}
 	if [ 0 -lt `configxml_get_count "//access/publickey/param[enable and login=\"${_login}\"]"` ]; then
@@ -44,8 +45,9 @@ rraki()
 }
 
 #	run user authorized keys installer
-ruaki()
-{
+ruaki() {
+	local _index _login _homedir _sshdir _akfile
+
 #	loop through users
 	_index=`configxml_get_count "//access/user"`
 	while [ ${_index} -gt 0 ]; do
