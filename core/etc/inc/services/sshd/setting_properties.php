@@ -180,6 +180,29 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
+	public function init_loglevel(): myp\property_list {
+		$description = gettext('Gives the verbosity level that is used when logging messages from sshd. Logging with a DEBUG level violates the privacy of users and is not recommended.');
+		$options = [
+			'' => gettext('Default'),
+			'QUIET' => gettext('QUIET - disable logging'),
+			'FATAL' => gettext('FATAL - log fatal errors only'),
+			'ERROR' => gettext('ERROR - log errors'),
+			'INFO' => gettext('INFO - log status messages'),
+			'VERBOSE' => gettext('VERBOSE - log detailed information'),
+			'DEBUG' => gettext('DEBUG - log debugging information'),
+			'DEBUG1' => gettext('DEBUG1 - same as DEBUG'),
+			'DEBUG2' => gettext('DEBUG2 - log detailed debugging information'),
+			'DEBUG3' => gettext('DEBUG3 - log all debugging information')
+		];
+		$property = parent::init_loglevel();
+		$property->
+			set_defaultvalue('')->
+			set_description($description)->
+			set_id('loglevel')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
 	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters are appended to /etc/ssh/sshd_config.');
 		$property = parent::init_auxparam();

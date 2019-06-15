@@ -85,6 +85,9 @@ sshd_mkconf()
 			--else \
 				--output 'PubkeyAuthentication no' --nl \
 			--break \
+			--if 'string-length(loglevel) > 0' \
+				--value-of 'concat("LogLevel ",loglevel)' --nl \
+			--break \
 			--match 'auxparam' \
 				--if 'position() < last() or string-length(.) > 0' \
 					--value-of '.' --nl \

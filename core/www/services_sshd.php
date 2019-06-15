@@ -60,6 +60,7 @@ $a_referer = [
 	$cop->get_compression(),
 	$cop->get_rawprivatekey(),
 	$cop->get_subsystem(),
+	$cop->get_loglevel(),
 	$cop->get_auxparam()
 ];
 $pending_changes = updatenotify_exists($sphere->get_notifier());
@@ -299,6 +300,7 @@ $tbody->
 	c2_checkbox($cop->get_compression(),$sphere,false,$is_readonly)->
 	c2_textarea($cop->get_rawprivatekey(),$sphere,false,$is_readonly,60,$n_rawprivatekey_rows)->
 	c2_input_text($cop->get_subsystem(),$sphere,false,$is_readonly)->
+	c2_select($cop->get_loglevel(),$sphere,false,$is_readonly)->
 	c2_textarea($cop->get_auxparam(),$sphere,false,$is_readonly,60,$n_auxparam_rows);
 //	add buttons
 $buttons = $document->add_area_buttons();

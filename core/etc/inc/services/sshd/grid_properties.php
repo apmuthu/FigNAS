@@ -176,6 +176,17 @@ class grid_properties extends myp\container {
 	final public function get_subsystem(): myp\property_text {
 		return $this->x_subsystem ?? $this->init_subsystem();
 	}
+	protected $x_loglevel;
+	public function init_loglevel(): myp\property_list {
+		$property = $this->x_loglevel = new myp\property_list;
+		$property->
+			set_name('loglevel')->
+			set_title(gettext('Log Level'));
+		return $property;
+	}
+	final public function get_loglevel(): myp\property_list {
+		return $this->x_loglevel ?? $this->init_loglevel();
+	}
 	protected $x_auxparam;
 	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
@@ -190,6 +201,7 @@ class grid_properties extends myp\container {
 	Compression
 	GSSAPIAuthentication
 	KbdInteractiveAuthentication
+	LogLevel
 	PasswordAuthentication
 	PermitRootLogin
 	Port
@@ -240,7 +252,6 @@ class grid_properties extends myp\container {
 	KexAlgorithms
 	ListenAddress
 	LoginGraceTime
-	LogLevel
 	MACs
 	Match
 	MaxAuthTries
