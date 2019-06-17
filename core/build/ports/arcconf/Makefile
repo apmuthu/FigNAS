@@ -1,17 +1,17 @@
-PORTNAME=		arcconf
+PORTNAME=	arcconf
 DISTVERSION=	v3_00_23488
-CATEGORIES=		sysutils
-COMMENT=		Adaptec SCSI/SAS RAID administration tool
-MAINTAINER=		zoon01@xigmanas.com
+CATEGORIES=	sysutils
+COMMENT=	Adaptec SCSI/SAS RAID administration tool
+MAINTAINER=	zoon01@xigmanas.com
 
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
 
-DISTNAME=		arcconf_${DISTVERSION}
-USES=			zip
+DISTNAME=	arcconf_${DISTVERSION}
+USES=		zip
 
 ONLY_FOR_ARCHS=	i386 amd64
-RESTRICTED=		May not be redistributed in binary form
-NO_CDROM=		May not be redistributed in binary form
+RESTRICTED=	May not be redistributed in binary form
+NO_CDROM=	May not be redistributed in binary form
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
