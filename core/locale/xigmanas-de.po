@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-06 01:26+0000\n"
-"PO-Revision-Date: 2019-06-06 19:12+0000\n"
+"PO-Revision-Date: 2019-06-10 09:16+0000\n"
 "Last-Translator: Tomfro <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-07 19:32+0000\n"
-"X-Generator: Launchpad (build 18978)\n"
+"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Generator: Launchpad (build 18986)\n"
 "Language: de\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -4331,10 +4331,10 @@ msgid "Enable Selected Mutual CHAP Users"
 msgstr "Ausgewählte gegenseitige CHAP Benutzer aktivieren"
 
 msgid "Enable Selected NFS Exports"
-msgstr ""
+msgstr "Ausgewählte NFS Exporte aktivieren"
 
 msgid "Enable Selected NFS Root Directories"
-msgstr ""
+msgstr "Aktiviert die ausgewählten NFS Wurzelverzeichnisse"
 
 msgid "Enable Selected Option Records"
 msgstr "Ausgewählte Auswahlaufzeichnungen aktivieren"
@@ -4349,7 +4349,7 @@ msgid "Enable Selected Portal Groups"
 msgstr "Ausgewählte Portalgruppen aktivieren"
 
 msgid "Enable Selected Public Keys"
-msgstr ""
+msgstr "Aktiviert die ausgewählten öffentlichen Schlüssel"
 
 msgid "Enable Selected Records"
 msgstr "Ausgewählten Einträge aktivieren"
@@ -4364,7 +4364,7 @@ msgid "Enable Selected Targets"
 msgstr "Ausgewählte Ziele aktivieren"
 
 msgid "Enable Selected Users"
-msgstr ""
+msgstr "Aktiviert die ausgewählten Nutzer"
 
 msgid "Enable Selected WebDAV Records"
 msgstr "Schalte ausgewählte WebDAV Einträge ein"
@@ -4447,6 +4447,8 @@ msgstr "Aktiviere das Sammeln von Betriebszeit-Werten (uptime)"
 
 msgid "Enable compression after the user has authenticated successfully."
 msgstr ""
+"Aktiviert de Datenkompression nachdem der Benutzer sich erfolgreich "
+"angemeldet hat"
 
 msgid "Enable console screensaver."
 msgstr "Konsolen-Bildschirmschoner aktivieren."
@@ -4708,6 +4710,8 @@ msgstr ""
 
 msgid "Enter a custom port number if you do not want to use default port 22."
 msgstr ""
+"Geben Sie eine Wunschportnummer ein, wenn sich nicht den voreingestellten "
+"Port 22 verwenden möchten."
 
 msgid "Enter a custom port number if you do not want to use default port 69."
 msgstr ""
@@ -4787,7 +4791,7 @@ msgid "Enter facility name"
 msgstr "Name der Einrichtung angeben"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "Geben Sie den Gruppennamen ein"
 
 msgid "Enter hostname or IP address."
 msgstr "Bitte Hostname oder IP-Adresse eingeben."
@@ -4821,7 +4825,7 @@ msgid "Enter the command"
 msgstr "Kommando eingeben"
 
 msgid "Enter the full user name."
-msgstr ""
+msgstr "Geben Sie den Vollständigen Nutzernamen ein"
 
 msgid "Enter the location of the share"
 msgstr "Geben Sie einen Standort für die Freigabe ein"
@@ -4867,6 +4871,8 @@ msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
 "use default path /mnt."
 msgstr ""
+"Geben sie den das Standard- Nutzerverzeichnis an. Ohne Eingabe wird der "
+"Default-Pfad /mnt ausgwählt."
 
 msgid ""
 "Enter the path to the home directory. This directory will store the "
@@ -6306,7 +6312,7 @@ msgid "Key Management Protocol"
 msgstr "Key Management Protocol"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "Tastatureingabe Authentifizierung"
 
 msgid "L2 Cache"
 msgstr "L2 Cache"
@@ -6667,7 +6673,7 @@ msgstr ""
 "Verzeichnispfad an welchem die Inhalte-Datenbank gespeichert werden soll."
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "Speicherort der Arbeitsdateien."
 
 msgid "Lock Selected Records"
 msgstr "Sperre ausgewählte Einträge"
@@ -6991,7 +6997,7 @@ msgid "Media Library"
 msgstr "Medienbibliothek"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "Medien Servername"
 
 msgid "Media Size"
 msgstr "Mediengröße"
@@ -7476,10 +7482,10 @@ msgid "No IPMI Sensor data available."
 msgstr "Es sind keine IPMI Daten verfügbar."
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "Keine IP4 routing Daten gefunden"
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "Keine IP6 routing Daten gefunden"
 
 msgid "No Initiator Group has been configured."
 msgstr "Es wurde keine Initiator Gruppe konfiguriert."

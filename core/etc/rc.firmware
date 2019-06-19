@@ -483,7 +483,7 @@ set_boot_path() {
 }
 
 backup_chflags() {
-	# Dump chflag from common directories to files.
+	# Dump chflag from common directories/* to zipped files.
 	cd ${BEPATH}
  	for FILES in ${DIRNOSCHG}; do
  		/usr/sbin/mtree -q -P -c -p ${FILES} | /usr/bin/gzip > ${SYSBACKUP}/chflags.${BENAME}.${FILES}.gz
@@ -496,7 +496,7 @@ backup_chflags() {
 }
 
 remove_chflags() {
-	# Remove chflag from common directories.
+	# Remove chflag from common directories/*.
 	cd ${BEPATH}
  	for FILES in ${DIRNOSCHG}; do
  		/bin/chflags -R noschg ${FILES}
@@ -510,7 +510,7 @@ remove_chflags() {
 }
 
 restore_chflags() {
-	# Restore chflag from previous files.
+	# Restore chflag from previous zipped files.
 	cd ${BEPATH}
  	for FILES in ${DIRNOSCHG}; do
 		/usr/bin/zcat ${SYSBACKUP}/chflags.${BENAME}.${FILES}.gz | /usr/sbin/mtree -q -P -U -p /${FILES}
@@ -642,6 +642,21 @@ full_upgrade() {
 	backup_sys_files
 	if [ 0 != $? ]; then
 		msg="ERROR: Failed to backup configuration."
+		/usr/bin/logger -p console.err "UPGRADE ${msg}"
+		disable_bootenv
+		disable_upgrade
+		exit 1
+	fi
+
+	# Extract the latest obsolete file list before the removal process.
+	# This must be performed and executed from the newly created boot environment.
+	msg="Extracting obsolete file list..."
+	/usr/bin/logger -p console.debug "UPGRADE: ${msg}"
+	RESULT=1
+	/usr/bin/tar --keep-newer-files -v -x -U -P -f ${ARG} --strip-components 3 -C ${BEPATH}/etc/install etc/install/ObsoleteFiles.inc > /dev/null 2>&1
+	RESULT=$?
+	if [ 0 != ${RESULT} ]; then
+		msg="ERROR: Failed obsolete file list extraction."
 		/usr/bin/logger -p console.err "UPGRADE ${msg}"
 		disable_bootenv
 		disable_upgrade

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-18 22:42+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2099,6 +2099,18 @@ msgstr ""
 msgid "DAAP"
 msgstr ""
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr ""
 
@@ -3480,6 +3492,9 @@ msgstr ""
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr ""
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr ""
 
@@ -4370,6 +4385,9 @@ msgstr ""
 msgid "FAT32"
 msgstr ""
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr ""
 
@@ -4724,6 +4742,9 @@ msgstr ""
 msgid "Give your media library a friendly name."
 msgstr ""
 
+msgid "Gives the verbosity level that is used when logging messages from sshd. Logging with a DEBUG level violates the privacy of users and is not recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr ""
 
@@ -4968,6 +4989,9 @@ msgid "ID"
 msgstr ""
 
 msgid "IG"
+msgstr ""
+
+msgid "INFO - log status messages"
 msgstr ""
 
 msgid "IP"
@@ -7523,6 +7547,9 @@ msgid "Push"
 msgstr ""
 
 msgid "Puts the disk into standby mode when the selected amount of time after the last disk access has been elapsed."
+msgstr ""
+
+msgid "QUIET - disable logging"
 msgstr ""
 
 msgid "Queue Depth"
@@ -11003,6 +11030,9 @@ msgid "Using defaults"
 msgstr ""
 
 msgid "VCPUs"
+msgstr ""
+
+msgid "VERBOSE - log detailed information"
 msgstr ""
 
 msgid "VFS fruit:encoding"

@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-06 01:26+0000\n"
-"PO-Revision-Date: 2019-06-08 11:09+0000\n"
+"PO-Revision-Date: 2019-06-10 08:14+0000\n"
 "Last-Translator: ChriZathens <c_kan1@hotmail.com>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-08 18:48+0000\n"
-"X-Generator: Launchpad (build 18978)\n"
+"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Generator: Launchpad (build 18986)\n"
 "X-Poedit-Country: Greece\n"
 "Language: \n"
 "X-Poedit-Language: Greek\n"
@@ -616,7 +616,7 @@ msgid "Add Listen Record"
 msgstr "Προσθήκη Εγγραφής Αναμονής Σύνδεσης"
 
 msgid "Add Media Folder"
-msgstr "Προσθήκη Φακέλου Μέσων"
+msgstr "Προσθήκη Φακέλου Πολυμέσων"
 
 msgid "Add Mutual CHAP User"
 msgstr "Προσθήκη χρήστη αμοιβαίου CHAP"
@@ -971,7 +971,7 @@ msgstr "Να επιτρέπεται η σύνδεση του root μέσω ssh."
 msgid "Allow symlinks that point outside defined media folders."
 msgstr ""
 "Να επιτρέπονται συντομεύσεις που κατευθύνουν εκτός των ορισμένων φακέλων "
-"μέσων."
+"πολυμέσων."
 
 msgid "Allow to start UPS from battery"
 msgstr "Να επιτρέπεται η εκκίνηση του UPS από τη μπαταρία"
@@ -2873,7 +2873,7 @@ msgid "Delete Selected Listen Records"
 msgstr "Διαγραφή Επιλεγμένων Εγγραφών Αναμονής Σύνδεσης"
 
 msgid "Delete Selected Media Folders"
-msgstr "Διαγραφή Επιλεγμένων Φακέλων Μέσων"
+msgstr "Διαγραφή Επιλεγμένων Φακέλων Πολυμέσων"
 
 msgid "Delete Selected Mutual CHAP Users"
 msgstr "Διαγραφή Επιλεγμένων Χρηστών Αμοιβαίου CHAP"
@@ -3265,7 +3265,7 @@ msgid "Disable Selected Listen Records"
 msgstr "Απενεργοποίηση Επιλεγμένων Εγγραφών Αναμονής Σύνδεσης"
 
 msgid "Disable Selected Media Folders"
-msgstr "Απενεργοποίηση Επιλεγμένων Φακέλων Μέσων"
+msgstr "Απενεργοποίηση Επιλεγμένων Φακέλων Πολυμέσων"
 
 msgid "Disable Selected Mutual CHAP Users"
 msgstr "Απενεργοποίηση Επιλεγμένων Χρηστών CHAP"
@@ -3682,7 +3682,7 @@ msgid "Do you want to delete selected listen records?"
 msgstr "Θέλετε να διαγράψετε τις επιλεγμένες εγγραφές αναμονής σύνδεσης;"
 
 msgid "Do you want to delete selected media folders?"
-msgstr "Θέλετε να διαγράψετε τους επιλεγμένους φακέλους μέσων;"
+msgstr "Θέλετε να διαγράψετε τους επιλεγμένους φακέλους πολυμέσων;"
 
 msgid "Do you want to delete selected notifier?"
 msgstr "Θέλετε να διαγράψετε τον επιλεγμένο ειδοποιητή;"
@@ -3791,7 +3791,7 @@ msgstr ""
 "Θέλετε να απενεργοποιήσετε τις επιλεγμένες εγγραφές αναμονής σύνδεσης;"
 
 msgid "Do you want to disable selected media folders?"
-msgstr "Θέλετε να απενεργοποιήσετε τους επιλεγμένους φακέλους μέσων;"
+msgstr "Θέλετε να απενεργοποιήσετε τους επιλεγμένους φακέλους πολυμέσων;"
 
 msgid "Do you want to disable selected option records?"
 msgstr "Θέλετε να απενεργοποιήσετε τις επιλεγμένες εγγραφές επιλογής;"
@@ -3872,7 +3872,7 @@ msgid "Do you want to enable selected listen records?"
 msgstr "Θέλετε να ενεργοποιήσετε τις επιλεγμένες εγγραφές αναμονής σύνδεσης;"
 
 msgid "Do you want to enable selected media folders?"
-msgstr "Θέλετε να ενεργοποιήσετε τους επιλεγμένους φακέλους μέσων;"
+msgstr "Θέλετε να ενεργοποιήσετε τους επιλεγμένους φακέλους πολυμέσων;"
 
 msgid "Do you want to enable selected option records?"
 msgstr "Θέλετε να ενεργοποιήσετε τις επιλεγμένες εγγραφές επιλογών;"
@@ -3962,7 +3962,7 @@ msgid "Do you want to toggle selected listen records?"
 msgstr "Θέλετε να μεταβάλλετε τις επιλεγμένες εγγραφές αναμονής σύνδεσης;"
 
 msgid "Do you want to toggle selected media folders?"
-msgstr "Θέλετε να μεταβάλλετε τους επιλεγμένους φακέλους μέσων;"
+msgstr "Θέλετε να μεταβάλλετε τους επιλεγμένους φακέλους πολυμέσων;"
 
 msgid "Do you want to toggle selected option records?"
 msgstr "Θέλετε να μεταβάλλετε τις επιλεγμένες εγγραφές επιλογής;"
@@ -4164,7 +4164,7 @@ msgid "Edit Listen Record"
 msgstr "Επεξεργασία Εγγραφής Αναμονής Σύνδεσης"
 
 msgid "Edit Media Folder"
-msgstr "Επεξεργασία Φακέλου Μέσων"
+msgstr "Επεξεργασία Φακέλου Πολυμέσων"
 
 msgid "Edit Mutual CHAP User"
 msgstr "Επεξεργασία Χρήστη Αμοιβαίου CHAP"
@@ -4402,7 +4402,7 @@ msgid "Enable Selected Listen Records"
 msgstr "Ενεργοποίηση Επιλεγμένων Εγγραφών Αναμονής Σύνδεσης"
 
 msgid "Enable Selected Media Folders"
-msgstr "Ενεργοποίηση Επιλεγμένων Φακέλων Μέσων"
+msgstr "Ενεργοποίηση Επιλεγμένων Φακέλων Πολυμέσων"
 
 msgid "Enable Selected Mutual CHAP Users"
 msgstr "Ενεργοποίηση Επιλεγμένων Χρηστών Αμοιβαίου CHAP"
@@ -4915,7 +4915,7 @@ msgid "Enter the location of the share"
 msgstr "Εισάγετε την τοποθεσία του κοινόχρηστου"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "Εισάγετε το όνομα του πρωτεύοντος λογαριασμού χρήστη."
 
 msgid "Enter the name of the share"
 msgstr "Εισάγετε το όνομα του κοινόχρηστου"
@@ -4932,7 +4932,7 @@ msgstr ""
 "πρέπει να είναι μεταξύ 8 και 63 χαρακτήρων."
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "Εισάγετε τον κωδικό του πρωτεύοντος λογαριασμού χρήστη."
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -5035,7 +5035,7 @@ msgid "Export Rules"
 msgstr "Εξαγωγή Κανόνων"
 
 msgid "Export Subfolders"
-msgstr ""
+msgstr "Εξαγωγή Υποφακέλων"
 
 msgid "Export a pool from the system"
 msgstr "Εξαγωγή ενός pool από το σύστημα"
@@ -5044,10 +5044,10 @@ msgid "Export all the directories in the specified path."
 msgstr "Εξαγωγή όλων των φακέλων στη συγκεκριμένη διαδρομή."
 
 msgid "Export as WebNFS."
-msgstr ""
+msgstr "Εξαγωγή ως WebNFS."
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "Εξαγωγή του συστήματος αρχείων σε λειτουργία μόνο για ανάγνωση."
 
 msgid "Exported"
 msgstr "Εξήχθη"
@@ -5415,7 +5415,7 @@ msgid "Fuppes Media Server"
 msgstr "Διακομιστής Πολυμέσων Fuppes"
 
 msgid "Fuppes Media Server Administration"
-msgstr "Διαχείριση Fuppes Media Server"
+msgstr "Διαχείριση Διακομιστή Πολυμέσων Fuppes"
 
 msgid "GEOM"
 msgstr "GEOM"
@@ -5805,7 +5805,7 @@ msgid "IPv4 DNS Servers"
 msgstr "Διακομιστές IPv4 DNS"
 
 msgid "IPv4 Routes"
-msgstr ""
+msgstr "Δρομολογήσεις IPv4"
 
 msgid "IPv4 Settings"
 msgstr "Ρυθμίσεις IPv4"
@@ -5850,7 +5850,7 @@ msgid "IPv6 Prefix"
 msgstr "Πρόθεμα IPv6"
 
 msgid "IPv6 Routes"
-msgstr ""
+msgstr "Δρομολογήσεις IPv6"
 
 msgid "IPv6 Settings"
 msgstr "Ρυθμίσεις IPv6"
@@ -6154,7 +6154,7 @@ msgid "Initiator Name is locked"
 msgstr "Το όνομα εκκινητή είναι κλειδωμένο"
 
 msgid "Initiator Name is marked for deletion"
-msgstr "Το όνομα εκκινητή είναι σημειωμένο προς διαγραφή"
+msgstr "Το όνομα εκκινητή έχει σημειωθεί προς διαγραφή"
 
 msgid "Initiator Name is unlocked"
 msgstr "Το όνομα εκκινητή είναι ξεκλείδωτο"
@@ -6169,7 +6169,7 @@ msgid "Initiator Portal is locked"
 msgstr "Το Portal του Εκκινητή είναι κλειδωμένο"
 
 msgid "Initiator Portal is marked for deletion"
-msgstr "Το Portal του Εκκινητή είναι σημειωμένο προς διαγραφή"
+msgstr "Το Portal του Εκκινητή έχει σημειωθεί προς διαγραφή"
 
 msgid "Initiator Portal is unlocked"
 msgstr "Το Portal του Εκκινητή είναι ξεκλείδωτο"
@@ -6422,7 +6422,7 @@ msgid "Key Management Protocol"
 msgstr "Πρωτόκολλο διαχείρισης κωδικών"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "Πιστοποίηση με Διαδραστική Χρήση Πληκτρολογίου"
 
 msgid "L2 Cache"
 msgstr "L2 Cache"
@@ -6512,7 +6512,7 @@ msgid "LUN is locked"
 msgstr "Το LUN είναι κλειδωμένο"
 
 msgid "LUN is marked for deletion"
-msgstr "Το LUN είναι σημειωμένο προς διαγραφή"
+msgstr "Το LUN έχει σημειωθεί προς διαγραφή"
 
 msgid "LUN is unlocked"
 msgstr "Το LUN είναι ξεκλείδωτο"
@@ -6524,7 +6524,7 @@ msgid "LUN record is locked"
 msgstr "Η εγγραφή LUN είναι κλειδωμένη"
 
 msgid "LUN record is marked for deletion"
-msgstr "Η εγγραφή LUN είναι σημειωμένη προς διαγραφή"
+msgstr "Η εγγραφή LUN έχει σημειωθεί προς διαγραφή"
 
 msgid "LUN record is unlocked"
 msgstr "Η εγγραφή LUN είναι ξεκλείδωτη"
@@ -6710,7 +6710,7 @@ msgid "Listen record is locked"
 msgstr "Η εγγραφή αναμονής σύνδεσης είναι κλειδωμένη"
 
 msgid "Listen record is marked for deletion"
-msgstr "Η εγγραφή αναμονής σύνδεσης είναι σημειωμένη προς διαγραφή"
+msgstr "Η εγγραφή αναμονής σύνδεσης έχει σημειωθεί προς διαγραφή"
 
 msgid "Listen record is unlocked"
 msgstr "Η εγγραφή αναμονής σύνδεσης είναι ξεκλείδωτη"
@@ -6782,7 +6782,7 @@ msgstr ""
 "Τοποθεσία που θα αποθηκευτεί το αρχείο με τη βάση δεδομένων των περιεχομένων."
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "Τοποθεσία στην οποία θα αποθηκεύονται οι φάκελοι εργασίας."
 
 msgid "Lock Selected Records"
 msgstr "Κλείδωμα Επιλεγμένων Εγγραφών"
@@ -6936,10 +6936,10 @@ msgid "Manufacturing date"
 msgstr "Ημερομηνία κατασκευής"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "Αντιστοίχιση Όλων Σε Χρήστη"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "Αντιστοίχιση Root Σε Χρήστη"
 
 msgid "Map to Guest"
 msgstr "Αντιστοίχηση στον χρήστη Guest"
@@ -6949,6 +6949,7 @@ msgstr "Αντιστοίσηση στον Χρήστη"
 
 msgid "Map users or map root to the specified user."
 msgstr ""
+"Αντιστοίχιση χρηστών ή αντιστοίχιση του root με τον συγκεκριμένο χρήστη."
 
 msgid "Mapping"
 msgstr "Αντιστοίχηση"
@@ -6979,13 +6980,13 @@ msgid "Masquerade Address"
 msgstr "Διεύθυνση Μεταμφίεσης"
 
 msgid "Master"
-msgstr ""
+msgstr "Πρωτεύων"
 
 msgid "Master Password"
-msgstr ""
+msgstr "Πρωτεύον Κωδικός"
 
 msgid "Master User"
-msgstr ""
+msgstr "Πρωτεύον Χρήστης"
 
 msgid "Max Processes"
 msgstr "Μέγιστος Αριθμός Διεργασιών"
@@ -7086,31 +7087,31 @@ msgid "Media"
 msgstr "Τύπος μέσου"
 
 msgid "Media Directory"
-msgstr "Κατάλογος μέσων"
+msgstr "Κατάλογος Πολυμέσων"
 
 msgid "Media Folder"
-msgstr ""
+msgstr "Φάκελος Πολυμέσων"
 
 msgid "Media Folder is locked"
-msgstr ""
+msgstr "Ο Φάκελος Πολυμέσων είναι κλειδωμένος"
 
 msgid "Media Folder is marked for deletion"
-msgstr ""
+msgstr "Ο Φάκελος Πολυμέσων έχει σημειωθεί προς διαγραφή"
 
 msgid "Media Folder is unlocked"
-msgstr ""
+msgstr "Ο Φάκελος Πολυμέσων είναι ξεκλείδωτος"
 
 msgid "Media Library"
 msgstr "Βιβλιοθήκη Πολυμέσων"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "Όνομα Διακομιστή Πολυμέσων."
 
 msgid "Media Size"
 msgstr "Μέγεθος Μέσου"
 
 msgid "Media Type"
-msgstr ""
+msgstr "Τύπος Πολυμέσων"
 
 msgid "Media library"
 msgstr "Βιβλιοθήκη πολυμέσων"
@@ -7240,13 +7241,13 @@ msgid "Monitoring"
 msgstr "Παρακολούθηση"
 
 msgid "Monitoring Password"
-msgstr ""
+msgstr "Κωδικός Παρακολούθησης"
 
 msgid "Monitoring Setup"
 msgstr "Ρύθμιση Παρακολούθησης"
 
 msgid "Monitoring User"
-msgstr ""
+msgstr "Χρήστης Παρακολούθησης"
 
 msgid "Months"
 msgstr "Μήνες"
@@ -7331,7 +7332,7 @@ msgid "Mutual CHAP User is locked"
 msgstr "Ο χρήστης αμοιβαίου CHAP είναι κλειδωμένος"
 
 msgid "Mutual CHAP User is marked for deletion"
-msgstr "Ο χρήστης αμοιβαίου CHAP είναι σημειωμένος προς διαγραφή"
+msgstr "Ο χρήστης αμοιβαίου CHAP έχει σημειωθεί προς διαγραφή"
 
 msgid "Mutual CHAP User is unlocked"
 msgstr "Ο Αμοιβαίος Χρήστης CHAP είναι ξεκλείδωτος"
@@ -7355,22 +7356,22 @@ msgid "NFS"
 msgstr "NFS"
 
 msgid "NFS Export is locked"
-msgstr ""
+msgstr "Το NFS Export είναι κλειδωμένο"
 
 msgid "NFS Export is marked for deletion"
-msgstr ""
+msgstr "Το NFS Export έχει σημειωθεί προς διαγραφή"
 
 msgid "NFS Export is unlocked"
-msgstr ""
+msgstr "Το NFS Export είναι ξεκλείδωτο"
 
 msgid "NFS Root is locked"
-msgstr ""
+msgstr "Ο Ριζικός Φάκελος NFS είναι κλειδωμένος"
 
 msgid "NFS Root is marked for deletion"
-msgstr ""
+msgstr "Το Ριζικός Φάκελος NFS έχει σημειωθεί προς διαγραφή"
 
 msgid "NFS Root is unlocked"
-msgstr ""
+msgstr "Ο Ριζικός Φάκελος NFS είναι ξεκλείδωτος"
 
 msgid "NFSv4"
 msgstr "NFSv4"
@@ -7484,7 +7485,7 @@ msgid "NetBIOS Name"
 msgstr "Όνομα NetBIOS"
 
 msgid "NetIf"
-msgstr ""
+msgstr "NetIf"
 
 msgid "Netatalk (default) - use Netatalk compatible xattr."
 msgstr "Netatalk (προεπιλογή) - χρήση xattr συμβατού με Netatalk."
@@ -7594,10 +7595,10 @@ msgid "No IPMI Sensor data available."
 msgstr "Δεν υπάρχουν διαθέσιμα δεδομένα αισθητήρων IPMI."
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "Δεν βρέθηκαν πληροφορίες δρομολόγησης IPv4"
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "Δεν βρέθηκαν πληροφορίες δρομολόγησης IPv6"
 
 msgid "No Initiator Group has been configured."
 msgstr "Δεν έχει ρυθμιστεί κάποια Ομάδα Εκκινητή."
@@ -7609,7 +7610,7 @@ msgid "No LUNs found."
 msgstr "Δεν βρέθηκαν LUN."
 
 msgid "No Login"
-msgstr ""
+msgstr "Όχι Σύνδεση"
 
 msgid "No Mutual-CHAP users found."
 msgstr "Δεν βρέθηκαν χρήστες Αμοιβαίου-CHAP."
@@ -7847,6 +7848,8 @@ msgstr "Σημείωση"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
 msgstr ""
+"Σημειώστε πως μόνο ένα σύστημα αρχείων μπορεί να εξαχθεί ως WebNFS σε ένα "
+"διακομιστή."
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7981,7 +7984,7 @@ msgid "Option record is locked"
 msgstr "Η εγγραφή επιλογής είναι κλειδωμένη"
 
 msgid "Option record is marked for deletion"
-msgstr "Η εγγραφή επιλογής είναι σημειωμένη προς διαγραφή"
+msgstr "Η εγγραφή επιλογής έχει σημειωθεί προς διαγραφή"
 
 msgid "Option record is unlocked"
 msgstr "Η εγγραφή επιλογής είναι ξεκλείδωτη"
@@ -8053,6 +8056,7 @@ msgstr "Αντικατάσταση ρύθμισης δίσκων"
 
 msgid "Overwrite the sort criteria passed by the client."
 msgstr ""
+"Αντικατάσταση των κριτηρίων ταξινόμησης που περνούν από το πρόγραμμα-πελάτη."
 
 msgid "Owner"
 msgstr "Κάτοχος"
@@ -8220,7 +8224,7 @@ msgstr ""
 "Directory)"
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "Επικολλήστε ένα RSA PRIVATE σε μορφή PEM"
 
 msgid "Paste a private key in PEM format here."
 msgstr "Επικολλήστε εδώ ένα προσωπικό κλειδί μορφής PEM."
@@ -8241,7 +8245,7 @@ msgid "Path of the URL relative to document root."
 msgstr "Διαδρομή του URL σε σχέση με τον ριζικό κατάλογο."
 
 msgid "Path to be included."
-msgstr ""
+msgstr "Διαδρομή που θα συμπεριληφθεί."
 
 msgid "Path to be shared to be synchronized."
 msgstr "Διαδρομή για κοινή χρήση και συγχρονισμό."
@@ -8447,6 +8451,7 @@ msgstr "Αριθμός θύρας του διακομιστή iSNS."
 
 msgid "Port of the SSH service. Leave blank to use the default port."
 msgstr ""
+"Θύρα της υπηρεσίας SSH. Αφήστε το κενό, για χρήση της προεπιλεγμένης θύρας."
 
 msgid "Port of the TFTP service. Leave blank to use the default port."
 msgstr ""
@@ -8462,7 +8467,7 @@ msgid "Port record is locked"
 msgstr "Η εγγραφή θύρας είναι κλειδωμένη"
 
 msgid "Port record is marked for deletion"
-msgstr "Η εγγραφή θύρας είναι σημειωμένη προς διαγραφή"
+msgstr "Η εγγραφή θύρας έχει σημειωθεί προς διαγραφή"
 
 msgid "Port record is unlocked"
 msgstr "Η εγγραφή θύρας είναι ξεκλείδωτη"
@@ -8492,6 +8497,8 @@ msgid ""
 "Port to listen on. Port number must be between 1024 and 65535. Default port "
 "is 8200."
 msgstr ""
+"Θύρα για αναμονή σύνδεσης. Ο αριθμός θύρας πρέπει να είναι μεταξύ 1024 και "
+"65535. Η προεπιλεγμένη θύρα είναι η 8200."
 
 msgid "Portal Group"
 msgstr "Ομάδα Portal"
@@ -8506,7 +8513,7 @@ msgid "Portal Group is locked"
 msgstr "Η Ομάδα Portal είναι κλειδωμένη"
 
 msgid "Portal Group is marked for deletion"
-msgstr "Η Ομάδα Portal είναι σημειωμένη προς διαγραφή"
+msgstr "Η Ομάδα Portal έχει σημειωθεί προς διαγραφή"
 
 msgid "Portal Group is unlocked"
 msgstr "Η Ομάδα Portal είναι ξεκλείδωτη"
@@ -8661,28 +8668,28 @@ msgid "Proxy"
 msgstr "Διακομιστής μεσολάβησης"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Δημόσιο Κλειδί"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "Πιστοποίηση Δημόσιου Κλειδιού"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Δημόσιου Κλειδιού"
 
 msgid "Public Keys"
-msgstr ""
+msgstr "Δημόσια Κλειδιά"
 
 msgid "Public key information."
-msgstr ""
+msgstr "Πληροφορίες δημόσιου κλειδιού."
 
 msgid "Public key is marked for deletion"
-msgstr ""
+msgstr "Το δημόσιο κλειδί έχει σημειωθεί προς διαγραφή"
 
 msgid "Public key is protected"
-msgstr ""
+msgstr "Το δημόσιο κλειδί είναι προστατευμένο"
 
 msgid "Public key is unlocked"
-msgstr ""
+msgstr "Το δημόσιο κλειδί είναι ξεκλείδωτο"
 
 msgid "Pull"
 msgstr "Λήψη"
@@ -9037,6 +9044,9 @@ msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
 msgstr ""
+"Η απομακρυσμένη πρόσβαση από τον root θα έχει σαν αποτέλεσμα τη χρήση "
+"διαπιστευτηρίων 65534:65533. Σε όλους τους άλλους χρήστες θα γίνεται "
+"αντιστοίχιση με τα απομακρυσμένα διαπιστευτήρια."
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -9179,7 +9189,7 @@ msgid "Restore metadata from the given file to the given provider."
 msgstr "Επαναφορά των μεταδεδομένων από το δοθέν αρχείο στο δοθέντα πάροχο."
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "Περιορισμός του φακέλου σε ένα μόνο τύπο πολυμέσων."
 
 msgid "Restricted"
 msgstr "Περιορισμένο"
@@ -9226,10 +9236,10 @@ msgid "Root Bind Password"
 msgstr "Κωδικός Ριζικού Bind"
 
 msgid "Root Directory"
-msgstr ""
+msgstr "Ριζιικός Κατάλογος"
 
 msgid "Root Login"
-msgstr ""
+msgstr "Σύνδεση root"
 
 msgid "Rotation Rate"
 msgstr "Ρυθμός  περιστροφής"
@@ -9325,7 +9335,7 @@ msgid "SCSI Name"
 msgstr "Όνομα SCSI"
 
 msgid "SHA Password"
-msgstr ""
+msgstr "Κωδικός SHA"
 
 msgid "SHA-256, Verify"
 msgstr "SHA-256, Verify"
@@ -9449,19 +9459,19 @@ msgstr ""
 "σελίδα 'Κατάσταση' του web περιβάλλοντος διαχείρισης."
 
 msgid "Scan folder for all media types."
-msgstr ""
+msgstr "Σάρωση φακέλου για όλους τους τύπους πολυμέσων."
 
 msgid "Scan folder for audio files."
-msgstr ""
+msgstr "Σάρωση φακέλου για αρχεία ήχου."
 
 msgid "Scan folder for image files."
-msgstr ""
+msgstr "Σάρωση φακέλου για αρχεία εικόνας."
 
 msgid "Scan folder for video and image files."
-msgstr ""
+msgstr "Σάρωση φακέλου για αρχεία βίντεο και εικόνας."
 
 msgid "Scan folder for video files."
-msgstr ""
+msgstr "Σάρωση φακέλου για αρχεία βίντεο."
 
 msgid "Schedule Time"
 msgstr "Προγραμματισμένη ώρα"
@@ -9524,7 +9534,7 @@ msgid "Secret for CHAP authentication."
 msgstr "Μυστικό για την πιστοποίηση CHAP."
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Τύπος Ασφάλειας"
 
 msgid "Security Warning"
 msgstr "Προειδοποίηση Ασφαλείας"
@@ -9587,6 +9597,8 @@ msgstr "Επιλογή Συσκευής Spare"
 
 msgid "Select a container as the root of the tree exposed to clients."
 msgstr ""
+"Επιλέξτε ένα container που θα αποτελεί τη ρίζα του δέντρου καταλόγων που θα "
+"εμφανίζονται στους χρήστες"
 
 msgid "Select a date format."
 msgstr "Επιλέξτε μια μορφή ημερομηνίας."
@@ -9834,7 +9846,7 @@ msgid "Set UID"
 msgstr "Ορισμός UID"
 
 msgid "Set User Password"
-msgstr ""
+msgstr "Ορισμός Κωδικού Χρήστη"
 
 msgid "Set browseable."
 msgstr "Ορισμός ως περιηγήσιμο."
@@ -9847,7 +9859,7 @@ msgstr ""
 "ελάχιστη επιτρεπόμενη τιμή είναι 10."
 
 msgid "Set password"
-msgstr ""
+msgstr "Ορισμός Κωδικού"
 
 msgid "Set per-LUN/per-pool thin provisioning soft threshold."
 msgstr "Ορισμός ορίου thin provisioning ανά LUN/pool"
@@ -9868,7 +9880,7 @@ msgstr ""
 "ώστε να εφαρμοστούν οι αλλαγές."
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "Ορίστε την πρωτεύουσα ομάδα του λογαριασμού."
 
 msgid "Set the content location(s) to or from the media library."
 msgstr ""
@@ -9946,7 +9958,7 @@ msgid "Set user login shell."
 msgstr "Επιλέξτε το κέλυφος σύνδεσης χρήστη."
 
 msgid "Set user password."
-msgstr ""
+msgstr "Ορισμός κωδικού χρήστη."
 
 msgid "Setkey"
 msgstr "Setkey"
@@ -10094,10 +10106,10 @@ msgid "Show RAW UPS Info"
 msgstr "Προβολή ακατέργαστων πληροφοριών UPS"
 
 msgid "Show System Groups"
-msgstr ""
+msgstr "Προβολή Ομάδων Συστήματος"
 
 msgid "Show System Users"
-msgstr ""
+msgstr "Προβολή Χρηστών Συστήματος"
 
 msgid "Show UPS Information"
 msgstr "Προβολή πληροφοριών UPS"
@@ -10167,7 +10179,7 @@ msgid "Skip View Mode"
 msgstr "Παράλειψη Λειτουργίας Προβολής"
 
 msgid "Slave"
-msgstr ""
+msgstr "Δευτερεύον"
 
 msgid "Sleep - Check the device unless it is in SLEEP mode."
 msgstr ""
@@ -10392,6 +10404,8 @@ msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
 msgstr ""
+"Ορίστε μια λίστα των αποδεκτών τύπων ασφάλειας που θα χρησιμοποιούνται για "
+"απομακρυσμένη πρόσβαση. Ο\tπροεπιλεγμένος\tτύπος ασφάλειας\tείναι sys."
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -10426,10 +10440,10 @@ msgstr ""
 "του LUN."
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "Ορίστε το αριθμητικό id της ομάδας."
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "Ορίστε το αριθμητικό id του χρήστη/λογαριασμού."
 
 msgid "Split request"
 msgstr "Αίτημα διαχωρισμού"
@@ -10608,7 +10622,7 @@ msgid "Sysctl variable is locked"
 msgstr "Η μεταβλητή sysctl είναι κλειδωμένη"
 
 msgid "Sysctl variable is marked for deletion"
-msgstr "Η μεταβλητή sysctl είναι σημειωμένη προς διαγραφή"
+msgstr "Η μεταβλητή sysctl έχει σημειωθεί προς διαγραφή"
 
 msgid "Sysctl variable is unlocked"
 msgstr "Η μεταβλητή sysctl είναι ξεκλείδωτη"
@@ -10644,7 +10658,7 @@ msgid "System Events"
 msgstr "Συμβάντα Συστήματος"
 
 msgid "System Group"
-msgstr ""
+msgstr "Ομάδα Συστήματος"
 
 msgid "System Information"
 msgstr "Πληροφορίες Συστήματος"
@@ -10671,7 +10685,7 @@ msgid "System Uptime"
 msgstr "Χρόνος συνεχούς λειτουργίας  συστήματος"
 
 msgid "System User"
-msgstr ""
+msgstr "Χρήστης Συστήματος"
 
 msgid "System info"
 msgstr "Πληροφορίες συστήματος"
@@ -10873,7 +10887,7 @@ msgstr ""
 "πρωτεύων."
 
 msgid "The IP address of the UPS master."
-msgstr "Η διέυθυνση IP του master UPS."
+msgstr "Η διέυθυνση IP του πρωτεύοντος UPS."
 
 msgid "The IP address of the device."
 msgstr "Η διεύθυνση IP της συσκευής."
@@ -11658,9 +11672,11 @@ msgstr "Το συνιστώμενο βάθος της ουράς είναι %d."
 
 msgid "The recommended range for the group id is between 1000 and 32000."
 msgstr ""
+"Το προτεινόμενο εύρος τιμών για το id ομάδας είναι μεταξύ 1000 και 32000."
 
 msgid "The recommended range for the user id is between 1000 and 32000."
 msgstr ""
+"Το προτεινόμενο εύρος τιμών για το id χρήστη είναι μεταξύ 1000 και 32000."
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -11858,7 +11874,7 @@ msgstr ""
 "στο υλικό."
 
 msgid "These parameters are appended to /etc/ssh/sshd_config."
-msgstr ""
+msgstr "Αυτοί οι παράμετροι προστίθενται στο /etc/ssh/sshd_config."
 
 msgid "These parameters are appended to the exports file."
 msgstr "Αυτές οι παράμετροι προστίθενται στο αρχείο exports."
@@ -11876,7 +11892,7 @@ msgid "These parameters will be added to global settings in %s."
 msgstr "Αυτές οι παράμετροι θα προστεθούν ως καθολικές ρυθμίσεις στο %s."
 
 msgid "These parameters will be added to minidlna.conf"
-msgstr ""
+msgstr "Αυτοί οι παράμετροι προστίθενται στο minidlna.conf"
 
 msgid "These parameters will be added to my.cnf"
 msgstr "Αυτές οι παράμετροι θα προστεθούν στο my.cnf"
@@ -12320,6 +12336,9 @@ msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
 msgstr ""
+"Αυτό θα επιτρέψει σμίκρυνση των πολύ μεγάλων αρχείων εικόνας JPEG σε επίπεδο "
+"διακομιστή. Μπορεί να έχει αντίκτυπο στην ταχύτητα της εξυπηρέτησης JPEG σε "
+"μερικές συσκευές DLNA."
 
 msgid "This will create a recycle bin on the share."
 msgstr "Αυτό δημιουργεί κάδο ανακύκλωσης στο κοινόχρηστο."
@@ -12469,6 +12488,7 @@ msgstr ""
 
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
+"Για να χρησιμοποιήσετε υποφακέλους, πρέπει να προσαρτήσετε τον κάθε φάκελο."
 
 msgid "Toggle Mode"
 msgstr "Λειτουργία Εναλλαγής"
@@ -12504,7 +12524,7 @@ msgid "Toggle Selected Listen Records"
 msgstr "Μεταβολή Επιλεγμένων Εγγραφών Αναμονής Σύνδεσης"
 
 msgid "Toggle Selected Media Folders"
-msgstr "Μεταβολή Επιλεγμένων Φακέλων Μέσων"
+msgstr "Μεταβολή Επιλεγμένων Φακέλων Πολυμέσων"
 
 msgid "Toggle Selected Mutual CHAP Users"
 msgstr "Μεταβολή Επιλεγμένων Χρηστών Αμοιβαίου CHAP"
@@ -12985,7 +13005,7 @@ msgid "Uptime Statistics"
 msgstr "Στατιστικά Χρόνου Συνεχούς Λειτουργίας"
 
 msgid "Use"
-msgstr ""
+msgstr "Χρήση"
 
 msgid "Use Bytes/sec instead of Bits/sec for network throughput display."
 msgstr ""
@@ -13027,6 +13047,7 @@ msgstr ""
 
 msgid "Use inotify monitoring to automatically discover new media files."
 msgstr ""
+"Χρήση παρακολούθησης με inotify για αυτόματη ανεύρεση νέων αρχείων πολυμέσων."
 
 msgid "Use local user authentication."
 msgstr "Χρήση πιστοποίησης τοπικών χρηστών."
@@ -13040,16 +13061,16 @@ msgstr ""
 "να χρησιμοποιηθεί σε συνδυασμό με θετικό/αρνητικό εύρος τιμών του άξονα y)"
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "Χρήση του container \"Αναζήτηση Φακέλου\""
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "Χρήση του container \"Μουσική\""
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "Χρήση του container \"Εικόνες\""
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "Χρήση του \"Βίντεο\" container"
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -13062,7 +13083,7 @@ msgid "Use the specified NTP server."
 msgstr "Χρήση του επιλεγμένου διακομιστή NTP."
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "Χρήση του κανονικού container (αυτό είναι η προεπιλογή)"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "Χρησιμοποιήστε αυτές τις ειδικές ενέργειες μόνο για αποσφαλμάτωση!"
@@ -13190,7 +13211,7 @@ msgid "Using %s bytes fragment size."
 msgstr "Χρήση %s bytes για μέγεθος κατακερματισμού."
 
 msgid "Using defaults"
-msgstr ""
+msgstr "Χρήση προεπιλογών"
 
 msgid "VCPUs"
 msgstr "VCPUs"
@@ -13266,7 +13287,7 @@ msgid "Vendor ID"
 msgstr "ID Προμηθευτή"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "Επίπεδο λεπτομερειών των πληροφοριών που καταγράφονται."
 
 msgid "Verify"
 msgstr "Επαλήθευση"
@@ -13470,7 +13491,7 @@ msgid "WebGUI and Root Password"
 msgstr "Κωδικοί WebGUI και Root"
 
 msgid "WebNFS"
-msgstr ""
+msgstr "WebNFS"
 
 msgid "Webserver"
 msgstr "Διακομιστής Web"
@@ -13810,7 +13831,7 @@ msgid "available of"
 msgstr "διαθέσιμα από"
 
 msgid "bash - Bourne Again Shell"
-msgstr ""
+msgstr "bash - Bourne Again Shell"
 
 msgid "change failed."
 msgstr "η αλλαγή απέτυχε."
@@ -13819,7 +13840,7 @@ msgid "chroot() everyone, but root."
 msgstr "chroot() όλοι, εκτός του root."
 
 msgid "csh - C Shell"
-msgstr ""
+msgstr "csh - C Shell"
 
 msgid ""
 "decoded as: byte 0-1-2 = good block count (big endian) and byte 3-4 = "
@@ -13900,7 +13921,7 @@ msgid "iSNS Server is locked"
 msgstr "Ο διακομιστής iSNS είναι κλειδωμένος"
 
 msgid "iSNS Server is marked for deletion"
-msgstr "Ο διακομιστής iSNS είναι σημειωμένος προς διαγραφή"
+msgstr "Ο διακομιστής iSNS έχει σημειωθεί προς διαγραφή"
 
 msgid "iSNS Server is unlocked"
 msgstr "Ο διακομιστής iSNS είναι ξεκλείδωτος"
@@ -13928,14 +13949,20 @@ msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
 msgstr ""
+"krb5 - Χρήση πρωτόκολλου Kerberos V5 για πιστοποίηση των χρηστών πριν τους "
+"δοθεί πρόσβαση στο κοινόχρηστο σύστημα αρχείων."
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
 msgstr ""
+"krb5i - Χρήση πιστοποίησης Kerberos V5 με checksums για ακεραιότητα "
+"δεδομένων."
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
 msgstr ""
+"krb5p - Χρήση πιστοποίησης Kerberos V5 με checksums για ακεραιότητα "
+"δεδομένων και για κρυπτογράφηση δεδομένων."
 
 msgid "less then 1.8\"."
 msgstr "λιγότερο από 1.8\"."
@@ -13948,11 +13975,15 @@ msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
 msgstr ""
+"mapall - Καθορίζει μια αντιστοίχιση για όλα τα UID των πελατών "
+"(συμπεριλαμβανομένου και του root)"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
 msgstr ""
+"maproot - Τα στοιχεία του συγκεκριμένου χρήστη χρησιμοποιούνται για "
+"απομακρυσμένη πρόσβαση από τον root."
 
 msgid "missing"
 msgstr "λείπει"
@@ -14010,13 +14041,13 @@ msgid "scan target failed."
 msgstr "η σάρωση του προορισμού απέτυχε."
 
 msgid "scponly - Secure Copy Protocol only"
-msgstr ""
+msgstr "scponly - Μόνο Secure Copy Protocol"
 
 msgid "seconds)"
 msgstr "δευτερόλεπτα)"
 
 msgid "sh - Bourne Shell"
-msgstr ""
+msgstr "sh - Bourne Shell"
 
 msgid "smallest settable high voltage transfer point"
 msgstr "ελάχιστο οριζόμενο σημείο μεταφοράς υψηλής τάσης"
@@ -14028,7 +14059,7 @@ msgid "successfully."
 msgstr "επιτυχώς."
 
 msgid "sys - Use AUTH_SYS authentication."
-msgstr ""
+msgstr "sys - Χρήση πιστοποίησης AUTH_SYS."
 
 msgid "sysctl.conf"
 msgstr "sysctl.conf"
@@ -14037,7 +14068,7 @@ msgid "syslog.conf"
 msgstr "syslog.conf"
 
 msgid "tcsh - TENEX C Shell"
-msgstr ""
+msgstr "tcsh - TENEX C Shell"
 
 msgid "to"
 msgstr "σε"

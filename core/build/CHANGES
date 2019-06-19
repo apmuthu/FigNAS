@@ -12,7 +12,6 @@ Changes:
 - Upgrade bash to 5.0 p7.
 - Upgrade mariadb to 10.2.23.
 - Upgrade msmtp to 1.8.4.
-- Upgrade nano to 4.2.
 - Upgrade tmux to 2.9a.
 - Upgrade samba to 4.8.12.
 - Upgrade jQuery to 3.4.1.
@@ -24,6 +23,8 @@ Changes:
 - Upgrade phpmyadmin to 4.9.0.
 - Upgrade syncthing to 1.1.4.
 - Upgrade devcpu-data to 1.22.
+- Upgrade nano to 4.3.
+- Upgrade bsnmp-ucd to 0.4.3.
 
 Fixes:
 

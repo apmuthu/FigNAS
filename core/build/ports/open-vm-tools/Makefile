@@ -32,9 +32,9 @@ do-install:
 	@${INSTALL_PROGRAM} -v ${BLDSRC}/open-vm-tools/services/plugins/vmbackup/.libs/libvmbackup.so ${XIGMANAS_ROOTFS}/${PREFIX}/lib/open-vm-tools/plugins/vmsvc
 
 	@${MKDIR} ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers
-	@${INSTALL_DATA} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmblock.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
-	@${INSTALL_DATA} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmmemctl.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
-	@${INSTALL_DATA} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmxnet.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
+	@${INSTALL_KLD} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmblock.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
+	@${INSTALL_KLD} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmmemctl.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
+	@${INSTALL_KLD} -v ${BLDSRC}/open-vm-tools/modules/freebsd/vmxnet.ko ${XIGMANAS_ROOTFS}/${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
 
 	@${INSTALL_PROGRAM} -v ${BLDSRC}/open-vm-tools/services/vmtoolsd/.libs/vmtoolsd ${XIGMANAS_ROOTFS}/${PREFIX}/bin
 	@${INSTALL_SCRIPT} -v ${BLDSRC}/open-vm-tools/checkvm/vmware-checkvm ${XIGMANAS_ROOTFS}/${PREFIX}/bin

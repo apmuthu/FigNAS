@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: xigmanas\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2019-06-06 01:26+0000\n"
-"PO-Revision-Date: 2019-06-07 22:56+0000\n"
+"PO-Revision-Date: 2019-06-09 12:00+0000\n"
 "Last-Translator: Vicente Soriano <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-08 00:12+0000\n"
-"X-Generator: Launchpad (build 18978)\n"
+"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Generator: Launchpad (build 18986)\n"
 "Language: ca_ES\n"
 
 msgid " No private key"
@@ -1838,7 +1838,7 @@ msgstr ""
 "certificats revocats."
 
 msgid "Challenge-Response Authentication"
-msgstr ""
+msgstr "Autenticació repte-resposta"
 
 msgid "Change"
 msgstr "Canvia-ho"
@@ -2044,6 +2044,10 @@ msgid ""
 "execute upon subsystem request. Leave this field empty to use the default "
 "settings."
 msgstr ""
+"Configura un subsistema extern (per exemple, el dimoni de transferència de "
+"fitxers). Els arguments han de ser un nom de subsistema i una ordre (amb "
+"arguments opcionals) per executar a petició del subsistema. Deixeu aquest "
+"camp buit per utilitzar la configuració predeterminada."
 
 msgid "Configuring"
 msgstr "Configuració"
@@ -2433,7 +2437,7 @@ msgid "Create PV Guest"
 msgstr "Crea un hoste PV"
 
 msgid "Create Work Directory"
-msgstr ""
+msgstr "Crea un directori de treball"
 
 msgid "Create ZFS on a GPT partition."
 msgstr "Crear ZFS en una partició GPT."
@@ -2830,16 +2834,16 @@ msgid "Delete Selected Listen Records"
 msgstr "Elimineu els registres d'escolta seleccionats"
 
 msgid "Delete Selected Media Folders"
-msgstr ""
+msgstr "Suprimeix les carpetes de mitjans seleccionats"
 
 msgid "Delete Selected Mutual CHAP Users"
 msgstr "Elimineu els usuaris CHAP seleccionats"
 
 msgid "Delete Selected NFS Exports"
-msgstr ""
+msgstr "Suprimeix les exportacions NFS seleccionades"
 
 msgid "Delete Selected NFS Root Directories"
-msgstr ""
+msgstr "Suprimeix els directoris de Root NFS seleccionades"
 
 msgid "Delete Selected Notifier"
 msgstr "Suprimeix el notificador seleccionat"
@@ -2860,7 +2864,7 @@ msgid "Delete Selected Portal Groups"
 msgstr "Suprimeix grups de Portal seleccionats"
 
 msgid "Delete Selected Public Keys"
-msgstr ""
+msgstr "Suprimeix les claus públiques seleccionades"
 
 msgid "Delete Selected RAID Volumes"
 msgstr "Suprimeix volums RAID seleccionats"
@@ -3198,7 +3202,7 @@ msgid "Disable Selected Commands"
 msgstr "Desactivar les ordres seleccionats"
 
 msgid "Disable Selected Groups"
-msgstr ""
+msgstr "Desactiva els grups seleccionats"
 
 msgid "Disable Selected Initiator Names"
 msgstr "Desactiveu els noms dels iniciadors seleccionats"
@@ -3219,16 +3223,16 @@ msgid "Disable Selected Listen Records"
 msgstr "Desactiveu els registres d'escolta seleccionats"
 
 msgid "Disable Selected Media Folders"
-msgstr ""
+msgstr "Desactiva les carpetes de mitjans seleccionats"
 
 msgid "Disable Selected Mutual CHAP Users"
 msgstr "Desactiveu els usuaris seleccionats de CHAP mútua"
 
 msgid "Disable Selected NFS Exports"
-msgstr ""
+msgstr "Desactiva les exportacions NFS seleccionades"
 
 msgid "Disable Selected NFS Root Directories"
-msgstr ""
+msgstr "Desactiva els directoris Root seleccionats de NFS"
 
 msgid "Disable Selected Option Records"
 msgstr "Desactiva els registres opcionals seleccionats"
@@ -3243,7 +3247,7 @@ msgid "Disable Selected Portal Groups"
 msgstr "Desactiveu els grups de portal seleccionats"
 
 msgid "Disable Selected Public Keys"
-msgstr ""
+msgstr "Desactiva les claus públiques seleccionades"
 
 msgid "Disable Selected Records"
 msgstr "Desactivar registres seleccionats"
@@ -3258,7 +3262,7 @@ msgid "Disable Selected Targets"
 msgstr "Desactiveu els objectius seleccionats"
 
 msgid "Disable Selected Users"
-msgstr ""
+msgstr "Desactiva els usuaris seleccionats"
 
 msgid "Disable Selected WebDAV Records"
 msgstr "Desactiva els registres seleccionats de WebDAV"
@@ -3270,7 +3274,7 @@ msgid "Disable Selected iSNS Servers"
 msgstr "Desactiveu els servidors iSNS seleccionats"
 
 msgid "Disable Subtitles"
-msgstr ""
+msgstr "Desactiva els subtítols"
 
 msgid "Disable TCP wrapper (mod_wrap module)."
 msgstr "Desactivar embolcall TCP (mòdul mod_wrap)."
@@ -3292,7 +3296,7 @@ msgid "Disable speaker beep on startup and shutdown."
 msgstr "Desactiva el so de l'altaveu a l'inici i a l'apagat."
 
 msgid "Disable subtitle support on unknown clients."
-msgstr ""
+msgstr "Descativa el suport de subtítols a clients desconeguts."
 
 msgid "Disable the compression of repeating lines."
 msgstr "Desactiva la compressió de línies repetides."
@@ -3569,10 +3573,10 @@ msgid "Do you want to delete selected Mutual CHAP users?"
 msgstr "Voleu eliminar usuaris seleccionats de CHAP mútua?"
 
 msgid "Do you want to delete selected NFS exports?"
-msgstr ""
+msgstr "Voleu eliminar les exportacions NFS seleccionades?"
 
 msgid "Do you want to delete selected NFS root directories?"
-msgstr ""
+msgstr "Voleu eliminar els directoris arrel NFS seleccionats?"
 
 msgid "Do you want to delete selected RAID volumes?"
 msgstr "Vols eliminar els volums RAID seleccionats?"
@@ -3629,7 +3633,7 @@ msgid "Do you want to delete selected listen records?"
 msgstr "Voleu eliminar els registres d'escolta seleccionats?"
 
 msgid "Do you want to delete selected media folders?"
-msgstr ""
+msgstr "Voleu eliminar les carpetes multimèdia seleccionades?"
 
 msgid "Do you want to delete selected notifier?"
 msgstr "Voleu eliminar el notificador seleccionat?"
@@ -3650,7 +3654,7 @@ msgid "Do you want to delete selected portal groups?"
 msgstr "Voleu eliminar els grups de portal seleccionats?"
 
 msgid "Do you want to delete selected public keys?"
-msgstr ""
+msgstr "Voleu eliminar les claus públiques seleccionades?"
 
 msgid "Do you want to delete selected records?"
 msgstr "Voleu eliminar els registres seleccionats?"
@@ -3701,10 +3705,10 @@ msgid "Do you want to disable selected Mutual CHAP users?"
 msgstr "Voleu desactivar els usuaris seleccionats de CHAP mútua?"
 
 msgid "Do you want to disable selected NFS exports?"
-msgstr ""
+msgstr "Voleu desactivar les exportacions NFS seleccionades?"
 
 msgid "Do you want to disable selected NFS root directories?"
-msgstr ""
+msgstr "Voleu desactivar els directoris arrel seleccionats de NFS?"
 
 msgid "Do you want to disable selected WebDAV records?"
 msgstr "Voleu desactivar els registres WebDAV seleccionats?"
@@ -3716,7 +3720,7 @@ msgid "Do you want to disable selected commands?"
 msgstr "Vols desactivar les ordres seleccionades?"
 
 msgid "Do you want to disable selected groups?"
-msgstr ""
+msgstr "Voleu desactivar els grups seleccionats?"
 
 msgid "Do you want to disable selected iSCSI initiators?"
 msgstr "Voleu desactivar els iniciadors seleccionats d'iSCSI?"
@@ -3737,7 +3741,7 @@ msgid "Do you want to disable selected listen records?"
 msgstr "Voleu desactivar els registres d'escolta seleccionats?"
 
 msgid "Do you want to disable selected media folders?"
-msgstr ""
+msgstr "Voleu desactivar les carpetes multimèdia seleccionades?"
 
 msgid "Do you want to disable selected option records?"
 msgstr "Voleu desactivar els registres d'opcions seleccionats?"
@@ -3752,7 +3756,7 @@ msgid "Do you want to disable selected portal groups?"
 msgstr "Voleu desactivar els grups de portal seleccionats?"
 
 msgid "Do you want to disable selected public keys?"
-msgstr ""
+msgstr "Voleu desactivar les claus públiques seleccionades?"
 
 msgid "Do you want to disable selected records?"
 msgstr "Voleu desactivar els registres seleccionats?"
@@ -3767,7 +3771,7 @@ msgid "Do you want to disable selected targets?"
 msgstr "Voleu desactivar els objectius seleccionats?"
 
 msgid "Do you want to disable selected users?"
-msgstr ""
+msgstr "Voleu desactivar els usuaris seleccionats?"
 
 msgid "Do you want to enable selected CHAP users?"
 msgstr "Voleu habilitar els usuaris CHAP seleccionats?"
@@ -3782,10 +3786,10 @@ msgid "Do you want to enable selected Mutual CHAP users?"
 msgstr "Voleu activar els usuaris seleccionats de CHAP mútua?"
 
 msgid "Do you want to enable selected NFS exports?"
-msgstr ""
+msgstr "Voleu habilitar les exportacions NFS seleccionades?"
 
 msgid "Do you want to enable selected NFS root directories?"
-msgstr ""
+msgstr "Voleu habilitar els directoris arrel NFS seleccionats?"
 
 msgid "Do you want to enable selected WebDAV records?"
 msgstr "Voleu activar els registres seleccionats WebDAV?"
@@ -3797,7 +3801,7 @@ msgid "Do you want to enable selected commands?"
 msgstr "Vols activar les ordres seleccionades?"
 
 msgid "Do you want to enable selected groups?"
-msgstr ""
+msgstr "Voleu habilitar els grups seleccionats?"
 
 msgid "Do you want to enable selected iSCSI initiators?"
 msgstr "Voleu activar els iniciadors seleccionats iSCSI?"
@@ -3818,7 +3822,7 @@ msgid "Do you want to enable selected listen records?"
 msgstr "Voleu activar els registres d'escolta seleccionats?"
 
 msgid "Do you want to enable selected media folders?"
-msgstr ""
+msgstr "Voleu habilitar les carpetes multimèdia seleccionades?"
 
 msgid "Do you want to enable selected option records?"
 msgstr "Voleu activar els registres d'opcions seleccionats?"
@@ -3833,7 +3837,7 @@ msgid "Do you want to enable selected portal groups?"
 msgstr "Voleu activar els grups de portal seleccionats?"
 
 msgid "Do you want to enable selected public keys?"
-msgstr ""
+msgstr "Voleu habilitar les claus públiques seleccionades?"
 
 msgid "Do you want to enable selected records?"
 msgstr "Voleu activar els registres seleccionats?"
@@ -3848,7 +3852,7 @@ msgid "Do you want to enable selected targets?"
 msgstr "Voleu activar els objectius seleccionats?"
 
 msgid "Do you want to enable selected users?"
-msgstr ""
+msgstr "Voleu habilitar els usuaris seleccionats?"
 
 msgid "Do you want to import disks?"
 msgstr "Vols importar els discs?"
@@ -3872,10 +3876,10 @@ msgid "Do you want to toggle selected Mutual CHAP users?"
 msgstr "Voleu canviar els usuaris CHAP mútus seleccionats?"
 
 msgid "Do you want to toggle selected NFS exports?"
-msgstr ""
+msgstr "Voleu canviar les exportacions de NFS seleccionades?"
 
 msgid "Do you want to toggle selected NFS root directories?"
-msgstr ""
+msgstr "Voleu canviar els directoris arrel NFS seleccionats?"
 
 msgid "Do you want to toggle selected WebDAV records?"
 msgstr "Voleu canviar els registres seleccionats de WebDAV?"
@@ -3887,7 +3891,7 @@ msgid "Do you want to toggle selected commands?"
 msgstr "Vols canviar les ordres seleccionats?"
 
 msgid "Do you want to toggle selected groups?"
-msgstr ""
+msgstr "Voleu canviar els grups seleccionats?"
 
 msgid "Do you want to toggle selected iSCSI initiators?"
 msgstr "Voleu canviar els iniciadors seleccionats de l'iSCSI?"
@@ -3908,7 +3912,7 @@ msgid "Do you want to toggle selected listen records?"
 msgstr "Voleu canviar els registres d'escolta seleccionats?"
 
 msgid "Do you want to toggle selected media folders?"
-msgstr ""
+msgstr "Voleu canviar les carpetes multimèdia seleccionades?"
 
 msgid "Do you want to toggle selected option records?"
 msgstr "Voleu canviar els registres d'opcions seleccionats?"
@@ -3923,7 +3927,7 @@ msgid "Do you want to toggle selected portal groups?"
 msgstr "Voleu canviar els grups de portal seleccionats?"
 
 msgid "Do you want to toggle selected public keys?"
-msgstr ""
+msgstr "Voleu canviar les claus públiques seleccionades?"
 
 msgid "Do you want to toggle selected records?"
 msgstr "Voleu conmutar els registres seleccionats?"
@@ -3938,7 +3942,7 @@ msgid "Do you want to toggle selected targets?"
 msgstr "Voleu canviar els objectius seleccionats?"
 
 msgid "Do you want to toggle selected users?"
-msgstr ""
+msgstr "Voleu canviar els usuaris seleccionats?"
 
 msgid "Do you want to unlock selected records?"
 msgstr "Voleu desbloquejar els registres seleccionats?"
@@ -4107,16 +4111,16 @@ msgid "Edit Listen Record"
 msgstr "Edita regsitre d'escolta"
 
 msgid "Edit Media Folder"
-msgstr ""
+msgstr "Editeu carpeta de mitjans"
 
 msgid "Edit Mutual CHAP User"
 msgstr "Editeu l'usuari CHAP mutu"
 
 msgid "Edit NFS Export"
-msgstr ""
+msgstr "Editeu Exportació NFS"
 
 msgid "Edit NFS Root"
-msgstr ""
+msgstr "Editeu Root NFS"
 
 msgid "Edit Option"
 msgstr "Editar opció"
@@ -4134,7 +4138,7 @@ msgid "Edit Portal Group"
 msgstr "Editar Grup de portal"
 
 msgid "Edit Public Key"
-msgstr ""
+msgstr "Editeu clau pùblica"
 
 msgid "Edit RAID"
 msgstr "Editar RAID"
@@ -4303,7 +4307,7 @@ msgid "Enable SMTP authentication."
 msgstr "Habilitar l'autenticació SMTP."
 
 msgid "Enable SSH service"
-msgstr ""
+msgstr "Activeu servei SSH"
 
 msgid ""
 "Enable SSL/TLS for secured connections. You also need to configure the TLS "
@@ -4326,7 +4330,7 @@ msgid "Enable Selected Commands"
 msgstr "Activa ordres seleccionats"
 
 msgid "Enable Selected Groups"
-msgstr ""
+msgstr "Activeu grups seleccionats"
 
 msgid "Enable Selected Initiator Names"
 msgstr "Activa els noms d'iniciadors seleccionats"
@@ -4347,16 +4351,16 @@ msgid "Enable Selected Listen Records"
 msgstr "Activa els registres d'escolta seleccionats"
 
 msgid "Enable Selected Media Folders"
-msgstr ""
+msgstr "Activeu Carpetes de Mitjans seleccionades"
 
 msgid "Enable Selected Mutual CHAP Users"
 msgstr "Habilita els usuaris seleccionats de CHAP mútua"
 
 msgid "Enable Selected NFS Exports"
-msgstr ""
+msgstr "Activeu Exportacions NFS seleccionats"
 
 msgid "Enable Selected NFS Root Directories"
-msgstr ""
+msgstr "Activeu directoris NFS Root seleccionats"
 
 msgid "Enable Selected Option Records"
 msgstr "Activa els registres d'opcions seleccionats"
@@ -4371,7 +4375,7 @@ msgid "Enable Selected Portal Groups"
 msgstr "Activar els grups de portal seleccionats?"
 
 msgid "Enable Selected Public Keys"
-msgstr ""
+msgstr "Activeu claus pùbliques"
 
 msgid "Enable Selected Records"
 msgstr "Activa els registres seleccionats"
@@ -4386,7 +4390,7 @@ msgid "Enable Selected Targets"
 msgstr "Activar els objectius seleccionats?"
 
 msgid "Enable Selected Users"
-msgstr ""
+msgstr "Activeu usuaris seleccionats"
 
 msgid "Enable Selected WebDAV Records"
 msgstr "Activa els registres seleccionats de WebDAV"
@@ -4469,6 +4473,7 @@ msgstr "Habilitar la recopilació d'estadístiques de temps d'activitat."
 
 msgid "Enable compression after the user has authenticated successfully."
 msgstr ""
+"Habiliteu la compressió després que l'usuari s'hagi autenticat correctament."
 
 msgid "Enable console screensaver."
 msgstr "Habilita estalvi de pantalla de la consola."
@@ -4730,6 +4735,8 @@ msgstr ""
 
 msgid "Enter a custom port number if you do not want to use default port 22."
 msgstr ""
+"Introduïu un número de port personalitzat si no voleu utilitzar el port per "
+"defecte 22."
 
 msgid "Enter a custom port number if you do not want to use default port 69."
 msgstr ""
@@ -4810,7 +4817,7 @@ msgid "Enter facility name"
 msgstr "Introduïu el nom de la ubicació"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "Introduïu nom de grup"
 
 msgid "Enter hostname or IP address."
 msgstr "Introduïu el nom d'amfitrió o l'adreça IP."
@@ -4819,7 +4826,7 @@ msgid "Enter level name"
 msgstr "Introduïu el nom del nivell"
 
 msgid "Enter login name."
-msgstr ""
+msgstr "Introduïu nom de usuari"
 
 msgid "Enter mutual user name."
 msgstr "Introduïu el nom d'usuari mutu."
@@ -4844,19 +4851,19 @@ msgid "Enter the command"
 msgstr "Introduïu l'ordre"
 
 msgid "Enter the full user name."
-msgstr ""
+msgstr "Introduïu el nom d'usuari sencer"
 
 msgid "Enter the location of the share"
 msgstr "Introduïu la localització del compartit"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "Introduïu el nom de la conta mestre d'usuari"
 
 msgid "Enter the name of the share"
 msgstr "Introduïu el nom del compartit"
 
 msgid "Enter the network that is authorised to access the NFS share."
-msgstr ""
+msgstr "Introduïu la xarxa autoritzada per accedir al percentatge de NFS."
 
 msgid ""
 "Enter the passphrase that will be used in WPA-PSK mode. This must be between "
@@ -4866,7 +4873,7 @@ msgstr ""
 "tenir entre 8 i 63 caràcters."
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "Introduïu la contrasenya del compte d’usuari principal."
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -4893,6 +4900,8 @@ msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
 "use default path /mnt."
 msgstr ""
+"Introduïu el camí d'accés al directori inicial de l'usuari. Deixeu aquest "
+"camp buit per utilitzar el camí predeterminat / mnt."
 
 msgid ""
 "Enter the path to the home directory. This directory will store the "
@@ -4966,7 +4975,7 @@ msgid "Export Rules"
 msgstr "Regles d'exportació"
 
 msgid "Export Subfolders"
-msgstr ""
+msgstr "Exporta subcarpetes"
 
 msgid "Export a pool from the system"
 msgstr "Exportació d'una piscina des del sistema"
@@ -4975,10 +4984,10 @@ msgid "Export all the directories in the specified path."
 msgstr "Exportar tots els directoris en la ruta especificada."
 
 msgid "Export as WebNFS."
-msgstr ""
+msgstr "Exporteu com a WebNFS."
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "Exporteu el sistema de fitxers en mode de només lectura."
 
 msgid "Exported"
 msgstr "Exportat"
@@ -5384,7 +5393,7 @@ msgid "GPT partition"
 msgstr "Partició GPT"
 
 msgid "GSSAPI Authentication"
-msgstr ""
+msgstr "Autenticació GSSAPI"
 
 msgid "Gateway"
 msgstr "Porta d'enllaç"
@@ -5431,7 +5440,7 @@ msgid "Grant access to the user portal."
 msgstr "Concedir accés al portal d'usuari."
 
 msgid "Grant shell access to user"
-msgstr ""
+msgstr "Permetre l’accés al shell dels usuaris"
 
 msgid "Graph shows last 120 seconds"
 msgstr "El gràfic mostra els últims 120 segons"
@@ -5460,7 +5469,7 @@ msgid "Group ID"
 msgstr "Identificador del Grup"
 
 msgid "Group Name"
-msgstr ""
+msgstr "Nom del grup"
 
 msgid "Group Settings"
 msgstr "Configuració del grup"
@@ -5607,10 +5616,10 @@ msgid "Hide Dot Files"
 msgstr "ocultar arxius amb punt"
 
 msgid "Hide System Groups"
-msgstr ""
+msgstr "Amaga els grups del sistema"
 
 msgid "Hide System Users"
-msgstr ""
+msgstr "Amaga els usuaris del sistema"
 
 msgid "High voltage boosting transfer point"
 msgstr "Punt de transferència d'impuls d'alta tensió"
@@ -5735,7 +5744,7 @@ msgid "IPv4 DNS Servers"
 msgstr "Servidors DNS IPv4"
 
 msgid "IPv4 Routes"
-msgstr ""
+msgstr "Rutes IPv4"
 
 msgid "IPv4 Settings"
 msgstr "Paràmetres IPv4"
@@ -5779,7 +5788,7 @@ msgid "IPv6 Prefix"
 msgstr "Prefix IPv6"
 
 msgid "IPv6 Routes"
-msgstr ""
+msgstr "Rutes IPv6"
 
 msgid "IPv6 Settings"
 msgstr "Paràmetres IPv6"
@@ -6339,7 +6348,7 @@ msgid "Key Management Protocol"
 msgstr "Protocol de gestió de claus"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "Teclat-Autenticació interactiva"
 
 msgid "L2 Cache"
 msgstr "Memòria cau L2"
@@ -6693,7 +6702,7 @@ msgid "Location where the content database file will be stored."
 msgstr "Lloc on s'emmagatzemarà l'arxiu de dades de contingut."
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "Ubicació on s’emmagatzemaran els fitxers de treball."
 
 msgid "Lock Selected Records"
 msgstr "Bloqueja els registres seleccionats"
@@ -6755,7 +6764,7 @@ msgid "Login"
 msgstr "Login"
 
 msgid "Login Name"
-msgstr ""
+msgstr "Nom d'usuari"
 
 msgid "Login for CHAP authentication."
 msgstr "Inicieu la sessió per a l'autenticació CHAP."
@@ -6792,7 +6801,7 @@ msgid "MBR partition"
 msgstr "Partició MBR"
 
 msgid "MD4 Password"
-msgstr ""
+msgstr "Contrasenya MD4"
 
 msgid "MIRROR"
 msgstr "MIRALL"
@@ -6846,10 +6855,10 @@ msgid "Manufacturing date"
 msgstr "Data de fabricació"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "Mapeja tot al usuari"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "Mapeja Root a usuari"
 
 msgid "Map to Guest"
 msgstr "Mapejar a convidats"
@@ -6858,10 +6867,10 @@ msgid "Map to User"
 msgstr "Mapejar a usuari"
 
 msgid "Map users or map root to the specified user."
-msgstr ""
+msgstr "Mapeja usuaris o mapeja usuari root a un usuari especific"
 
 msgid "Mapping"
-msgstr ""
+msgstr "Mapejant"
 
 msgid "Mapping DOS Attributes"
 msgstr "Mapejar atributs DOS"
@@ -6889,13 +6898,13 @@ msgid "Masquerade Address"
 msgstr "Adreça de màscara"
 
 msgid "Master"
-msgstr ""
+msgstr "Primari"
 
 msgid "Master Password"
-msgstr ""
+msgstr "Contrasenya mestre"
 
 msgid "Master User"
-msgstr ""
+msgstr "Usuari mestre"
 
 msgid "Max Processes"
 msgstr "Processos màxims"
@@ -6998,28 +7007,28 @@ msgid "Media Directory"
 msgstr "Directori de Mitjans"
 
 msgid "Media Folder"
-msgstr ""
+msgstr "Carpete de mitjans"
 
 msgid "Media Folder is locked"
-msgstr ""
+msgstr "Carpeta de mitjans bloquejada"
 
 msgid "Media Folder is marked for deletion"
-msgstr ""
+msgstr "La carpeta multimèdia està marcada per eliminar-la"
 
 msgid "Media Folder is unlocked"
-msgstr ""
+msgstr "La carpeta multimèdia està desbloquejada"
 
 msgid "Media Library"
 msgstr "Biblioteca multimèdia"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "Nom del servidor de mitjans"
 
 msgid "Media Size"
 msgstr "Mida del mitjà"
 
 msgid "Media Type"
-msgstr ""
+msgstr "Tipus de mitjà"
 
 msgid "Media library"
 msgstr "Biblioteca multimèdia"
@@ -7148,13 +7157,13 @@ msgid "Monitoring"
 msgstr "Monitorització"
 
 msgid "Monitoring Password"
-msgstr ""
+msgstr "Supervisant la contrasenya"
 
 msgid "Monitoring Setup"
 msgstr "Configuració de monitorització"
 
 msgid "Monitoring User"
-msgstr ""
+msgstr "Supervisant usuari"
 
 msgid "Months"
 msgstr "Mesos"
@@ -7263,22 +7272,22 @@ msgid "NFS"
 msgstr "NFS"
 
 msgid "NFS Export is locked"
-msgstr ""
+msgstr "NFS Export està bloquejat"
 
 msgid "NFS Export is marked for deletion"
-msgstr ""
+msgstr "L’exportació NFS està marcada per a la supressió"
 
 msgid "NFS Export is unlocked"
-msgstr ""
+msgstr "Desbloquejat NFS Export"
 
 msgid "NFS Root is locked"
-msgstr ""
+msgstr "El NFS root està bloquejat"
 
 msgid "NFS Root is marked for deletion"
-msgstr ""
+msgstr "NFS Root està marcat per a la supressió"
 
 msgid "NFS Root is unlocked"
-msgstr ""
+msgstr "NFS root està desbloquejat"
 
 msgid "NFSv4"
 msgstr "NFSv4"
@@ -7394,7 +7403,7 @@ msgid "NetBIOS Name"
 msgstr "Nom NetBIOS"
 
 msgid "NetIf"
-msgstr ""
+msgstr "NetIf"
 
 msgid "Netatalk (default) - use Netatalk compatible xattr."
 msgstr "Netatalk (per defecte): utilitzeu Xattr compatible amb Netatalk."
@@ -7504,10 +7513,10 @@ msgid "No IPMI Sensor data available."
 msgstr "Dades del sensor IPMI no disponible."
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "No s’ha trobat cap informació d’encaminament IPv4."
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "No s’ha trobat cap informació d’encaminament IPv6."
 
 msgid "No Initiator Group has been configured."
 msgstr "Grup iniciador no s'ha configurat."
@@ -7519,7 +7528,7 @@ msgid "No LUNs found."
 msgstr "No s'ha trobat cap LUN."
 
 msgid "No Login"
-msgstr ""
+msgstr "Sense login"
 
 msgid "No Mutual-CHAP users found."
 msgstr "No s’han trobat usuaris de CHAP mutu."
@@ -7755,6 +7764,8 @@ msgstr "Nota"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
 msgstr ""
+"Tingueu en compte que només es pot exportar un sistema de fitxers WebNFS a "
+"un servidor."
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7960,7 +7971,7 @@ msgid "Overwrite disks configuration"
 msgstr "Sobreescriure configuració de discos"
 
 msgid "Overwrite the sort criteria passed by the client."
-msgstr ""
+msgstr "Sobreescriu els criteris de classificació aprovats pel client."
 
 msgid "Owner"
 msgstr "Propietari"
@@ -8126,7 +8137,7 @@ msgstr ""
 "d'Active Directory)."
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "Enganxeu una clau privada RSA en format PEM"
 
 msgid "Paste a private key in PEM format here."
 msgstr "Enganxar una clau privada en format PEM aquí."
@@ -8147,7 +8158,7 @@ msgid "Path of the URL relative to document root."
 msgstr "Ruta de l'URL relativa a l'arrel del document."
 
 msgid "Path to be included."
-msgstr ""
+msgstr "Ruta a incloure."
 
 msgid "Path to be shared to be synchronized."
 msgstr "Ruta en ser compartida a sincronitzar."
@@ -8352,6 +8363,7 @@ msgstr "Número del port del servidor iSNS."
 
 msgid "Port of the SSH service. Leave blank to use the default port."
 msgstr ""
+"Port del servei SSH. Deixeu en blanc per utilitzar el port per defecte."
 
 msgid "Port of the TFTP service. Leave blank to use the default port."
 msgstr ""
@@ -8397,6 +8409,8 @@ msgid ""
 "Port to listen on. Port number must be between 1024 and 65535. Default port "
 "is 8200."
 msgstr ""
+"Port per escoltar. El número de port ha de ser entre 1024 i 65535. El port "
+"per defecte és de 8200."
 
 msgid "Portal Group"
 msgstr "Grup de Portal"
@@ -8564,28 +8578,28 @@ msgid "Proxy"
 msgstr "Proxy"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Clau pública"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "Autenticació de clau pública"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "Configuració de la clau pública"
 
 msgid "Public Keys"
-msgstr ""
+msgstr "Claus públiques"
 
 msgid "Public key information."
-msgstr ""
+msgstr "Informació de clau pública."
 
 msgid "Public key is marked for deletion"
-msgstr ""
+msgstr "La clau pública està marcada per a la supressió"
 
 msgid "Public key is protected"
-msgstr ""
+msgstr "La clau pública està protegida"
 
 msgid "Public key is unlocked"
-msgstr ""
+msgstr "La clau pública està desbloquejada"
 
 msgid "Pull"
 msgstr "Extreu («Pull»)"
@@ -8940,6 +8954,8 @@ msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
 msgstr ""
+"Els accessos remots per root hauran d'utilitzar una credencial de 65534: "
+"65533. Es maparà tots els altres usuaris amb les seves credencials remotes."
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -9082,7 +9098,7 @@ msgid "Restore metadata from the given file to the given provider."
 msgstr "Restaurar metadades del fitxer donat al proveïdor determinat."
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "Restringiu la carpeta a un tipus de suport específic."
 
 msgid "Restricted"
 msgstr "Restringit"
@@ -9128,10 +9144,10 @@ msgid "Root Bind Password"
 msgstr "Contrasenya arrel oculta"
 
 msgid "Root Directory"
-msgstr ""
+msgstr "Directori arrel"
 
 msgid "Root Login"
-msgstr ""
+msgstr "Iniciar sessió Root"
 
 msgid "Rotation Rate"
 msgstr "Taxa de rotació"
@@ -9226,7 +9242,7 @@ msgid "SCSI Name"
 msgstr "Nom SCSI"
 
 msgid "SHA Password"
-msgstr ""
+msgstr "Contrasenya SHA"
 
 msgid "SHA-256, Verify"
 msgstr "SHA-256, Verifica"
@@ -9350,19 +9366,19 @@ msgstr ""
 "forçada des de la pàgina d'estat de la interfície web d'administració."
 
 msgid "Scan folder for all media types."
-msgstr ""
+msgstr "Escaneja la carpeta per a tots els tipus de suports."
 
 msgid "Scan folder for audio files."
-msgstr ""
+msgstr "Escaneja la carpeta per als fitxers d’àudio."
 
 msgid "Scan folder for image files."
-msgstr ""
+msgstr "Escaneja la carpeta dels fitxers d'imatge."
 
 msgid "Scan folder for video and image files."
-msgstr ""
+msgstr "Escaneja la carpeta per a fitxers de vídeo i imatge."
 
 msgid "Scan folder for video files."
-msgstr ""
+msgstr "Escaneja la carpeta per a fitxers de vídeo."
 
 msgid "Schedule Time"
 msgstr "Temps programat"
@@ -9425,7 +9441,7 @@ msgid "Secret for CHAP authentication."
 msgstr "Secret de l'autenticació CHAP."
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Sabor de seguretat"
 
 msgid "Security Warning"
 msgstr "Alerta de seguretat"
@@ -9485,6 +9501,7 @@ msgstr "Seleccionar dispositiu de recanvi"
 
 msgid "Select a container as the root of the tree exposed to clients."
 msgstr ""
+"Seleccioneu un contenidor com a arrel de l'arbre exposat als clients."
 
 msgid "Select a date format."
 msgstr "Seleccioneu un format de data."
@@ -9729,7 +9746,7 @@ msgid "Set UID"
 msgstr "Estableix UID"
 
 msgid "Set User Password"
-msgstr ""
+msgstr "Definiu la contrasenya d'usuari"
 
 msgid "Set browseable."
 msgstr "Fes-ho navegable."
@@ -9742,7 +9759,7 @@ msgstr ""
 "permès és de 10."
 
 msgid "Set password"
-msgstr ""
+msgstr "Definiu la contrasenya"
 
 msgid "Set per-LUN/per-pool thin provisioning soft threshold."
 msgstr "Estableix el llindar suau per a la provisió per-LUN / per-piscina."
@@ -9763,7 +9780,7 @@ msgstr ""
 "entrin en vigor."
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "Definiu el grup principal del compte."
 
 msgid "Set the content location(s) to or from the media library."
 msgstr ""
@@ -9843,7 +9860,7 @@ msgid "Set user login shell."
 msgstr "Configurar el usuari d'inici de consola."
 
 msgid "Set user password."
-msgstr ""
+msgstr "Definiu la contrasenya de l’usuari."
 
 msgid "Setkey"
 msgstr "Fixar la clau"
@@ -9988,10 +10005,10 @@ msgid "Show RAW UPS Info"
 msgstr "Mostra l'informació plana del SAI"
 
 msgid "Show System Groups"
-msgstr ""
+msgstr "Mostra els grups de sistema"
 
 msgid "Show System Users"
-msgstr ""
+msgstr "Mostra els usuaris del sistema"
 
 msgid "Show UPS Information"
 msgstr "Mostra l'informació del SAI"
@@ -10061,7 +10078,7 @@ msgid "Skip View Mode"
 msgstr "Saltar mode de visualització"
 
 msgid "Slave"
-msgstr ""
+msgstr "Esclau"
 
 msgid "Sleep - Check the device unless it is in SLEEP mode."
 msgstr "Somni - Comproveu el dispositiu llevat que sigui en el mode SLEEP."
@@ -10285,6 +10302,9 @@ msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
 msgstr ""
+"Especifiqueu una llista dels sabors de seguretat acceptables que "
+"s’utilitzaran per a l’accés remot. El sabor de seguretat \t per defecte \t \t"
+" és sys."
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -10319,10 +10339,10 @@ msgstr ""
 "Especifiqueu el tipus de dispositiu SCSI que s'utilitzarà en crear el LUN."
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "Especifiqueu l’identificador numèric del grup."
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "Especifiqueu l’identificador numèric de l’usuari / compte."
 
 msgid "Split request"
 msgstr "Sol·licitud de divisiò"
@@ -10535,7 +10555,7 @@ msgid "System Events"
 msgstr "Esdeveniments del sistema"
 
 msgid "System Group"
-msgstr ""
+msgstr "Grup de sistema"
 
 msgid "System Information"
 msgstr "Informació del sistema"
@@ -10562,7 +10582,7 @@ msgid "System Uptime"
 msgstr "Temps d'activitat del sistema"
 
 msgid "System User"
-msgstr ""
+msgstr "Usuari de sistema"
 
 msgid "System info"
 msgstr "Informació del sistema"
@@ -11513,9 +11533,11 @@ msgstr "La profunditat de la cua recomanada és de %d."
 
 msgid "The recommended range for the group id is between 1000 and 32000."
 msgstr ""
+"L’interval recomanat per al grup d’identificació es troba entre 1000 i 32000."
 
 msgid "The recommended range for the user id is between 1000 and 32000."
 msgstr ""
+"L’interval recomanat per a l’identificador de l’usuari és entre 1000 i 32000."
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -11707,7 +11729,7 @@ msgstr ""
 "controlador."
 
 msgid "These parameters are appended to /etc/ssh/sshd_config."
-msgstr ""
+msgstr "Aquests paràmetres s’afegeixen a /etc/ssh/sshd_config."
 
 msgid "These parameters are appended to the exports file."
 msgstr "Aquests paràmetres s’afegeixen al fitxer d'exportacions."
@@ -11725,7 +11747,7 @@ msgid "These parameters will be added to global settings in %s."
 msgstr "Aquests paràmetres s'agreguen als ajustos globals en %s."
 
 msgid "These parameters will be added to minidlna.conf"
-msgstr ""
+msgstr "Aquests paràmetres s’afegeixen a minidlna.conf"
 
 msgid "These parameters will be added to my.cnf"
 msgstr "Aquests paràmetres s'afegiran a my.cnf"
@@ -12150,6 +12172,9 @@ msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
 msgstr ""
+"Això permetrà la reducció de les imatges JPEG molt grans al costat del "
+"servidor, pot afectar el rendiment de la prestació de JPEG en alguns "
+"dispositius DLNA."
 
 msgid "This will create a recycle bin on the share."
 msgstr "Això crearà una paperera de reciclatge en el recurs."
@@ -12295,7 +12320,7 @@ msgstr ""
 "Per utilitzar Active Directory el servei CIFS / SMB serà permès també."
 
 msgid "To use subdirectories, you must mount each directory."
-msgstr ""
+msgstr "Per utilitzar subdirectoris, heu de muntar cada directori."
 
 msgid "Toggle Mode"
 msgstr "Mode de commutació"
@@ -12310,7 +12335,7 @@ msgid "Toggle Selected Commands"
 msgstr "Commuta els comandos seleccionats"
 
 msgid "Toggle Selected Groups"
-msgstr ""
+msgstr "Commuta els grups seleccionats"
 
 msgid "Toggle Selected Initiator Names"
 msgstr "Commuta els noms d'iniciadors seleccionats"
@@ -12331,16 +12356,16 @@ msgid "Toggle Selected Listen Records"
 msgstr "Commuta els registres d'escolta seleccionats"
 
 msgid "Toggle Selected Media Folders"
-msgstr ""
+msgstr "Commuta les carpetes seleccionats de mitjans"
 
 msgid "Toggle Selected Mutual CHAP Users"
 msgstr "Commuta els usuaris mutus CHAP seleccionats"
 
 msgid "Toggle Selected NFS Exports"
-msgstr ""
+msgstr "Commuta les exportacions NFS seleccionats"
 
 msgid "Toggle Selected NFS Root Directories"
-msgstr ""
+msgstr "Commuta els directoris NFS arrels seleccionats"
 
 msgid "Toggle Selected Option Records"
 msgstr "Commuta els registres d'opcions seleccionats"
@@ -12355,7 +12380,7 @@ msgid "Toggle Selected Portal Groups"
 msgstr "Commuta els grups de portal seleccionats"
 
 msgid "Toggle Selected Public Keys"
-msgstr ""
+msgstr "Commuta les claus públiques seleccionats"
 
 msgid "Toggle Selected Records"
 msgstr "Activa registres seleccionats"
@@ -12370,7 +12395,7 @@ msgid "Toggle Selected Targets"
 msgstr "Commuta els objectius seleccionats"
 
 msgid "Toggle Selected Users"
-msgstr ""
+msgstr "Commuta els usuaris seleccionats"
 
 msgid "Toggle Selected WebDAV Records"
 msgstr "Commuta els registres seleccionats de WebDAV"
@@ -12808,7 +12833,7 @@ msgid "Uptime Statistics"
 msgstr "Estadístiques de funcionament"
 
 msgid "Use"
-msgstr ""
+msgstr "Utilitza"
 
 msgid "Use Bytes/sec instead of Bits/sec for network throughput display."
 msgstr ""
@@ -12850,6 +12875,8 @@ msgstr ""
 
 msgid "Use inotify monitoring to automatically discover new media files."
 msgstr ""
+"Utilitzeu el monitoratge inotify per descobrir automàticament nous fitxers "
+"multimèdia."
 
 msgid "Use local user authentication."
 msgstr "Utilitzar l'autenticació d'usuari local."
@@ -12863,16 +12890,16 @@ msgstr ""
 "utilitzar juntament amb la gamma d'eix i positiu/negatiu)"
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "Utilitzeu el contenidor \"Examinar el directori\""
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "Utilitzeu el contenidor \"Music\""
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "Utilitzeu el contenidor \"Imatges\""
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "Utilitzeu el contenidor \"Vídeo\""
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -12885,7 +12912,7 @@ msgid "Use the specified NTP server."
 msgstr "Utilitzar el servidor NTP especificat."
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "Utilitzeu el contenidor estàndard (aquest és el valor predeterminat)"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "Utilitzeu aquests especials mesures per a la depuració només!"
@@ -13011,7 +13038,7 @@ msgid "Using %s bytes fragment size."
 msgstr "Utilitzant %s bytes fragmentat."
 
 msgid "Using defaults"
-msgstr ""
+msgstr "Utilitzant els valors per defecte"
 
 msgid "VCPUs"
 msgstr "VCPUs"
@@ -13086,7 +13113,7 @@ msgid "Vendor ID"
 msgstr "ID del fabricant"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "Verbositat de la informació que es registra."
 
 msgid "Verify"
 msgstr "Verificar"
@@ -13289,7 +13316,7 @@ msgid "WebGUI and Root Password"
 msgstr "Contrasenya de root i WebGUI"
 
 msgid "WebNFS"
-msgstr ""
+msgstr "WebNFS"
 
 msgid "Webserver"
 msgstr "Servidor Web"
@@ -13612,7 +13639,7 @@ msgid "available of"
 msgstr "disponible de"
 
 msgid "bash - Bourne Again Shell"
-msgstr ""
+msgstr "bash - Bourne Again Shell"
 
 msgid "change failed."
 msgstr "canvi"
@@ -13621,7 +13648,7 @@ msgid "chroot() everyone, but root."
 msgstr "chroot() per tothom excepte root."
 
 msgid "csh - C Shell"
-msgstr ""
+msgstr "csh - C Shell"
 
 msgid ""
 "decoded as: byte 0-1-2 = good block count (big endian) and byte 3-4 = "
@@ -13730,14 +13757,20 @@ msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
 msgstr ""
+"krb5: utilitzeu el protocol Kerberos V5 per autenticar els usuaris abans de "
+"concedir accés al sistema de fitxers compartit."
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
 msgstr ""
+"krb5i - Utilitzeu l’autenticació Kerberos V5 amb les sumes de comprovació de "
+"la integritat de les dades."
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
 msgstr ""
+"krb5p: utilitzeu l'autenticació Kerberos V5 amb xifres de dades i xifrat de "
+"dades."
 
 msgid "less then 1.8\"."
 msgstr "mès petit de 1.8\"."
@@ -13750,11 +13783,14 @@ msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
 msgstr ""
+"mapall: especifica un mapatge per a tots els UIDs del client (inclòs el root)"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
 msgstr ""
+"maproot: la credencial de l'usuari especificat s'utilitza per a l'accés "
+"remot per root."
 
 msgid "missing"
 msgstr "no s'ha trobat"
@@ -13812,13 +13848,13 @@ msgid "scan target failed."
 msgstr "escaneig de objetiu fallid."
 
 msgid "scponly - Secure Copy Protocol only"
-msgstr ""
+msgstr "scponly: només protocol de còpia segura"
 
 msgid "seconds)"
 msgstr "segons)"
 
 msgid "sh - Bourne Shell"
-msgstr ""
+msgstr "sh - Bourne Shell"
 
 msgid "smallest settable high voltage transfer point"
 msgstr "punt més alt de transferència d'alta tensió ajustable"
@@ -13830,7 +13866,7 @@ msgid "successfully."
 msgstr "exitosament"
 
 msgid "sys - Use AUTH_SYS authentication."
-msgstr ""
+msgstr "sys: utilitzeu l'autenticació AUTH_SYS."
 
 msgid "sysctl.conf"
 msgstr "sysctl.conf"
@@ -13839,7 +13875,7 @@ msgid "syslog.conf"
 msgstr "syslog.conf"
 
 msgid "tcsh - TENEX C Shell"
-msgstr ""
+msgstr "tcsh - TENEX C Shell"
 
 msgid "to"
 msgstr "cap a"

@@ -10,3 +10,12 @@ XigmaNAS is an Open Source fork of NAS4Free which is a fork of FreeNAS
 
 ## Building XigmaNAS
 * Read the file at `build/README`
+
+## Post Release Updation of web facing files
+* The contents of the repo folders need to be oplaced in the root filesystem of the NAS install thus:
+	* www => /usr/local/www
+	* etc => /etc
+	* locale => /usr/local/share/locale
+
+# find / -name "locale"
+* Gets all locakle folders and files

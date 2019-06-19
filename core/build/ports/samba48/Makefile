@@ -1,6 +1,6 @@
 PORTNAME?=			${SAMBA4_BASENAME}48
 PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=			0
+PORTREVISION?=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -162,7 +162,7 @@ SAMBA4_BUNDLED_CMOCKA=		no
 SAMBA4_BUNDLED_TALLOC=		no
 SAMBA4_BUNDLED_TEVENT=		no
 SAMBA4_BUNDLED_TDB=		no
-SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_BUNDLED_LDB=		no
 SAMBA4_LDB=			13
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
@@ -228,8 +228,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 BUILD_DEPENDS+=			ldb14>=1.4.4:databases/ldb14
 RUN_DEPENDS+=			ldb14>=1.4.4:databases/ldb14
 .       elif ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
+BUILD_DEPENDS+=			ldb13>=1.3.8:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.8:databases/ldb13
 .       elif ${SAMBA4_LDB} == 12
 BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
 RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
@@ -640,26 +640,22 @@ post-install:
 
 # misc
 	@${MKDIR} -p ${XIGMANAS_ROOTFS}/usr/local/lib/python2.7/site-packages
-#	for file in ldb.so talloc.so tdb.so; do \
-	for file in talloc.so tdb.so; do \
+	for file in ldb.so talloc.so tdb.so; do \
 		${CP} -pv ${PREFIX}/lib/python2.7/site-packages/$${file} ${XIGMANAS_ROOTFS}/usr/local/lib/python2.7/site-packages; \
-	done
-	for file in ldb.so; do \
-		${CP} -pv ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/$${file} ${XIGMANAS_ROOTFS}/usr/local/lib/python2.7/site-packages; \
 	done
 	@${CP} -Rpv ${PREFIX}/lib/python2.7/site-packages/dns ${XIGMANAS_ROOTFS}/usr/local/lib/python2.7/site-packages
 	@${CP} -pv ${PREFIX}/bin/samba-nsupdate ${XIGMANAS_ROOTFS}/usr/local/bin
 
 # ldb/tdb
 	for file in ldbadd ldbdel ldbedit ldbmodify ldbrename ldbsearch; do \
-		${CP} -pv ${STAGEDIR}${PREFIX}/bin/$${file} ${XIGMANAS_ROOTFS}/usr/local/bin; \
+		${CP} -pv ${PREFIX}/bin/$${file} ${XIGMANAS_ROOTFS}/usr/local/bin; \
 	done
 	@${MKDIR} -p ${XIGMANAS_ROOTFS}/usr/local/lib/shared-modules/ldb
-	for file in ${STAGEDIR}${PREFIX}/lib/shared-modules/ldb/*; do \
+	for file in ${PREFIX}/lib/shared-modules/ldb/*; do \
 		${CP} -pv $${file} ${XIGMANAS_ROOTFS}/usr/local/lib/shared-modules/ldb; \
 	done
-#	@${MKDIR} -p ${XIGMANAS_ROOTFS}/usr/local/lib/ldb
-#	@${CP} -Rpv ${PREFIX}/lib/ldb/libldb-cmdline.so ${XIGMANAS_ROOTFS}/usr/local/lib/ldb
+	@${MKDIR} -p ${XIGMANAS_ROOTFS}/usr/local/lib/ldb
+	@${CP} -Rpv ${PREFIX}/lib/ldb/libldb-cmdline.so ${XIGMANAS_ROOTFS}/usr/local/lib/ldb
 
 	for file in tdbbackup tdbdump tdbrestore tdbtool; do \
 		${CP} -pv ${PREFIX}/bin/$${file} ${XIGMANAS_ROOTFS}/usr/local/bin; \

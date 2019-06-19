@@ -4,7 +4,7 @@ PORTREVISION=		1
 CATEGORIES=		emulators
 
 COMMENT=		VirtualBox
-MAINTAINER=		aoyama@xigmanas.com
+MAINTAINER=		zoon01@xigmanas.com
 
 DISTFILES=
 NO_BUILD=		yes

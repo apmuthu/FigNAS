@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-06 01:26+0000\n"
-"PO-Revision-Date: 2019-06-06 13:28+0000\n"
+"PO-Revision-Date: 2019-06-15 10:53+0000\n"
 "Last-Translator: Kiss-Kálmán Dániel <kisskalmandaniel@gmail.com>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-07 19:33+0000\n"
-"X-Generator: Launchpad (build 18978)\n"
+"X-Launchpad-Export-Date: 2019-06-18 18:17+0000\n"
+"X-Generator: Launchpad (build 18986)\n"
 "Language: hu_HU\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -851,7 +851,7 @@ msgid ""
 "an empty UFS directory is recommended."
 msgstr ""
 "Az útvonalon lévő összes fájlt felülírjuk. Érvénytelen adat/jogosultság "
-"elkerülése érdekében célszerű egy üres UFS könyvtár használata."
+"elkerülése érdekében célszerű egy üres UFS mappa használata."
 
 msgid "All data will be lost when you activate this option!"
 msgstr "Az opció aktiválásakor az összes adat el fog veszni!"
@@ -986,7 +986,7 @@ msgid "Alternate TCP port. (Default is 873)."
 msgstr "Alternatív TCP port (alapértelmezetten 873)."
 
 msgid "Alternative configuration directory."
-msgstr "Alternatív konfigurációs könyvtár."
+msgstr "Alternatív konfigurációs mappa."
 
 msgid "Always"
 msgstr "Mindig"
@@ -1490,7 +1490,7 @@ msgid ""
 "directory %s!"
 msgstr ""
 "BitTorrentnek legalább olvasási és futtatási jogosultságra van szüksége a "
-"csatolási pont %s könyvtárán."
+"csatolási pont %s mappáján."
 
 msgid "Blank Time"
 msgstr "Üres idő"
@@ -1963,7 +1963,7 @@ msgid "Community"
 msgstr "Közösség"
 
 msgid "Compilations Directories"
-msgstr "Gyűjtemények könyvtárai"
+msgstr "Gyűjtemények mappái"
 
 msgid "Compiled"
 msgstr "Lefordítva"
@@ -1984,7 +1984,7 @@ msgid "Configuration"
 msgstr "Beállítások"
 
 msgid "Configuration Directory"
-msgstr "Beállítások könyvtára"
+msgstr "Beállítások mappája"
 
 msgid ""
 "Configuration information about devices is different from physical devices. "
@@ -2161,8 +2161,8 @@ msgid ""
 "Controls whether the .zfs directory is hidden or visible in the root of the "
 "file system."
 msgstr ""
-"Meghatározza, hogy a .zfs könyvtár rejtve legyen vagy látszódjon "
-"fájlrendszer gyökerében."
+"Meghatározza, hogy a .zfs mappa rejtve legyen vagy látszódjon a fájlrendszer "
+"gyökerében."
 
 msgid ""
 "Controls whether the access time for files is updated when they are read."
@@ -2359,7 +2359,7 @@ msgid "Create PV Guest"
 msgstr "PV vendég létrehozása"
 
 msgid "Create Work Directory"
-msgstr "Munka könyvtár létrehozása"
+msgstr "Munkamappa létrehozása"
 
 msgid "Create ZFS on a GPT partition."
 msgstr "ZFS létrehozása GPT partíción"
@@ -2404,7 +2404,7 @@ msgid "Create recursive snapshot."
 msgstr "Rekurzív pillanatkép létrehozása."
 
 msgid "Create work directory if it doesn't exist."
-msgstr "Munka könyvtár létrehozása, ha nem létezik."
+msgstr "Munkamappa létrehozása, ha nem létezik."
 
 msgid "Created UFS file system:"
 msgstr "Létrehozott UFS fájlrendszer:"
@@ -2560,10 +2560,10 @@ msgid "Data digest"
 msgstr "Adat kivonat"
 
 msgid "Database Directory"
-msgstr "Adatbáziskönyvtár"
+msgstr "Adatbázismappa"
 
 msgid "Database directory"
-msgstr "Adatbázis könyvtár"
+msgstr "Adatbázismappa"
 
 msgid "Dataset"
 msgstr "Adattár"
@@ -3084,26 +3084,26 @@ msgid "Direction"
 msgstr "Irány"
 
 msgid "Directory"
-msgstr "Könyvtár"
+msgstr "Mappa"
 
 #, php-format
 msgid "Directory %s doesn't exist!"
-msgstr "%s könyvtár nem létezik!"
+msgstr "%s mappa nem létezik!"
 
 msgid "Directory Mask"
-msgstr "Könyvtármaszk"
+msgstr "Mappamaszk"
 
 msgid "Directory for incomplete files. An empty field means disable."
-msgstr "Befejezetlen fájlok könyvtára. Az üres mező tiltást jelent."
+msgstr "Befejezetlen fájlok mappája. Az üres mező tiltást jelent."
 
 msgid "Directory listing"
 msgstr "Mappa listázása"
 
 msgid "Directory that contains removable media. (e.g /mnt/iscsi/)"
-msgstr "Cserélhető médiát tartalmazó könyvtár. (pl.: /mnt/iscsi/)"
+msgstr "Cserélhető médiát tartalmazó mappa. (pl.: /mnt/iscsi/)"
 
 msgid "Directory to watch for new .torrent files."
-msgstr "Könyvtár a .torrent fájlok figyelésére."
+msgstr "Mappa a .torrent fájlok figyelésére."
 
 msgid "Disable"
 msgstr "Kikapcsolás"
@@ -3211,7 +3211,7 @@ msgid "Disable firmware version check."
 msgstr "Firmware-verzió ellenőrzésének kikapcsolása"
 
 msgid "Disable scanning of folders for existing extension menus."
-msgstr "Bővítmények-könyvtárak keresésének kikapcsolása"
+msgstr "Létező menükiterjesztés keresésekor mappák keresésének kikapcsolása"
 
 msgid "Disable speaker beep on startup and shutdown."
 msgstr "Hangszóró sípolásának kikapcsolása indításkor és leállításkor."
@@ -3494,10 +3494,10 @@ msgid "Do you want to delete selected Mutual CHAP users?"
 msgstr "Biztos, hogy törlöd a kiválasztott kölcsönös CHAP felhasználót?"
 
 msgid "Do you want to delete selected NFS exports?"
-msgstr ""
+msgstr "Biztos, hogy törlöd a kiválasztott NFS exportokat?"
 
 msgid "Do you want to delete selected NFS root directories?"
-msgstr ""
+msgstr "Biztos, hogy törlöd a kiválasztott NFS gyökérmappákat?"
 
 msgid "Do you want to delete selected RAID volumes?"
 msgstr "Biztos, hogy törli a kiválasztott RAID köteteket?"
@@ -3554,7 +3554,7 @@ msgid "Do you want to delete selected listen records?"
 msgstr "Biztos, hogy törlöd a kiválasztott figyelendő portokat?"
 
 msgid "Do you want to delete selected media folders?"
-msgstr ""
+msgstr "Biztos, hogy törlöd a kiválasztott médiamappákat?"
 
 msgid "Do you want to delete selected notifier?"
 msgstr "Biztos, hogy törlöd ez az értesítőt?"
@@ -3575,7 +3575,7 @@ msgid "Do you want to delete selected portal groups?"
 msgstr "Biztos, hogy törli a kiválasztott Portál csoportokat?"
 
 msgid "Do you want to delete selected public keys?"
-msgstr ""
+msgstr "Biztos, hogy törlöd a kiválasztott nyilvános kulcsokat?"
 
 msgid "Do you want to delete selected records?"
 msgstr "Biztos, hogy törlöd a kijelölt bejegyzéseket?"
@@ -3626,10 +3626,10 @@ msgid "Do you want to disable selected Mutual CHAP users?"
 msgstr "Biztos, hogy letiltod kiválasztott kölcsönös CHAP felhasználót?"
 
 msgid "Do you want to disable selected NFS exports?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott NFS exportokat?"
 
 msgid "Do you want to disable selected NFS root directories?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott NFS gyökérmappákat?"
 
 msgid "Do you want to disable selected WebDAV records?"
 msgstr "Biztos, hogy letiltod a kiválasztott WebDAV bejegyzéseket?"
@@ -3641,7 +3641,7 @@ msgid "Do you want to disable selected commands?"
 msgstr "Biztos, hogy kikapcsolod a kijelölt parancsokat?"
 
 msgid "Do you want to disable selected groups?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott csoportokat?"
 
 msgid "Do you want to disable selected iSCSI initiators?"
 msgstr "Biztos, hogy kikapcsolod a kiválasztott  iSCSI Kezdeményezőket?"
@@ -3662,7 +3662,7 @@ msgid "Do you want to disable selected listen records?"
 msgstr "Biztos, hogy letiltod a kiválasztott figyelendő bejegyzéseket?"
 
 msgid "Do you want to disable selected media folders?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott médiamappákat?"
 
 msgid "Do you want to disable selected option records?"
 msgstr "Biztos, hogy letiltod a kiválasztott lehetőségbejegyzéseket?"
@@ -3677,7 +3677,7 @@ msgid "Do you want to disable selected portal groups?"
 msgstr "Biztos, hogy kikapcsolja a kiválasztott Portál csoportokat?"
 
 msgid "Do you want to disable selected public keys?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott nyilvános kulcsokat?"
 
 msgid "Do you want to disable selected records?"
 msgstr "Biztos, hogy kikapcsolod a kijelölt bejegyzéseket?"
@@ -3692,7 +3692,7 @@ msgid "Do you want to disable selected targets?"
 msgstr "Biztos, hogy kikapcsolja a kiválasztott célokat?"
 
 msgid "Do you want to disable selected users?"
-msgstr ""
+msgstr "Biztos, hogy kikapcsolod a kiválasztott felhasználókat?"
 
 msgid "Do you want to enable selected CHAP users?"
 msgstr "Biztos, hogy engedélyezed a kiválasztott CHAP felhasználókat?"
@@ -3708,10 +3708,10 @@ msgstr ""
 "Biztos, hogy engedélyezed a kiválasztott kölcsönös CHAP felhasználót?"
 
 msgid "Do you want to enable selected NFS exports?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott NFS exportokat?"
 
 msgid "Do you want to enable selected NFS root directories?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott NFS gyökérmappákat?"
 
 msgid "Do you want to enable selected WebDAV records?"
 msgstr "Biztos, hogy engedélyezed a kiválasztott WebDAV bejegyzéseket?"
@@ -3723,7 +3723,7 @@ msgid "Do you want to enable selected commands?"
 msgstr "Biztos, hogy engedélyezed a kijelölt parancsokat?"
 
 msgid "Do you want to enable selected groups?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott csoportokat?"
 
 msgid "Do you want to enable selected iSCSI initiators?"
 msgstr "Biztos, hogy bekapcsolja a kiválasztott  iSCSI Kezdeményezőket?"
@@ -3744,7 +3744,7 @@ msgid "Do you want to enable selected listen records?"
 msgstr "Biztos, hogy engedélyezed a kiválasztott figyelendő bejegyzéseket?"
 
 msgid "Do you want to enable selected media folders?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott médiamappákat?"
 
 msgid "Do you want to enable selected option records?"
 msgstr "Biztos, hogy engedélyezed a kiválasztott lehetőségbejegyzéseket?"
@@ -3759,7 +3759,7 @@ msgid "Do you want to enable selected portal groups?"
 msgstr "Biztos, hogy bekapcsolja kiválasztott Portál csoportokat?"
 
 msgid "Do you want to enable selected public keys?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott nyilvános kulcsokat?"
 
 msgid "Do you want to enable selected records?"
 msgstr "Biztos, hogy bekapcsolod a kijelölt bejegyzéseket?"
@@ -3774,7 +3774,7 @@ msgid "Do you want to enable selected targets?"
 msgstr "Biztos, hogy bekapcsolja kiválasztott célokat?"
 
 msgid "Do you want to enable selected users?"
-msgstr ""
+msgstr "Biztos, hogy bekapcsolod a kiválasztott felhasználókat?"
 
 msgid "Do you want to import disks?"
 msgstr "Biztos, hogy importálod a lemezeket?"
@@ -3870,11 +3870,11 @@ msgid "Do you want to unlock selected records?"
 msgstr "Biztos, hogy feloldod a kijelölt bejegyzések zárolását?"
 
 msgid "Document Root"
-msgstr "Dokumentum gyökérkönyvtára"
+msgstr "Dokumentum gyökérmappája"
 
 msgid "Document root of the webserver. Home of the web page files."
 msgstr ""
-"A webkiszolgáló dokumentumainak főkönyvtára. A weblap fájljainak lakhelye."
+"A webkiszolgáló dokumentumainak főmappája. A weblap fájljainak lakhelye."
 
 msgid "DomID"
 msgstr "DomID"
@@ -3925,7 +3925,7 @@ msgid "Download Configuration"
 msgstr "Konfiguráció letöltése"
 
 msgid "Download Directory"
-msgstr "Letöltések könyvtára"
+msgstr "Letöltések mappája"
 
 msgid "Drive Temperature."
 msgstr "Meghajtó hőmérséklete."
@@ -4040,7 +4040,7 @@ msgid "Edit NFS Export"
 msgstr ""
 
 msgid "Edit NFS Root"
-msgstr ""
+msgstr "NFS gyökér módosítása"
 
 msgid "Edit Option"
 msgstr "Opciók módosítása"
@@ -4058,7 +4058,7 @@ msgid "Edit Portal Group"
 msgstr "Portál csoport módosítása"
 
 msgid "Edit Public Key"
-msgstr ""
+msgstr "Nyilvános kulcs módosítása"
 
 msgid "Edit RAID"
 msgstr "RAID szerkesztése"
@@ -4225,7 +4225,7 @@ msgid "Enable SMTP authentication."
 msgstr "SMTP hitelesítés engedélyezése"
 
 msgid "Enable SSH service"
-msgstr ""
+msgstr "SSH szolgáltatás bekapcsolása?"
 
 msgid ""
 "Enable SSL/TLS for secured connections. You also need to configure the TLS "
@@ -4248,7 +4248,7 @@ msgid "Enable Selected Commands"
 msgstr "Kijelölt parancsok engedélyezése"
 
 msgid "Enable Selected Groups"
-msgstr ""
+msgstr "Kiválasztott csoportok bekapcsolása?"
 
 msgid "Enable Selected Initiator Names"
 msgstr "A kiválasztott Kezdeményező nevek engedélyezése"
@@ -4269,16 +4269,16 @@ msgid "Enable Selected Listen Records"
 msgstr "A kiválasztott figyelendő bejegyzések engedélyezése"
 
 msgid "Enable Selected Media Folders"
-msgstr ""
+msgstr "Kiválasztott médiamappák bekapcsolása"
 
 msgid "Enable Selected Mutual CHAP Users"
 msgstr "A kiválasztott kölcsönös CHAP felhasználó engedélyezése"
 
 msgid "Enable Selected NFS Exports"
-msgstr ""
+msgstr "Kiválasztott NFS exportok bekapcsolása"
 
 msgid "Enable Selected NFS Root Directories"
-msgstr ""
+msgstr "Kiválasztott NFS gyökérmappák bekapcsolása"
 
 msgid "Enable Selected Option Records"
 msgstr "A kiválasztott lehetőségbejegyzések engedélyezése"
@@ -4293,7 +4293,7 @@ msgid "Enable Selected Portal Groups"
 msgstr "Kiválasztott portál csoportok engedélyezése"
 
 msgid "Enable Selected Public Keys"
-msgstr ""
+msgstr "Kiválasztott nyilvános kulcsok bekapcsolása"
 
 msgid "Enable Selected Records"
 msgstr "Kijelölt bejegyzések bekapcsolása"
@@ -4308,7 +4308,7 @@ msgid "Enable Selected Targets"
 msgstr "Kiválasztott célok engedélyezése"
 
 msgid "Enable Selected Users"
-msgstr ""
+msgstr "Kiválasztott felhasználók bekapcsolása"
 
 msgid "Enable Selected WebDAV Records"
 msgstr "Kiválasztott WebDAV bejegyzések bekapcsolása"
@@ -4665,7 +4665,7 @@ msgid "Enter a description for your reference."
 msgstr "Add meg a hivatkozás leírását."
 
 msgid "Enter a directory"
-msgstr "Adj meg egy könyvtárat"
+msgstr "Adj meg egymappát"
 
 msgid "Enter a group description."
 msgstr "Add meg a csoport leírását."
@@ -4785,7 +4785,7 @@ msgstr ""
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
 msgstr ""
-"Add meg az adatbázis és konfigurációs fájlok home könyvtárának útvonalát."
+"Add meg az adatbázis és konfigurációs fájlok home mappájának útvonalát."
 
 msgid ""
 "Enter the path to the database directory. The config files will be created "
@@ -4798,8 +4798,8 @@ msgid ""
 "Enter the path to the home directory of VirtualBox. VM config and HDD image "
 "will be created under the specified directory."
 msgstr ""
-"Add meg a VirtualBox saját könyvtárának útvonalát. A VM konfiguráció és a "
-"HDD képfájl a megadott könyvtárba kerül."
+"Add meg a VirtualBox saját mappájának útvonalát. A VM konfiguráció és a HDD "
+"képfájl a megadott mappába kerül."
 
 msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
@@ -4810,8 +4810,8 @@ msgid ""
 "Enter the path to the home directory. This directory will store the "
 "statistical data and gets updated every 5 minutes!"
 msgstr ""
-"Add meg a saját könyvtár útvonalát. Ez a könyvtár tárolja az 5 percenként "
-"frissülő statisztikai adatokat."
+"Add meg a saját mappa útvonalát. Ez a mappa tárolja az 5 percenként frissülő "
+"statisztikai adatokat."
 
 msgid "Enter the port to send the traps to (default 162)."
 msgstr "Add meg a csapdák portját (alapértelmezetten 162)."
@@ -4884,7 +4884,7 @@ msgid "Export a pool from the system"
 msgstr "Tároló exportálása a rendszerből"
 
 msgid "Export all the directories in the specified path."
-msgstr "A kiválasztott útvonalon lévő összes könyvtár exportálása."
+msgstr "A kiválasztott útvonalon lévő összes mappa exportálása."
 
 msgid "Export as WebNFS."
 msgstr ""
@@ -5320,7 +5320,7 @@ msgid "Give only local users access to the web page."
 msgstr "Csak helyi felhasználóknak érhetik el a weblapot."
 
 msgid "Give your media library a friendly name."
-msgstr "Adj a média könyvtárnak egy barátságos nevet"
+msgstr "Adj a médiamappának egy barátságos nevet"
 
 msgid "Global Settings"
 msgstr "Globális beállítások"
@@ -5780,7 +5780,7 @@ msgstr ""
 "fájlrendszer kiterjesztett attribútumból, mielőtt átfordítja a DOS "
 "attribútumokat UNIX bit jogosultsággá. Beállítás esetén a DOS attribútumok "
 "kiterjesztett UNIX fájlrendszer attribútumként tárolódnak, fájlhoz vagy "
-"könyvtárhoz társítva."
+"mappához társítva."
 
 msgid ""
 "If this parameter is set, then users may not create or modify files in the "
@@ -5794,8 +5794,7 @@ msgstr "Ha ez a tulajdonság  tiltva van, a fájlrendszer nem csatolható be."
 
 msgid ""
 "If this property is enabled, the snapshots are displayed into .zfs directory."
-msgstr ""
-"Ha engedélyezve van, a pillanatképek a .zfs könyvtárban jelennek meg."
+msgstr "Ha engedélyezve van, a pillanatképek a .zfs mappában jelennek meg."
 
 msgid "If this property is set to off, the file system cannot be mounted."
 msgstr ""
@@ -5850,7 +5849,7 @@ msgstr ""
 #, php-format
 msgid ""
 "In this directory, you can create a %s file with your additional parameters."
-msgstr "Ebbe a könyvtárba hozhatod létre %s fájl a további paramétereiddel."
+msgstr "Ebbe a mappába hozhatod létre %s fájl a további paramétereiddel."
 
 msgid "In/Out Errors"
 msgstr "Be/Ki hiba"
@@ -5862,7 +5861,7 @@ msgid "Incoming Line/Power Information"
 msgstr "Bemeneti áram/teljesítmény információ"
 
 msgid "Incomplete Directory"
-msgstr "Nem teljes könyvtár"
+msgstr "Nem teljes mappa"
 
 msgid ""
 "Indicates the approximate SSD life left, in terms of program/erase cycles or "
@@ -6882,7 +6881,7 @@ msgid "Media"
 msgstr "Adathordozó"
 
 msgid "Media Directory"
-msgstr "Média könyvtár"
+msgstr "Médiamappa"
 
 msgid "Media Folder"
 msgstr ""
@@ -6897,7 +6896,7 @@ msgid "Media Folder is unlocked"
 msgstr ""
 
 msgid "Media Library"
-msgstr "Médiakönyvtár"
+msgstr "Médiagyűjtemény"
 
 msgid "Media Server Name."
 msgstr ""
@@ -6986,7 +6985,7 @@ msgid "Minutes between the next network time synchronization."
 msgstr "Következő hálózati időszinkronizáció közötti idő."
 
 msgid "Missing a temporary folder."
-msgstr "Hiányzik az átmeneti könyvtár."
+msgstr "Hiányzik az ideiglenes mappa."
 
 msgid "Missing parameter"
 msgstr "Hiányzó paraméter"
@@ -7912,7 +7911,7 @@ msgid "Parameter xxx (ups.conf or cmdline -x) setting"
 msgstr "Paraméter xxx (ups.conf vagy cmdline -x) beállítás"
 
 msgid "Parent Directory"
-msgstr "Szülőkönyvtár"
+msgstr "Szülőmappa"
 
 msgid "Partition"
 msgstr "Partíció"
@@ -8589,11 +8588,11 @@ msgid ""
 "Point | Management</a> or <a href='disks_zfs_dataset.php'>Disks | ZFS | "
 "Datasets</a>) and hit Save in order to take them effect."
 msgstr ""
-"RRDGrafikonnak '%s' könyvtáron legalább olvasási és futtatási jogosultsággal "
+"RRDGrafikonnak '%s' mappán legalább olvasási és futtatási jogosultsággal "
 "kell rendelkeznie! %s csatolási pontra a Többieknek állíts Olvasási és  "
 "Futtatási jogosultságot (Hozzáférési korlátozások | Mód) (<a "
 "href='disks_mount.php'>Lemezek | Csatolási pont | Kezelés</a> vagy <a "
-"href='disks_zfs_dataset.php'>Lemezek | ZFS | Datatárolók</a> menü alatt), "
+"href='disks_zfs_dataset.php'>Lemezek | ZFS | Adattárolók</a> menü alatt), "
 "majd nyomd meg a Mentés gombot."
 
 msgid "RSYNC"
@@ -8734,7 +8733,7 @@ msgid "Record is unlocked"
 msgstr "A bejegyzés zárolását feloldottad"
 
 msgid "Recurse into directories."
-msgstr "Rekurzívan a könyvtárakba."
+msgstr "Rekurzívan a mappákban."
 
 msgid "Recursive"
 msgstr "Rekurzív"
@@ -9644,7 +9643,7 @@ msgid "Set the account's primary group."
 msgstr ""
 
 msgid "Set the content location(s) to or from the media library."
-msgstr "Tartalomhely(ek) beállítása a média könyvtár részére."
+msgstr "Tartalomhely(ek) beállítása a médiamapa részére."
 
 msgid "Set the critical threshold to a value between 90 and 95."
 msgstr "Állítsd be a kritikus küszöbértéket 90 és 95 közötti számra."
@@ -9946,7 +9945,7 @@ msgid "SmartTrim"
 msgstr "SmartTrim"
 
 msgid "Snapdir"
-msgstr "Pillanatkép-könyvtár"
+msgstr "Pillanatkép-mappa"
 
 msgid "Snapshot"
 msgstr "Pillanatkép"
@@ -10526,7 +10525,7 @@ msgid "Target Name"
 msgstr "Célnév"
 
 msgid "Target directory."
-msgstr "Cél könyvtár"
+msgstr "Célmappa"
 
 msgid "Target information"
 msgstr "Cél információ"
@@ -10583,10 +10582,10 @@ msgid "Temporary Device"
 msgstr "Átmeneti eszköz"
 
 msgid "Temporary directory"
-msgstr "Átmeneti könyvtár"
+msgstr "Ideiglenes mappa"
 
 msgid "Temporary directory to store transcoded files."
-msgstr "Átmeneti könyvtár az átkódolt fájlok tárolására."
+msgstr "Ideiglenes mappa az átkódolt fájlok tárolására."
 
 msgid "Test Email"
 msgstr "Teszt e-mail"
@@ -10838,7 +10837,7 @@ msgid "The attribute '%s' must contain at least one entry."
 msgstr "'%s' attribútum legalább egy bejáratot kell hogy tartalmazzon."
 
 msgid "The attribute 'Data directory' is required."
-msgstr "Az 'Adatkönyvtár' attribútum kötelező."
+msgstr "Az 'Adatmappa' attribútum kötelező."
 
 #, php-format
 msgid "The attribute 'Port': port '%ld' is already taken by another service."
@@ -11013,8 +11012,8 @@ msgid ""
 "The directory containing the files you want to publish. The remote host does "
 "not need to pass along the directory as part of the transfer."
 msgstr ""
-"A könyvtár, amely tartalmazza a kívánt fájlokat közzétenni. A távoli gép nem "
-"kell, hogy végigvezet a könyvtár részeként az átadás."
+"A közzéteendő fájlokat tartalmazó mappa. A távoli kiszolgálónak nem kell "
+"átmennie a mappán a szállítás során."
 
 msgid "The disk is currently mounted!"
 msgstr "A lemez jelenleg be van csatolva!"
@@ -11301,11 +11300,11 @@ msgstr "A(z) '%s' útvonal nem létezik."
 
 #, php-format
 msgid "The path '%s' is a directory."
-msgstr "A(z) '%s' útvonal könyvtár."
+msgstr "A(z) '%s' útvonal egy mappa."
 
 #, php-format
 msgid "The path '%s' is not a directory."
-msgstr "A(z) '%s' útvonal nem könyvtár."
+msgstr "A(z) '%s' útvonal nem mappa."
 
 msgid ""
 "The path to the file, device node, or zfs volume used to back the LUN."
@@ -11322,9 +11321,9 @@ msgid ""
 "this. This can be particularly useful on systems with many users to allow a "
 "single share to be used flexibly by each user."
 msgstr ""
-"Az új fájlokat és könyvtárakat szabályozza általában a létrehozó maszk és a "
-"könyvtár mask, de az örökölt jogosultságok felülbírálhatják ezeket. Ez "
-"különösen hasznos lehet sok felhasználós rendszerek esetén, így lehetővé "
+"Az új fájlokat és mappákat szabályozza általában a létrehozó maszk és a "
+"mappamaszk, de az örökölt jogosultságok felülbírálhatják ezeket. Ez "
+"különösen hasznos lehet sokfelhasználós rendszerek esetén, így lehetővé "
 "válik, hogy egy megosztást rugalmasan használhasson több felhasználó."
 
 msgid "The port to listen on."
@@ -12297,7 +12296,7 @@ msgid "Transcoding"
 msgstr "Átkódolás"
 
 msgid "Transcoding Directory"
-msgstr "Transzkódolási könyvtár"
+msgstr "Transzkódolási mappa"
 
 msgid "Transfer Rate"
 msgstr "Átviteli sebesség"
@@ -12611,14 +12610,14 @@ msgid "Upload Bandwidth"
 msgstr "Feltöltési sávszélesség"
 
 msgid "Upload Directory"
-msgstr "Feltöltési könyvtár"
+msgstr "Feltöltési mappa"
 
 msgid "Upload Script"
 msgstr "Szkript feltöltése"
 
 #, php-format
 msgid "Upload directory of the webserver. The default is %s."
-msgstr "Webszerver feltöltési könyvtára. Alapértelmezetten: %s"
+msgstr "Webszerver feltöltési mappája. Alapértelmezetten: %s"
 
 msgid "Upper"
 msgstr "Nagybetűs"
@@ -13074,7 +13073,7 @@ msgid "Warning Level"
 msgstr "Figyelmeztetési szint"
 
 msgid "Watch Directory"
-msgstr "Figyelő könyvtár"
+msgstr "Figyelőmappa"
 
 msgid "WebDAV"
 msgstr "WebDAV"
@@ -13192,7 +13191,7 @@ msgid "Wireless configuration"
 msgstr "Vezetéknélküli beállítások"
 
 msgid "Work Directory"
-msgstr "Munkakönyvtár"
+msgstr "Munkamappa"
 
 msgid "Workgroup"
 msgstr "Munkacsoport"
