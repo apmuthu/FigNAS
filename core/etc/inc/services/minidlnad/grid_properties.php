@@ -177,7 +177,7 @@ class grid_properties extends myp\container {
 		$property = $this->x_forcesortcriteria = new myp\property_text($this);
 		$property->
 			set_name('force_sort_criteria')->
-			set_title('Sort Criteria');
+			set_title(gettext('Sort Criteria'));
 		return $property;
 	}
 	final public function get_forcesortcriteria(): myp\property_text {
@@ -188,7 +188,7 @@ class grid_properties extends myp\container {
 		$property = $this->x_disablesubtitles = new myp\property_bool();
 		$property->
 			set_name('disablesubtitles')->
-			set_title(gtext('Disable Subtitles'));
+			set_title(gettext('Disable Subtitles'));
 		return $property;
 	}
 	final public function get_disablesubtitles(): myp\property_bool {
