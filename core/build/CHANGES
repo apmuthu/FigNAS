@@ -1,7 +1,7 @@
 XigmaNAS 12.0.0.4 - Reticulus
 -----------------------------
 Changes:
-- Upgrade to FreeBSD 12.0-RELEASE P5.
+- Upgrade to FreeBSD 12.0-RELEASE P6.
 - isboot.ko driver not available.
 - Add public key management for SSH.
 - Upgrade APCu to 5.1.17.
@@ -10,7 +10,6 @@ Changes:
 - Upgrade smartmontools to 7.0.
 - Upgrade zoneinfo to 2019a.
 - Upgrade bash to 5.0 p7.
-- Upgrade mariadb to 10.2.23.
 - Upgrade msmtp to 1.8.4.
 - Upgrade tmux to 2.9a.
 - Upgrade samba to 4.8.12.
@@ -25,6 +24,7 @@ Changes:
 - Upgrade devcpu-data to 1.22.
 - Upgrade nano to 4.3.
 - Upgrade bsnmp-ucd to 0.4.3.
+- Upgrade mariadb to 10.2.25.
 
 Fixes:
 

@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2019-06-10 09:16+0000\n"
 "Last-Translator: Tomfro <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "Language: de\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -2547,6 +2547,18 @@ msgstr "Das  benutzereigene Skript wurde nicht gefunden"
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -4033,6 +4045,9 @@ msgstr "EA Unterstützung"
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT-Partition kann nur in Verbindung mit UFS genutzt werden."
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "FEHLER:"
 
@@ -5021,6 +5036,9 @@ msgstr "Zusätzliche Optionen für rsync (normalerweise leer)."
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr "FRU Information"
 
@@ -5393,6 +5411,12 @@ msgid "Give your media library a friendly name."
 msgstr ""
 "Vergeben Sie einen benutzerfreundlichen Namen für ihre Mediendatenbank"
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr "Globale Einstellungen"
 
@@ -5668,6 +5692,9 @@ msgstr "ID"
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8574,6 +8601,9 @@ msgid ""
 msgstr ""
 "Nach der angegeben Zeit ohne Zugriff gehen die Festplatten in 'Stand-by'"
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Warteschlangenlänge"
 
@@ -10098,6 +10128,9 @@ msgstr ""
 
 msgid "Sort"
 msgstr "Sortieren"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "Quelle"
@@ -13023,6 +13056,9 @@ msgstr "Verwende Voreinstellungen"
 
 msgid "VCPUs"
 msgstr "VCPUs"
+
+msgid "VERBOSE - log detailed information"
+msgstr ""
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:encoding"

@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2019-06-08 05:20+0000\n"
 "Last-Translator: Evgeny Sokolov <sea1.150@gmail.com>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:17+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Language: \n"
@@ -2548,6 +2548,18 @@ msgstr "Пользовательский скрипт не найден."
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -4028,6 +4040,9 @@ msgstr "Поддержка EA"
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "На EFI/GPT-разделах поддерживается только файловая система UFS."
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "ОШИБКА:"
 
@@ -5013,6 +5028,9 @@ msgstr "Дополнительные настройки rsync (обычно пу
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr "Информация FRU"
 
@@ -5389,6 +5407,12 @@ msgstr "Только локальные пользователи могут от
 msgid "Give your media library a friendly name."
 msgstr "Дайте вашей медиа-библиотеке понятное имя"
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr "Общие параметры"
 
@@ -5661,6 +5685,9 @@ msgstr "ID (идентификатор)"
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8558,6 +8585,9 @@ msgstr ""
 "Перевод диска в режиме ожидания, по истечении времени после последнего "
 "доступа к диску."
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Глубина очереди"
 
@@ -10069,6 +10099,9 @@ msgstr ""
 
 msgid "Sort"
 msgstr "Упорядочить"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "Источник"
@@ -12952,6 +12985,9 @@ msgstr "Использовать значения по умолчанию"
 
 msgid "VCPUs"
 msgstr "Вирт. CPUs"
+
+msgid "VERBOSE - log detailed information"
+msgstr ""
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:encoding"

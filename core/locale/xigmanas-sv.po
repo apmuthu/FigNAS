@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
-"PO-Revision-Date: 2019-06-07 05:04+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
+"PO-Revision-Date: 2019-06-19 03:36+0000\n"
 "Last-Translator: Anders Malm <anders.malm@brevet.se>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:17+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "X-Poedit-Country: SWEDEN\n"
 "Language: \n"
@@ -2500,6 +2500,18 @@ msgstr "Användarskript hittas inte."
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr "DEBUG - logga avlusningsinformation"
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr "DEBUG1 - samma som DEBUG"
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr "DEBUG2 - logga detaljerad avlusningsinformation"
+
+msgid "DEBUG3 - log all debugging information"
+msgstr "DEBUG3 - logga all avlusningsinformation"
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -3966,6 +3978,9 @@ msgstr "EA Support"
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT partition kan enbart användas med UFS."
 
+msgid "ERROR - log errors"
+msgstr "ERROR - logga fel"
+
 msgid "ERROR:"
 msgstr "FEL:"
 
@@ -4949,6 +4964,9 @@ msgstr "Extra val till rsync (vantligtvis tom)."
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr "FATAL - logga bara kritiska fel"
+
 msgid "FRU Information"
 msgstr "FRU Information"
 
@@ -5319,6 +5337,15 @@ msgstr "Ge enbart lokala användare tillgång till webbsidan."
 msgid "Give your media library a friendly name."
 msgstr "Ge ditt mediabibliotek ett kortnamn"
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+"Ger information om vem som är ansluten när meddelanden loggas från sshd. "
+"Loggning med en DEBUG nivå bryter integriteten hos användarna och "
+"rekommenderas ej."
+
 msgid "Global Settings"
 msgstr "Globala inställningar"
 
@@ -5590,6 +5617,9 @@ msgstr "ID"
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr "INFO - logga statusmeddelanden"
 
 msgid "IP"
 msgstr "IP"
@@ -8436,6 +8466,9 @@ msgid ""
 "last disk access has been elapsed."
 msgstr "Sätter disken i strömsparläge inställd tid efter sista diskåtkomst."
 
+msgid "QUIET - disable logging"
+msgstr "QUIET - stäng av loggning"
+
 msgid "Queue Depth"
 msgstr "Ködjup"
 
@@ -9932,6 +9965,9 @@ msgstr "En del av mjukvaran som används till %s är under följande licenser:"
 
 msgid "Sort"
 msgstr "Sortera"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "Källa"
@@ -12773,6 +12809,9 @@ msgstr "Använder standard"
 
 msgid "VCPUs"
 msgstr "VCPUer"
+
+msgid "VERBOSE - log detailed information"
+msgstr "VERBOSE - logga detaljerad information"
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:encoding"

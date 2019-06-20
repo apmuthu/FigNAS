@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2019-02-21 17:23+0000\n"
 "Last-Translator: zoon01 <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "X-Poedit-Country: DENMARK\n"
 "Language: \n"
@@ -2364,6 +2364,18 @@ msgstr ""
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -3797,6 +3809,9 @@ msgstr ""
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT partition kan kun bruges med UFS."
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "FEJL:"
 
@@ -4739,6 +4754,9 @@ msgstr "Ekstra indstillinger til rsync (som regel tom)."
 msgid "FAT32"
 msgstr ""
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr ""
 
@@ -5105,6 +5123,12 @@ msgstr "Giv kun lokale brugere adgang til hjemmesiden."
 msgid "Give your media library a friendly name."
 msgstr "Angiv brugervenligt navn for dit medie-bibliotek."
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr ""
 
@@ -5367,6 +5391,9 @@ msgstr ""
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8126,6 +8153,9 @@ msgid ""
 "last disk access has been elapsed."
 msgstr ""
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Kø dybde"
 
@@ -9544,6 +9574,9 @@ msgid "Some of the software used for %s are under the following licenses:"
 msgstr ""
 
 msgid "Sort"
+msgstr ""
+
+msgid "Sort Criteria"
 msgstr ""
 
 msgid "Source"
@@ -12198,6 +12231,9 @@ msgid "Using defaults"
 msgstr ""
 
 msgid "VCPUs"
+msgstr ""
+
+msgid "VERBOSE - log detailed information"
 msgstr ""
 
 msgid "VFS fruit:encoding"

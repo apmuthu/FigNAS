@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xigmanas\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2018-09-22 21:53+0000\n"
 "Last-Translator: Makhanya Mandla <Unknown>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 
 msgid " No private key"
@@ -2484,6 +2484,18 @@ msgstr ""
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -3948,6 +3960,9 @@ msgstr ""
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT partisie kan net met UFS gebruik word"
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "FOUT:"
 
@@ -4909,6 +4924,9 @@ msgstr "Ekstra opsies bestaan vir rsync (gewoonlik is dit leeg)"
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr "FRU informasie"
 
@@ -5276,6 +5294,12 @@ msgstr "Gee slegs plaaslike gebruikers toegang na die webblad."
 msgid "Give your media library a friendly name."
 msgstr "Kies 'n vriendelike naam vir jou media biblioteek."
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr ""
 
@@ -5549,6 +5573,9 @@ msgstr "ID"
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8368,6 +8395,9 @@ msgstr ""
 "Sit die skyf in bystaan mode nadat die geselekteerde tydperk na nie vorige "
 "skyf toegang verloop het."
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Lyn Diepte"
 
@@ -9816,6 +9846,9 @@ msgstr ""
 
 msgid "Sort"
 msgstr "Sorteer"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "Bron"
@@ -12547,6 +12580,9 @@ msgstr ""
 
 msgid "VCPUs"
 msgstr "VCPUs"
+
+msgid "VERBOSE - log detailed information"
+msgstr ""
 
 msgid "VFS fruit:encoding"
 msgstr ""

@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2018-08-30 10:20+0000\n"
 "Last-Translator: Mustafa DAĞCI <mustafa.matrix@gmail.com>\n"
 "Language-Team: XigmaNAS <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:17+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-Language: Turkish\n"
@@ -2368,6 +2368,18 @@ msgstr ""
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -3792,6 +3804,9 @@ msgstr ""
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT bölümü sadece UFS ile kullanılabilir"
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr ""
 
@@ -4726,6 +4741,9 @@ msgstr "Rsync için extra ayarlar(genellikle boştur)."
 msgid "FAT32"
 msgstr ""
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr ""
 
@@ -5089,6 +5107,12 @@ msgstr ""
 msgid "Give your media library a friendly name."
 msgstr ""
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr ""
 
@@ -5348,6 +5372,9 @@ msgstr ""
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8055,6 +8082,9 @@ msgid ""
 "last disk access has been elapsed."
 msgstr ""
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Sıra Uzunluğu"
 
@@ -9451,6 +9481,9 @@ msgid "Some of the software used for %s are under the following licenses:"
 msgstr ""
 
 msgid "Sort"
+msgstr ""
+
+msgid "Sort Criteria"
 msgstr ""
 
 msgid "Source"
@@ -11950,6 +11983,9 @@ msgid "Using defaults"
 msgstr ""
 
 msgid "VCPUs"
+msgstr ""
+
+msgid "VERBOSE - log detailed information"
 msgstr ""
 
 msgid "VFS fruit:encoding"

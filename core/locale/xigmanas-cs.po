@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2019-06-07 14:32+0000\n"
 "Last-Translator: Pavel Borecki <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:16+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "Language: cs_CZ\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -2554,6 +2554,18 @@ msgstr "Vlastní skript nebyl nalezen."
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "Automaticky (DHCP)"
 
@@ -4040,6 +4052,9 @@ msgstr "Podpora EA"
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT oddíl může být použit pouze s UFS."
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "CHYBA:"
 
@@ -5016,6 +5031,9 @@ msgstr "Další předvolby pro Rsync (obvykle se nevyplňuje)."
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr "Informace o v provozu vyměnitelné součástce"
 
@@ -5391,6 +5409,12 @@ msgstr ""
 msgid "Give your media library a friendly name."
 msgstr "Dejte své knihovně médií nějaký praktický název."
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr "Globální nastavení"
 
@@ -5667,6 +5691,9 @@ msgstr "Identifikátor"
 
 msgid "IG"
 msgstr "Sk. inic."
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP"
@@ -8573,6 +8600,9 @@ msgstr ""
 "Poté, co od posledního přístupu k disku uplyne nastavená doba, přepne disk "
 "do pohotovostního režimu."
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "Délka fronty"
 
@@ -10077,6 +10107,9 @@ msgstr "Některý software, použitý pro %s je pod následujícími licencemi:"
 
 msgid "Sort"
 msgstr "Seřadit"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "Zdroj"
@@ -12974,6 +13007,9 @@ msgstr ""
 
 msgid "VCPUs"
 msgstr "Virt. procesory"
+
+msgid "VERBOSE - log detailed information"
+msgstr ""
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:enkódování"

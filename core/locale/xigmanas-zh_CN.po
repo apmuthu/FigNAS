@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-06 01:26+0000\n"
+"POT-Creation-Date: 2019-06-19 19:58+0000\n"
 "PO-Revision-Date: 2019-04-01 03:12+0000\n"
 "Last-Translator: tianmo <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-18 18:17+0000\n"
+"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
 "X-Generator: Launchpad (build 18986)\n"
 "Language: zh_CN\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,128,-1,-1,-1,-1,-1\n"
@@ -2330,6 +2330,18 @@ msgstr "自定义脚本未找到。"
 msgid "DAAP"
 msgstr "DAAP"
 
+msgid "DEBUG - log debugging information"
+msgstr ""
+
+msgid "DEBUG1 - same as DEBUG"
+msgstr ""
+
+msgid "DEBUG2 - log detailed debugging information"
+msgstr ""
+
+msgid "DEBUG3 - log all debugging information"
+msgstr ""
+
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -3754,6 +3766,9 @@ msgstr "EA支持"
 msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT 只相容于 UFS 文件系统。"
 
+msgid "ERROR - log errors"
+msgstr ""
+
 msgid "ERROR:"
 msgstr "错误："
 
@@ -4686,6 +4701,9 @@ msgstr "rsync 的额外选项（通常为空白）。"
 msgid "FAT32"
 msgstr "FAT32"
 
+msgid "FATAL - log fatal errors only"
+msgstr ""
+
 msgid "FRU Information"
 msgstr "FRU信息"
 
@@ -5047,6 +5065,12 @@ msgstr "只有本机用户可以使用网页服务器。"
 msgid "Give your media library a friendly name."
 msgstr "给你的媒体库起个好名字。"
 
+msgid ""
+"Gives the verbosity level that is used when logging messages from sshd. "
+"Logging with a DEBUG level violates the privacy of users and is not "
+"recommended."
+msgstr ""
+
 msgid "Global Settings"
 msgstr "全局设置"
 
@@ -5308,6 +5332,9 @@ msgstr "ID"
 
 msgid "IG"
 msgstr "IG"
+
+msgid "INFO - log status messages"
+msgstr ""
 
 msgid "IP"
 msgstr "IP 地址"
@@ -8028,6 +8055,9 @@ msgid ""
 "last disk access has been elapsed."
 msgstr "在上次访问磁盘后的所选时间内，将磁盘置于待机模式。"
 
+msgid "QUIET - disable logging"
+msgstr ""
+
 msgid "Queue Depth"
 msgstr "伫列深度"
 
@@ -9436,6 +9466,9 @@ msgstr "某些用于%s的软件具有以下许可证："
 
 msgid "Sort"
 msgstr "排序"
+
+msgid "Sort Criteria"
+msgstr ""
 
 msgid "Source"
 msgstr "来源位置"
@@ -11965,6 +11998,9 @@ msgstr ""
 
 msgid "VCPUs"
 msgstr "VCPUs"
+
+msgid "VERBOSE - log detailed information"
+msgstr ""
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit：编码"
