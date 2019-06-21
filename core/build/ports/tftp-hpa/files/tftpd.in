@@ -28,7 +28,7 @@ start_precmd="tftpd_prestart"
 
 # Defaults
 tftpd_enable=${tftpd_enable:-"NO"}
-command="/usr/local/libexec/in.${name}"
+command="/usr/local/libexec/${name}"
 command_args="-v -l"
 
 tftpd_prestart()

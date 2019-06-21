@@ -41,4 +41,6 @@ usr/local/www/services_nfs_share.php
 usr/local/www/services_nfs_share_edit.php
 # 6651
 etc/inc/properties_access_users.php
+# 6767
+/usr/local/libexec/in.tftpd
 #
