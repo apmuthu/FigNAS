@@ -344,6 +344,9 @@ EOD;
 function install_upgrade_full($harddrive) {
 	global $g;
 
+//	directories to search for chflagged files
+	$dirs_noschg = 'bin lib libexec sbin usr';
+
 //	Determine if target disk/partition is GPT or MBR
 	if(mwexec("/sbin/gpart show {$harddrive} | grep GPT") == false ):
 		$part = "p2";
@@ -359,13 +362,6 @@ function install_upgrade_full($harddrive) {
 	mwexec("/bin/mkdir -p {$mntpath}");
 	if(1 == mwexec("/sbin/mount /dev/{$harddrive}{$part} {$mntpath}")):
 		write_console("Error: Failed to mount '/dev/{$harddrive}{$part}'!\n");
-		return 1;
-	endif;
-	
-	// Remove chflags for protected files before upgrade to prevent errors
-	// chflags will be restored after upgrade completion by default.
-	if(1 == mwexec("/bin/chflags 0 {$mntpath}/usr/lib/librt.so.1")):
-		write_console("Error: Failed to remove chflags!\n");
 		return 1;
 	endif;
 
@@ -389,9 +385,21 @@ function install_upgrade_full($harddrive) {
 	write_console("Remove obsolete files.\n");
 	mwexec("/etc/install/upgrade.sh clean {$mntpath}");
 
+//	Dump chflags from common directories/* to zipped files.
+	write_console("Backup system chflags.\n");
+	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/sbin/mtree -q -P -c -p \$files | /usr/bin/gzip > {$sysbackup}/chflags.full.\$files.gz; done");
+
+//	Remove chflags from common directories/*.
+	write_console("Removing system chflags.\n");
+	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /bin/chflags -R noschg \$files; /bin/chmod -R u+rw \$files; done");
+
 //	Install system files
 	write_console("Installing system files on device {$harddrive}{$part}.\n");
-	mwexec("/usr/bin/tar --exclude mnt/ --exclude dev/ --exclude var/ --exclude tmp/ --exclude {$g['cf_path']}/ -c -f - -C / . | tar -xvpf - -C {$mntpath}");
+	if(1 == mwexec("/usr/bin/tar --exclude mnt/ --exclude dev/ --exclude var/ --exclude tmp/ --exclude {$g['cf_path']}/ -c -f - -C / . | tar -xvpf - -C {$mntpath}")):
+		write_console("Error: Failed to upgrade {$harddrive}{$part}.\n");
+		return 1;
+	endif;
+
 	if($boot_lowmem === "1" && preg_match('/-liveCD$/i', $platform)):
 //		under lowmem version
 		mwexec("/usr/bin/xz -dcv /mnt/cdrom/mdlocal.xz | dd of={$mntpath}/ftmp/mdlocal bs=1m status=none");
@@ -432,6 +440,10 @@ function install_upgrade_full($harddrive) {
 	#mwexec("/bin/cp -p {$sysbackup}/platform {$mntpath}/etc");
 	mwexec("/bin/cp -p {$sysbackup}/fstab {$mntpath}/etc");
 	mwexec("/bin/cp -p {$sysbackup}/cfdevice {$mntpath}/etc");
+
+//	Restore chflags from previous zipped files.
+	write_console("Restoring system chflags.\n");
+	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/bin/zcat {$sysbackup}/chflags.full.\$files.gz | /usr/sbin/mtree -q -P -U -p /\$files; done");
 
 //	Set the release type.
 	$platform = <<<EOD
@@ -574,7 +586,7 @@ function install_backup_config($disk) {
 		return 1;
 	endif;
 
-	/* Unmount the drive to be upgraded */
+//	Unmount the drive to be upgraded
 	if(1 == mwexec("/sbin/umount {$mnt_cf_disk}")):
 		write_console("Error: Failed to unmount '{$mnt_cf_disk}'!\n");
 		return 1;
