@@ -366,12 +366,16 @@ function install_upgrade_full(string $harddrive) {
 	mwexec("/etc/install/upgrade.sh clean {$mntpath}");
 //	Dump chflags from common directories/* to zipped files.
 	write_console("Backup system chflags.\n");
-	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/sbin/mtree -q -P -c -p \$files | /usr/bin/gzip > {$sysbackup}/chflags.full.\$files.gz; done");
-
+	if(1 == mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/sbin/mtree -q -P -c -p \$files | /usr/bin/gzip > {$sysbackup}/chflags.full.\$files.gz; done")):
+		write_console("Error: Failed to backup chflags!\n");
+		return 1;
+	endif;
 //	Remove chflags from common directories/*.
 	write_console("Removing system chflags.\n");
-	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /bin/chflags -R noschg \$files; /bin/chmod -R u+rw \$files; done");
-
+	if(1 == mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /bin/chflags -R noschg \$files; /bin/chmod -R u+rw \$files; done")):
+		write_console("Error: Failed to remove chflags!\n");
+		return 1;
+	endif;
 //	Install system files
 	write_console("Installing system files on device {$harddrive}{$part}.\n");
 	if(1 == mwexec("/usr/bin/tar --exclude mnt/ --exclude dev/ --exclude var/ --exclude tmp/ --exclude {$g['cf_path']}/ -c -f - -C / . | tar -xvpf - -C {$mntpath}")):
@@ -417,8 +421,10 @@ function install_upgrade_full(string $harddrive) {
 	mwexec("/bin/cp -p {$sysbackup}/cfdevice {$mntpath}/etc");
 //	Restore chflags from previous zipped files.
 	write_console("Restoring system chflags.\n");
-	mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/bin/zcat {$sysbackup}/chflags.full.\$files.gz | /usr/sbin/mtree -q -P -U -p /\$files; done");
-
+	if(1 == mwexec("cd {$mntpath} && for files in {$dirs_noschg}; do /usr/bin/zcat {$sysbackup}/chflags.full.\$files.gz | /usr/sbin/mtree -q -P -U -p /\$files; done")):
+		write_console("Error: Failed to restore chflags!\n");
+		return 1;
+	endif;
 //	Set the release type.
 	$platform = <<<EOD
 {$g['arch']}-full
@@ -897,12 +903,22 @@ function install_bsdlabel(string $disk,string $fstype,int $startsector,int $slic
  */
 function install_newfs(string $disk,string $volname,int $sector,int $fsize,int $bsize) {
 //	$param = '-U -b 16384 -f 2048';
-	$param = "-U -S $sector -b $bsize -f $fsize";
+	$a_param = [];
+	$a_param[] = '/sbin/newfs';
+	$a_param[] = '-U';
+	$a_param[] = '-S';
+	$a_param[] = sprintf('%u',$sector);
+	$a_param[] = '-b';
+	$a_param[] = sprintf('%u',$bsize);
+	$a_param[] = '-f';
+	$a_param[] = sprintf('%u',$fsize);
 	if(!empty($volname)):
-		$param .= " -L \"{$volname}\"";
+		$a_param[] = '-L';
+		$a_param[] = escapeshellarg($volname);
 	endif;
-
-	if(mwexec("/sbin/newfs {$param} /dev/{$disk}")):
+	$a_param[] = escapeshellarg(sprintf('/dev/%s',$disk));
+	$cmd = implode(' ',$a_param);
+	if(mwexec($cmd)):
 		return 1;
 	endif;
 	return 0;
@@ -920,8 +936,7 @@ function install_detect_installation(string $mode,array &$devinfo) {
 	$imgfile = get_product_name(). "-{$g['arch']}-embedded.xz";
 	$result = 1;
 	$devinfo = [];
-	echo "Try to detect installation...\n";
-
+	echo "Detecting installation...\n";
 //	Create temporary mountpoint
 	$mnt_cf_disk = '/mnt/inst_cf_tmp';
 	mwexec("/bin/mkdir -p {$mnt_cf_disk}");
