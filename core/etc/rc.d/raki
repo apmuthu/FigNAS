@@ -19,8 +19,8 @@ rraki() {
 	local _login _homedir _sshdir _akfile
 
 #	prepare variables
-	_login=${_login:-"root"}
-	if [ 0 -lt `configxml_get_count "//access/publickey/param[enable and login=\"${_login}\"]"` ]; then
+	_login="root"
+	if [ 0 -lt `configxml_get_count "//access/publickey/param[login=\"${_login}\"]"` ]; then
 		_homedir=`/usr/bin/getent passwd "${_login}" | cut -d : -f 6`
 		_sshdir="${_homedir}/.ssh"
 		_akfile="${_sshdir}/authorized_keys"
@@ -29,7 +29,7 @@ rraki() {
 #			create .ssh folder if it doesn't exist
 			[ ! -d "${_sshdir}" ] && /bin/mkdir -m 4700 "${_sshdir}" && /usr/sbin/chown "${_login}" "${_sshdir}"
 #			prepare authorized_keys file
-			echo '# created by raki' > "${_akfile}"
+			echo '# managed by raki' > "${_akfile}"
 			/bin/chmod 600 "${_akfile}"
 			/usr/sbin/chown "${_login}" "${_akfile}"
 #			populate public keys for root into authorized_keys file
@@ -53,7 +53,7 @@ ruaki() {
 	while [ ${_index} -gt 0 ]; do
 #		prepare variables
 		_login=`configxml_get "//access/user[position()=${_index}]/login"`
-		if [ 0 -lt `configxml_get_count "//access/publickey/param[enable and login=\"${_login}\"]"` ]; then
+		if [ 0 -lt `configxml_get_count "//access/publickey/param[login=\"${_login}\"]"` ]; then
 			_homedir=`/usr/bin/getent passwd "${_login}" | cut -d : -f 6`
 			_sshdir="${_homedir}/.ssh"
 			_akfile="${_sshdir}/authorized_keys"
@@ -62,7 +62,7 @@ ruaki() {
 #				create ssh folder if it doesn't exist
 				[ ! -d "${_sshdir}" ] && /bin/mkdir -m 4700 "${_sshdir}" && /usr/sbin/chown "${_login}" "${_sshdir}"
 #				prepare authorized_keys file
-				echo '# created by raki' > "${_akfile}"
+				echo '# managed by raki' > "${_akfile}"
 				/bin/chmod 600 "${_akfile}"
 				/usr/sbin/chown "${_login}" "${_akfile}"
 #				populate public keys for user into authorized_keys file

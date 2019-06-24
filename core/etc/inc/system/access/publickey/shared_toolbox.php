@@ -62,6 +62,18 @@ final class shared_toolbox {
 					write_config();
 					break;
 				case UPDATENOTIFY_MODE_DIRTY:
+//					delete authorized_keys file
+					$cmd = sprintf('/usr/bin/getent passwd %s | cut -d : -f 6',escapeshellarg($sphere->grid[$sphere->row_id]['login']));
+					unset($output,$return_var);
+					$home_dir = mwexec2($cmd,$output,$return_var);
+					if($home_dir !== '' && $home_dir !== '/mnt' && 0 === $return_var):
+						$_akfile = sprintf('%s/.ssh/authorized_keys',$home_dir);
+						if(file_exists($_akfile)):
+							if(true !== @unlink($_akfile)):
+								$retval = 1;
+							endif;
+						endif;
+					endif;
 					unset($sphere->grid[$sphere->row_id]);
 					write_config();
 					break;
