@@ -1613,6 +1613,19 @@ function config_upgrade_43() {
 	endif;
 }
 /**
+ *	Upgrade configuration from 44
+ *	@global array $config
+ */
+function config_upgrade_44() {
+	global $config;
+
+	$a_source = &array_make_branch($config,'syslogd','remote');
+	if(array_key_exists('system',$a_source)):
+		$a_source['sendsystemeventmessages'] = $a_source['system'];
+		unset($a_source['system']);
+	endif;
+}
+/**
  *	Upgrade the configuration file to the latest version.
  *	@global array $g
  *	@global array $config
@@ -1660,7 +1673,8 @@ function config_upgrade() {
 		'41' => [$kf => 'config_upgrade_41',$kv => '42'],
 		'42' => [$kf => 'config_upgrade_42',$kv => '43'],
 		'43' => [$kf => 'config_upgrade_43',$kv => '44'],
-		'44' => [$kf => NULL,$kv => NULL]
+		'44' => [$kf => 'config_upgrade_44',$kv => '45'],
+		'45' => [$kf => NULL,$kv => NULL]
 	];
 	$version = $config['version'] ?? 'notset';
 	$config_has_been_updated = false;

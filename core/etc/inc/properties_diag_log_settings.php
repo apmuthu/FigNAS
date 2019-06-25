@@ -48,7 +48,7 @@ class properties_diag_log_settings extends co_property_container {
 	protected $x_smartd;
 	protected $x_sshd;
 	protected $x_system;
-	
+
 	public function get_daemon() {
 		return $this->x_daemon ?? $this->init_daemon();
 	}
@@ -349,10 +349,10 @@ class properties_diag_log_settings extends co_property_container {
 		$caption = gettext('Send system event messages.');
 		$description = '';
 		$property->
-			set_name('system')->
+			set_name('sendsystemeventmessages')->
 			set_title(gettext('System Events'));
 		$property->
-			set_id('system')->
+			set_id('sendsystemeventmessages')->
 			set_caption($caption)->
 			set_description($description)->
 			set_defaultvalue(false)->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- XigmaNAS default system configuration -->
 <xigmanas>
-	<version>44</version>
+	<version>45</version>
 	<lastchange></lastchange>
 	<system>
 		<hostname>xigmanas</hostname>
@@ -1336,7 +1336,7 @@
 			<rsyncd/>
 			<smartd/>
 			<sshd/>
-			<system/>
+			<sendsystemeventmessages/>
 		</remote>
 		-->
 	</syslogd>
