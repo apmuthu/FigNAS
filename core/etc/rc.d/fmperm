@@ -54,10 +54,8 @@ else
 
 #	process administrator and root user
 	/usr/local/bin/xml sel --template \
-		--match '//system' \
-			--output "  ['" --value-of 'username' --output "','" --value-of 'password' --output "','/','http://localhost',1,'',32847,1]," --nl \
-			--output "  ['root','" --value-of 'password' --output "','/','http://localhost',1,'',32847,1]" --nl \
-		--break \
+		--output "  ['" --value-of //system/username --output "','" --value-of //system/password --output "','/','http://localhost',1,'',32847,1]," --nl \
+		--output "  ['root','" --value-of //system/password --output "','/','http://localhost',1,'',32847,1]" --nl \
 		${configxml_file} | /usr/local/bin/xml unesc >> ${fmperm_htusers}
 	echo '];' >> ${fmperm_htusers}
 fi
