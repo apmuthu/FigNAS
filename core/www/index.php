@@ -273,10 +273,10 @@ $(document).ready(function(){
 			$('#memusage').text(data.memusage.caption);
 		}
 		if ($('#memusageu').length > 0) {
-			$('#memusageu').attr('width', data.memusage.percentage + 'px');
+			$('#memusageu').attr('width', data.memusage.usedpct + 'px');
 		}
 		if ($('#memusagef').length > 0) {
-			$('#memusagef').attr('width', (100 - data.memusage.percentage) + 'px');
+			$('#memusagef').attr('width', data.memusage.freepct + 'px');
 		}
 		if ($('#loadaverage').length > 0) {
 			$('#loadaverage').val(data.loadaverage);
@@ -617,12 +617,11 @@ $(document).ready(function(){
 					<td class="celldata">
 <?php
 						$raminfo = system_get_ram_info();
-						$percentage = round(($raminfo['used'] * 100) / $raminfo['total'], 0);
 						echo '<img src="images/bar_left.gif" class="progbarl" alt=""/>';
-						echo '<img src="images/bar_blue.gif" name="memusageu" id="memusageu" width="',$percentage,'" class="progbarcf" alt=""/>';
-						echo '<img src="images/bar_gray.gif" name="memusagef" id="memusagef" width="',(100 - $percentage),'" class="progbarc" alt="" />';
+						echo '<img src="images/bar_blue.gif" name="memusageu" id="memusageu" width="',$raminfo['usedpct'],'" class="progbarcf" alt=""/>';
+						echo '<img src="images/bar_gray.gif" name="memusagef" id="memusagef" width="',$raminfo['freepct'],'" class="progbarc" alt="" />';
 						echo '<img src="images/bar_right.gif" class="progbarr" alt="" style="padding-right:8px"/>';
-						echo '<span id="memusage">',sprintf(gtext('%d%% of %s'),0,format_bytes($raminfo['physical'],2,false,false)),'</span>';
+						echo '<span id="memusage">',$raminfo['caption'],'</span>';
 ?>
 					</td>
 				</tr>
@@ -982,4 +981,3 @@ $(document).ready(function(){
 </td></tr></tbody></table>
 <?php
 include 'fend.inc';
-?>

@@ -37,7 +37,7 @@ class sysctl_properties extends co_property_container_param {
 	protected $x_comment;
 	protected $x_name;
 	protected $x_value;
-	
+
 	public function get_comment() {
 		return $this->x_comment ?? $this->init_comment();
 	}
@@ -80,7 +80,7 @@ class sysctl_edit_properties extends sysctl_properties {
 			set_placeholder($placeholder)->
 			set_defaultvalue('')->
 			set_size(60)->
-			set_maxlength(60)->
+			set_maxlength(128)->
 			set_editableonadd(true)->
 			set_editableonmodify(true)->
 			set_filter(FILTER_UNSAFE_RAW)->

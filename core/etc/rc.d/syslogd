@@ -112,7 +112,7 @@ auth.info;authpriv.info %${clog_logdir}/system.log
 			-i "//syslogd/remote/smartd" -o "local5.* @" -o "${_ipaddr}" -n -b \
 			-i "//syslogd/remote/ftp" -o "ftp.* @" -o "${_ipaddr}" -n -b \
 			-i "//syslogd/remote/daemon" -o "daemon.* @" -o "${_ipaddr}" -n -b \
-			-i "//syslogd/remote/system" \
+			-i "//syslogd/remote/sendsystemeventmessages" \
 				-o "*.notice;kern.debug;lpr.info;mail.crit;news.err;local0.none;local7.none @" -o "${_ipaddr}" -n \
 				-o "security.* @" -o "${_ipaddr}" -n \
 				-o "auth.info;authpriv.info @" -o "${_ipaddr}" -n \

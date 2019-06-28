@@ -413,19 +413,22 @@ function get_datetime_locale(int $timestamp = null,string $format = NULL) {
 	$retval = str_replace($replacement_symbols,$localised_names,$dto->format(str_replace($format_symbols,$replacement_symbols,$format))); // Do the whole thing in one go
 	return $retval;
 }
-
-// Get the current RAM information.
-// Returns an array listing the amount of memory installed in the hardware.
+/**
+ *	Get the current RAM information.
+ *	@return array Returns an array with memory status information.
+ */
 function system_get_ram_info() {
-	exec("/sbin/sysctl -n vm.stats.vm.v_active_count vm.stats.vm.v_inactive_count vm.stats.vm.v_wire_count vm.stats.vm.v_cache_count vm.stats.vm.v_free_count hw.physmem",$memory);
-	exec("/sbin/sysctl -n hw.realmem",$hwmemory);
-
 	$raminfo = [];
-	$raminfo['real'] = $hwmemory[0];
+	unset($memory);
+	exec('/sbin/sysctl -n vm.stats.vm.v_active_count vm.stats.vm.v_inactive_count vm.stats.vm.v_wire_count vm.stats.vm.v_cache_count vm.stats.vm.v_free_count hw.physmem hw.realmem',$memory);
+	$raminfo['real'] = $memory[6];
 	$raminfo['physical'] = $memory[5];
 	$raminfo['total'] = $memory[0] + $memory[1] + $memory[2] + $memory[3] + $memory[4];
 	$raminfo['free'] = $memory[4] + $memory[1];
+	$raminfo['freepct'] = round(($raminfo['free'] * 100) / $raminfo['total'],0);
 	$raminfo['used'] = $raminfo['total'] - $raminfo['free'];
+	$raminfo['usedpct'] = 100 - $raminfo['freepct'];
+	$raminfo['caption'] = sprintf(gtext('%d%% of %s'),$raminfo['usedpct'],format_bytes($raminfo['physical'],2,false,false));
 	return $raminfo;
 }
 
@@ -555,7 +558,7 @@ function system_get_controller($devicespecialfile) {
 	$devlist = [];
 	$device = '';
 	$controller = '';
-	$controller_id = ''; 
+	$controller_id = '';
 	$target_id = '';
 	$lun_id = '';
 	mwexec2("/sbin/camcontrol devlist -v 2> /dev/null",$rawdata);
@@ -807,26 +810,27 @@ function get_swap_usage() {
  * @return An array containing the system informations.
  */
 function system_get_sysinfo() {
+	$value = [];
 	$value['hostname'] = system_get_hostname();
-	// Get CPU counts.
+//	Get CPU counts.
 	$cpus = system_get_cpus();
 	$value['cpus'] = $cpus;
-	// Get RAM usage.
+//	Get RAM usage.
 	$raminfo = system_get_ram_info();
-	$percentage = round(($raminfo['used'] * 100) / $raminfo['total'],0);
-	$value['memusage']['percentage'] = $percentage;
-	$value['memusage']['caption'] = sprintf(gtext('%d%% of %s'),$percentage,format_bytes($raminfo['physical'],2,false,false));
-	// Get load average.
+	$value['memusage']['caption'] = $raminfo['caption'];
+	$value['memusage']['usedpct'] = $raminfo['usedpct'];
+	$value['memusage']['freepct'] = $raminfo['freepct'];
+//	Get load average.
 	exec('uptime',$result);
 	$value['loadaverage'] = substr(strrchr($result[0],'load averages:'),15);
-	// Get up-to-date CPU informations.
+//	Get up-to-date CPU informations.
 	$cpuinfo = system_get_cpu_info();
 	$value['cputemp'] = $cpuinfo['temperature'];
 	$value['cpufreq'] = $cpuinfo['freq'];
 	if(!empty($cpuinfo['temperature2'])):
 		$value['cputemp2'] = $cpuinfo['temperature2'];
 	endif;
-	// Get CPU usage.
+//	Get CPU usage.
 	if($cpus > 1):
 		$value['cpuusage2'] = system_get_smp_cpu_usage();
 		$value['cpuusage'] = floor(array_sum($value['cpuusage2']) / $cpus);
@@ -837,9 +841,8 @@ function system_get_sysinfo() {
 	$value['diskusage'] = get_disk_usage(); // Get disk usage.
 	$value['poolusage'] = get_pool_usage(); // Get pool info.
 	$value['swapusage'] = get_swap_usage(); // Get swap info.
-	// Get uptime and date.
+//	Get uptime and date.
 	$value['uptime'] = system_get_uptime();
 	$value['date'] = get_datetime_locale();
 	return $value;
 }
-?>
