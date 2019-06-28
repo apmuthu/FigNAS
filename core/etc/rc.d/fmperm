@@ -27,17 +27,16 @@ echo "Preparing web-based file-management."
 
 #	generate .htusers.php file and export user accounts
 echo '<?php' > ${fmperm_htusers}
+echo "//	created by $name" >> ${fmperm_htusers}
+echo '$GLOBALS["users"] = [];' >> ${fmperm_htusers}
 
 #	option to disable/enable 'File Manager' by WebGUI
-if [ `configxml_get_count "//system/disablefm"` -gt 0 ]; then
-	echo '$GLOBALS["users"] = [];' >> ${fmperm_htusers}
-else
-	echo '$GLOBALS["users"] = [' >> ${fmperm_htusers}
-
+if [ `configxml_get_count "//system/disablefm"` -eq 0 ]; then
 #	process configured users
 	/usr/local/bin/xml sel --template \
 		--match '//access/user[enable]' \
-			--output "  ['" \
+			--output '$GLOBALS["users"][] = [' \
+			--output "'" \
 			--value-of 'login' \
 			--output "','" \
 			--value-of 'passwordsha' \
@@ -47,18 +46,29 @@ else
 			--else \
 				--output '/mnt' \
 			--break \
-			--output "','http://localhost',0,'^.ht',${fmperm_user_permissions},${fmperm_user_active}]," \
+			--output "','http://localhost',0,'^.ht',${fmperm_user_permissions},${fmperm_user_active}" \
+			--output '];' \
 			--nl \
 		--break \
 		${configxml_file} | /usr/local/bin/xml unesc >> ${fmperm_htusers}
 
 #	process administrator and root user
 	/usr/local/bin/xml sel --template \
-		--output "  ['" --value-of //system/username --output "','" --value-of //system/password --output "','/','http://localhost',1,'',32847,1]," --nl \
-		--output "  ['root','" --value-of //system/password --output "','/','http://localhost',1,'',32847,1]" --nl \
+		--output '$GLOBALS["users"][] = [' \
+		--output "'" \
+		--value-of '//system/username' \
+		--output "','" \
+		--value-of '//system/password' \
+		--output "','/','http://localhost',1,'',32847,1" \
+		--output '];' \
+		--nl \
+		--output '$GLOBALS["users"][] = [' \
+		--output "'"  \
+		--output 'root' \
+		--output "','" \
+		--value-of '//system/password' \
+		--output "','/','http://localhost',1,'',32847,1" \
+		--output '];' \
+		--nl \
 		${configxml_file} | /usr/local/bin/xml unesc >> ${fmperm_htusers}
-	echo '];' >> ${fmperm_htusers}
 fi
-
-#	PHP closing tag
-echo '?>' >> ${fmperm_htusers}

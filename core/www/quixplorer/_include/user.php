@@ -62,32 +62,30 @@ function user_load($file = NULL) {
  */
 function _saveUsers() {
 	$cnt = count($GLOBALS['users']);
-	if($cnt > 0):
+	if($cnt > 1):
 		sort($GLOBALS['users']);
 	endif;
 //	prepare file
-	$content = '<?php' . PHP_EOL . '$GLOBALS["users"]=[' . PHP_EOL;
+	$content = ['<?php' . PHP_EOL];
+	$content[] = '//	created by saveusers' . PHP_EOL;
+	$content[] = '$GLOBALS["users"] = [];' . PHP_EOL;
 	for($i = 0;$i < $cnt;++$i):
-//		if($GLOBALS["users"][6]&4==4) $GLOBALS["users"][6]=7;	// If admin, all permissions
-		$content .= "  ['" .
-		$GLOBALS["users"][$i][0] . "','" . $GLOBALS["users"][$i][1] . "','" .
-		$GLOBALS["users"][$i][2] . "','" . $GLOBALS["users"][$i][3] . "'," .
-		$GLOBALS["users"][$i][4] . ",'" . $GLOBALS["users"][$i][5] . "'," .
-		$GLOBALS["users"][$i][6] . "," . $GLOBALS["users"][$i][7] . "]";
-		if(($i + 1) === $cnt):
-			$content .= PHP_EOL;
-		else:
-			$content .= "," . PHP_EOL;
-		endif;
+		$content[] = sprintf('$GLOBALS["%s"][] = [\'%s\',\'%s\',\'%s\',\'%s\',%u,\'%s\',%u,%u];' . PHP_EOL,
+			'users',
+			$GLOBALS['users'][$i][0],
+			$GLOBALS['users'][$i][1],
+			$GLOBALS['users'][$i][2],
+			$GLOBALS['users'][$i][3],
+			$GLOBALS['users'][$i][4],
+			$GLOBALS['users'][$i][5],
+			$GLOBALS['users'][$i][6],
+			$GLOBALS['users'][$i][7]
+		);
 	endfor;
-	$content .= '];' .PHP_EOL . '?>';
 //	write to file
-	$fp = @fopen("./_config/.htusers.php", "w");
-	if($fp === false):
-		return false;	// Error
+	if(false === file_put_contents('./_config/.htusers.php',$content)):
+		return false;
 	endif;
-	fputs($fp,$content);
-	fclose($fp);
 	return true;
 }
 /**
