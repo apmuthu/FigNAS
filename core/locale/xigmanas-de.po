@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-10 09:16+0000\n"
+"PO-Revision-Date: 2019-06-23 14:13+0000\n"
 "Last-Translator: Tomfro <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
-"X-Generator: Launchpad (build 18986)\n"
+"X-Launchpad-Export-Date: 2019-06-30 13:56+0000\n"
+"X-Generator: Launchpad (build 18991)\n"
 "Language: de\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -2062,6 +2062,10 @@ msgid ""
 "execute upon subsystem request. Leave this field empty to use the default "
 "settings."
 msgstr ""
+"Konfiguriert ein externes Subsystem (z. B. File Transfer Daemon). Argumente "
+"sollten ein Subsystemname und ein Befehl (mit optionalen Argumenten) sein, "
+"die auf Subsystemanforderung ausgeführt werden. Lassen Sie dieses Feld leer, "
+"um die voreingestellten Einstellungen zu verwenden."
 
 msgid "Configuring"
 msgstr "Konfiguriere"
@@ -2548,16 +2552,16 @@ msgid "DAAP"
 msgstr "DAAP"
 
 msgid "DEBUG - log debugging information"
-msgstr ""
+msgstr "DEBUG - Zeichne Informationen zur Fehlersuche (Debugging) auf"
 
 msgid "DEBUG1 - same as DEBUG"
-msgstr ""
+msgstr "DEBUG1 - analog wie DEBUG"
 
 msgid "DEBUG2 - log detailed debugging information"
-msgstr ""
+msgstr "DEBUG2 - Detaillierte Debugging-Informationen aufzeichnen"
 
 msgid "DEBUG3 - log all debugging information"
-msgstr ""
+msgstr "DEBUG - Zeichne alle Informationen zur Fehlersuche (Debugging) auf"
 
 msgid "DHCP"
 msgstr "DHCP"
@@ -4046,7 +4050,7 @@ msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT-Partition kann nur in Verbindung mit UFS genutzt werden."
 
 msgid "ERROR - log errors"
-msgstr ""
+msgstr "ERROR - Zeichne Fehler auf"
 
 msgid "ERROR:"
 msgstr "FEHLER:"
@@ -4846,13 +4850,15 @@ msgid "Enter the location of the share"
 msgstr "Geben Sie einen Standort für die Freigabe ein"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "Geben Sie bitte den Namen des Hauptbenutzerzuganges ein."
 
 msgid "Enter the name of the share"
 msgstr "Geben Sie den Namen der Freigabe ein"
 
 msgid "Enter the network that is authorised to access the NFS share."
 msgstr ""
+"Geben Sie das Netzwerk ein, das für den Zugriff auf die NFS-Freigabe "
+"berechtigt ist."
 
 msgid ""
 "Enter the passphrase that will be used in WPA-PSK mode. This must be between "
@@ -4862,7 +4868,7 @@ msgstr ""
 "zwischen 8 und 63 Zeichen lang sein."
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "Gebens Sie bitte das Passwort des Hauptbenutzerzuganges ein."
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -4973,7 +4979,7 @@ msgid "Export as WebNFS."
 msgstr "Als WebNFS exportieren."
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "Exportiert das Dateisystem im schreibgeschützten Modus."
 
 msgid "Exported"
 msgstr "Exportiert"
@@ -5037,7 +5043,7 @@ msgid "FAT32"
 msgstr "FAT32"
 
 msgid "FATAL - log fatal errors only"
-msgstr ""
+msgstr "FATAL - Zeichne nur schwerwiegende Fehler auf"
 
 msgid "FRU Information"
 msgstr "FRU Information"
@@ -5416,6 +5422,9 @@ msgid ""
 "Logging with a DEBUG level violates the privacy of users and is not "
 "recommended."
 msgstr ""
+"Gibt die Ausführlichkeitsstufe an, die beim Protokollieren von Nachrichten "
+"von sshd verwendet wird. Die Protokollierung mit einem DEBUG-Level verletzt "
+"die Privatsphäre der Benutzer und wird nicht empfohlen."
 
 msgid "Global Settings"
 msgstr "Globale Einstellungen"
@@ -5429,7 +5438,7 @@ msgid "Grant access to the user portal."
 msgstr "Gewähre Zugang zum Benutzerportal."
 
 msgid "Grant shell access to user"
-msgstr ""
+msgstr "Benutzer Shell-Zugriff gewähren"
 
 msgid "Graph shows last 120 seconds"
 msgstr "Graph zeigt die letzten 120 Sekunden"
@@ -5694,7 +5703,7 @@ msgid "IG"
 msgstr "IG"
 
 msgid "INFO - log status messages"
-msgstr ""
+msgstr "INFO - Zeichne Statusmeldungen auf"
 
 msgid "IP"
 msgstr "IP"
@@ -6857,10 +6866,10 @@ msgid "Manufacturing date"
 msgstr "Herstellungsdatum"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "Alles dem Benutzer zuordnen"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "Benutzer Root zuordnen"
 
 msgid "Map to Guest"
 msgstr "Zugriff als Gast"
@@ -6869,7 +6878,7 @@ msgid "Map to User"
 msgstr "Binden an Benutzer"
 
 msgid "Map users or map root to the specified user."
-msgstr ""
+msgstr "Benutzer oder Root dem angegebenen Benutzer zuordnen"
 
 msgid "Mapping"
 msgstr "Zuordnung"
@@ -6906,7 +6915,7 @@ msgid "Master Password"
 msgstr "Hauptpasswort"
 
 msgid "Master User"
-msgstr ""
+msgstr "Hauptbenutzer"
 
 msgid "Max Processes"
 msgstr "Maximale Prozesse"
@@ -7761,6 +7770,8 @@ msgstr "Hinweis"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
 msgstr ""
+"Beachten Sie, dass nur ein Dateisystem auf einem Server exportiert werden "
+"kann."
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7962,6 +7973,7 @@ msgstr "Überschreibe Festplattenkonfiguration"
 
 msgid "Overwrite the sort criteria passed by the client."
 msgstr ""
+"Überschreibe die Sortierkriterien, die vom Clienten übergeben wurden."
 
 msgid "Owner"
 msgstr "Eigentümer"
@@ -8128,7 +8140,7 @@ msgstr ""
 "Controller)"
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "Privaten RSA Schlüssel (RSA PRIVATE KEY) in PEM Format einfügen"
 
 msgid "Paste a private key in PEM format here."
 msgstr "Fügen Sie hier einen private key in PEM-Format ein"
@@ -8149,7 +8161,7 @@ msgid "Path of the URL relative to document root."
 msgstr "Pfad der URL relativ zum Wurzelverzeichnis."
 
 msgid "Path to be included."
-msgstr ""
+msgstr "Pfad, der eingeschlossen werden soll."
 
 msgid "Path to be shared to be synchronized."
 msgstr "Freigabepfad welcher synchronisiert wird"
@@ -8569,10 +8581,10 @@ msgid "Public Key"
 msgstr "Öffentlicher Schlüssel"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "Authentifizierung mit öffentlichem Schlüssel"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "Einstellungen für öffentliche Schlüssel"
 
 msgid "Public Keys"
 msgstr "Öffentliche Schlüssel"
@@ -8602,7 +8614,7 @@ msgstr ""
 "Nach der angegeben Zeit ohne Zugriff gehen die Festplatten in 'Stand-by'"
 
 msgid "QUIET - disable logging"
-msgstr ""
+msgstr "QUIET - Deaktiviert die Protokollierung"
 
 msgid "Queue Depth"
 msgstr "Warteschlangenlänge"
@@ -8943,6 +8955,9 @@ msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
 msgstr ""
+"Bei Remotezugriffen von Root wird ein Berechtigungsnachweis von 65534: 65533 "
+"verwendet. Alle anderen Benutzer werden ihrem Remote-Berechtigungsnachweis "
+"zugeordnet."
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -9086,7 +9101,7 @@ msgstr ""
 "wiederherstellen."
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "Beschränkt den Ordner auf einen bestimmten Medientyp."
 
 msgid "Restricted"
 msgstr "Eingeschränkt"
@@ -9426,7 +9441,7 @@ msgid "Secret for CHAP authentication."
 msgstr "Gehemnis für CHAP Authentifikation."
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Sicherheitsvariante ( Security Flavor)"
 
 msgid "Security Warning"
 msgstr "Sicherheitshinweis"
@@ -9490,6 +9505,8 @@ msgstr "Wähle Spare Laufwerk"
 
 msgid "Select a container as the root of the tree exposed to clients."
 msgstr ""
+"Wählen Sie einen Container als Wurzel des Baums aus, der Clienten angezeigt "
+"wird."
 
 msgid "Select a date format."
 msgstr "Datumsformat auswählen"
@@ -9773,7 +9790,7 @@ msgstr ""
 "wirksam werden."
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "Legen Sie die primäre Gruppe des Kontos fest."
 
 msgid "Set the content location(s) to or from the media library."
 msgstr "Legen Sie den Pfad der Medien-Bibliothek fest:"
@@ -10130,7 +10147,7 @@ msgid "Sort"
 msgstr "Sortieren"
 
 msgid "Sort Criteria"
-msgstr ""
+msgstr "Sortierkriterien"
 
 msgid "Source"
 msgstr "Quelle"
@@ -10292,6 +10309,9 @@ msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
 msgstr ""
+"Geben Sie eine Liste akzeptabler Sicherheitsvarianten an, die für den "
+"Remotezugriff verwendet werden sollen. Die \t Standard-\t "
+"Sicherheitsvariante \t ist sys."
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -10325,10 +10345,10 @@ msgstr ""
 "Legt den SCSI Gerätetyp fest, der beim Anlegen des LUN verwendet wird."
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "Geben Sie die numerische Gruppen-ID an."
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "Geben Sie die numerische ID des Benutzers / Kontos an."
 
 msgid "Split request"
 msgstr "Split request"
@@ -11540,9 +11560,11 @@ msgstr "Die empfohlene Größe des Kommandostapels ist %d"
 
 msgid "The recommended range for the group id is between 1000 and 32000."
 msgstr ""
+"Der empfohlene Bereich für die Gruppen-ID liegt zwischen 1000 und 32000."
 
 msgid "The recommended range for the user id is between 1000 and 32000."
 msgstr ""
+"Der empfohlene Bereich für die Benutzer-ID liegt zwischen 1000 und 32000."
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -12194,6 +12216,9 @@ msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
 msgstr ""
+"Dies ermöglicht die serverseitige Verkleinerung sehr großer JPEG-Bilder. "
+"Dies kann sich auf die Leistung von JPEG-Servern bei einigen DLNA-Geräten "
+"auswirken."
 
 msgid "This will create a recycle bin on the share."
 msgstr "Papierkorb auf der Freigabe wird eingereichtet."
@@ -12342,6 +12367,8 @@ msgstr ""
 
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
+"Um Unterverzeichnisse zu verwenden, müssen Sie jedes Verzeichnis einbinden "
+"(mount)."
 
 msgid "Toggle Mode"
 msgstr "Modus umschalten"
@@ -12893,6 +12920,8 @@ msgstr "Verwende standardmäßiges TLS Trust File /usr/local/etc/ssl/cert.pem."
 
 msgid "Use inotify monitoring to automatically discover new media files."
 msgstr ""
+"Verwenden Sie die inotify-Überwachung, um neue Mediendateien automatisch zu "
+"erkennen."
 
 msgid "Use local user authentication."
 msgstr "Verwende \"Lokaler-Benutzer\" Anmeldung"
@@ -12906,16 +12935,16 @@ msgstr ""
 "zusammen mit positivem/negativem y-Achsen Bereich)"
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "Verwenden Sie den Container \"Verzeichnis durchsuchen\""
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "Verwenden Sie den Container \"Musik\""
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "Verwenden Sie den Container \"Bilder\""
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "Verwenden Sie den Container \"Video\""
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -12928,7 +12957,7 @@ msgid "Use the specified NTP server."
 msgstr "Verwendet den angegebenen NTP Server."
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "Verwenden Sie den Standardcontainer (dies istdie Voreinstellung)"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "Benutzen Sie diese speziellen Möglichkeiten nur zur Fehlersuche!"
@@ -13058,7 +13087,7 @@ msgid "VCPUs"
 msgstr "VCPUs"
 
 msgid "VERBOSE - log detailed information"
-msgstr ""
+msgstr "VERBOSE - Zeichne detaillierte Informationen auf"
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:encoding"
@@ -13130,7 +13159,7 @@ msgid "Vendor ID"
 msgstr "Lieferantenkennung"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "Ausführlichkeit der Informationen, die aufgezeichnet werden."
 
 msgid "Verify"
 msgstr "Bestätigen"
@@ -13789,14 +13818,20 @@ msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
 msgstr ""
+"krb5 - Verwende das Kerberos V5-Protokoll, um Benutzer zu authentifizieren, "
+"bevor Zugriff auf das gemeinsam genutzte Dateisystem gewährt wird."
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
 msgstr ""
+"krb5i - Kerberos V5-Authentifizierung mit Datenintegritätsprüfsummen "
+"verwenden."
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
 msgstr ""
+"krb5p - Kerberos V5-Authentifizierung mit Datenintegritätsprüfsummen und "
+"Datenverschlüsselung verwenden."
 
 msgid "less then 1.8\"."
 msgstr "Kleiner als 1,8\"."
@@ -13809,11 +13844,14 @@ msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
 msgstr ""
+"mapall - Gibt eine Zuordnung für alle Client-UIDs an (einschließlich Root)"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
 msgstr ""
+"maproot - Der Berechtigungsnachweis des angegebenen Benutzers wird für den "
+"Remotezugriff von Root verwendet."
 
 msgid "missing"
 msgstr "fehlend"
@@ -13898,7 +13936,7 @@ msgid "syslog.conf"
 msgstr "syslog.conf"
 
 msgid "tcsh - TENEX C Shell"
-msgstr ""
+msgstr "tcsh - TENEX C Shell"
 
 msgid "to"
 msgstr "bis"

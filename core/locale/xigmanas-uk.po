@@ -3,20 +3,20 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-12 17:11+0000\n"
+"PO-Revision-Date: 2019-06-28 15:16+0000\n"
 "Last-Translator: uniss <uniss@ua.fm>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
-"X-Generator: Launchpad (build 18986)\n"
+"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
+"X-Generator: Launchpad (build 18991)\n"
 "X-Poedit-Country: Ukrainian\n"
 "Language: \n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid " No private key"
-msgstr ""
+msgstr " Приватного ключа немає"
 
 msgid " interfaces:"
 msgstr " інтерфейси:"
@@ -594,16 +594,16 @@ msgid "Add Listen Record"
 msgstr "Додати запис слухача"
 
 msgid "Add Media Folder"
-msgstr ""
+msgstr "Додоати каталог медіа"
 
 msgid "Add Mutual CHAP User"
 msgstr "Додати взаємного користувача CHAP"
 
 msgid "Add NFS Export"
-msgstr ""
+msgstr "Додати експорт NFS"
 
 msgid "Add NFS Root"
-msgstr ""
+msgstr "Додати корінь NFS"
 
 msgid "Add Option"
 msgstr "Додати опцію"
@@ -621,7 +621,7 @@ msgid "Add Portal Group"
 msgstr "Додати групу портала"
 
 msgid "Add Public Key"
-msgstr ""
+msgstr "Додати приватний ключ"
 
 msgid "Add RAID"
 msgstr "Додати RAID"
@@ -741,7 +741,7 @@ msgid "Add the selected device to the existing mirror."
 msgstr "Додати обраний пристрій до існуючого дзеркала."
 
 msgid "Add user to additional groups."
-msgstr ""
+msgstr "Додати користувача до розширених груп."
 
 msgid "Additional Information"
 msgstr "Додаткова інформація"
@@ -887,7 +887,7 @@ msgid "Allow"
 msgstr "Дозволити"
 
 msgid "Allow GSSAPI authentication."
-msgstr ""
+msgstr "Дозволити автентифікацію GSSAPI."
 
 msgid "Allow New Files"
 msgstr "Дозволити нові файли"
@@ -896,7 +896,7 @@ msgid "Allow Serial Ports"
 msgstr "Дозволити послідовні порти"
 
 msgid "Allow TCP forwarding."
-msgstr ""
+msgstr "Дозволити переадресацію TCP."
 
 msgid "Allow TLS connections only."
 msgstr "Дозволяти лише TLS з'єднання."
@@ -908,7 +908,7 @@ msgid "Allow USB Serial Ports"
 msgstr "Дозволити USB послідовні порти"
 
 msgid "Allow challenge-response authentication."
-msgstr ""
+msgstr "Дозволити автентифікацію \"виклик-відповідь\"."
 
 msgid "Allow client access to accounts that have null passwords."
 msgstr ""
@@ -927,22 +927,24 @@ msgid "Allow consecutive read/writes to be issued in parallel"
 msgstr "Дозволити здійснювати послідовність читання / запис паралельно"
 
 msgid "Allow keyboard-interactive authentication."
-msgstr ""
+msgstr "Дозволити автентифікацію \"клавіатура-інтерактивно\"."
 
 msgid "Allow new files to be created."
 msgstr "Дозволити створення нових файлів."
 
 msgid "Allow password authentication."
-msgstr ""
+msgstr "Дозволити автентифікацію за паролем."
 
 msgid "Allow public key authentication."
-msgstr ""
+msgstr "Додати публічний ключ автентифікації."
 
 msgid "Allow root to login via ssh."
-msgstr ""
+msgstr "Дозволити root входити через ssh."
 
 msgid "Allow symlinks that point outside defined media folders."
 msgstr ""
+"Дозволити символьні посилання, що дивляться назовні визначених каталогів "
+"медіа."
 
 msgid "Allow to start UPS from battery"
 msgstr "Дозволити запуск ДБЖ від батареї"
@@ -1468,7 +1470,7 @@ msgid "Battery voltage"
 msgstr "Напруга батареї"
 
 msgid "Be Quiet"
-msgstr ""
+msgstr "Бути тихим"
 
 msgid "Be careful with turning on these options."
 msgstr "Треба бути уважним, вмикаючи  ці параметри."
@@ -1482,6 +1484,7 @@ msgstr "Перед - Видалення файлів буде виконуват
 msgid ""
 "Before a Unison client can start to work, you need to perform the following:"
 msgstr ""
+"Перед тим, як клієнт Unison зможе працювати, потрібно виконати наступне:"
 
 msgid "Best available"
 msgstr "Найкраще з доступного"
@@ -1580,6 +1583,8 @@ msgid ""
 "Broadcasts its availability every configured seconds on the network, the "
 "default is 300 seconds."
 msgstr ""
+"Налаштування часу трансляції доступності в мережі в секундах, за "
+"замовчуванням 300 секунд."
 
 msgid "Browseable"
 msgstr "Доступний для перегляду"
@@ -1816,7 +1821,7 @@ msgstr ""
 "відкликаних сертифікатів."
 
 msgid "Challenge-Response Authentication"
-msgstr ""
+msgstr "Автентифікація за запитом-відповіддю"
 
 msgid "Change"
 msgstr "Змінити"
@@ -2021,6 +2026,10 @@ msgid ""
 "execute upon subsystem request. Leave this field empty to use the default "
 "settings."
 msgstr ""
+"Налаштування зовнішньої підсистеми (наприклад демону передавання файлів). "
+"Аргументи повинні бути ім'ям підсистеми і командою (з необов'язковими "
+"аргументами) для виконання на запит підсистеми. Залиште це поле порожнім, "
+"щоб використовувати стандартні параметри."
 
 msgid "Configuring"
 msgstr "Налаштування"
@@ -2397,7 +2406,7 @@ msgid "Create PV Guest"
 msgstr "Створює PV Гістя"
 
 msgid "Create Work Directory"
-msgstr ""
+msgstr "Створення робочого каталогу"
 
 msgid "Create ZFS on a GPT partition."
 msgstr "Створює ZFS на GPT розділах."
@@ -2533,16 +2542,16 @@ msgid "DAAP"
 msgstr "DAAP"
 
 msgid "DEBUG - log debugging information"
-msgstr ""
+msgstr "DEBUG - реєструвати інформацію про налагодження"
 
 msgid "DEBUG1 - same as DEBUG"
-msgstr ""
+msgstr "DEBUG1 - теж саме, що й DEBUG"
 
 msgid "DEBUG2 - log detailed debugging information"
-msgstr ""
+msgstr "DEBUG2 - реєструвати деталізовану інформацію про налагодження"
 
 msgid "DEBUG3 - log all debugging information"
-msgstr ""
+msgstr "DEBUG3 - реєструвати всю інформацію про налагодження"
 
 msgid "DHCP"
 msgstr "DHCP"
@@ -2807,16 +2816,16 @@ msgid "Delete Selected Listen Records"
 msgstr "Видалити обрані записи прослуховань"
 
 msgid "Delete Selected Media Folders"
-msgstr ""
+msgstr "Видалення обраних медіа каталогів"
 
 msgid "Delete Selected Mutual CHAP Users"
 msgstr "Видалити обраних взаємних користувачів CHAP"
 
 msgid "Delete Selected NFS Exports"
-msgstr ""
+msgstr "Видалення обраних експортів NFS"
 
 msgid "Delete Selected NFS Root Directories"
-msgstr ""
+msgstr "Видалення обраних кореневих каталогів NFS"
 
 msgid "Delete Selected Notifier"
 msgstr "Видалити Обраний Сповіщувач"
@@ -2837,7 +2846,7 @@ msgid "Delete Selected Portal Groups"
 msgstr "Видалити обрані групи порталів"
 
 msgid "Delete Selected Public Keys"
-msgstr ""
+msgstr "Видалення обраних публічних ключей"
 
 msgid "Delete Selected RAID Volumes"
 msgstr "Видалити вибраний RAID масив"
@@ -3176,7 +3185,7 @@ msgid "Disable Selected Commands"
 msgstr "Заборонити обрані команди"
 
 msgid "Disable Selected Groups"
-msgstr ""
+msgstr "Видалення обраних груп"
 
 msgid "Disable Selected Initiator Names"
 msgstr "Вимкнути обрані імена ініціаторів"
@@ -3197,16 +3206,16 @@ msgid "Disable Selected Listen Records"
 msgstr "Вимкнути обрані записи прослуховань"
 
 msgid "Disable Selected Media Folders"
-msgstr ""
+msgstr "Видалення обраних каталогів медіа"
 
 msgid "Disable Selected Mutual CHAP Users"
 msgstr "Вимкнути обраних взаємних користувачів CHAP"
 
 msgid "Disable Selected NFS Exports"
-msgstr ""
+msgstr "Заборонити обрані експорти NFS"
 
 msgid "Disable Selected NFS Root Directories"
-msgstr ""
+msgstr "Заборонити обрані кореневі каталоги NFS"
 
 msgid "Disable Selected Option Records"
 msgstr "Вимкнути обрані записи параметрів"
@@ -3221,7 +3230,7 @@ msgid "Disable Selected Portal Groups"
 msgstr "Заборонити обрані групи порталів"
 
 msgid "Disable Selected Public Keys"
-msgstr ""
+msgstr "Заборонити обрані публічні ключі"
 
 msgid "Disable Selected Records"
 msgstr "Заборонити обрані записи"
@@ -3236,7 +3245,7 @@ msgid "Disable Selected Targets"
 msgstr "Заборонити обрані цілі"
 
 msgid "Disable Selected Users"
-msgstr ""
+msgstr "Заборонити обраних користувачів"
 
 msgid "Disable Selected WebDAV Records"
 msgstr "Вимкнути обрані записи WebDAV"
@@ -3248,7 +3257,7 @@ msgid "Disable Selected iSNS Servers"
 msgstr "Заборонити обрані сервери iSNS"
 
 msgid "Disable Subtitles"
-msgstr ""
+msgstr "Заборонити субтитри"
 
 msgid "Disable TCP wrapper (mod_wrap module)."
 msgstr "Заборонити обгортку TCP (модуль mod_wrap)."
@@ -3269,7 +3278,7 @@ msgid "Disable speaker beep on startup and shutdown."
 msgstr "Заборонити звуковий сигнал при ввімкненні та вимиканні."
 
 msgid "Disable subtitle support on unknown clients."
-msgstr ""
+msgstr "Заборонити підтримку субтитрів на невизначених клієнтах."
 
 msgid "Disable the compression of repeating lines."
 msgstr "Заборонити стиснення рядків що повторюються"
@@ -3278,7 +3287,7 @@ msgid "Disabled"
 msgstr "Вимкнено"
 
 msgid "Disabled variable names will be removed from /etc/rc.conf."
-msgstr "Заборонені імена змінних будуть видалені з /etc/rc.conf."
+msgstr "Вимкнені імена змінних будуть видалені з /etc/rc.conf."
 
 msgid "Discard - Discard ACL"
 msgstr "Discard - не наслідувати ACL"
@@ -3538,10 +3547,10 @@ msgid "Do you want to delete selected Mutual CHAP users?"
 msgstr "Ви бажаєте видалити обраних взаємних користувачів CHAP?"
 
 msgid "Do you want to delete selected NFS exports?"
-msgstr ""
+msgstr "Ви дійсно бажаєте видалити обрані експорти NFS?"
 
 msgid "Do you want to delete selected NFS root directories?"
-msgstr ""
+msgstr "Ви дійсно бажаєте видалити обрані кореневі каталоги NFS?"
 
 msgid "Do you want to delete selected RAID volumes?"
 msgstr "Бажаєте видалити вибрані RAID диски?"
@@ -3598,7 +3607,7 @@ msgid "Do you want to delete selected listen records?"
 msgstr "Ви бажаєте видалити обрані записи прослуховань?"
 
 msgid "Do you want to delete selected media folders?"
-msgstr ""
+msgstr "Ви дійсно бажаєте видалити обрані каталоги медіа?"
 
 msgid "Do you want to delete selected notifier?"
 msgstr "Ви дійсно хочете видалити обраний сповіщувач?"
@@ -3619,7 +3628,7 @@ msgid "Do you want to delete selected portal groups?"
 msgstr "Ви бажаєте видалити обрані групи порталів?"
 
 msgid "Do you want to delete selected public keys?"
-msgstr ""
+msgstr "Ви дійсно бажаєте видалити обрані публічні ключі?"
 
 msgid "Do you want to delete selected records?"
 msgstr "Ви бажаєте видалити обрані записи?"
@@ -3670,10 +3679,10 @@ msgid "Do you want to disable selected Mutual CHAP users?"
 msgstr "Ви бажаєте заборонити обраних взаємних користувачів CHAP?"
 
 msgid "Do you want to disable selected NFS exports?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обрані експорти NFS?"
 
 msgid "Do you want to disable selected NFS root directories?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обрані кореневі каталоги NFS?"
 
 msgid "Do you want to disable selected WebDAV records?"
 msgstr "Ви дійсно бажаєте вимкнути обрані записи WebDAV?"
@@ -3685,7 +3694,7 @@ msgid "Do you want to disable selected commands?"
 msgstr "Ви впевнені, що хочете заборонити обрані команди?"
 
 msgid "Do you want to disable selected groups?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обрані групи?"
 
 msgid "Do you want to disable selected iSCSI initiators?"
 msgstr "Чи бажаєте заборонити обрані ініціатори iSCSI?"
@@ -3706,7 +3715,7 @@ msgid "Do you want to disable selected listen records?"
 msgstr "Ви бажаєте заборонити обрані записи прослуховань?"
 
 msgid "Do you want to disable selected media folders?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обрані каталоги медіа?"
 
 msgid "Do you want to disable selected option records?"
 msgstr "Ви бажаєте заборонити обрані записи параметрів?"
@@ -3721,7 +3730,7 @@ msgid "Do you want to disable selected portal groups?"
 msgstr "Ви бажаєте заборонити обрані групи порталу?"
 
 msgid "Do you want to disable selected public keys?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обрані публічні ключі?"
 
 msgid "Do you want to disable selected records?"
 msgstr "Ви бажаєте вимкнути обрані записи?"
@@ -3736,7 +3745,7 @@ msgid "Do you want to disable selected targets?"
 msgstr "Ви бажаєте заборонити обрані цілі?"
 
 msgid "Do you want to disable selected users?"
-msgstr ""
+msgstr "Ви дійсно бажаєте заборонити обраних користувачів?"
 
 msgid "Do you want to enable selected CHAP users?"
 msgstr "Ви бажаєте дозволити обраних користувачів CHAP?"
@@ -3751,10 +3760,10 @@ msgid "Do you want to enable selected Mutual CHAP users?"
 msgstr "Ви бажаєте дозволити обраних взаємних користувачів CHAP?"
 
 msgid "Do you want to enable selected NFS exports?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обрані експорти NFS?"
 
 msgid "Do you want to enable selected NFS root directories?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обрані кореневі каталоги NFS?"
 
 msgid "Do you want to enable selected WebDAV records?"
 msgstr "Ви дійсно бажаєте увімкнути обрані записи WebDAV?"
@@ -3766,7 +3775,7 @@ msgid "Do you want to enable selected commands?"
 msgstr "Ви хочете дозволити обрані команди?"
 
 msgid "Do you want to enable selected groups?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обрані групи?"
 
 msgid "Do you want to enable selected iSCSI initiators?"
 msgstr "Чи бажаєте дозволити обрані ініціатори iSCSI?"
@@ -3787,7 +3796,7 @@ msgid "Do you want to enable selected listen records?"
 msgstr "Ви бажаєте дозволити обрані записи прослуховань?"
 
 msgid "Do you want to enable selected media folders?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обрані каталоги медіа?"
 
 msgid "Do you want to enable selected option records?"
 msgstr "Ви бажаєте дозволити обрані записи параметрів?"
@@ -3802,7 +3811,7 @@ msgid "Do you want to enable selected portal groups?"
 msgstr "Ви бажаєте дозволити обрані групи порталу?"
 
 msgid "Do you want to enable selected public keys?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обрані публічні ключі?"
 
 msgid "Do you want to enable selected records?"
 msgstr "Ви бажаєте увімкнути обрані записи?"
@@ -3817,7 +3826,7 @@ msgid "Do you want to enable selected targets?"
 msgstr "Ви бажаєте дозволити обрані цілі?"
 
 msgid "Do you want to enable selected users?"
-msgstr ""
+msgstr "Ви дійсно бажаєте дозволити обраних користувачів?"
 
 msgid "Do you want to import disks?"
 msgstr "Ви бажаєте імпортувати диски?"
@@ -3841,10 +3850,10 @@ msgid "Do you want to toggle selected Mutual CHAP users?"
 msgstr "Ви бажаєте перемкнути обраних взаємних користувачів CHAP?"
 
 msgid "Do you want to toggle selected NFS exports?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обрані експорти NFS?"
 
 msgid "Do you want to toggle selected NFS root directories?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обрані кореневі каталоги NFS?"
 
 msgid "Do you want to toggle selected WebDAV records?"
 msgstr "Ви дійсно бажаєте перемкнути обрані записи WebDAV?"
@@ -3856,7 +3865,7 @@ msgid "Do you want to toggle selected commands?"
 msgstr "Ви хочете переключити обрані команди?"
 
 msgid "Do you want to toggle selected groups?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обрані групи?"
 
 msgid "Do you want to toggle selected iSCSI initiators?"
 msgstr "Чи бажаєте перемкнути обрані ініціатори iSCSI?"
@@ -3877,7 +3886,7 @@ msgid "Do you want to toggle selected listen records?"
 msgstr "Ви бажаєте перемкнути обрані записи прослуховань?"
 
 msgid "Do you want to toggle selected media folders?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обрані каталоги медіа?"
 
 msgid "Do you want to toggle selected option records?"
 msgstr "Ви бажаєте перемкнути обрані записи параметрів?"
@@ -3892,7 +3901,7 @@ msgid "Do you want to toggle selected portal groups?"
 msgstr "Ви бажаєте перемкнути обрані групи портала?"
 
 msgid "Do you want to toggle selected public keys?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обрані публічні ключі?"
 
 msgid "Do you want to toggle selected records?"
 msgstr "Ви бажаєте перемкнути обрані записи?"
@@ -3907,7 +3916,7 @@ msgid "Do you want to toggle selected targets?"
 msgstr "Ви бажаєте перемкнути обрані цілі?"
 
 msgid "Do you want to toggle selected users?"
-msgstr ""
+msgstr "Ви дійсно бажаєте перемкнути обраних користувачів?"
 
 msgid "Do you want to unlock selected records?"
 msgstr "Ви бажаєте розблокувати обрані записи?"
@@ -4022,7 +4031,7 @@ msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT розділ може використовуватись лише з UFS."
 
 msgid "ERROR - log errors"
-msgstr ""
+msgstr "ERROR - реєстрація помилок"
 
 msgid "ERROR:"
 msgstr "ПОМИЛКА:"
@@ -4079,16 +4088,16 @@ msgid "Edit Listen Record"
 msgstr "Редагувати запис прослуховання"
 
 msgid "Edit Media Folder"
-msgstr ""
+msgstr "Змінити каталог медіа"
 
 msgid "Edit Mutual CHAP User"
 msgstr "Редагувати взаємного користувача CHAP"
 
 msgid "Edit NFS Export"
-msgstr ""
+msgstr "Змінити експорт NFS"
 
 msgid "Edit NFS Root"
-msgstr ""
+msgstr "Змінити корінь NFS"
 
 msgid "Edit Option"
 msgstr "Редагувати налаштування"
@@ -4106,7 +4115,7 @@ msgid "Edit Portal Group"
 msgstr "Редагувати групу портала"
 
 msgid "Edit Public Key"
-msgstr ""
+msgstr "Змінити публічний ключ"
 
 msgid "Edit RAID"
 msgstr "Редагувати RAID"
@@ -4273,7 +4282,7 @@ msgid "Enable SMTP authentication."
 msgstr "Дозволити SMTP автентифікацію."
 
 msgid "Enable SSH service"
-msgstr ""
+msgstr "Дозволити службу SSH"
 
 msgid ""
 "Enable SSL/TLS for secured connections. You also need to configure the TLS "
@@ -4296,7 +4305,7 @@ msgid "Enable Selected Commands"
 msgstr "Дозволити обрані команди"
 
 msgid "Enable Selected Groups"
-msgstr ""
+msgstr "Дозволити обрані групи"
 
 msgid "Enable Selected Initiator Names"
 msgstr "Дозволити обрані імена ініціаторів"
@@ -4317,16 +4326,16 @@ msgid "Enable Selected Listen Records"
 msgstr "Дозволити обрані записи прослуховань"
 
 msgid "Enable Selected Media Folders"
-msgstr ""
+msgstr "Дозволити обрані каталоги медіа"
 
 msgid "Enable Selected Mutual CHAP Users"
 msgstr "Дозволити обраних взаємних користувачів CHAP"
 
 msgid "Enable Selected NFS Exports"
-msgstr ""
+msgstr "Дозволити обрані експорти NFS"
 
 msgid "Enable Selected NFS Root Directories"
-msgstr ""
+msgstr "Дозволити обрані кореневі каталоги NFS"
 
 msgid "Enable Selected Option Records"
 msgstr "Дозволити обрані записи параметра"
@@ -4341,7 +4350,7 @@ msgid "Enable Selected Portal Groups"
 msgstr "Дозволити обрані групи портала"
 
 msgid "Enable Selected Public Keys"
-msgstr ""
+msgstr "Дозволити обрані публічні ключі"
 
 msgid "Enable Selected Records"
 msgstr "Дозволити Обрані Записи"
@@ -4356,7 +4365,7 @@ msgid "Enable Selected Targets"
 msgstr "Дозволити обрані цілі"
 
 msgid "Enable Selected Users"
-msgstr ""
+msgstr "Дозволити обраних користувачів"
 
 msgid "Enable Selected WebDAV Records"
 msgstr "Увімкнути обраний запис WebDAV"
@@ -4438,7 +4447,7 @@ msgid "Enable collecting uptime statistics."
 msgstr "Увімкнути збір статистики про тривалість роботи."
 
 msgid "Enable compression after the user has authenticated successfully."
-msgstr ""
+msgstr "Дозволити стиснення після успішної автентифікації користувача."
 
 msgid "Enable console screensaver."
 msgstr "Увімкнути консольний скрінсейвер."
@@ -4604,7 +4613,7 @@ msgid "Enabled"
 msgstr "Увімкнено"
 
 msgid "Enabled options will be added to /etc/rc.conf."
-msgstr "Дозволені параметри будуть додані до /etc/rc.conf."
+msgstr "Увімкнені параметри будуть додані до /etc/rc.conf."
 
 msgid ""
 "Enabling this option may expose your system to additional security risk!"
@@ -4696,6 +4705,8 @@ msgstr ""
 
 msgid "Enter a custom port number if you do not want to use default port 22."
 msgstr ""
+"Введіть довільний номер порту, якщо ви не бажаєте використовувати "
+"стандартний порт 22."
 
 msgid "Enter a custom port number if you do not want to use default port 69."
 msgstr ""
@@ -4776,7 +4787,7 @@ msgid "Enter facility name"
 msgstr "Введіть назву обладнання"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "Введіть ім'я групи."
 
 msgid "Enter hostname or IP address."
 msgstr "Введіть ім'я хоста або IP-адресу."
@@ -4785,7 +4796,7 @@ msgid "Enter level name"
 msgstr "Введіть назву рівня"
 
 msgid "Enter login name."
-msgstr ""
+msgstr "Введіть логін."
 
 msgid "Enter mutual user name."
 msgstr "Введіть ім'я взаємного користувача."
@@ -4810,19 +4821,19 @@ msgid "Enter the command"
 msgstr "Введіть команду"
 
 msgid "Enter the full user name."
-msgstr ""
+msgstr "Введіть повне ім'я користувача."
 
 msgid "Enter the location of the share"
 msgstr "Введіть розташування спільного ресурсу"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "Введіть ім'я головного облікового запису користувача."
 
 msgid "Enter the name of the share"
 msgstr "Введіть ім'я ресурсу"
 
 msgid "Enter the network that is authorised to access the NFS share."
-msgstr ""
+msgstr "Вкажіть мережу, авторизовану для доступу до загального ресурсу NFS."
 
 msgid ""
 "Enter the passphrase that will be used in WPA-PSK mode. This must be between "
@@ -4830,7 +4841,7 @@ msgid ""
 msgstr "Введіть пароль для WPA-PSK. Довжина від 8 до 63 символів."
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "Введіть пароль головного облікового запису користувача."
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -4855,6 +4866,8 @@ msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
 "use default path /mnt."
 msgstr ""
+"Введіть шлях до домашнього каталогу користувача. Залиште пустим, щоб "
+"використовувати шлях /mnt за замовчуванням."
 
 msgid ""
 "Enter the path to the home directory. This directory will store the "
@@ -4929,7 +4942,7 @@ msgid "Export Rules"
 msgstr "Правила експорту"
 
 msgid "Export Subfolders"
-msgstr ""
+msgstr "Експортувати підкаталоги"
 
 msgid "Export a pool from the system"
 msgstr "Експорт пулу з системи"
@@ -4938,10 +4951,10 @@ msgid "Export all the directories in the specified path."
 msgstr "Експортувати всі каталоги за вказаним шляхом."
 
 msgid "Export as WebNFS."
-msgstr ""
+msgstr "Експортувати як WebNFS."
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "Експортувати файлову систему в режимі тільки читання."
 
 msgid "Exported"
 msgstr "Експортовано"
@@ -5006,7 +5019,7 @@ msgid "FAT32"
 msgstr "FAT32"
 
 msgid "FATAL - log fatal errors only"
-msgstr ""
+msgstr "FATAL - реєструвати лише фатальні помилки"
 
 msgid "FRU Information"
 msgstr "Інформація FRU"
@@ -5033,7 +5046,7 @@ msgid "FTP log"
 msgstr "Журнал FTP"
 
 msgid "FTP service is disabled."
-msgstr "Сервіс FTP недозволений."
+msgstr "Сервіс FTP вимкнений."
 
 msgid "FXP"
 msgstr "FXP"
@@ -5201,7 +5214,7 @@ msgid "Firmware Update"
 msgstr "Оновлення прошивки"
 
 msgid "Firmware upgrade check has been disabled."
-msgstr "Перевірка оновлення прошивки була заборонена."
+msgstr "Перевірка оновлення прошивки була вимкнена."
 
 msgid "Firmware upload failed (out of memory?)"
 msgstr "Не вдалося вивантажити прошивку (недостатньо пам'яті?)"
@@ -5346,7 +5359,7 @@ msgid "GPT partition"
 msgstr "Розділ GPT"
 
 msgid "GSSAPI Authentication"
-msgstr ""
+msgstr "Автентифікація GSSAPI"
 
 msgid "Gateway"
 msgstr "Шлюз"
@@ -5386,6 +5399,9 @@ msgid ""
 "Logging with a DEBUG level violates the privacy of users and is not "
 "recommended."
 msgstr ""
+"Дає рівень деталізації, який використовується при реєстрації повідомлень від "
+"sshd. Вхід із рівнем DEBUG порушує конфіденційність користувачів і не "
+"рекомендується."
 
 msgid "Global Settings"
 msgstr "Загальні налаштування"
@@ -5398,7 +5414,7 @@ msgid "Grant access to the user portal."
 msgstr "Надати доступ до порталу користувачів."
 
 msgid "Grant shell access to user"
-msgstr ""
+msgstr "Надати користувачеві доступ до оболонки"
 
 msgid "Graph shows last 120 seconds"
 msgstr "Графік показує останні 120 секунд"
@@ -5427,7 +5443,7 @@ msgid "Group ID"
 msgstr "ID групи"
 
 msgid "Group Name"
-msgstr ""
+msgstr "Ім'я групи"
 
 msgid "Group Settings"
 msgstr "Налаштування групи"
@@ -5478,7 +5494,7 @@ msgid "HAST Resource"
 msgstr "Ресурси HAST"
 
 msgid "HAST is disabled."
-msgstr "HAST заборонений."
+msgstr "HAST вимкнений."
 
 msgid "HAST volume"
 msgstr "HAST диск"
@@ -5572,10 +5588,10 @@ msgid "Hide Dot Files"
 msgstr "Приховати файли, що починаються з точки (вважаються системними)."
 
 msgid "Hide System Groups"
-msgstr ""
+msgstr "Приховати системні групи"
 
 msgid "Hide System Users"
-msgstr ""
+msgstr "Приховати системних користувачів"
 
 msgid "High voltage boosting transfer point"
 msgstr "Верхня межа напруги для режиму підживлення (boosting)"
@@ -5662,7 +5678,7 @@ msgid "IG"
 msgstr "IG"
 
 msgid "INFO - log status messages"
-msgstr ""
+msgstr "INFO - реєструвати повідомлення про стан"
 
 msgid "IP"
 msgstr "IP"
@@ -5681,7 +5697,7 @@ msgstr "Адреса IP віддаленого syslog сервера."
 
 msgid ""
 "IP addresses are resolved to hostnames when the following option is enabled:"
-msgstr "IP адреси вирішуються в імена хостів коли наступна опція включена:"
+msgstr "IP адреси вирішуються в імена хостів коли наступна опція увімкнена:"
 
 msgid "IP or FQDN address of remote Rsync server."
 msgstr "IP або FQDN адреса віддаленого сервера Rsync."
@@ -5699,7 +5715,7 @@ msgid "IPv4 DNS Servers"
 msgstr "Сервери DNS IPv4"
 
 msgid "IPv4 Routes"
-msgstr ""
+msgstr "IPv4 маршрути"
 
 msgid "IPv4 Settings"
 msgstr "Налаштування IPv4"
@@ -5742,7 +5758,7 @@ msgid "IPv6 Prefix"
 msgstr "IPv6 префікс"
 
 msgid "IPv6 Routes"
-msgstr ""
+msgstr "IPv6 маршрути"
 
 msgid "IPv6 Settings"
 msgstr "Налаштування IPv6"
@@ -5797,7 +5813,7 @@ msgid ""
 "after a client authenticates. This can be used to effectively isolate the "
 "client from a portion of the host system filespace."
 msgstr ""
-"Якщо за замовчуванням рут включений, операція chroot виконується відразу ж "
+"Якщо за замовчуванням root увімкнений, операція chroot виконується відразу ж "
 "після того, як клієнт підтверджує справжність. Це може бути використано для "
 "ефективного ізолювання клієнта від частини файлового простору хост-системи."
 
@@ -5862,7 +5878,7 @@ msgstr ""
 msgid ""
 "If this property is enabled, the snapshots are displayed into .zfs directory."
 msgstr ""
-"Якщо цей параметр увімкнутий, знімки будуть відображені в каталозі .zfs."
+"Якщо цей параметр увімкнений, знімки будуть відображені в каталозі .zfs."
 
 msgid "If this property is set to off, the file system cannot be mounted."
 msgstr "Якщо вимкнено, файлову систему неможливо змонтувати."
@@ -6298,7 +6314,7 @@ msgid "Key Management Protocol"
 msgstr "Протокол керування ключами"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "Автентифікація \"клавіатура-інтерактивно\""
 
 msgid "L2 Cache"
 msgstr "Кеш L2"
@@ -6653,7 +6669,7 @@ msgid "Location where the content database file will be stored."
 msgstr "Місце, де файл бази даних контенту буде зберігатися."
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "Розташування, де робочі файли будуть зберігатися."
 
 msgid "Lock Selected Records"
 msgstr "Заблокувати Обрані Записи"
@@ -6713,7 +6729,7 @@ msgid "Login"
 msgstr "Логін"
 
 msgid "Login Name"
-msgstr ""
+msgstr "Ім'я користувача"
 
 msgid "Login for CHAP authentication."
 msgstr "Логін для автентифікації CHAP."
@@ -6741,7 +6757,7 @@ msgid ""
 "enabled, it is adjusted to 240 on failure."
 msgstr ""
 "Найнижче значення дорівнює більш високиму пріоритету. Для головного вузла "
-"використовуйте 0 або 1. Якщо preempt включена, то у разі невдачі дорівнює "
+"використовуйте 0 або 1. Якщо preempt увімкнено, то у разі невдачі дорівнює "
 "240."
 
 msgid "MAC Address"
@@ -6751,7 +6767,7 @@ msgid "MBR partition"
 msgstr "MBR розділ"
 
 msgid "MD4 Password"
-msgstr ""
+msgstr "Пароль MD4"
 
 msgid "MIRROR"
 msgstr "MIRROR"
@@ -6805,10 +6821,10 @@ msgid "Manufacturing date"
 msgstr "Дата виробництва"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "Зіставити всіх до користувача"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "Зіставити root до користувача"
 
 msgid "Map to Guest"
 msgstr "Перетворювати в Гостя"
@@ -6817,10 +6833,10 @@ msgid "Map to User"
 msgstr "Перетворювати в користувача"
 
 msgid "Map users or map root to the specified user."
-msgstr ""
+msgstr "Зіставити користувачів або зіставити root до вказаного користувача"
 
 msgid "Mapping"
-msgstr ""
+msgstr "Зіставлення"
 
 msgid "Mapping DOS Attributes"
 msgstr "Відображати DOS Атрибути"
@@ -6846,13 +6862,13 @@ msgid "Masquerade Address"
 msgstr "Адреса Маскарадінгу"
 
 msgid "Master"
-msgstr ""
+msgstr "Головний"
 
 msgid "Master Password"
-msgstr ""
+msgstr "Головний пароль"
 
 msgid "Master User"
-msgstr ""
+msgstr "Головний користувач"
 
 msgid "Max Processes"
 msgstr "Максимальна кількість процесів"
@@ -6952,28 +6968,28 @@ msgid "Media Directory"
 msgstr "Каталог Медіа"
 
 msgid "Media Folder"
-msgstr ""
+msgstr "Каталог медіа"
 
 msgid "Media Folder is locked"
-msgstr ""
+msgstr "Медіа каталог заблокований"
 
 msgid "Media Folder is marked for deletion"
-msgstr ""
+msgstr "Медіа каталог позначений для видалення"
 
 msgid "Media Folder is unlocked"
-msgstr ""
+msgstr "Медіа каталог розблокований"
 
 msgid "Media Library"
 msgstr "Медіабібліотека"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "Ім'я медіа каталогу."
 
 msgid "Media Size"
 msgstr "Розмір носія"
 
 msgid "Media Type"
-msgstr ""
+msgstr "Тип медіа"
 
 msgid "Media library"
 msgstr "Медіа бібліотека"
@@ -7103,13 +7119,13 @@ msgid "Monitoring"
 msgstr "Спостереження"
 
 msgid "Monitoring Password"
-msgstr ""
+msgstr "Пароль моніторингу"
 
 msgid "Monitoring Setup"
 msgstr "Налаштування спостереження"
 
 msgid "Monitoring User"
-msgstr ""
+msgstr "Користувач моніторингу"
 
 msgid "Months"
 msgstr "Місяців"
@@ -7218,22 +7234,22 @@ msgid "NFS"
 msgstr "NFS"
 
 msgid "NFS Export is locked"
-msgstr ""
+msgstr "Експорт NFS заблокований"
 
 msgid "NFS Export is marked for deletion"
-msgstr ""
+msgstr "Експорт NFS позначений для видалення"
 
 msgid "NFS Export is unlocked"
-msgstr ""
+msgstr "Експорт NFS розблокований"
 
 msgid "NFS Root is locked"
-msgstr ""
+msgstr "Корінь NFS заблокований"
 
 msgid "NFS Root is marked for deletion"
-msgstr ""
+msgstr "Корінь NFS позначений для видалення"
 
 msgid "NFS Root is unlocked"
-msgstr ""
+msgstr "Корінь NFS розблокований"
 
 msgid "NFSv4"
 msgstr "NFSv4"
@@ -7345,7 +7361,7 @@ msgid "NetBIOS Name"
 msgstr "Ім'я NetBIOS"
 
 msgid "NetIf"
-msgstr ""
+msgstr "Інтерфейс"
 
 msgid "Netatalk (default) - use Netatalk compatible xattr."
 msgstr ""
@@ -7458,10 +7474,10 @@ msgid "No IPMI Sensor data available."
 msgstr "Немає доступних даних IPMI сенсору."
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "Не знайдено жодної інформації про маршрутизацію IPv4."
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "Не знайдено жодної інформації про маршрутизацію IPv6."
 
 msgid "No Initiator Group has been configured."
 msgstr "Жодна група ініціаторів не налаштована."
@@ -7473,7 +7489,7 @@ msgid "No LUNs found."
 msgstr "Жодних LUN не знайдено."
 
 msgid "No Login"
-msgstr ""
+msgstr "Вхід не виконано"
 
 msgid "No Mutual-CHAP users found."
 msgstr "Жодних користувачів взаємних CHAP не знайдено."
@@ -7709,6 +7725,8 @@ msgstr "Примітка"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
 msgstr ""
+"Зверніть увагу, що тільки одна файлова система може бути експортована в "
+"WebNFS на сервері."
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7911,7 +7929,7 @@ msgid "Overwrite disks configuration"
 msgstr "Переписати конфігурацію дисків"
 
 msgid "Overwrite the sort criteria passed by the client."
-msgstr ""
+msgstr "Перезаписати критерії сортування, передані клієнтом."
 
 msgid "Owner"
 msgstr "Власник"
@@ -8075,7 +8093,7 @@ msgstr ""
 "Пароль Ім'я сервера або IP адреса (типа контролер домену Active Directory)."
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "Вставити RSA PRIVATE KEY у форматі PEM"
 
 msgid "Paste a private key in PEM format here."
 msgstr "Скопіюйте сюди приватний ключ у PEM форматі."
@@ -8096,7 +8114,7 @@ msgid "Path of the URL relative to document root."
 msgstr "Шлях URL відносно кореня документа."
 
 msgid "Path to be included."
-msgstr ""
+msgstr "Шлях, що буде доданий."
 
 msgid "Path to be shared to be synchronized."
 msgstr "Шлях, що буде загальним для синхронізації."
@@ -8301,6 +8319,7 @@ msgstr "Ім'я порту сервера iSNS."
 
 msgid "Port of the SSH service. Leave blank to use the default port."
 msgstr ""
+"Порт служби SSH. Залиште пустим, щоб використовувати порт за замовчуванням."
 
 msgid "Port of the TFTP service. Leave blank to use the default port."
 msgstr ""
@@ -8346,6 +8365,8 @@ msgid ""
 "Port to listen on. Port number must be between 1024 and 65535. Default port "
 "is 8200."
 msgstr ""
+"Порт для прослуховування. Номер порту повинен бути між 1024 і 65535. Порт за "
+"замовчуванням - 8200."
 
 msgid "Portal Group"
 msgstr "Група порталів"
@@ -8511,28 +8532,28 @@ msgid "Proxy"
 msgstr "Проксі"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Публічний ключ"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "Автентифікація за публічним ключем"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "Налаштування публічного ключа"
 
 msgid "Public Keys"
-msgstr ""
+msgstr "Публічний ключ"
 
 msgid "Public key information."
-msgstr ""
+msgstr "Інформація про публічний ключ."
 
 msgid "Public key is marked for deletion"
-msgstr ""
+msgstr "Публічний ключ позначений для видалення"
 
 msgid "Public key is protected"
-msgstr ""
+msgstr "Публічний ключ захищений"
 
 msgid "Public key is unlocked"
-msgstr ""
+msgstr "Публічний ключ розблокований"
 
 msgid "Pull"
 msgstr "Пул"
@@ -8546,7 +8567,7 @@ msgid ""
 msgstr "Переводити диск в сплячий режим після вказаного часу."
 
 msgid "QUIET - disable logging"
-msgstr ""
+msgstr "QUIET - заборонити реєстрацію"
 
 msgid "Queue Depth"
 msgstr "Глибина запитів"
@@ -8887,6 +8908,9 @@ msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
 msgstr ""
+"Віддалені root доступи призведуть до використання облікових даних "
+"65534:65533. Усі інші користувачі будуть зіставлені з їх віддаленими "
+"обліковими даними."
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -9028,7 +9052,7 @@ msgid "Restore metadata from the given file to the given provider."
 msgstr "Відновити метадані з обраного файлу в вибране місце."
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "Обмежити каталог певним типом медіа."
 
 msgid "Restricted"
 msgstr "Restricted"
@@ -9074,10 +9098,10 @@ msgid "Root Bind Password"
 msgstr "Пароль Кореневого Зв'язування"
 
 msgid "Root Directory"
-msgstr ""
+msgstr "Кореневий каталог"
 
 msgid "Root Login"
-msgstr ""
+msgstr "Кореневий вхід"
 
 msgid "Rotation Rate"
 msgstr "Швидкість ротації"
@@ -9144,8 +9168,7 @@ msgstr "Виконати зараз"
 
 msgid "Run without requiring remote rsync daemon. (Disabled by default)"
 msgstr ""
-"Запуск без необхідності віддаленого демону rsync. (Відключено за "
-"замовчуванням)"
+"Запуск без необхідності віддаленого демону rsync. (Вимкнено за замовчуванням)"
 
 msgid ""
 "Running this service as root is not recommended for security reasons, use at "
@@ -9173,7 +9196,7 @@ msgid "SCSI Name"
 msgstr "Ім'я SCSI"
 
 msgid "SHA Password"
-msgstr ""
+msgstr "Пароль SHA"
 
 msgid "SHA-256, Verify"
 msgstr "SHA-256, з перевіркою"
@@ -9291,24 +9314,24 @@ msgid ""
 "administrative web interface."
 msgstr ""
 "Сканувати файлову систему кожні N секунд для виявлення доданих чи видалених "
-"файлів. Встановіть '0' для відміни періодичного фонового сканування. Навіть "
-"якщо постійне фонове сканування відмінено, одноразове сканування можна "
-"запустити із сторінки статуса у веб інтерфейсі."
+"файлів. Встановіть '0' для вимкнення періодичного фонового сканування. "
+"Навіть якщо постійне фонове сканування вимкнено, одноразове сканування можна "
+"виконати із сторінки статуса веб інтерфейса."
 
 msgid "Scan folder for all media types."
-msgstr ""
+msgstr "Сканувати каталог на всі типи медіа."
 
 msgid "Scan folder for audio files."
-msgstr ""
+msgstr "Сканувати каталог на аудіо файли."
 
 msgid "Scan folder for image files."
-msgstr ""
+msgstr "Сканувати каталог на файли зображень."
 
 msgid "Scan folder for video and image files."
-msgstr ""
+msgstr "Сканувати каталог на відеофайли та файли зображень."
 
 msgid "Scan folder for video files."
-msgstr ""
+msgstr "Сканувати каталог на відеофайли."
 
 msgid "Schedule Time"
 msgstr "Час розкладів"
@@ -9371,7 +9394,7 @@ msgid "Secret for CHAP authentication."
 msgstr "Пароль автентифікації CHAP."
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Вкладка безпеки"
 
 msgid "Security Warning"
 msgstr "Попередження про небезпеку"
@@ -9429,13 +9452,13 @@ msgid "Select Spare Device"
 msgstr "Оберіть запасний пристрій"
 
 msgid "Select a container as the root of the tree exposed to clients."
-msgstr ""
+msgstr "Виберіть контейнер в якості кореня дерева, доступного для клієнтів."
 
 msgid "Select a date format."
 msgstr "Виберіть формат дати."
 
 msgid "Select a disk that is enabled for S.M.A.R.T. monitoring."
-msgstr "Виберіть диск для якого дозволено моніторинг S.M.A.R.T."
+msgstr "Виберіть диск для якого увімкнений моніторинг S.M.A.R.T."
 
 msgid "Select an encryption algorithm to use."
 msgstr "Оберіть алгоритм шифрування."
@@ -9660,7 +9683,7 @@ msgid "Service Active"
 msgstr "Служба активна"
 
 msgid "Service Enabled"
-msgstr "Сервіс дозволений"
+msgstr "Сервіс увімкнений"
 
 msgid "Services"
 msgstr "Служби"
@@ -9675,7 +9698,7 @@ msgid "Set UID"
 msgstr "Встановити UID"
 
 msgid "Set User Password"
-msgstr ""
+msgstr "Встановить пароль користувача"
 
 msgid "Set browseable."
 msgstr "Зробити таким, що проглядається."
@@ -9688,7 +9711,7 @@ msgstr ""
 "значення 10."
 
 msgid "Set password"
-msgstr ""
+msgstr "Встановити пароль"
 
 msgid "Set per-LUN/per-pool thin provisioning soft threshold."
 msgstr "Встановлює м'який поріг для мінімальної настройки кожного LUN/пулу"
@@ -9709,7 +9732,7 @@ msgstr ""
 "застосувати."
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "Встановіть основну групу облікового запису."
 
 msgid "Set the content location(s) to or from the media library."
 msgstr ""
@@ -9787,7 +9810,7 @@ msgid "Set user login shell."
 msgstr "Встановить оболонку користувацького входу."
 
 msgid "Set user password."
-msgstr ""
+msgstr "Встановіть пароль користувача."
 
 msgid "Setkey"
 msgstr "Встановити ключ шифрування"
@@ -9928,10 +9951,10 @@ msgid "Show RAW UPS Info"
 msgstr "Показати необроблену інформацію ДБЖ"
 
 msgid "Show System Groups"
-msgstr ""
+msgstr "Показати системні групи"
 
 msgid "Show System Users"
-msgstr ""
+msgstr "Показати системних користувачів"
 
 msgid "Show UPS Information"
 msgstr "Показати інформацію про ДБЖ"
@@ -9999,7 +10022,7 @@ msgid "Skip View Mode"
 msgstr "Скасувати Режим Огляду"
 
 msgid "Slave"
-msgstr ""
+msgstr "Ведений"
 
 msgid "Sleep - Check the device unless it is in SLEEP mode."
 msgstr "Сплячий (sleep) - Перевіряти пристрій якщо він не у сплячому режимі."
@@ -10059,7 +10082,7 @@ msgid "Sort"
 msgstr "Сортування"
 
 msgid "Sort Criteria"
-msgstr ""
+msgstr "Критерії впорядкування"
 
 msgid "Source"
 msgstr "Джерело"
@@ -10221,6 +10244,8 @@ msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
 msgstr ""
+"Вкажіть список прийнятних параметрів безпеки, які будуть використовуватися "
+"для віддаленого доступу. \tВкладка безпеки\tза замовчуванням\tsys."
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -10253,10 +10278,10 @@ msgid "Specify the SCSI device type to use when creating the LUN."
 msgstr "Визначає тип пристрою SCSI для використання під час створювання LUN."
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "Вкажіть числовий ідентифікатор групи."
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "Вкажіть числовий ідентифікатор користувача / облікового запису."
 
 msgid "Split request"
 msgstr "Розділений запит"
@@ -10397,7 +10422,7 @@ msgid "Swap Usage"
 msgstr "Використання Swap"
 
 msgid "Swap is disabled."
-msgstr "Своп заборонений."
+msgstr "Своп вимкнений."
 
 msgid "Switch VIP to BACKUP"
 msgstr "Перемкнути VIP на BACKUP"
@@ -10468,7 +10493,7 @@ msgid "System Events"
 msgstr "Системні події"
 
 msgid "System Group"
-msgstr ""
+msgstr "Системна група"
 
 msgid "System Information"
 msgstr "Системна інформація"
@@ -10495,7 +10520,7 @@ msgid "System Uptime"
 msgstr "Час роботи системи"
 
 msgid "System User"
-msgstr ""
+msgstr "Системний користувач"
 
 msgid "System info"
 msgstr "Відомості про систему"
@@ -10681,7 +10706,7 @@ msgstr ""
 "загального ресурсу. Формат аналогічний налаштувань дозволу доступу."
 
 msgid "The COM port in BIOS has to be enabled before enabling this option."
-msgstr "Перед включенням цієї опції треба дозволити COM-порт в BIOS."
+msgstr "Перед включенням цієї опції треба увімкнути COM-порт в BIOS."
 
 msgid "The CTL backend to use for a given LUN."
 msgstr "CTL backend для використання для даного LUN."
@@ -11436,9 +11461,11 @@ msgstr "Рекомендована довжина черги %d."
 
 msgid "The recommended range for the group id is between 1000 and 32000."
 msgstr ""
+"Рекомендований діапазон для ідентифікатора групи - від 1000 до 32000."
 
 msgid "The recommended range for the user id is between 1000 and 32000."
 msgstr ""
+"Рекомендований діапазон для ідентифікатора користувача - від 1000 до 32000."
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -11621,7 +11648,7 @@ msgid ""
 msgstr "Ці параметри додаються до апаратно-специфічної частини драйвера."
 
 msgid "These parameters are appended to /etc/ssh/sshd_config."
-msgstr ""
+msgstr "Ці параметри додаються до /etc/ssh/sshd_config."
 
 msgid "These parameters are appended to the exports file."
 msgstr "Ці параметри додані до експортованого файлу."
@@ -11639,7 +11666,7 @@ msgid "These parameters will be added to global settings in %s."
 msgstr "Ці параметри будуть додані до загальних налаштувань в %s."
 
 msgid "These parameters will be added to minidlna.conf"
-msgstr ""
+msgstr "Ці параметри будуть додані до minidlna.conf"
 
 msgid "These parameters will be added to my.cnf"
 msgstr "Ці параметри будуть додані до my.cnf"
@@ -12056,6 +12083,9 @@ msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
 msgstr ""
+"Це дозволить на стороні сервера зменшити масштаб дуже великих зображень у "
+"форматі JPEG, це може вплинути на продуктивність обробки JPEG на деяких "
+"пристроях DLNA."
 
 msgid "This will create a recycle bin on the share."
 msgstr "Це створить смітник у загальному ресурсі."
@@ -12198,10 +12228,10 @@ msgstr ""
 "Для того, щоб будь-яка IP адреса була відповідною, залиште це поле порожнім."
 
 msgid "To use Active Directory the CIFS/SMB service will enabled as well."
-msgstr "Щоб використовувати Active Directory служба CIFS/SMB буде включена."
+msgstr "Щоб використовувати Active Directory служба CIFS/SMB буде увімкнена."
 
 msgid "To use subdirectories, you must mount each directory."
-msgstr ""
+msgstr "Щоб використовувати підкаталоги, потрібно змонтувати кожен каталог."
 
 msgid "Toggle Mode"
 msgstr "Режим перемикача"
@@ -12216,7 +12246,7 @@ msgid "Toggle Selected Commands"
 msgstr "Переключити обрані команди"
 
 msgid "Toggle Selected Groups"
-msgstr ""
+msgstr "Перемкнути обрані групи"
 
 msgid "Toggle Selected Initiator Names"
 msgstr "Перемкнути обрані імена ініціаторів"
@@ -12237,16 +12267,16 @@ msgid "Toggle Selected Listen Records"
 msgstr "Перемкнути обрані записи прослуховувань"
 
 msgid "Toggle Selected Media Folders"
-msgstr ""
+msgstr "Перемкнути обрані каталоги медіа"
 
 msgid "Toggle Selected Mutual CHAP Users"
 msgstr "Перемкнути обраних взаємних користувачів CHAP"
 
 msgid "Toggle Selected NFS Exports"
-msgstr ""
+msgstr "Перемкнути обрані експорти NFS"
 
 msgid "Toggle Selected NFS Root Directories"
-msgstr ""
+msgstr "Перемкнути обрані кореневы каталоги NFS"
 
 msgid "Toggle Selected Option Records"
 msgstr "Перемкнути обрані записи опції"
@@ -12261,7 +12291,7 @@ msgid "Toggle Selected Portal Groups"
 msgstr "Перемкнути обрані групи порталу"
 
 msgid "Toggle Selected Public Keys"
-msgstr ""
+msgstr "Перемкнути обрані публічні ключі"
 
 msgid "Toggle Selected Records"
 msgstr "Перемикання Обраних Записів"
@@ -12276,7 +12306,7 @@ msgid "Toggle Selected Targets"
 msgstr "Перемкнути обрані цілі"
 
 msgid "Toggle Selected Users"
-msgstr ""
+msgstr "Перемкнути обрані користувачі"
 
 msgid "Toggle Selected WebDAV Records"
 msgstr "Перемкнути обрані записи WebDAV"
@@ -12713,7 +12743,7 @@ msgid "Uptime Statistics"
 msgstr "Статистика часу роботи"
 
 msgid "Use"
-msgstr ""
+msgstr "Використовувати"
 
 msgid "Use Bytes/sec instead of Bits/sec for network throughput display."
 msgstr "Відображати пропускну здатність мережі у байт/с замість біт/с."
@@ -12755,6 +12785,8 @@ msgstr ""
 
 msgid "Use inotify monitoring to automatically discover new media files."
 msgstr ""
+"Використовуйте моніторинг inotify для автоматичного виявлення нових "
+"мультимедійних файлів."
 
 msgid "Use local user authentication."
 msgstr "Використовувати автентифікацію локального користувача."
@@ -12768,16 +12800,16 @@ msgstr ""
 "може бути використано разом з позитивним/негативним значенням по осі Y)"
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "Використовувати контейнер \"Перегляд каталогу\""
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "Використовувати контейнер \"Музика\""
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "Використовувати контейнер \"Зображення\""
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "Використовувати контейнер \"Відео\""
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -12790,7 +12822,7 @@ msgid "Use the specified NTP server."
 msgstr "Використовувати вказаний NTP сервер."
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "Використовувати стандартний контейнер (за замовчуванням)"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "Використовуйте ці спеціальні дії тільки для відлагодження!"
@@ -12916,13 +12948,13 @@ msgid "Using %s bytes fragment size."
 msgstr "Використовується розмір фрагмента в %s байт."
 
 msgid "Using defaults"
-msgstr ""
+msgstr "Використовувати замовчування"
 
 msgid "VCPUs"
 msgstr "VCPUs"
 
 msgid "VERBOSE - log detailed information"
-msgstr ""
+msgstr "VERBOSE - реєструвати детальну інформацію"
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit:encoding"
@@ -12994,7 +13026,7 @@ msgid "Vendor ID"
 msgstr "Ідентифікатор виробника"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "Деталізація інформації, що реєструється."
 
 msgid "Verify"
 msgstr "Перевірити"
@@ -13232,13 +13264,13 @@ msgid ""
 "When HAST is enabled, the local devices, the local services and the "
 "additional packages which do not support HAST volume cannot be used."
 msgstr ""
-"Коли HAST включено, не можуть бути використані локальні пристрої, місцеві "
-"сервіси та додаткові пакети, які не підтримують том HAST."
+"Коли HAST увімкнений, локальні пристрої, місцеві сервіси та додаткові "
+"пакети, які не підтримують том HAST, не можуть бути використані."
 
 msgid ""
 "When Samba AD is enabled, stand-alone CIFS/SMB file sharing cannot be used."
 msgstr ""
-"Коли Samba AD включена, автономний загальний доступ до файлів CIFS / SMB не "
+"Коли Samba AD увімкнена, автономний загальний доступ до файлів CIFS / SMB не "
 "може бути використаний."
 
 msgid ""
@@ -13642,14 +13674,20 @@ msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
 msgstr ""
+"krb5 - Використовуйте протокол Kerberos V5 для автентифікації користувачів "
+"перед наданням доступу до спільної файлової системи."
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
 msgstr ""
+"krb5i - Використовуйте автентифікацію Kerberos V5 з контрольними сумами "
+"цілісності даних."
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
 msgstr ""
+"krb5p - Використовуйте автентифікацію Kerberos V5 з контрольними сумами "
+"цілісності даних."
 
 msgid "less then 1.8\"."
 msgstr "менш ніж 1.8\"."
@@ -13662,11 +13700,15 @@ msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
 msgstr ""
+"mapall - визначає відображення для всіх ідентифікаторів клієнта (включаючи "
+"кореневий)"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
 msgstr ""
+"maproot - облікові дані вказаного користувача використовуються для "
+"віддаленого доступу за допомогою root."
 
 msgid "missing"
 msgstr "відсутній"
@@ -13724,7 +13766,7 @@ msgid "scan target failed."
 msgstr "збій сканування об'єкта."
 
 msgid "scponly - Secure Copy Protocol only"
-msgstr ""
+msgstr "scponly - лише захищений протокол копіювання"
 
 msgid "seconds)"
 msgstr "секунд)"

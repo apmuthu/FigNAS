@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
 "POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-15 10:53+0000\n"
+"PO-Revision-Date: 2019-06-26 07:03+0000\n"
 "Last-Translator: Kiss-Kálmán Dániel <kisskalmandaniel@gmail.com>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-19 18:13+0000\n"
-"X-Generator: Launchpad (build 18986)\n"
+"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
+"X-Generator: Launchpad (build 18991)\n"
 "Language: hu_HU\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -735,7 +735,7 @@ msgid "Add the selected device to the existing mirror."
 msgstr "A kiválasztott eszköz hozzáadása a már létező tükörhöz."
 
 msgid "Add user to additional groups."
-msgstr ""
+msgstr "Felhasználó további csoportokhoz rendelése."
 
 msgid "Additional Information"
 msgstr "További információ"
@@ -934,7 +934,7 @@ msgid "Allow root to login via ssh."
 msgstr "A root bejelentkezhet ssh-n."
 
 msgid "Allow symlinks that point outside defined media folders."
-msgstr ""
+msgstr "A megadott médiamappákon kívülre mutató symlinkek engedélyezése."
 
 msgid "Allow to start UPS from battery"
 msgstr "Megengedi, hogy a szünetmentes elemről induljon."
@@ -1468,6 +1468,7 @@ msgstr "Előtte - Átvitel megkezdése előtt töröljük a fájlokat."
 msgid ""
 "Before a Unison client can start to work, you need to perform the following:"
 msgstr ""
+"Mielőtt az Unison kliens munkába áll, végre kell hajtanod a következőket:"
 
 msgid "Best available"
 msgstr "Az elérhető legjobb"
@@ -1564,6 +1565,8 @@ msgid ""
 "Broadcasts its availability every configured seconds on the network, the "
 "default is 300 seconds."
 msgstr ""
+"Az elérhetőség broadcastolása a hálózaton minden beállított másodpercében, "
+"az alapértelmezett 300 másodperc."
 
 msgid "Browseable"
 msgstr "Böngészhető"
@@ -2001,6 +2004,10 @@ msgid ""
 "execute upon subsystem request. Leave this field empty to use the default "
 "settings."
 msgstr ""
+"Egy külső alrendszert lonfigurál (pl. fájlátviteli démon). Az argumentumok "
+"egy alrendszernev és egy parancs legyen (opcionális argumentumokkal), hogy "
+"alrendszer kérésére fusson. Hagyd üresen a mezőt az alapértelmezett "
+"beállítások használatához."
 
 msgid "Configuring"
 msgstr "Beállítás"
@@ -2497,16 +2504,16 @@ msgid "DAAP"
 msgstr "DAAP"
 
 msgid "DEBUG - log debugging information"
-msgstr ""
+msgstr "DEBUG - hibakeresési információ naplózása"
 
 msgid "DEBUG1 - same as DEBUG"
-msgstr ""
+msgstr "DEBUG1 - ugyanaz, mint a DEBUG"
 
 msgid "DEBUG2 - log detailed debugging information"
-msgstr ""
+msgstr "DEBUG2 - részletes hibakeresési információ naplózása"
 
 msgid "DEBUG3 - log all debugging information"
-msgstr ""
+msgstr "DEBUG - összes hibakeresési információ naplózása"
 
 msgid "DHCP"
 msgstr "DHCP"
@@ -3229,7 +3236,7 @@ msgid "Disable speaker beep on startup and shutdown."
 msgstr "Hangszóró sípolásának kikapcsolása indításkor és leállításkor."
 
 msgid "Disable subtitle support on unknown clients."
-msgstr ""
+msgstr "Felirattámogatás tiltása ismeretlen klienseken."
 
 msgid "Disable the compression of repeating lines."
 msgstr "Ismétlődő sorok tömörítésének tiltása."
@@ -3810,10 +3817,10 @@ msgid "Do you want to toggle selected Mutual CHAP users?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott kölcsönös CHAP felhasználót?"
 
 msgid "Do you want to toggle selected NFS exports?"
-msgstr ""
+msgstr "Biztos, hogy ki-, bekapcsolod a kiválasztott NFS exportokat?"
 
 msgid "Do you want to toggle selected NFS root directories?"
-msgstr ""
+msgstr "Biztos, hogy ki-, bekapcsolod a kiválasztott NFS gyökérmappákat?"
 
 msgid "Do you want to toggle selected WebDAV records?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott WebDAV bejegyzéseket?"
@@ -3825,7 +3832,7 @@ msgid "Do you want to toggle selected commands?"
 msgstr "Biztos, hogy engedélyezed a kijelölt parancsokat?"
 
 msgid "Do you want to toggle selected groups?"
-msgstr ""
+msgstr "Biztos, hogy ki-. bekapcsolod a kiválasztott csoportokat?"
 
 msgid "Do you want to toggle selected iSCSI initiators?"
 msgstr "Biztos, hogy átkapcsolja a kiválasztott  iSCSI Kezdeményezőket?"
@@ -3846,7 +3853,7 @@ msgid "Do you want to toggle selected listen records?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott figyelendő bejegyzéseket?"
 
 msgid "Do you want to toggle selected media folders?"
-msgstr ""
+msgstr "Biztos, hogy ki-. bekapcsolod a kiválasztott médiamappákat?"
 
 msgid "Do you want to toggle selected option records?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott lehetőségbejegyzéseket?"
@@ -3861,7 +3868,7 @@ msgid "Do you want to toggle selected portal groups?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott portál csoportokat?"
 
 msgid "Do you want to toggle selected public keys?"
-msgstr ""
+msgstr "Biztos, hogy ki-. bekapcsolod a kiválasztott nyilvános kulcsokat?"
 
 msgid "Do you want to toggle selected records?"
 msgstr "Biztos, hogy átkapcsolod a kijelölt bejegyzéseket?"
@@ -3876,7 +3883,7 @@ msgid "Do you want to toggle selected targets?"
 msgstr "Biztos, hogy átkapcsolod a kiválasztott célokat?"
 
 msgid "Do you want to toggle selected users?"
-msgstr ""
+msgstr "Biztos, hogy ki-, bekapcsolod a kiválasztott felhasználókat?"
 
 msgid "Do you want to unlock selected records?"
 msgstr "Biztos, hogy feloldod a kijelölt bejegyzések zárolását?"
@@ -3989,7 +3996,7 @@ msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT partíció csak UFS-sel használható."
 
 msgid "ERROR - log errors"
-msgstr ""
+msgstr "ERROR - hibák naplózása"
 
 msgid "ERROR:"
 msgstr "HIBA:"
@@ -4046,13 +4053,13 @@ msgid "Edit Listen Record"
 msgstr "Figyelendő bejegyzés módosítása"
 
 msgid "Edit Media Folder"
-msgstr ""
+msgstr "Médiamappa módosítása"
 
 msgid "Edit Mutual CHAP User"
 msgstr "A kiválasztott kölcsönös CHAP felhasználó módosítása"
 
 msgid "Edit NFS Export"
-msgstr ""
+msgstr "NFS export módosítása"
 
 msgid "Edit NFS Root"
 msgstr "NFS gyökér módosítása"
@@ -4404,7 +4411,7 @@ msgid "Enable collecting uptime statistics."
 msgstr "Működési idő statisztika gyűjtésének engedélyezése."
 
 msgid "Enable compression after the user has authenticated successfully."
-msgstr ""
+msgstr "Sikeresen hitelesítés után a tömörítés engedélyezése."
 
 msgid "Enable console screensaver."
 msgstr "Konzol-képernyővédő engedélyezése."
@@ -4659,7 +4666,7 @@ msgstr ""
 "HTTPS esetén)."
 
 msgid "Enter a custom port number if you do not want to use default port 22."
-msgstr ""
+msgstr "Adj meg egy portot, ha nem az alapértelmezett 22-es használod."
 
 msgid "Enter a custom port number if you do not want to use default port 69."
 msgstr ""
@@ -4739,7 +4746,7 @@ msgid "Enter facility name"
 msgstr "Adja meg a terület nevét"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "Add meg a csoport nevét."
 
 msgid "Enter hostname or IP address."
 msgstr "Add meg a kiszolgálónevét vagy az IP címét."
@@ -4748,7 +4755,7 @@ msgid "Enter level name"
 msgstr "Adja meg a szint nevét"
 
 msgid "Enter login name."
-msgstr ""
+msgstr "Add meg a felhasználónevet."
 
 msgid "Enter mutual user name."
 msgstr "Add meg a kölcsönös felhasználónevet."
@@ -4773,19 +4780,19 @@ msgid "Enter the command"
 msgstr "Adj meg egy parancsot"
 
 msgid "Enter the full user name."
-msgstr ""
+msgstr "Add meg a felhasználó teljes nevét."
 
 msgid "Enter the location of the share"
 msgstr "Add meg a megosztás helyét"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "Add meg a mesterfelhasználó fiók nevét."
 
 msgid "Enter the name of the share"
 msgstr "Add meg a megosztás nevét"
 
 msgid "Enter the network that is authorised to access the NFS share."
-msgstr ""
+msgstr "Add meg a hálózatot, ami elérheti a NFS megosztásokat."
 
 msgid ""
 "Enter the passphrase that will be used in WPA-PSK mode. This must be between "
@@ -4795,7 +4802,7 @@ msgstr ""
 "lennie."
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "Add meg a mesterfelhasználó fiók jelszavát."
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -4820,6 +4827,8 @@ msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
 "use default path /mnt."
 msgstr ""
+"Add meg a felhasználó saját mappájának az útvonalát. Hagyd üresen az "
+"alapértelmezett /mnt használatához."
 
 msgid ""
 "Enter the path to the home directory. This directory will store the "
@@ -4893,7 +4902,7 @@ msgid "Export Rules"
 msgstr "Szabályok exportálása"
 
 msgid "Export Subfolders"
-msgstr ""
+msgstr "Almappák exoprtálása"
 
 msgid "Export a pool from the system"
 msgstr "Tároló exportálása a rendszerből"
@@ -4902,10 +4911,10 @@ msgid "Export all the directories in the specified path."
 msgstr "A kiválasztott útvonalon lévő összes mappa exportálása."
 
 msgid "Export as WebNFS."
-msgstr ""
+msgstr "Exportálás WebNFS-ként."
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "A fájlrendszer exportálása írásvédett módban."
 
 msgid "Exported"
 msgstr "Exportálva"
@@ -4969,7 +4978,7 @@ msgid "FAT32"
 msgstr "FAT32"
 
 msgid "FATAL - log fatal errors only"
-msgstr ""
+msgstr "FATAL - csak a végzetes hibák naplózása"
 
 msgid "FRU Information"
 msgstr "FRU információ"
@@ -5305,7 +5314,7 @@ msgid "GPT partition"
 msgstr "GPT partíció"
 
 msgid "GSSAPI Authentication"
-msgstr ""
+msgstr "GSSAPI hitelesítése"
 
 msgid "Gateway"
 msgstr "Átjáró"
@@ -5345,6 +5354,8 @@ msgid ""
 "Logging with a DEBUG level violates the privacy of users and is not "
 "recommended."
 msgstr ""
+"Adja meg az sshd üzeneteinek naplózási szintjét. A HIBAKERESÉS szintű "
+"naplózás sérti a felhasználók magánéletét, ezért nem ajánljuk."
 
 msgid "Global Settings"
 msgstr "Globális beállítások"
@@ -5357,7 +5368,7 @@ msgid "Grant access to the user portal."
 msgstr "Hozzáférés engedélyezése a felhasználói portálhoz."
 
 msgid "Grant shell access to user"
-msgstr ""
+msgstr "A felhasználónak a shell hozzáférés engedélyezése"
 
 msgid "Graph shows last 120 seconds"
 msgstr "Grafikon az utolsó 120 mp-et mutatja"
@@ -5385,7 +5396,7 @@ msgid "Group ID"
 msgstr "Csoportazonosító"
 
 msgid "Group Name"
-msgstr ""
+msgstr "Csoportnév"
 
 msgid "Group Settings"
 msgstr "Csoportbeállítások"
@@ -5530,10 +5541,10 @@ msgid "Hide Dot Files"
 msgstr "Pontfájlok elrejtése"
 
 msgid "Hide System Groups"
-msgstr ""
+msgstr "Rendszercsoportok elrejtése"
 
 msgid "Hide System Users"
-msgstr ""
+msgstr "Rendszerfelhasználók elrejtése"
 
 msgid "High voltage boosting transfer point"
 msgstr "Nagyfeszültségű fellendítő átviteli pont"
@@ -5622,7 +5633,7 @@ msgid "IG"
 msgstr "IG"
 
 msgid "INFO - log status messages"
-msgstr ""
+msgstr "INFO - állapotüzenetek naplózása"
 
 msgid "IP"
 msgstr "IP"
@@ -5661,7 +5672,7 @@ msgid "IPv4 DNS Servers"
 msgstr "IPv4 DNS szerverek"
 
 msgid "IPv4 Routes"
-msgstr ""
+msgstr "IPv4 útvonalak"
 
 msgid "IPv4 Settings"
 msgstr "IPv4 beállítások"
@@ -5704,7 +5715,7 @@ msgid "IPv6 Prefix"
 msgstr "IPv6 előtag"
 
 msgid "IPv6 Routes"
-msgstr ""
+msgstr "IPv6 útvonalak"
 
 msgid "IPv6 Settings"
 msgstr "IPv6 beállítások"
@@ -6252,7 +6263,7 @@ msgid "Key Management Protocol"
 msgstr "Kulcskezelő protokoll"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "Billentyűzet-interaktív hitelesítés"
 
 msgid "L2 Cache"
 msgstr "L2 gyorsítótár"
@@ -6610,7 +6621,7 @@ msgid "Location where the content database file will be stored."
 msgstr "Az adatbázis tartalom fájl helye."
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "A munkafájlok tárolásának a helye."
 
 msgid "Lock Selected Records"
 msgstr "Kiválasztott bejegyzések zárolása"
@@ -6670,7 +6681,7 @@ msgid "Login"
 msgstr "Bejelentkezés"
 
 msgid "Login Name"
-msgstr ""
+msgstr "Bejelentkezési név"
 
 msgid "Login for CHAP authentication."
 msgstr "Bejelentkezés CHAP hitelesítéshez."
@@ -6708,7 +6719,7 @@ msgid "MBR partition"
 msgstr "MBR partíció"
 
 msgid "MD4 Password"
-msgstr ""
+msgstr "MD4 jelszó"
 
 msgid "MIRROR"
 msgstr "TÜKÖR"
@@ -6762,10 +6773,10 @@ msgid "Manufacturing date"
 msgstr "Gyártás dátuma"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "Az összes képzése a felhasználóra"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "A gyökér képzése a felhasználóra"
 
 msgid "Map to Guest"
 msgstr "Leképezés vendégként"
@@ -6774,10 +6785,10 @@ msgid "Map to User"
 msgstr "Leképezés felhasználóként"
 
 msgid "Map users or map root to the specified user."
-msgstr ""
+msgstr "A felhasználók vagy a gyökér képzése a kiválasztott felhasználóra."
 
 msgid "Mapping"
-msgstr ""
+msgstr "Leképezés"
 
 msgid "Mapping DOS Attributes"
 msgstr "DOS attribútumok leképezése"
@@ -6805,13 +6816,13 @@ msgid "Masquerade Address"
 msgstr "Álarc cím"
 
 msgid "Master"
-msgstr ""
+msgstr "Mester"
 
 msgid "Master Password"
-msgstr ""
+msgstr "Mesterjelszó"
 
 msgid "Master User"
-msgstr ""
+msgstr "Mesterfelhasználó"
 
 msgid "Max Processes"
 msgstr "Folyamatok maximális száma"
@@ -6911,28 +6922,28 @@ msgid "Media Directory"
 msgstr "Médiamappa"
 
 msgid "Media Folder"
-msgstr ""
+msgstr "Médiamappa"
 
 msgid "Media Folder is locked"
-msgstr ""
+msgstr "A médiamappa zárolt"
 
 msgid "Media Folder is marked for deletion"
-msgstr ""
+msgstr "A médiamappát megjelölted törlésre"
 
 msgid "Media Folder is unlocked"
-msgstr ""
+msgstr "A médiamappa zárolását feloldottad"
 
 msgid "Media Library"
 msgstr "Médiagyűjtemény"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "A médiaszerver neve."
 
 msgid "Media Size"
 msgstr "Médiaméret"
 
 msgid "Media Type"
-msgstr ""
+msgstr "Médiatípus"
 
 msgid "Media library"
 msgstr "Média library"
@@ -7063,13 +7074,13 @@ msgid "Monitoring"
 msgstr "Figyelés"
 
 msgid "Monitoring Password"
-msgstr ""
+msgstr "Felügyeleti jelszó"
 
 msgid "Monitoring Setup"
 msgstr "Figyelés beállításai"
 
 msgid "Monitoring User"
-msgstr ""
+msgstr "Felügyeleti felhasználó"
 
 msgid "Months"
 msgstr "Hónap"
@@ -7177,22 +7188,22 @@ msgid "NFS"
 msgstr "NFS"
 
 msgid "NFS Export is locked"
-msgstr ""
+msgstr "Az NFS export zárolt"
 
 msgid "NFS Export is marked for deletion"
-msgstr ""
+msgstr "Az NFS export törlése megjelölt"
 
 msgid "NFS Export is unlocked"
-msgstr ""
+msgstr "Az NFS export zárolása feloldva"
 
 msgid "NFS Root is locked"
-msgstr ""
+msgstr "Az NFS gyökér zárolt"
 
 msgid "NFS Root is marked for deletion"
-msgstr ""
+msgstr "Az NFS gyökér törlésre jelölt"
 
 msgid "NFS Root is unlocked"
-msgstr ""
+msgstr "Az NFS gyökér zárolása feloldva"
 
 msgid "NFSv4"
 msgstr "NFSv4"
@@ -7304,7 +7315,7 @@ msgid "NetBIOS Name"
 msgstr "NetBIOS név"
 
 msgid "NetIf"
-msgstr ""
+msgstr "NetIf"
 
 msgid "Netatalk (default) - use Netatalk compatible xattr."
 msgstr "Netatalk (alapértelmezett) - Netatalk kompatibilis xattr használata."
@@ -7413,10 +7424,10 @@ msgid "No IPMI Sensor data available."
 msgstr "IMPI érzékelő adat nem érhető el."
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "Nincs IPv4 útválasztási információ."
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "Nincs IPv6 útválasztási információ."
 
 msgid "No Initiator Group has been configured."
 msgstr "Egy Kezdeményező csoport sincs konfigurálva."
@@ -7428,7 +7439,7 @@ msgid "No LUNs found."
 msgstr "Egy LUN sem található"
 
 msgid "No Login"
-msgstr ""
+msgstr "Nincs bejelentkezés"
 
 msgid "No Mutual-CHAP users found."
 msgstr "Egy Kölcsönös-CHAP felhasználó sem található."
@@ -7666,6 +7677,7 @@ msgstr "Megjegyzés"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
 msgstr ""
+"Ne feledd, hogy csak egy fájlrendszer lehet WebNFS exportált a kiszolgálón."
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7869,7 +7881,7 @@ msgid "Overwrite disks configuration"
 msgstr "Lemez beállítások felülírása"
 
 msgid "Overwrite the sort criteria passed by the client."
-msgstr ""
+msgstr "A kliens rendezési feltételeinek felülírása."
 
 msgid "Owner"
 msgstr "Tulajdonos"
@@ -8034,7 +8046,7 @@ msgstr ""
 "Jelszószerver neve vagy IP címe (pl. Címtárszolgáltató Tartományvezérlő)."
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "Egy RSA PRIVÁT KULCS beillesztése PAM formátumban"
 
 msgid "Paste a private key in PEM format here."
 msgstr "Ide illeszd a privát kulcsot PEM formátumban."
@@ -8055,7 +8067,7 @@ msgid "Path of the URL relative to document root."
 msgstr "Az URL relatív útvonala a gyökérdokumentumhoz viszonyítva."
 
 msgid "Path to be included."
-msgstr ""
+msgstr "Beleveendő útvonal."
 
 msgid "Path to be shared to be synchronized."
 msgstr "Szinkronizációhoz megosztott útvonal."
@@ -8260,6 +8272,8 @@ msgstr "Az iSNS szerver portjának száma."
 
 msgid "Port of the SSH service. Leave blank to use the default port."
 msgstr ""
+"Az SSH szolgáltatás portja. Hagyd üresen az alapértelmezett port "
+"használatához."
 
 msgid "Port of the TFTP service. Leave blank to use the default port."
 msgstr "TFTP szolgáltatás portja. Az alapértelmezett értékhez hagyd üresen."
@@ -8301,6 +8315,8 @@ msgid ""
 "Port to listen on. Port number must be between 1024 and 65535. Default port "
 "is 8200."
 msgstr ""
+"A figyelendő port. A port számának 1024 és 65535 között kell lennie. Az "
+"alapértelmezett port 8200."
 
 msgid "Portal Group"
 msgstr "Portálcsoport"
@@ -8466,28 +8482,28 @@ msgid "Proxy"
 msgstr "Proxy"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Nyilvános kulcs"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "Nyilvános kulcs hitelesítés"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "Nyilvános kulcs beállítások"
 
 msgid "Public Keys"
-msgstr ""
+msgstr "Nyilvános kulcsok"
 
 msgid "Public key information."
-msgstr ""
+msgstr "Nyilvános kulcs információ"
 
 msgid "Public key is marked for deletion"
-msgstr ""
+msgstr "A nyilvános kulcs törlésre megjelölve"
 
 msgid "Public key is protected"
-msgstr ""
+msgstr "A nyilvános kulcs védett"
 
 msgid "Public key is unlocked"
-msgstr ""
+msgstr "A nyilvános kulcs zárolása feloldva"
 
 msgid "Pull"
 msgstr "Pull"
@@ -8503,7 +8519,7 @@ msgstr ""
 "készenléti módba tesszük,"
 
 msgid "QUIET - disable logging"
-msgstr ""
+msgstr "CSENDES - naplózás kikapcsolása"
 
 msgid "Queue Depth"
 msgstr "Sor mélység"
@@ -8844,6 +8860,9 @@ msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
 msgstr ""
+"A root által elérhető távoli elérések 65534: 65533 hitelesítő adatok "
+"használatát eredményezik. Az összes többi felhasználót a távoli "
+"hitelesítésre képezzük le."
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -8987,7 +9006,7 @@ msgstr ""
 "Metaadatok visszaállítása a megadott szolgáltatótól kapott fájl alapján."
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "A mappa korlátozása egy adott médiatípusra."
 
 msgid "Restricted"
 msgstr "Korlátozott"
@@ -9033,10 +9052,10 @@ msgid "Root Bind Password"
 msgstr "Gyökérkötés jelszava"
 
 msgid "Root Directory"
-msgstr ""
+msgstr "Gyökérkönyvtár"
 
 msgid "Root Login"
-msgstr ""
+msgstr "Root belépés"
 
 msgid "Rotation Rate"
 msgstr "Forgási sebesség"
@@ -9132,7 +9151,7 @@ msgid "SCSI Name"
 msgstr "SCSI neve"
 
 msgid "SHA Password"
-msgstr ""
+msgstr "SHA jelszó"
 
 msgid "SHA-256, Verify"
 msgstr "SHA-256, Ellenőrzés"
@@ -9255,19 +9274,19 @@ msgstr ""
 "felületen állapot oldalán."
 
 msgid "Scan folder for all media types."
-msgstr ""
+msgstr "Összes médiatípus keresése a mappában."
 
 msgid "Scan folder for audio files."
-msgstr ""
+msgstr "Hangfájlok keresése a mappában."
 
 msgid "Scan folder for image files."
-msgstr ""
+msgstr "Képfájlok keresése a mappában."
 
 msgid "Scan folder for video and image files."
-msgstr ""
+msgstr "Videó- és képfájlok keresése a mappában."
 
 msgid "Scan folder for video files."
-msgstr ""
+msgstr "Videófájlok keresése a mappában."
 
 msgid "Schedule Time"
 msgstr "Ütemezett időpont"
@@ -9330,7 +9349,7 @@ msgid "Secret for CHAP authentication."
 msgstr "Titok a CHAP hitelesítéshez."
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Biztonsági Flavor"
 
 msgid "Security Warning"
 msgstr "Biztonsági figyelmeztetés"
@@ -9391,7 +9410,7 @@ msgid "Select Spare Device"
 msgstr "Tartalékeszköz kiválasztása"
 
 msgid "Select a container as the root of the tree exposed to clients."
-msgstr ""
+msgstr "Válaszd ki a tárolót, ami az ügyfeleknek kitett fa gyökere."
 
 msgid "Select a date format."
 msgstr "Válassz dátumformátumot."
@@ -9635,7 +9654,7 @@ msgid "Set UID"
 msgstr "UID beállítása"
 
 msgid "Set User Password"
-msgstr ""
+msgstr "A felhasználó jelszavának beállítása"
 
 msgid "Set browseable."
 msgstr "Tallózhatónak beállítás."
@@ -9648,7 +9667,7 @@ msgstr ""
 "megengedett érték 10."
 
 msgid "Set password"
-msgstr ""
+msgstr "Jelszó beállítása"
 
 msgid "Set per-LUN/per-pool thin provisioning soft threshold."
 msgstr ""
@@ -9670,7 +9689,7 @@ msgstr ""
 "hogy életbe lépjen."
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "A fiók elsődleges csoportjának beállítása"
 
 msgid "Set the content location(s) to or from the media library."
 msgstr "Tartalomhely(ek) beállítása a médiamapa részére."
@@ -9744,7 +9763,7 @@ msgid "Set user login shell."
 msgstr "Felhasználó-bejelentkezési parancsértelmező beállítása."
 
 msgid "Set user password."
-msgstr ""
+msgstr "A felhasználó jelszavának beállítása."
 
 msgid "Setkey"
 msgstr "Kulcsbeállítás"
@@ -9887,10 +9906,10 @@ msgid "Show RAW UPS Info"
 msgstr "Nyers szünetmentes információk megjelenítése"
 
 msgid "Show System Groups"
-msgstr ""
+msgstr "Rendszercsoportok megjelenítése"
 
 msgid "Show System Users"
-msgstr ""
+msgstr "Rendszerfelhasználók megjelenítése"
 
 msgid "Show UPS Information"
 msgstr "Szünetmentes információk megjelenítése"
@@ -9959,7 +9978,7 @@ msgid "Skip View Mode"
 msgstr "Megtekintési mód figyelmen kívül hagyása"
 
 msgid "Slave"
-msgstr ""
+msgstr "Szolga"
 
 msgid "Sleep - Check the device unless it is in SLEEP mode."
 msgstr ""
@@ -10020,7 +10039,7 @@ msgid "Sort"
 msgstr "Rendezés"
 
 msgid "Sort Criteria"
-msgstr ""
+msgstr "Rendezési feltétel"
 
 msgid "Source"
 msgstr "Forrás"
@@ -10186,6 +10205,8 @@ msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
 msgstr ""
+"Add meg a távoli hozzáféréshez használható elfogadható biztonsági flavor-ok "
+"listáját. Az \t alapértelmezett \t biztonsági flavor  \t a sys."
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -10218,10 +10239,10 @@ msgid "Specify the SCSI device type to use when creating the LUN."
 msgstr "Meghatározza a LUN létrehozásakor használandó SCSI eszköz típusát."
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "Add meg a csoport numerikus id-jét"
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "Add meg a felhasználó/fiók numerikus id-jét"
 
 msgid "Split request"
 msgstr "Osztott kérés"
@@ -10433,7 +10454,7 @@ msgid "System Events"
 msgstr "Rendszeresemények"
 
 msgid "System Group"
-msgstr ""
+msgstr "Rendszercsoport"
 
 msgid "System Information"
 msgstr "Rendszerinformáció"
@@ -10460,7 +10481,7 @@ msgid "System Uptime"
 msgstr "Rendszer működési ideje"
 
 msgid "System User"
-msgstr ""
+msgstr "Rendszerfelhasználó"
 
 msgid "System info"
 msgstr "Rendszerinformáció"
@@ -11393,10 +11414,11 @@ msgid "The recommended queue depth is %d."
 msgstr "Az ajánlott sormélység %d."
 
 msgid "The recommended range for the group id is between 1000 and 32000."
-msgstr ""
+msgstr "A csoport id-jének 1000 és 32000 közötti tartományt javasolunk."
 
 msgid "The recommended range for the user id is between 1000 and 32000."
 msgstr ""
+"User id használatára az 1000 és a 32000 között tartományt javasoljuk."
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -11582,7 +11604,7 @@ msgstr ""
 "Ezeket a paramétereket a illesztőprogram hardverfüggő részéhez adjuk hozzá."
 
 msgid "These parameters are appended to /etc/ssh/sshd_config."
-msgstr ""
+msgstr "Ezeket a paramétereket a /etc/ssh/sshd_config-hoz fűzzük hozzá"
 
 msgid "These parameters are appended to the exports file."
 msgstr "Ezeket a paramétereket hozzáfűzzük az exportfájlhoz."
@@ -11600,7 +11622,7 @@ msgid "These parameters will be added to global settings in %s."
 msgstr "Ezek a paraméterek hozzáadódnak a következő global részéhez: %s."
 
 msgid "These parameters will be added to minidlna.conf"
-msgstr ""
+msgstr "Ezeket a paramétereket a minidlna.conf-hoz adjuk hozzá"
 
 msgid "These parameters will be added to my.cnf"
 msgstr "Ezeket a paramétereket a my.cnf fájlhoz adjuk hozzá"
@@ -12010,6 +12032,9 @@ msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
 msgstr ""
+"Ez lehetővé teszi a nagyon nagy JPEG-képek kiszolgálóoldali lefelé történő "
+"skálázását, ez hatással lehet néhány DLNA-eszköz JPEG-kiszolgáló "
+"teljesítményére."
 
 msgid "This will create a recycle bin on the share."
 msgstr "Ez csinál egy lomtárat a megosztáson."
@@ -12154,7 +12179,7 @@ msgstr ""
 "Az Címtárszolgáltatás használatához a CIF/SMB szolgáltatást is bekapcsolod."
 
 msgid "To use subdirectories, you must mount each directory."
-msgstr ""
+msgstr "Az almappák használatához mindegyik mappát be kell csatolnod."
 
 msgid "Toggle Mode"
 msgstr "Átkapcsolási mód"
@@ -12169,7 +12194,7 @@ msgid "Toggle Selected Commands"
 msgstr "Kijelölt parancsok felcserélése"
 
 msgid "Toggle Selected Groups"
-msgstr ""
+msgstr "A kiválasztott csoportok be-, kikapcsolása"
 
 msgid "Toggle Selected Initiator Names"
 msgstr "A kiválasztott Kezdeményező nevek átváltása"
@@ -12190,16 +12215,16 @@ msgid "Toggle Selected Listen Records"
 msgstr "A kiválasztott figyelendő bejegyzések átkapcsolása"
 
 msgid "Toggle Selected Media Folders"
-msgstr ""
+msgstr "A kiválasztott médiamappák be-, kikapcsolása"
 
 msgid "Toggle Selected Mutual CHAP Users"
 msgstr "A kiválasztott kölcsönös CHAP felhasználók átkapcsolása"
 
 msgid "Toggle Selected NFS Exports"
-msgstr ""
+msgstr "A kiválasztott NFS exportok be-, kikapcsolása"
 
 msgid "Toggle Selected NFS Root Directories"
-msgstr ""
+msgstr "A kiválasztott NFS gyökérmappák be-, kikapcsolása"
 
 msgid "Toggle Selected Option Records"
 msgstr "A kiválasztott lehetőségbejegyzések átkapcsolása"
@@ -12214,7 +12239,7 @@ msgid "Toggle Selected Portal Groups"
 msgstr "Kiválasztott portál csoportok átkapcsolása"
 
 msgid "Toggle Selected Public Keys"
-msgstr ""
+msgstr "A kiválasztott nyilvános kulcsok be-, kikapcsolása"
 
 msgid "Toggle Selected Records"
 msgstr "A kiválasztott bejegyzések átkapcsolása"
@@ -12229,7 +12254,7 @@ msgid "Toggle Selected Targets"
 msgstr "Kiválasztott célok átkapcsolása"
 
 msgid "Toggle Selected Users"
-msgstr ""
+msgstr "A kiválasztott felhasználók be-, kikapcsolása"
 
 msgid "Toggle Selected WebDAV Records"
 msgstr "A kiválasztott WebDAV bejegyzések átkapcsolása"
@@ -12662,7 +12687,7 @@ msgid "Uptime Statistics"
 msgstr "Működési idő statisztikái"
 
 msgid "Use"
-msgstr ""
+msgstr "Használat"
 
 msgid "Use Bytes/sec instead of Bits/sec for network throughput display."
 msgstr ""
@@ -12703,6 +12728,8 @@ msgstr ""
 
 msgid "Use inotify monitoring to automatically discover new media files."
 msgstr ""
+"Az inotify felügyelet segítségével automatikusan felfedezheti az új "
+"médiafájlokat."
 
 msgid "Use local user authentication."
 msgstr "Helyi felhasználói hitelesítés használata."
@@ -12716,16 +12743,16 @@ msgstr ""
 "tengely tartománnyal együtt nem használható)."
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "A \"böngészőmappa\" tároló használata"
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "A \"Zene\" tároló használata"
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "A \"Képek\" tároló használata"
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "A \"Videó\" tároló használata"
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -12738,7 +12765,7 @@ msgid "Use the specified NTP server."
 msgstr "Megadott NTP-időkiszolgáló használata."
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "A standard tároló használata (ez az alapértelmezett)"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "Ezeket a speciális műveleteket csak hibakeresésre használd!"
@@ -12857,13 +12884,13 @@ msgid "Using %s bytes fragment size."
 msgstr "%s bájt a töredezettségméret."
 
 msgid "Using defaults"
-msgstr ""
+msgstr "Alapértelmezett értékek használata"
 
 msgid "VCPUs"
 msgstr "VCPU-k"
 
 msgid "VERBOSE - log detailed information"
-msgstr ""
+msgstr "BŐBESZÉDŰ - részletes információk naplózása"
 
 msgid "VFS fruit:encoding"
 msgstr "VFS gyümölcs:kódolás"
@@ -12934,7 +12961,7 @@ msgid "Vendor ID"
 msgstr "Gyártóazonosító"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "A naplózott információk beszédessége."
 
 msgid "Verify"
 msgstr "Ellenőrzés"
@@ -13133,7 +13160,7 @@ msgid "WebGUI and Root Password"
 msgstr "WebGUI és root jelszó"
 
 msgid "WebNFS"
-msgstr ""
+msgstr "WebNFS"
 
 msgid "Webserver"
 msgstr "Webkiszolgáló"
@@ -13454,7 +13481,7 @@ msgid "available of"
 msgstr "érhető el"
 
 msgid "bash - Bourne Again Shell"
-msgstr ""
+msgstr "bash - Bourne Again Shell"
 
 msgid "change failed."
 msgstr "változtatás sikertelen"
@@ -13463,7 +13490,7 @@ msgid "chroot() everyone, but root."
 msgstr "chroot() mindenki, kivéve root."
 
 msgid "csh - C Shell"
-msgstr ""
+msgstr "csh - C Shell"
 
 msgid ""
 "decoded as: byte 0-1-2 = good block count (big endian) and byte 3-4 = "
@@ -13572,14 +13599,20 @@ msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
 msgstr ""
+"krb5 - Kerberos V5 protokoll használatával hitelesítheti a felhasználókat a "
+"megosztott fájlrendszerhez hozzáférés megadása előtt."
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
 msgstr ""
+"krb5i - Kerberos V5 hitelesítés használata adatintegritás-ellenőrző "
+"összegekkel."
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
 msgstr ""
+"krb5p - Kerberos V5 hitelesítés használata adatintegritás-ellenőrző "
+"összegekkel és adattitkosítással."
 
 msgid "less then 1.8\"."
 msgstr "1,8\"-nél kevesebb"
@@ -13592,11 +13625,14 @@ msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
 msgstr ""
+"mapall - Meghatározza az összes kliens UID (beleértve a root-ot) leképezését"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
 msgstr ""
+"maproot - A megadott felhasználó hitelesítő adatait a root távoli elérésére "
+"használjuk."
 
 msgid "missing"
 msgstr "hiányzik"
