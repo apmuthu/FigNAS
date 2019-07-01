@@ -25,6 +25,7 @@ Changes:
 - Upgrade nano to 4.3.
 - Upgrade bsnmp-ucd to 0.4.3.
 - Upgrade mariadb to 10.2.25.
+- Upgrade iperf3 to 3.7.
 
 Fixes:
 
