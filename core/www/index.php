@@ -214,7 +214,7 @@ function tblrow($name,$value,$symbol = null,$id = null) {
 		$value = sprintf('%d',$value);
 	endif;
 	if($symbol == 'pre'):
-		$value = '<pre>'.$value;
+		$value = '<pre class="cmdoutput">' . $value;
 		$symbol = '</pre>';
 	endif;
 	print(<<<EOD
@@ -750,20 +750,14 @@ $(document).ready(function(){
 						</table>
 					</td>
 				</tr>
-				<tr>
-					<td class="celltag"><?=gtext("UPS Status")." ".$config["ups"]["upsname"];?></td>
-					<td class="celldata">
-						<table width="100%" border="0" cellspacing="0" cellpadding="2">
 <?php
-							if(!isset($config['ups']['enable'])):
+				if(isset($config['ups']['enable'])):
 ?>
-								<tr>
-									<td>
-										<input style="padding:0;border:0;background-color:transparent" readonly="readonly" name="upsstatus" id="upsstatus" value="<?=gtext("UPS disabled");?>" />
-									</td>
-								</tr>
+					<tr>
+						<td class="celltag"><?=gtext('UPS Status') . ' ' . $config['ups']['upsname'];?></td>
+						<td class="celldata">
+							<table width="100%" border="0" cellspacing="0" cellpadding="2">
 <?php
-							else:
 								$cmd = "/usr/local/bin/upsc {$config['ups']['upsname']}@{$config['ups']['ip']}";
 								$handle = popen($cmd,'r');
 								if($handle):
@@ -793,7 +787,7 @@ $(document).ready(function(){
 				if(isset($config['ups']['enable']) && isset($config['ups']['ups2'])):
 ?>
 					<tr>
-						<td class="celltag"><?=gtext("UPS Status")." ".$config["ups"]["ups2_upsname"];?></td>
+						<td class="celltag"><?=gtext('UPS Status') . ' ' . $config["ups"]["ups2_upsname"];?></td>
 						<td class="celldata">
 							<table width="100%" border="0" cellspacing="0" cellpadding="2">
 <?php

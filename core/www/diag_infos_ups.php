@@ -62,7 +62,7 @@ function tblrow($name,$value,$symbol = null,$id = null) {
 		endif;
 	endif;
 	if($symbol == 'pre'):
-		$value = '<pre>' . $value;
+		$value = '<pre class="cmdoutput">' . $value;
 		$symbol = '</pre>';
 	endif;
 	print(<<<EOD
@@ -182,7 +182,7 @@ $document->render();
 					<td class="celltag"><?=gtext('Information');?></td>
 					<td class="celldata">
 <?php
-						echo '<pre>';
+						echo '<pre class="cmdoutput">';
 						echo gtext('UPS is disabled.');
 						echo '</pre>';
 ?>
@@ -208,7 +208,7 @@ $document->render();
 				if(isset($config['ups']['ups2'])):
 ?>
 					<tr>
-						<td class="celltag">gtext('Selected UPS')</td>
+						<td class="celltag"><?=gtext('Selected UPS');?></td>
 						<td class="celldata">
 							<form name="form2" action="diag_infos_ups.php" method="get">
 								<select name="if" class="formfld" onchange="submit()">
