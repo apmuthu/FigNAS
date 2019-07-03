@@ -119,7 +119,6 @@ function tblrowbar($name,$value,$symbol,$red,$yellow,$green) {
 EOD
 	. PHP_EOL);
 }
-
 $pgtitle = [gtext('Diagnostics'),gtext('Information'),gtext('UPS')];
 include 'fbegin.inc';
 ?>
@@ -302,7 +301,7 @@ $document->render();
 					tblrow(gtext('Status'), $disp_status);
 					tblrowbar(gtext('Load'), $ups['ups.load'], '%', '100-80', '79-60', '59-0');
 					tblrowbar(gtext('Battery level'), $ups['battery.charge'], '%', '0-29' ,'30-79', '80-100');
-					// status
+//					status
 					tblrow(gtext('Battery voltage'), $ups['battery.voltage'], 'V');
 					tblrow(gtext('Input voltage'), $ups['input.voltage'], 'V');
 					tblrow(gtext('Input frequency'), $ups['input.frequency'], 'Hz');
@@ -310,7 +309,7 @@ $document->render();
 					tblrow(gtext('Temperature'), $ups['ups.temperature'], ' &deg;C');
 					tblrow(gtext('Remaining battery runtime'), $ups['battery.runtime'], ' seconds');
 					html_separator2();
-					// output						
+//					output
 					html_titleline2(gettext('UPS Unit General Information'));
 					tblrow(gtext('UPS status'), $ups['ups.status']);
 					tblrow(gtext('UPS alarms'), $ups['ups.alarm']);
@@ -467,12 +466,7 @@ $document->render();
 					html_separator2();
 					html_titleline_checkbox2('raw_upsc_enable','NUT',$upsc_enable ? true : false,(gettext('Show RAW UPS Info')),'upsc_enable_change()');
 					tblrow(gtext('RAW info'),htmlspecialchars($read), 'pre', 'upsc_raw_command');
-					unset($handle);
-					unset($read);
-					unset($lines);
-					unset($status);
-					unset($disp_status);
-					unset($ups);
+					unset($handle,$read,$lines,$status,$disp_status,$ups);
 				endif;
 				unset($cmd);
 ?>
@@ -489,4 +483,3 @@ upsc_enable_change();
 </script>
 <?php
 include 'fend.inc';
-?>
