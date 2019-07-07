@@ -81,10 +81,11 @@ if(isset($rm_value)):
 				else:
 					$continue_checking = true;
 //					if($continue_checking):
-						//	Check if username is listed as a system user
+//						Check if username is listed as a system user
 						$users = system_get_user_list();
 						$system_user_row_id = array_search_ex($username,$users,'name');
 						if(false !== $system_user_row_id):
+//							$continue_checking = true;
 							$system_user = $users[$system_user_row_id];
 						else:
 							$continue_checking = false;
@@ -92,18 +93,20 @@ if(isset($rm_value)):
 						endif;
 //					endif;
 					if($continue_checking):
-						//	Check if UID column exists
+//						Check if UID column exists
 						if(array_key_exists('uid',$system_user)):
+//							$continue_checking = true;
 						else:
 							$continue_checking = false;
 							write_log(sprintf('AUTH: UID for username not found: %s from %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-						//	Check if it is a local user
+//						Check if it is a local user
 						array_make_branch($config,'access','user');
 						$portal_user_row_id = array_search_ex($system_user['uid'],$config['access']['user'],'id');
 						if(false !== $portal_user_row_id):
+//							$continue_checking = true;
 							$portal_user = $config['access']['user'][$portal_user_row_id];
 						else:
 							$continue_checking = false;
@@ -111,32 +114,37 @@ if(isset($rm_value)):
 						endif;
 					endif;
 					if($continue_checking):
-						//	check if a password has been received
+//						check if a password has been received
 						$password = (isset($_POST['password']) && is_string($_POST['password'])) ? $_POST['password'] : NULL;
 						if(isset($password)):
+//							$continue_checking = true;
 						else:
 							$continue_checking = false;
 							write_log(sprintf('AUTH: No password provided for user: %s from %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-						//	Check if password has been configured for user
+//						Check if password has been configured for user
 						if(isset($system_user['password']) && is_string($system_user['password'])):
+//							$continue_checking = true;
 						else:
 							$continue_checking = false;
 							write_log(sprintf('AUTH: No password configured for user: %s from %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-						//	Verify password
+//						Verify password
 						if(password_verify($password,$system_user['password'])):
+//							$continue_checking = true;
 						else:
+							$continue_checking = false;
 							write_log(sprintf('AUTH: Invalid password entererd for user: %s from %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-						//	Check if user is allowed to access the user portal
+//						Check if user is allowed to access the user portal
 						if(isset($portal_user['userportal'])):
+//							$continue_checking = true;
 							Session::initUser($system_user['uid'],$system_user['name']);
 							header('Location: index.php');
 							exit;
