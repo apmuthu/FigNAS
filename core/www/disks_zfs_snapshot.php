@@ -254,10 +254,10 @@ if($_POST):
 		exit;
 	endif;
 	if(isset($_POST['apply']) && $_POST['apply']):
-		$ret = array('output' => [], 'retval' => 0);
+		$ret = array('output' => [],'retval' => 0);
 		if(!file_exists($d_sysrebootreqd_path)):
-			// Process notifications
-			$ret = zfs_updatenotify_process($sphere_notifier, $sphere_notifier_processor);
+//			Process notifications
+			$ret = zfs_updatenotify_process($sphere_notifier,$sphere_notifier_processor);
 		endif;
 		$savemsg = get_std_save_message($ret['retval']);
 		if($ret['retval'] == 0):
@@ -266,26 +266,26 @@ if($_POST):
 			exit;
 		endif;
 		updatenotify_delete($sphere_notifier);
-		$errormsg = implode("\n", $ret['output']);
+		$errormsg = implode("\n",$ret['output']);
 	endif;
 	if(isset($_POST['delete_selected_rows']) && $_POST['delete_selected_rows']):
 		$checkbox_member_array = isset($_POST[$checkbox_member_name]) ? $_POST[$checkbox_member_name] : [];
 		foreach($checkbox_member_array as $checkbox_member_record):
-			if(false !== ($index = array_search_ex($checkbox_member_record, $sphere_array, 'snapshot'))):
-				$identifier = serialize(['snapshot' => $checkbox_member_record, 'recursive' => false]);
+			if(false !== ($index = array_search_ex($checkbox_member_record,$sphere_array,'snapshot'))):
+				$identifier = serialize(['snapshot' => $checkbox_member_record,'recursive' => false]);
 				if(!isset($sphere_array[$index]['protected'])):
-					$mode_updatenotify = updatenotify_get_mode($sphere_notifier, $identifier);
+					$mode_updatenotify = updatenotify_get_mode($sphere_notifier,$identifier);
 					switch($mode_updatenotify):
-						case UPDATENOTIFY_MODE_NEW:  
-							updatenotify_clear($sphere_notifier, $identifier);
-							updatenotify_set($sphere_notifier, UPDATENOTIFY_MODE_DIRTY_CONFIG, $identifier);
+						case UPDATENOTIFY_MODE_NEW:
+							updatenotify_clear($sphere_notifier,$identifier);
+							updatenotify_set($sphere_notifier,UPDATENOTIFY_MODE_DIRTY_CONFIG,$identifier);
 							break;
 						case UPDATENOTIFY_MODE_MODIFIED:
-							updatenotify_clear($sphere_notifier, $identifier);
-							updatenotify_set($sphere_notifier, UPDATENOTIFY_MODE_DIRTY, $identifier);
+							updatenotify_clear($sphere_notifier,$identifier);
+							updatenotify_set($sphere_notifier,UPDATENOTIFY_MODE_DIRTY,$identifier);
 							break;
 						case UPDATENOTIFY_MODE_UNKNOWN:
-							updatenotify_set($sphere_notifier, UPDATENOTIFY_MODE_DIRTY, $identifier);
+							updatenotify_set($sphere_notifier,UPDATENOTIFY_MODE_DIRTY,$identifier);
 							break;
 					endswitch;
 				endif;
@@ -420,7 +420,7 @@ $document->render();
 		<thead>
 <?php
 			html_separator2();
-			html_titleline2(gettext('Overview'), 6);
+			html_titleline2(gettext('Overview'),6);
 ?>
 			<tr>
 				<th class="lhelc"><input type="checkbox" id="togglemembers" name="togglemembers" title="<?=gtext('Invert Selection');?>"/></th>
@@ -433,16 +433,16 @@ $document->render();
 		</thead>
 		<tbody>
 <?php
-			foreach ($sphere_array as $sphere_record):
-				$identifier = serialize(['snapshot' => $sphere_record['snapshot'], 'recursive'=> false]);
-				$notificationmode = updatenotify_get_mode($sphere_notifier, $identifier);
+			foreach($sphere_array as $sphere_record):
+				$identifier = serialize(['snapshot' => $sphere_record['snapshot'],'recursive'=> false]);
+				$notificationmode = updatenotify_get_mode($sphere_notifier,$identifier);
 				$notdirty = (UPDATENOTIFY_MODE_DIRTY != $notificationmode) && (UPDATENOTIFY_MODE_DIRTY_CONFIG != $notificationmode);
 				$notprotected = !isset($sphere_record['protected']);
 ?>
 				<tr>
 					<td class="lcelc">
 <?php
-						if ($notdirty && $notprotected):
+						if($notdirty && $notprotected):
 ?>
 							<input type="checkbox" name="<?=$checkbox_member_name;?>[]" value="<?=$sphere_record['snapshot'];?>" id="<?=$sphere_record['snapshot'];?>"/>
 <?php
@@ -466,7 +466,7 @@ $document->render();
 									<a href="<?=$sphere_scriptname_child;?>?snapshot=<?=urlencode($sphere_record['snapshot']);?>"><img src="<?=$img_path['mod'];?>" title="<?=$gt_record_mod;?>" alt="<?=$gt_record_mod;?>"  class="spin oneemhigh"/></a>
 <?php
 								else:
-									if ($notprotected):
+									if($notprotected):
 ?>
 										<img src="<?=$img_path['del'];?>" title="<?=$gt_record_del;?>" alt="<?=$gt_record_del;?>"/>
 <?php
