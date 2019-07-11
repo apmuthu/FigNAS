@@ -69,7 +69,7 @@ $img_path = [
 	'mdn' => 'images/down.png'
 ];
 
-function get_zfs_snapshots() {
+function get_zfs_snapshots(): array {
 	$result = [];
 	$cmd = 'zfs list -pH -o name,used,creation -t snapshot 2>&1';
 	mwexec2($cmd,$rawdata);
@@ -78,12 +78,12 @@ function get_zfs_snapshots() {
 		$r = [];
 		$name = $a[0];
 		$r['snapshot'] = $name;
-		// the following regex splits the snapshot name into
-		// 1: [pool name]
-		// 2: /[dataset name | volume name]
-		// 3: [dataset name | volume name]
-		// 4: [snapshot name]
-		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/', $name, $m)):
+//		the following regex splits the snapshot name into
+//		1: [pool name]
+//		2: /[dataset name | volume name]
+//		3: [dataset name | volume name]
+//		4: [snapshot name]
+		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/',$name,$m)):
 			$r['pool'] = $m[1];
 			$r['name'] = $m[4];
 			$r['path'] = $m[1].$m[2];
