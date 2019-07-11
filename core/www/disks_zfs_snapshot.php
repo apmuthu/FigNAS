@@ -229,27 +229,36 @@ $img_path = [
 	'mup' => 'images/up.png',
 	'mdn' => 'images/down.png'
 ];
-
 $a_snapshot = get_zfs_snapshots();
-
-if(isset($_SESSION['filter_time'])):
-	$filter_time = $_SESSION['filter_time'];
+if(isset($_SESSION['filter_time_id'])):
+	$filter_time_id = $_SESSION['filter_time_id'];
 else:
-	$filter_time = '1week';
+	$filter_time_id = '0';
 endif;
-$l_filter_time = [
-    '1week' => sprintf(gettext('%d week'),1),
-    '2weeks' => sprintf(gettext('%d weeks'),2),
-    '30days' => sprintf(gettext('%d days'),30),
-    '60days' => sprintf(gettext('%d days'),60),
-    '90days' => sprintf(gettext('%d days'),90),
-    '180days' => sprintf(gettext('%d days'),180),
-    '0' => gettext('All')
+$l_filter_time_id = [
+	'0' => gettext('All'),
+	'dc' => gettext('Today'),
+	'dp' => gettext('Yesterday'),
+	'dotp' => gettext('Older than yesterday'),
+	'wc' => gettext('This week'),
+	'wp' => gettext('Last week'),
+	'wotp' => gettext('Older than last week'),
+	'mc' => gettext('This month'),
+	'mp' => gettext('Last month'),
+	'mcp' => gettext('Current and previous month'),
+	'motp' => gettext('Older than last month'),
+	'qc' => gettext('Current quarter'),
+	'qp' => gettext('Previous quarter'),
+	'qotp' => gettext('Older than previous quarter'),
+	'yc' => gettext('Current year'),
+	'yp' => gettext('Previous year'),
+	'ycp' => gettext('Current and previous year'),
+	'yotp' => gettext('Older than previous year')
 ];
 $sphere_array = get_zfs_snapshots_filter($a_snapshot,$filter_time_id);
 if($_POST):
 	if(isset($_POST['filter']) && $_POST['filter']):
-		$_SESSION['filter_time'] = $_POST['filter_time'];
+		$_SESSION['filter_time_id'] = $_POST['filter_time_id'];
 		header($sphere_header);
 		exit;
 	endif;
@@ -401,7 +410,7 @@ $document->render();
 		</thead>
 		<tbody>
 <?php
-			html_combobox2('filter_time', gettext('Age'), $filter_time, $l_filter_time, '');
+			html_combobox2('filter_time_id',gettext('Display'),$filter_time_id,$l_filter_time_id,'');
 ?>
 		</tbody>
 	</table>
@@ -424,7 +433,7 @@ $document->render();
 ?>
 			<tr>
 				<th class="lhelc"><input type="checkbox" id="togglemembers" name="togglemembers" title="<?=gtext('Invert Selection');?>"/></th>
-				<th class="lhell"><?=sprintf('%1$s (%2$d/%3$d)', gtext('Path'), count($sphere_array), count($a_snapshot));?></th>
+				<th class="lhell"><?=sprintf('%s (%d/%d)',gtext('Path'),count($sphere_array),count($a_snapshot));?></th>
 				<th class="lhell"><?=gtext('Name');?></th>
 				<th class="lhell"><?=gtext('Used');?></th>
 				<th class="lhell"><?=gtext('Create Date');?></th>
