@@ -152,6 +152,50 @@ function get_timestamp_values_from_time_id(string $time_id = ''): array {
 	endswitch;
 	return $filter;
 }
+function get_zfs_snapshots_filter(array $snapshots,string $filter_time_id = '0'): array {
+	$result = [];
+	$filter = get_timestamp_values_from_time_id($filter_time_id);
+	if(!is_null($filter['lo'])):
+		$time_from = strtotime($filter['lo']);
+		if(false === $time_from):
+			$filter['lo'] = null;
+		endif;
+	endif;
+	if(!is_null($filter['hi'])):
+		$time_to = strtotime($filter['hi']);
+		if(false === $time_to):
+			$filter['hi'] = null;
+		endif;
+	endif;
+	foreach($snapshots as $snapshot):
+		if((is_null($filter['lo']) || $snapshot['creation'] >= $time_from) && (is_null($filter['hi']) || $snapshot['creation'] < $time_to)):
+			$result[] = $snapshot;
+		endif;
+	endforeach;
+	return $result;
+}
+function zfssnapshot_process_updatenotification($mode,$data) {
+	global $config;
+	$ret = [
+		'output' => [],
+		'retval' => 0
+	];
+	switch($mode):
+		case UPDATENOTIFY_MODE_NEW:
+			$data = unserialize($data);
+			$ret = zfs_snapshot_configure($data);
+			break;
+		case UPDATENOTIFY_MODE_MODIFIED:
+			$data = unserialize($data);
+			$ret = zfs_snapshot_properties($data);
+			break;
+		case UPDATENOTIFY_MODE_DIRTY:
+			$data = unserialize($data);
+			$ret = zfs_snapshot_destroy($data);
+			break;
+	endswitch;
+	return $ret;
+}
 $sphere_scriptname = basename(__FILE__);
 $sphere_scriptname_child = 'disks_zfs_snapshot_edit.php';
 $sphere_header = 'Location: '.$sphere_scriptname;
@@ -202,31 +246,7 @@ $l_filter_time = [
     '180days' => sprintf(gettext('%d days'),180),
     '0' => gettext('All')
 ];
-
-function get_zfs_snapshots_filter(array $snapshots,string $filter_time_id = '0'): array {
-	$result = [];
-	$filter = get_timestamp_values_from_time_id($filter_time_id);
-	if(!is_null($filter['lo'])):
-		$time_from = strtotime($filter['lo']);
-		if(false === $time_from):
-			$filter['lo'] = null;
-		endif;
-	endif;
-	if(!is_null($filter['hi'])):
-		$time_to = strtotime($filter['hi']);
-		if(false === $time_to):
-			$filter['hi'] = null;
-		endif;
-	endif;
-	foreach($snapshots as $snapshot):
-		if((is_null($filter['lo']) || $snapshot['creation'] >= $time_from) && (is_null($filter['hi']) || $snapshot['creation'] < $time_to)):
-			$result[] = $snapshot;
-		endif;
-	endforeach;
-	return $result;
-}
-$sphere_array = get_zfs_snapshots_filter($a_snapshot,['time' => $filter_time]);
-
+$sphere_array = get_zfs_snapshots_filter($a_snapshot,$filter_time_id);
 if($_POST):
 	if(isset($_POST['filter']) && $_POST['filter']):
 		$_SESSION['filter_time'] = $_POST['filter_time'];
@@ -275,30 +295,7 @@ if($_POST):
 		exit;
 	endif;
 endif;
-
-function zfssnapshot_process_updatenotification($mode,$data) {
-	global $config;
-	$ret = [
-		'output' => [],
-		'retval' => 0
-	];
-	switch($mode):
-		case UPDATENOTIFY_MODE_NEW:
-			$data = unserialize($data);
-			$ret = zfs_snapshot_configure($data);
-			break;
-		case UPDATENOTIFY_MODE_MODIFIED:
-			$data = unserialize($data);
-			$ret = zfs_snapshot_properties($data);
-			break;
-		case UPDATENOTIFY_MODE_DIRTY:
-			$data = unserialize($data);
-			$ret = zfs_snapshot_destroy($data);
-			break;
-	endswitch;
-	return $ret;
-}
-$pgtitle = [gtext('Disks'), gtext('ZFS'), gtext('Snapshots'), gtext('Snapshot')];
+$pgtitle = [gtext('Disks'),gtext('ZFS'),gtext('Snapshots'),gtext('Snapshot')];
 include 'fbegin.inc';
 ?>
 <script type="text/javascript">
