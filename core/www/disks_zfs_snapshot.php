@@ -35,6 +35,123 @@ require_once 'auth.inc';
 require_once 'guiconfig.inc';
 require_once 'zfs.inc';
 
+function get_zfs_snapshots(): array {
+	$result = [];
+	$cmd = 'zfs list -pH -o name,used,creation -t snapshot 2>&1';
+	mwexec2($cmd,$rawdata);
+	foreach($rawdata as $line):
+		$a = preg_split('/\t/',$line);
+		$r = [];
+		$name = $a[0];
+		$r['snapshot'] = $name;
+//		the following regex splits the snapshot name into
+//		1: [pool name]
+//		2: /[dataset name | volume name]
+//		3: [dataset name | volume name]
+//		4: [snapshot name]
+		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/',$name,$m)):
+			$r['pool'] = $m[1];
+			$r['name'] = $m[4];
+			$r['path'] = $m[1].$m[2];
+		else:
+			$r['pool'] = 'unknown'; // XXX
+			$r['name'] = 'unknown'; // XXX
+			$r['path'] = $name;
+		endif;
+		$r['used'] = $a[1];
+		$r['creation'] = $a[2];
+		$result[] = $r;
+	endforeach;
+	return $result;
+}
+function get_timestamp_values_from_time_id(string $time_id = ''): array {
+	$filter = [
+		'lo' => null,
+		'hi' => null
+	];
+	switch($time_id):
+		default:
+//			no time range
+			break;
+		case 'dc':
+//			current day
+			$filter['lo'] = 'today';
+			break;
+		case 'dp':
+//			previous day
+			$filter['lo'] = 'yesterday';
+			$filter['hi'] = 'today';
+			break;
+		case 'dotp':
+//			older than previous day
+			$filter['hi'] = 'yesterday';
+			break;
+		case 'wc':
+//			current week
+			$filter['lo'] = 'mon this week';
+			break;
+		case 'wp':
+//			previous week
+			$filter['lo'] = 'mon last week';
+			$filter['hi'] = 'mon this week';
+			break;
+		case 'wotp':
+//			older than previous week
+			$filter['hi'] = 'mon last week';
+			break;
+		case 'mc':
+//			current month
+			$filter['lo'] = 'first day of this month midnight';
+			break;
+		case 'mp':
+//			previous month
+			$filter['lo'] = 'first day of last month midnight';
+			$filter['hi'] = 'first day of this month midnight';
+			break;
+		case 'mcp':
+//			current and previous month
+			$filter['lo'] = 'first day of last month midnight';
+			break;
+		case 'motp':
+//			older than previous month
+			$filter['hi'] = 'first day of last month midnight';
+			break;
+		case 'qc':
+//			current quarter
+			$moq = (date('n') - 1) % 3;
+			$filter['lo'] = sprintf('first day of this month midnight -%u months',$moq);
+			break;
+		case 'qp':
+//			previous quarter
+			$moq = (date('n') - 1) % 3;
+			$filter['lo'] = sprintf('first day of this month midnight -%u months',$moq + 3);
+			$filter['hi'] = sprintf('first day of this month midnight -%u months',$moq);
+			break;
+		case 'qotp':
+//			older than previous quarter
+			$moq = (date('n') - 1) % 3;
+			$filter['hi'] = sprintf('first day of this month midnight -%u months',$moq + 3);
+			break;
+		case 'yc':
+//			current year
+			$filter['lo'] = 'first day of jan this year';
+			break;
+		case 'yp':
+//			previous year
+			$filter['lo'] = 'first day of jan last year';
+			$filter['hi'] = 'first day of jan this year';
+			break;
+		case 'ycp':
+//			current and previous year
+			$filter['lo'] = 'first day of jan last year';
+			break;
+		case 'yotp':
+//			older than previous year
+			$filter['hi'] = 'first day of jan last year';
+			break;
+	endswitch;
+	return $filter;
+}
 $sphere_scriptname = basename(__FILE__);
 $sphere_scriptname_child = 'disks_zfs_snapshot_edit.php';
 $sphere_header = 'Location: '.$sphere_scriptname;
@@ -69,35 +186,6 @@ $img_path = [
 	'mdn' => 'images/down.png'
 ];
 
-function get_zfs_snapshots(): array {
-	$result = [];
-	$cmd = 'zfs list -pH -o name,used,creation -t snapshot 2>&1';
-	mwexec2($cmd,$rawdata);
-	foreach($rawdata as $line):
-		$a = preg_split('/\t/',$line);
-		$r = [];
-		$name = $a[0];
-		$r['snapshot'] = $name;
-//		the following regex splits the snapshot name into
-//		1: [pool name]
-//		2: /[dataset name | volume name]
-//		3: [dataset name | volume name]
-//		4: [snapshot name]
-		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/',$name,$m)):
-			$r['pool'] = $m[1];
-			$r['name'] = $m[4];
-			$r['path'] = $m[1].$m[2];
-		else:
-			$r['pool'] = 'unknown'; // XXX
-			$r['name'] = 'unknown'; // XXX
-			$r['path'] = $name;
-		endif;
-		$r['used'] = $a[1];
-		$r['creation'] = $a[2];
-		$result[] = $r;
-	endforeach;
-	return $result;
-}
 $a_snapshot = get_zfs_snapshots();
 
 if(isset($_SESSION['filter_time'])):
