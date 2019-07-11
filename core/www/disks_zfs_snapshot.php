@@ -203,20 +203,26 @@ $l_filter_time = [
     '0' => gettext('All')
 ];
 
-function get_zfs_snapshots_filter($snapshots,$filter) {
-	if($filter['time'] == 0):
-		return $snapshots;
-	else:
-		$now = time() / 86400;
-		$now *= 86400;
-		$f_time = strtotime(sprintf('-%s',$filter['time']),$now);
-		$result = [];
-		foreach($snapshots as $snapshot):
-			if($snapshot['creation'] >= $f_time):
-				$result[] = $snapshot;
-			endif;
-		endforeach;
+function get_zfs_snapshots_filter(array $snapshots,string $filter_time_id = '0'): array {
+	$result = [];
+	$filter = get_timestamp_values_from_time_id($filter_time_id);
+	if(!is_null($filter['lo'])):
+		$time_from = strtotime($filter['lo']);
+		if(false === $time_from):
+			$filter['lo'] = null;
+		endif;
 	endif;
+	if(!is_null($filter['hi'])):
+		$time_to = strtotime($filter['hi']);
+		if(false === $time_to):
+			$filter['hi'] = null;
+		endif;
+	endif;
+	foreach($snapshots as $snapshot):
+		if((is_null($filter['lo']) || $snapshot['creation'] >= $time_from) && (is_null($filter['hi']) || $snapshot['creation'] < $time_to)):
+			$result[] = $snapshot;
+		endif;
+	endforeach;
 	return $result;
 }
 $sphere_array = get_zfs_snapshots_filter($a_snapshot,['time' => $filter_time]);
