@@ -276,13 +276,13 @@ if($_POST):
 	endif;
 endif;
 
-function zfssnapshot_process_updatenotification($mode, $data) {
+function zfssnapshot_process_updatenotification($mode,$data) {
 	global $config;
 	$ret = [
 		'output' => [],
 		'retval' => 0
 	];
-	switch ($mode):
+	switch($mode):
 		case UPDATENOTIFY_MODE_NEW:
 			$data = unserialize($data);
 			$ret = zfs_snapshot_configure($data);
