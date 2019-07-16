@@ -50,9 +50,9 @@ function get_zfs_snapshots(): array {
 //		3: [dataset name | volume name]
 //		4: [snapshot name]
 		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/',$name,$m)):
+			$r['path'] = $m[1] . $m[2];
 			$r['pool'] = $m[1];
 			$r['name'] = $m[4];
-			$r['path'] = $m[1].$m[2];
 		else:
 			$r['pool'] = 'unknown'; // XXX
 			$r['name'] = 'unknown'; // XXX

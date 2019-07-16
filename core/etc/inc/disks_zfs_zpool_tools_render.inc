@@ -316,7 +316,7 @@ function render_pooldev_edit($a_items = [],$format = '1',$a_selected_items = [],
 						echo '<th class="lhell">',gtext('Device'),'</th>',PHP_EOL;
 						echo '<th class="lhell">',gtext('Type'),'</th>',PHP_EOL;
 						echo '<th class="lhell">',gtext('Virtual Device'),'</th>',PHP_EOL;
-						echo '<th class="lhebl">',gtext('Pool'),'</th>',PHP_EOL;						
+						echo '<th class="lhebl">',gtext('Pool'),'</th>',PHP_EOL;
 					echo '</tr>',PHP_EOL;
 				echo '</thead>',PHP_EOL;
 				echo '<tbody>',PHP_EOL;
@@ -647,7 +647,7 @@ function render_selector_radio($title,$a_option,$r_option_selected = '') {
  *	show - - bool - the radio button won't be shown if set to false
  *	longtext - text - Explanation of the option
  *
- * An option gets preselected when it matches $r_option_selected 
+ * An option gets preselected when it matches $r_option_selected
  */
 	$b_check_default = (false === array_search_ex($r_option_selected,$a_option,'value'));
 	if(0 < count($a_option)):
@@ -742,7 +742,7 @@ class co_zpool_flags extends co_zpool_flag_base {
 	}
 	public function init_available_keys($a_keynames = []) {
 /*
- *	Resets the list of available keynames and loads a new list 
+ *	Resets the list of available keynames and loads a new list
  */
 		$this->a_available_keys = [];
 		$this->load_available_keys($a_keynames);
@@ -802,11 +802,11 @@ class co_zpool_flags extends co_zpool_flag_base {
 		return true;
 	}
 	public function render_available_keys() {
-/*		
+/*
  *	Displays a list of checkbox input fields for available keys
  *	Embedded in the body of a table with 2 columns
  *
- *	A key is checked by default when it is in the list of selected keys 
+ *	A key is checked by default when it is in the list of selected keys
  *	Default option of keys are used when no key has been previously selected
  */
 		if(0 === count($this->a_available_keys)):
@@ -872,7 +872,7 @@ class co_zpool_flags extends co_zpool_flag_base {
 	}
 	public function init_selected_keys($a_keynames = []) {
 /*
- *	Resets the list of selected keynames and loads a new list 
+ *	Resets the list of selected keynames and loads a new list
  */
 		$this->a_selected_keys = [];
 		$this->load_selected_keys($a_keynames);

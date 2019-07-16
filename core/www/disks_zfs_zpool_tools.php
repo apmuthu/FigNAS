@@ -96,7 +96,7 @@ foreach($a_geom_available_provider as $potential_device):
 		//	skip reserved devices
 		//	search provider id with name of reserved device
 		//	get geom id from geom ref
-		//	get consumer id -> provider ref from geom id	
+		//	get consumer id -> provider ref from geom id
 	elseif(0 === ($potential_device['mediasize'] ?? 0)):
 		//	skip read-only devices
 	else:
@@ -118,7 +118,7 @@ $b_online_data = $b_test || ($b_pool && (0 < count($a_pool_for_online_data)));
 $b_remove_cache = $b_test || ($b_pool && (0 < count($a_pool_for_remove_cache)));
 $b_remove_log = $b_test || ($b_pool && (0 < count($a_pool_for_remove_log)));
 $b_remove_spare = $b_test || ($b_pool && (0 < count($a_pool_for_remove_spare)));
-$b_replace_data = $b_test || ($b_pool && (0 < count($a_pool_for_replace_data))); // (0 < count($a_newdev)) && 
+$b_replace_data = $b_test || ($b_pool && (0 < count($a_pool_for_replace_data))); // (0 < count($a_newdev)) &&
 $l_command = [
 	'add.data' => ['name' => 'activity','value' => 'add.data','show' => $b_add_data,'default' => false,'longname' => gettext('Add a virtual device to a pool')],
 	'add.cache' => ['name' => 'activity','value' => 'add.cache','show' => $b_add_cache,'default' => false,'longname' => gettext('Add a cache device to a pool')],
@@ -1491,7 +1491,7 @@ $document->render();
 						switch($sphere_array['pageindex']):
 							case 2: // scrub page 2: select option and pool
 								$ll_option = [];
-								$ll_option['start'] = $l_option['start']; 
+								$ll_option['start'] = $l_option['start'];
 								$ll_option['stop'] = $l_option['stop'];
 								$ll_option['start']['default'] = true;
 								render_set_start();
