@@ -44,22 +44,39 @@ function get_zfs_snapshots(): array {
 		$r = [];
 		$name = $a[0];
 		$r['snapshot'] = $name;
-//		the following regex splits the snapshot name into
-//		1: [pool name]
-//		2: /[dataset name | volume name]
-//		3: [dataset name | volume name]
-//		4: [snapshot name]
+		$r['used'] = $a[1];
+		$r['creation'] = $a[2];
+/*
+		the following regex splits the snapshot name into
+		1: [pool name]
+		2: /[dataset name | volume name]
+		3: [dataset name | volume name]
+		4: [snapshot name]
 		if(preg_match('/^([^\/\@]+)(\/([^\@]+))?\@(.*)$/',$name,$m)):
 			$r['path'] = $m[1] . $m[2];
 			$r['pool'] = $m[1];
 			$r['name'] = $m[4];
 		else:
+			$r['path'] = $name;
 			$r['pool'] = 'unknown'; // XXX
 			$r['name'] = 'unknown'; // XXX
-			$r['path'] = $name;
 		endif;
-		$r['used'] = $a[1];
-		$r['creation'] = $a[2];
+ */
+/*
+		the following regex splits the snapshot name into
+		1: filesystem path
+		2: pool name
+		3: snapshot name
+ */
+		if(preg_match('/^(([^\/\@]+)(?:\/[^\@]+)?)\@(.*)$/',$name,$m)):
+			$r['path'] = $m[1];
+			$r['pool'] = $m[2];
+			$r['name'] = $m[3];
+		else:
+			$r['path'] = $name;
+			$r['pool'] = 'unknown'; // XXX
+			$r['name'] = 'unknown'; // XXX
+		endif;
 		$result[] = $r;
 	endforeach;
 	return $result;
@@ -216,19 +233,6 @@ $gt_record_mai = gtext('Maintenance');
 $gt_record_inf = gtext('Information');
 $gt_selection_delete = gtext('Delete Selected Snapshots');
 $gt_selection_delete_confirm = gtext('Do you want to delete selected snapshots?');
-$img_path = [
-	'add' => 'images/add.png',
-	'mod' => 'images/edit.png',
-	'del' => 'images/delete.png',
-	'loc' => 'images/locked.png',
-	'unl' => 'images/unlocked.png',
-	'mai' => 'images/maintain.png',
-	'inf' => 'images/info.png',
-	'ena' => 'images/status_enabled.png',
-	'dis' => 'images/status_disabled.png',
-	'mup' => 'images/up.png',
-	'mdn' => 'images/down.png'
-];
 $a_snapshot = get_zfs_snapshots();
 if(isset($_SESSION['filter_time_id'])):
 	$filter_time_id = $_SESSION['filter_time_id'];
@@ -472,16 +476,16 @@ $document->render();
 <?php
 								if($notdirty && $notprotected):
 ?>
-									<a href="<?=$sphere_scriptname_child;?>?snapshot=<?=urlencode($sphere_record['snapshot']);?>"><img src="<?=$img_path['mod'];?>" title="<?=$gt_record_mod;?>" alt="<?=$gt_record_mod;?>"  class="spin oneemhigh"/></a>
+									<a href="<?=$sphere_scriptname_child;?>?snapshot=<?=urlencode($sphere_record['snapshot']);?>"><img src="<?=$g_img['mod'];?>" title="<?=$gt_record_mod;?>" alt="<?=$gt_record_mod;?>"  class="spin oneemhigh"/></a>
 <?php
 								else:
 									if($notprotected):
 ?>
-										<img src="<?=$img_path['del'];?>" title="<?=$gt_record_del;?>" alt="<?=$gt_record_del;?>"/>
+										<img src="<?=$g_img['del'];?>" title="<?=$gt_record_del;?>" alt="<?=$gt_record_del;?>"/>
 <?php
 									else:
 ?>
-										<img src="<?=$img_path['loc'];?>" title="<?=$gt_record_loc;?>" alt="<?=$gt_record_loc;?>"/>
+										<img src="<?=$g_img['loc'];?>" title="<?=$gt_record_loc;?>" alt="<?=$gt_record_loc;?>"/>
 <?php
 									endif;
 								endif;
@@ -502,7 +506,7 @@ $document->render();
 			<tr>
 				<td class="lcenl" colspan="5"></td>
 				<td class="lceadd">
-					<a href="disks_zfs_snapshot_add.php"><img src="<?=$img_path['add'];?>" title="<?=$gt_record_add;?>" border="0" alt="<?=$gt_record_add;?>" class="spin oneemhigh"/></a>
+					<a href="disks_zfs_snapshot_add.php"><img src="<?=$g_img['add'];?>" title="<?=$gt_record_add;?>" border="0" alt="<?=$gt_record_add;?>" class="spin oneemhigh"/></a>
 				</td>
 			</tr>
 		</tfoot>
