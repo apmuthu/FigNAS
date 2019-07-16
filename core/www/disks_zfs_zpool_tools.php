@@ -146,12 +146,15 @@ $l_command = [
 	'remove.spare' => ['name' => 'activity','value' => 'remove.spare','show' => $b_remove_spare,'default' => false,'longname' => gettext('Remove a spare device from a pool')],
 //	'reopen' => ['name' => 'activity','value' => 'reopen','show' => $b_pool && false,'default' => false,'longname' => gettext('Reopen all virtual devices of a pool')],
 	'replace' => ['name' => 'activity','value' => 'replace','show' => $b_replace_data,'default' => false,'longname' => gettext('Replace a device')],
-	'scrub' => ['name' => 'activity','value' => 'scrub','show' => $b_pool,'default' => false,'longname' => gettext('Scrub a pool')],
+	'scrub' => ['name' => 'activity','value' => 'scrub','show' => $b_pool,'default' => false,'longname' => gettext('Scrub a pool')]
 //	'set' => ['name' => 'activity','value' => 'set','show' => $b_pool && false,'default' => false,'longname' => gettext('Set property of a pool')],
 //	'split' => ['name' => 'activity','value' => 'split','show' => $b_pool && false,'default' => false,'longname' => gettext('Split off a device from mirrored virtual devices')],
 //	'status' => ['name' => 'activity','value' => 'status','show' => true && false,'default' => false,'longname' => gettext('Displays the health status of a pool')],
-	'upgrade' => ['name' => 'activity','value' => 'upgrade','show' => $b_pool,'default' => false,'longname' => gettext('Upgrade ZFS and add all supported feature flags on a pool')]
 ];
+//	Don't show upgrade option when running FreeBSD 11.3. It has feature flag spacemap_v2 which is not compatible with 11.2 and 12.0
+if(1 !== preg_match('/^11\.3/',get_product_version())):
+	$l_command['upgrade'] = ['name' => 'activity','value' => 'upgrade','show' => $b_pool,'default' => false,'longname' => gettext('Upgrade ZFS and add all supported feature flags on a pool')];
+endif;
 $lcommand = array_sort_key($l_command,'longname');
 $l_option = [
 	'all' => ['name' => 'option','value' => 'all','show' => true,'default' => false,'longname' => gettext('All')],
