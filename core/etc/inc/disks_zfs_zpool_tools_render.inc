@@ -49,7 +49,7 @@ function render_command_and_execute($subcommand,$a_param = [],$b_exec = true) {
 	$param = implode(' ',$a_param);
 	$output = sprintf('%1$s %2$s %3$s','zpool',$subcommand,$param);
 	html_text2('syscommand',gettext('Command'),$output);
-	echo '<tr>',PHP_EOL,'<td class="celltag">',gtext('Output'),'</td><td class="celldata"><pre>';
+	echo '<tr>',PHP_EOL,'<td class="celltag">',gtext('Output'),'</td><td class="celldata"><pre class="cmdoutput">';
 	if($b_exec):
 		$result = zfs_zpool_cmd($subcommand,$param,true);
 	else:
@@ -59,7 +59,7 @@ function render_command_and_execute($subcommand,$a_param = [],$b_exec = true) {
 	return $result;
 }
 function render_zpool_status($param,$b_exec = true) {
-	echo '<tr>',PHP_EOL,'<td class="celltag">',gtext('Pool Status'),'</td><td class="celldata"><pre>';
+	echo '<tr>',PHP_EOL,'<td class="celltag">',gtext('Pool Status'),'</td><td class="celldata"><pre class="cmdoutput">';
 	if($b_exec):
 		$result = zfs_zpool_cmd('status',escapeshellarg($param),true);
 	else:

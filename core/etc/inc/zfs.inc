@@ -236,10 +236,11 @@ function zfs_zpool_configure(string $uuid) {
 //		FreeBSD 11.2
 		'zpool_checkpoint',
 		'device_removal',
-		'obsolete_counts',
+		'obsolete_counts'
+//		FreeBSD 11.3
+//		'spacemap_v2',
 //		FreeBSD 12
 //		'large_dnode'
-//		'spacemap_v2'
 	];
 	$pool_devices = [
 		'stripe' => [],
