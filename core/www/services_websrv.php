@@ -273,9 +273,11 @@ $document->render();
 			</tr>
 <?php
 			html_checkbox2("dirlisting",gettext("Directory listing"),!empty($pconfig['dirlisting']) ? true : false,gettext("Enable directory listing."),gettext("A directory listing is generated when no index-files (index.php, index.html, index.htm or default.htm) are found in a directory."),false);
-			$helpinghand = '<a href="'
-				. 'https://redmine.lighttpd.net/projects/lighttpd/wiki'
-				. '" target="_blank">'
+			$helpinghand = '<a'
+				. ' href="https://redmine.lighttpd.net/projects/lighttpd/wiki"'
+				. ' target="_blank"'
+				. ' rel="noreferrer"'
+				. '>'
 				. gettext('Please check the documentation')
 				. '</a>.';
 			html_textarea2("auxparam",gettext("Additional Parameters"),!empty($pconfig['auxparam']) ? $pconfig['auxparam'] : "",sprintf(gettext("These parameters will be added to %s."),"websrv.conf")  . " " . $helpinghand,false,85,7,false,false);

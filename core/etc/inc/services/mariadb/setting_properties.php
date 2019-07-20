@@ -41,13 +41,19 @@ final class setting_properties extends grid_properties {
 	}
 	public function init_homedir() {
 		$description =
-			gettext('Enter the path of the home directory for databases and configuration files.') .
-			'<br />' .
-			gettext('The server will be started with the minimum required parameters.') .
-			'<br />' .
-			sprintf(gettext('In this directory, you can create a %s file with your additional parameters.'),"'my.cnf'") .
-			'  ' .
-			'<a href="https://mariadb.com/kb/en/mariadb/configuring-mariadb-with-mycnf" target="_blank">' . gettext('Please read the documentation') . '</a>.';
+			gettext('Enter the path of the home directory for databases and configuration files.')
+			. '<br />'
+			. gettext('The server will be started with the minimum required parameters.')
+			. '<br />'
+			. sprintf(gettext('In this directory, you can create a %s file with your additional parameters.'),"'my.cnf'")
+			. '  '
+			. '<a'
+			. ' href="https://mariadb.com/kb/en/mariadb/configuring-mariadb-with-mycnf"'
+			. ' target="_blank"'
+			. ' rel="noreferrer"'
+			. '>'
+			. gettext('Please read the documentation')
+			. '</a>.';
 		$placeholder = gettext('Path');
 		$property = parent::init_homedir();
 		$property->
