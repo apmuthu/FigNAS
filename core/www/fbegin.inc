@@ -48,7 +48,7 @@ echo '<!DOCTYPE html>',"\n";
 	<title><?=genhtmltitle($pgtitle ?? []);?></title>
 	<link href="/css/gui.css.php" rel="stylesheet" type="text/css">
 	<link href="/css/navbar.css.php" rel="stylesheet" type="text/css">
-	<link href="/css/tabs.css.php" rel="stylesheet" type="text/css">	
+	<link href="/css/tabs.css.php" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/gui.js"></script>
 	<script type="text/javascript" src="/js/spinner.js"></script>
@@ -84,7 +84,7 @@ echo '<!DOCTYPE html>',"\n";
 	</div>
 </header>
 <?php
-	endif; 
+	endif;
 ?>
 <header id="g4h">
 <?php
@@ -110,4 +110,3 @@ if(!isset($pgtitle_omit) || !$pgtitle_omit):
 	<p class="pgtitle"><?=gentitle($pgtitle);?></p>
 <?php
 endif;
-?>

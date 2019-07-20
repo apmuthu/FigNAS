@@ -297,7 +297,7 @@ $(window).on("load", function() {
 	$("#ntp_enable_tr").click(function () {
 		ntp_change();
 	});
-}); 
+});
 function ntp_change() {
 	switch(document.iform.ntp_enable.checked) {
 		case false:
@@ -347,7 +347,7 @@ function webguiproto_change() {
 			<col class="area_data_settings_col_data">
 		</colgroup>
 		<thead>
-<?php 
+<?php
 			html_titleline2(gettext('WebGUI'));
 ?>
 		</thead>
@@ -382,7 +382,7 @@ function webguiproto_change() {
 ?>
 		</thead>
 		<tbody>
-<?php			
+<?php
 			html_timezonecombobox2('timezone',gettext('Time Zone'),$pconfig['timezone'],gettext('Select the location closest to you.'),false);
 			html_combobox2('datetimeformat',gettext('Date Format'),$pconfig['datetimeformat'],get_datetime_locale_samples(),gettext('Select a date format.'),false);
 ?>
@@ -414,8 +414,7 @@ function webguiproto_change() {
 ?>
 		</thead>
 		<tbody>
-<?php			
-			
+<?php
 			html_inputbox2('hostname',gettext('Hostname'),$pconfig['hostname'],sprintf(gettext('Name of the NAS host, without domain part e.g. %s.'),'<em>' . strtolower(get_product_name()) .'</em>'),true,40);
 			html_inputbox2('domain',gettext('Domain'),$pconfig['domain'],sprintf(gettext('e.g. %s'),'<em>com, local</em>'),false,40);
 ?>

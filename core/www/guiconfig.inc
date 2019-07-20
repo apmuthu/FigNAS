@@ -1059,7 +1059,7 @@ function make_headermenu() {
 			endif;
 			if(!empty($menu[$menuid]['menuitem'])):
 				$output[] = '<ul>';
-				// Display menu items.
+//				Display menu items.
 				foreach($menu[$menuid]['menuitem'] as $menu_item):
 					if($menu_item['visible']): // render menuitem when visible
 						$output[] = '<li>';
