@@ -68,7 +68,7 @@ function show_header($title, $additional_header_content = null) {
 	echo '<meta name="format-detection" content="telephone=no">',PHP_EOL;
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">',PHP_EOL;
 	echo '<title>',genhtmltitle($pgtitle ?? []),'</title>',PHP_EOL;
-	echo '<link href="./_style/style.css" rel="stylesheet" type="text/css">',PHP_EOL;
+	echo '<link href="./_style/style.css.php" rel="stylesheet" type="text/css">',PHP_EOL;
 	echo '<link href="../css/gui.css.php" rel="stylesheet" type="text/css">',PHP_EOL;
 	echo '<link href="../css/navbar.css.php" rel="stylesheet" type="text/css">',PHP_EOL;
 	echo '<link href="../css/tabs.css.php" rel="stylesheet" type="text/css">',PHP_EOL;
