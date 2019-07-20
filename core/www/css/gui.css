@@ -147,7 +147,6 @@ pre
 	font-weight: bold;
 }
 
-.vncellbg,
 .vncell,
 .vncellreq,
 .vncellt
@@ -298,11 +297,6 @@ pre
 	text-overflow: ellipsis;
 	overflow-x: hidden;
 	white-space: normal;
-}
-
-.cellabout
-{
-	font-size: 1em;
 }
 
 .celldatacheckbox
@@ -458,8 +452,7 @@ input[type='checkbox']:checked ~ div.hideifchecked
 	color: #A0A0A0;
 }
 
-.vexpl,
-.listbgc
+.vexpl
 {
 	font-size: 1em;
 }
@@ -496,8 +489,7 @@ a
 }
 
 .listrc,
-.listrcd,
-.listbgc
+.listrcd
 {
 	text-align: center;
 }
@@ -523,18 +515,11 @@ a
 	padding-bottom: 0.35em;
 }
 
-.listbg,
-.listbgc
+.listbg
 {
 	border-right: 1px solid #999999;
 	border-bottom: 1px solid #999999;
 	background-color: #D9DEE8;
-}
-
-.listbgc
-{
-	padding-top: 0.35em;
-	padding-bottom: 0.35em;
 }
 
 .listhdr,
@@ -595,8 +580,7 @@ a
 }
 
 .listlr,
-.listlrd,
-.listbgc
+.listlrd
 {
 	padding-right: 0.55em;
 	padding-left: 0.55em;
@@ -644,18 +628,6 @@ a
 	font-size: 1em;
 }
 
-.listbgns
-{
-	border-right: 1px solid #999999;
-	border-bottom: 1px solid #999999;
-	font-size: 1em;
-	background-color: #D9DEE8;
-	padding-left: 0.55em;
-	padding-right: 0.35em;
-	padding-top: 0.35em;
-	padding-bottom: 0.35em;
-}
-
 .listtopic
 {
 	font-size: 1em;
@@ -667,15 +639,6 @@ a
 	font-weight: bold;
 	padding-top: 0.45em;
 	padding-bottom: 0.45em;
-}
-
-.listcontent
-{
-	padding: 0;
-	border: 0;
-	background-color: #EEEEEE;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 1.09em;
 }
 
 .optsect_t
