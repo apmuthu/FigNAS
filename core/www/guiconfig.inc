@@ -1037,6 +1037,7 @@ function make_headermenu() {
 				case 'external':
 					$a_tag['href'] = sprintf('href="%s"',htmlspecialchars($menu[$menuid]['link']));
 					$a_tag['target'] = sprintf('target="%s"','_blank');
+					$a_tag['rel'] = sprintf('rel=%s','noreferrer');
 					break;
 				case 'internal':
 					$a_tag['href'] = sprintf('href="%s"',htmlspecialchars($menu[$menuid]['link']));
@@ -1063,17 +1064,31 @@ function make_headermenu() {
 				foreach($menu[$menuid]['menuitem'] as $menu_item):
 					if($menu_item['visible']): // render menuitem when visible
 						$output[] = '<li>';
-						$target = ('internal' === $menu_item['type']) ? '_self' : '_blank';
-						if('separator' === $menu_item['type']):
-							$output[] = '<span class="tabseparator"></span>';
-						else:
-							$link = $menu_item['link'];
-							if(preg_match($hard_link_regex,$link)): // hard link = no spinner
-								$output[] = sprintf('<a href="%1$s" target="%2$s" onclick="">%3$s</a>',htmlspecialchars($link),$target,htmlspecialchars($menu_item['description']));
-							else: // local link = spinner
-								$output[] = sprintf('<a href="%1$s" target="%2$s" onclick="spinner()">%3$s</a>',htmlspecialchars($link),$target,htmlspecialchars($menu_item['description']));
-							endif;
-						endif;
+						switch($menu_item['type']):
+							case 'external':
+								$link = $menu_item['link'];
+								if(1 === preg_match($hard_link_regex,$link)):
+//									hard link = no spinner
+									$output[] = sprintf('<a href="%s" target="_blank" rel="noreferrer">%s</a>',htmlspecialchars($link),htmlspecialchars($menu_item['description']));
+								else:
+//									local link = spinner
+									$output[] = sprintf('<a href="%s" target="_blank" onclick="spinner()">%s</a>',htmlspecialchars($link),htmlspecialchars($menu_item['description']));
+								endif;
+								break;
+							case 'internal':
+								$link = $menu_item['link'];
+								if(1 === preg_match($hard_link_regex,$link)):
+//									hard link = no spinner
+									$output[] = sprintf('<a href="%s" target="_self">%s</a>',htmlspecialchars($link),htmlspecialchars($menu_item['description']));
+								else:
+//									local link = spinner
+									$output[] = sprintf('<a href="%s" target="_self" onclick="spinner()">%s</a>',htmlspecialchars($link),htmlspecialchars($menu_item['description']));
+								endif;
+								break;
+							case 'separator':
+								$output[] = '<span class="tabseparator"></span>';
+								break;
+						endswitch;
 						$output[] = '</li>';
 					endif;
 				endforeach;

@@ -2844,6 +2844,7 @@ EOJ;
 			insElement('meta',['name' => 'format-detection','content' => 'telephone=no'])->
 			insElement('meta',['name' => 'viewport','content' => 'width=device-width, initial-scale=1.0'])->
 			insElement('meta',['name' => 'robots','content' => 'noindex,nofollow'])->
+			insElement('meta',['name' => 'description','content' => 'XigmaNAS - The Free Network Attached Storage Project'])->
 			insElement('title',[],$this->clc_html_page_title($page_title))->
 			insElement('link',['href' => '/css/gui.css.php','rel' => 'stylesheet','type' => 'text/css'])->
 			insElement('link',['href' => '/css/navbar.css.php','rel' => 'stylesheet','type' => 'text/css'])->
@@ -2882,9 +2883,9 @@ EOJ;
 				insElement('script',['src' => 'js/datechooser.js']);
 		endif;
 		$head->
-			insElement('link',['href' => '/images/info_box.png','rel' => 'prefetch','as' => 'image'])->
-			insElement('link',['href' => '/images/warn_box.png','rel' => 'prefetch','as' => 'image'])->
-			insElement('link',['href' => '/images/error_box.png','rel' => 'prefetch','as' => 'image']);
+			insElement('link',['href' => '/images/info_box.png','rel' => 'prefetch'])->
+			insElement('link',['href' => '/images/warn_box.png','rel' => 'prefetch'])->
+			insElement('link',['href' => '/images/error_box.png','rel' => 'prefetch']);
 		return $this;
 	}
 	/**
@@ -2967,7 +2968,8 @@ EOJ;
 			$a_attributes = [
 				'title' => sprintf('www.%s',get_product_url()),
 				'href' => sprintf('https://www.%s',get_product_url()),
-				'target' => '_blank'
+				'target' => '_blank',
+				'rel' => 'noreferrer'
 			];
 			$img_attributes = [
 				'src' => '/images/header_logo.png',
@@ -3006,6 +3008,7 @@ EOJ;
 					case 'external':
 						$attributes['href'] = $menu[$menuid]['link'];
 						$attributes['target'] = '_blank';
+						$attributes['rel'] = 'noreferrer';
 						break;
 					case 'internal':
 						$attributes['href'] = $menu[$menuid]['link'];
@@ -3029,17 +3032,32 @@ EOJ;
 					foreach($menu[$menuid]['menuitem'] as $menu_item):
 						if($menu_item['visible']): // render menuitem when visible
 							$li_v = $ul_v->addLI();
-							$target = ('internal' === $menu_item['type']) ? '_self' : '_blank';
-							if('separator' === $menu_item['type']):
-								$li_v->insSPAN(['class' => 'tabseparator']);
-							else:
-								$link = $menu_item['link'];
-								if(preg_match($hard_link_regex,$link)): // hard link = no spinner
-									$li_v->insA(['href' => $link,'target' => $target,'onclick' => ''],$menu_item['description']);
-								else: // local link = spinner
-									$li_v->insA(['href' => $link,'target' => $target,'onclick' => 'spinner()'],$menu_item['description']);
-								endif;
-							endif;
+							switch($menu_item['type']):
+								case 'external':
+									$a_attributes = [];
+									$a_attributes['href'] = $menu_item['link'];
+									$a_attributes['target'] = '_blank';
+									$a_attributes['rel'] = 'noreferrer';
+									if(1 !== preg_match($hard_link_regex,$menu_item['link'])):
+//										local link = spinner
+										$a_attributes['onclick'] = 'spinner()';
+									endif;
+									$li_v->insA($a_attributes,$menu_item['description']);
+									break;
+								case 'internal':
+									$a_attributes = [];
+									$a_attributes['href'] = $menu_item['link'];
+									$a_attributes['target'] = '_self';
+									if(1 !== preg_match($hard_link_regex,$menu_item['link'])):
+//										local link = spinner
+										$a_attributes['onclick'] = 'spinner()';
+									endif;
+									$li_v->insA($a_attributes,$menu_item['description']);
+									break;
+								case 'separator':
+									$li_v->insSPAN(['class' => 'tabseparator']);
+									break;
+							endswitch;
 						endif;
 					endforeach;
 				endif;

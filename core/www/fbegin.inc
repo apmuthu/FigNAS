@@ -45,6 +45,8 @@ echo '<!DOCTYPE html>',"\n";
 	<meta charset="<?=system_get_language_codeset();?>">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="description" content="XigmaNAS - The Free Network Attached Storage Project">
 	<title><?=genhtmltitle($pgtitle ?? []);?></title>
 	<link href="/css/gui.css.php" rel="stylesheet" type="text/css">
 	<link href="/css/navbar.css.php" rel="stylesheet" type="text/css">
@@ -79,7 +81,7 @@ echo '<!DOCTYPE html>',"\n";
 			</div>
 		</div>
 		<div id="headerlogo">
-			<a title="www.<?=get_product_url();?>" href="https://www.<?=get_product_url();?>" target="_blank"><img src="/images/header_logo.png" alt="logo" /></a>
+			<a title="www.<?=get_product_url();?>" href="https://www.<?=get_product_url();?>" target="_blank" rel="noreferrer"><img src="/images/header_logo.png" alt="logo" /></a>
 		</div>
 	</div>
 </header>

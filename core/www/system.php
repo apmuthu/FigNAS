@@ -363,7 +363,11 @@ function webguiproto_change() {
 			html_textarea2('certificate',gettext('Certificate'),$pconfig['certificate'],gettext('Paste a signed certificate in X.509 PEM format here.'),true,65,7,false,false);
 			html_textarea2('privatekey',gettext('Private Key'),$pconfig['privatekey'],gettext('Paste a private key in PEM format here.'),true,65,7,false,false);
 			html_languagecombobox2('language',gettext('Language'),$pconfig['language'],gettext('Select the language of the WebGUI.'),'',false);
-			$helpinghand = '<a href="http://redmine.lighttpd.net/projects/lighttpd/wiki" target="_blank">'
+			$helpinghand = '<a'
+				. ' href="http://redmine.lighttpd.net/projects/lighttpd/wiki"'
+				. ' target="_blank"'
+				. ' rel="noreferrer"'
+				. '>'
 				. gettext('Please check the documentation')
 				. '</a>.';
 			html_textarea2('auxparam',gettext('Additional Parameters'),!empty($pconfig['auxparam']) ? $pconfig['auxparam'] : '',sprintf(gettext('These parameters will be added to %s.'),'lighttpd.conf')  . ' ' . $helpinghand,false,85,7,false,false);
