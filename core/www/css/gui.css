@@ -1402,3 +1402,17 @@ input[type="radio"].rblo.dimassoctable:not(:checked) + span + table
 {
 	font-style: italic;
 }
+
+div.rrdgraphs
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
+img.rrdgraphs,
+object.rrdgraphs
+{
+	margin-top: 1em;
+	flex: 0 0 auto;
+}
