@@ -35,75 +35,52 @@ require_once 'auth.inc';
 require_once 'guiconfig.inc';
 
 $status_cpu = true;
-$graph_gap = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 $graph_width = 397;
 $graph_height = 220;
-
 $a_object = [];
-$a_object['type'] = 'type="image/svg+xml"';
-$a_object['width'] = sprintf('width="%s"',$graph_width);
-$a_object['height'] = sprintf('height="%s"',$graph_height);
+$a_object['type'] = 'image/svg+xml';
+$a_object['width'] = $graph_width;
+$a_object['height'] = $graph_height;
+$a_object['class'] = 'rrdgraphs';
 $a_param = [];
-$a_param['name'] = 'name="src"';
-
-$gt_notsupported = gtext('Your browser does not support this svg object type.') .
-		'<br />' .
-		gtext('You need to update your browser or use Internet Explorer 10 or higher.') .
-		'<br/>';
-
-$pgtitle = [gtext('Status'),gtext('Monitoring'),gtext('CPU Load')];
-include 'fbegin.inc';
-$document = new co_DOMDocument();
+$a_param['name'] = 'src';
+$cpus = system_get_cpus();
+$gt_notsupported = gettext('Your browser does not support this svg object type.')
+	. '<br />'
+	. gettext('Please update your browser or use Internet Explorer 10 or higher.');
+$document = new_page([gettext('Status'),gettext('Monitoring'),gettext('CPU Load')]);
+//	get areas
+$pagecontent = $document->getElementById('pagecontent');
+//	add tab navigation
 include 'status_graph_tabs.inc';
+//	create data area
+$content = $pagecontent->add_area_data();
+//	display information, warnings and errors
+if(file_exists($d_sysrebootreqd_path)):
+	$content->ins_info_box(get_std_save_message(0));
+endif;
+$table = $content->add_table_data_settings();
+$table->addTHEAD()->ins_titleline(gettext('CPU Load'));
+$content->
+	ins_remark('remark','',sprintf(gettext('Graph shows recent 120 seconds.'),$refresh));
+$div = $content->
+	addDIV(['class' => 'rrdgraphs']);
+if($cpus > 1):
+	for($j = 0;$j < $cpus;$j++):
+		$a_object['id'] = sprintf('graph%s',$j);
+		$a_object['data'] = sprintf('status_graph_cpu2.php?cpu=%s',$j);
+		$a_param['value'] = sprintf('status_graph_cpu2.php?cpu=%s',$j);
+		$div->
+			addElement('object',$a_object)->
+				insElement('param',$a_param)->
+				insSPAN([],$gt_notsupported);
+	endfor;
+endif;
+$a_object['id'] = 'graph';
+$a_object['data'] = 'status_graph_cpu2.php';
+$a_param['value'] = 'status_graph_cpu2.php';
+$div->
+	addElement('object',$a_object)->
+		insElement('param',$a_param)->
+		insSPAN([],$gt_notsupported);
 $document->render();
-?>
-<table id="area_data"><tbody><tr><td id="area_data_frame">
-	<table class="area_data_settings">
-		<colgroup>
-			<col style="width:100%">
-		</colgroup>
-		<thead>
-<?php
-			html_titleline2(gettext('CPU Load'),1);
-?>
-		</thead>
-		<tbody>
-			<tr><td><?=gtext('Graph shows last 120 seconds');?></td></tr>
-			<tr><td>
-				<div align="center" style="min-width:840px;">
-					<br />
-<?php
-//					session_start();
-					$cpus = system_get_cpus();
-					if($cpus > 1):
-						for($j = 0;$j < $cpus;$j++):
-							$a_object['id'] = 'id="graph"';
-							$a_object['data'] = sprintf('data="status_graph_cpu2.php?cpu=%s"',$j);
-							$a_param['value'] = sprintf('value="status_graph_cpu2.php?cpu=%s"',$j);
-							echo sprintf('<object %s>',implode(' ',$a_object));
-							echo sprintf('<param %s/>',implode(' ',$a_param));
-							echo $gt_notsupported;
-							echo '</object>',PHP_EOL;
-							$test = $j % 2;
-							if($test != 0):
-								echo '<br /><br /><br />'; // add line breaks after second graph ...
-							else:
-								echo $graph_gap; // or the gap between two graphs
-							endif;
-						endfor;
-					endif;
-//					$a_object['id'] = 'id="graph"';
-					$a_object['data'] = 'data="status_graph_cpu2.php"';
-					$a_param['value'] = 'value="status_graph_cpu2.php"';
-					echo sprintf('<object %s>',implode(' ',$a_object));
-					echo sprintf('<param %s/>',implode(' ',$a_param));
-					echo $gt_notsupported;
-					echo '</object>',PHP_EOL;
-?>
-				</div>
-			</td></tr>
-		</tbody>
-	</table>
-</td></tr></table>
-<?php
-include 'fend.inc';

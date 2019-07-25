@@ -43,41 +43,28 @@ if(isset($config['rrdgraphs']['refresh_time'])):
 	endif;
 endif;
 mwexec('/usr/local/share/rrdgraphs/rrd-graph.sh load',true);
-$pgtitle = [gtext('Status'),gtext('Monitoring'),gtext('Load Averages')];
-include 'fbegin.inc';
-?>
-<meta http-equiv="refresh" content="<?=$refresh?>">
-<?php
-$document = new co_DOMDocument();
+$document = new_page([gettext('Status'),gettext('Monitoring'),gettext('Load Averages')]);
+//	get areas
+$head = $document->getElementById('head');
+$pagecontent = $document->getElementById('pagecontent');
+$head->insElement('meta',['http-equiv' => 'refresh','content' => $refresh]);
+//	add tab navigation
 include 'status_graph_tabs.inc';
+//	create data area
+$content = $pagecontent->add_area_data();
+//	display information, warnings and errors
+if(file_exists($d_sysrebootreqd_path)):
+	$content->ins_info_box(get_std_save_message(0));
+endif;
+$table = $content->add_table_data_settings();
+$table->addTHEAD()->ins_titleline(gettext('Load Averages'));
+$now = time();
+$content->
+	ins_remark('remark','',sprintf(gettext('Graph updates every %d seconds.'),$refresh));
+$content->
+	addDIV(['class' => 'rrdgraphs'])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-load_averages_daily.png?rand=%s',$now),'alt' => gettext('RRDGraphs Daily Load Averages Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-load_averages_weekly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Weekly Load Averages Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-load_averages_monthly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Monthly Load Averages Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-load_averages_yearly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Yearly Load Averages Graph')]);
 $document->render();
-?>
-<table id="area_data"><tbody><tr><td id="area_data_frame">
-	<table class="area_data_settings">
-		<colgroup>
-			<col style="width:100%">
-		</colgroup>
-		<thead>
-<?php
-			html_titleline2(gettext('Load Averages'),1);
-?>
-		</thead>
-		<tbody>
-			<tr><td><?=sprintf(gtext('Graph updates every %d seconds.'),$refresh);?></td></tr>
-			<tr><td>
-				<div align="center" style="min-width:840px;">
-					<br>
-					<img src="/images/rrd/rrd-load_averages_daily.png?rand=<?=time()?>" alt="RRDGraphs Daily Load Averages Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-load_averages_weekly.png?rand=<?=time()?>" alt="RRDGraphs Weekly Load Averages Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-load_averages_monthly.png?rand=<?=time()?>" alt="RRDGraphs Monthly Load Averages Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-load_averages_yearly.png?rand=<?=time()?>" alt="RRDGraphs Yearly Load Averages Graph">
-				</div>
-			</td></tr>
-		</tbody>
-	</table>
-</td></tr></tbody></table>
-<?php
-include 'fend.inc';

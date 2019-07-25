@@ -43,41 +43,28 @@ if(isset($config['rrdgraphs']['refresh_time'])):
 	endif;
 endif;
 mwexec('/usr/local/share/rrdgraphs/rrd-graph.sh temperature',true);
-$pgtitle = [gtext('Status'),gtext('Monitoring'),gtext('CPU Temperature')];
-include 'fbegin.inc';
-?>
-<meta http-equiv="refresh" content="<?=$refresh?>">
-<?php
-$document = new co_DOMDocument();
+$document = new_page([gettext('Status'),gettext('Monitoring'),gettext('CPU Temperature')]);
+//	get areas
+$head = $document->getElementById('head');
+$pagecontent = $document->getElementById('pagecontent');
+$head->insElement('meta',['http-equiv' => 'refresh','content' => $refresh]);
+//	add tab navigation
 include 'status_graph_tabs.inc';
+//	create data area
+$content = $pagecontent->add_area_data();
+//	display information, warnings and errors
+if(file_exists($d_sysrebootreqd_path)):
+	$content->ins_info_box(get_std_save_message(0));
+endif;
+$table = $content->add_table_data_settings();
+$table->addTHEAD()->ins_titleline(gettext('CPU Temperature'));
+$now = time();
+$content->
+	ins_remark('remark','',sprintf(gettext('Graph updates every %d seconds.'),$refresh));
+$content->
+	addDIV(['class' => 'rrdgraphs'])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-cpu_temp_daily.png?rand=%s',$now),'alt' => gettext('RRDGraphs Daily CPU Temperature Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-cpu_temp_weekly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Weekly CPU Temperature Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-cpu_temp_monthly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Monthly CPU Temperature Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-cpu_temp_yearly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Yearly CPU Temperature Graph')]);
 $document->render();
-?>
-<table id="area_data"><tbody><tr><td id="area_data_frame">
-	<table class="area_data_settings">
-		<colgroup>
-			<col style="width:100%">
-		</colgroup>
-		<thead>
-<?php
-			html_titleline2(gettext('CPU Temperature'),1);
-?>
-		</thead>
-		<tbody>
-			<tr><td><?=sprintf(gtext('Graph updates every %d seconds.'),$refresh);?></td></tr>
-			<tr><td>
-				<div align="center" style="min-width:840px;">
-					<br>
-					<img src="/images/rrd/rrd-cpu_temp_daily.png?rand=<?=time()?>" alt="RRDGraphs Daily CPU Temperature Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-cpu_temp_weekly.png?rand=<?=time()?>" alt="RRDGraphs Weekly CPU Temperature Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-cpu_temp_monthly.png?rand=<?=time()?>" alt="RRDGraphs Monthly CPU Temperature Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-cpu_temp_yearly.png?rand=<?=time()?>" alt="RRDGraphs Yearly CPU Temperature Graph">
-				</div>
-			</td></tr>
-		</tbody>
-	</table>
-</td></tr></tbody></table>
-<?php
-include 'fend.inc';

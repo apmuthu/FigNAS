@@ -43,41 +43,28 @@ if(isset($config['rrdgraphs']['refresh_time'])):
 	endif;
 endif;
 mwexec('/usr/local/share/rrdgraphs/rrd-graph.sh zfs_arc',true);
-$pgtitle = [gtext('Status'),gtext('Monitoring'),gtext('ZFS ARC')];
-include 'fbegin.inc';
-?>
-<meta http-equiv="refresh" content="<?=$refresh?>">
-<?php
-$document = new co_DOMDocument();
+$document = new_page([gettext('Status'),gettext('Monitoring'),gettext('ZFS ARC')]);
+//	get areas
+$head = $document->getElementById('head');
+$pagecontent = $document->getElementById('pagecontent');
+$head->insElement('meta',['http-equiv' => 'refresh','content' => $refresh]);
+//	add tab navigation
 include 'status_graph_tabs.inc';
+//	create data area
+$content = $pagecontent->add_area_data();
+//	display information, warnings and errors
+if(file_exists($d_sysrebootreqd_path)):
+	$content->ins_info_box(get_std_save_message(0));
+endif;
+$table = $content->add_table_data_settings();
+$table->addTHEAD()->ins_titleline(gettext('ZFS Adaptive Replacement Cache (ARC)'));
+$now = time();
+$content->
+	ins_remark('remark','',sprintf(gettext('Graph updates every %d seconds.'),$refresh));
+$content->
+	addDIV(['class' => 'rrdgraphs'])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-zfs_arc_daily.png?rand=%s',$now),'alt' => gettext('RRDGraphs Daily ARC Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-zfs_arc_weekly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Weekly ARC Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-zfs_arc_monthly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Monthly ARC Graph')])->
+		insIMG(['class' => 'rrdgraphs','src' => sprintf('/images/rrd/rrd-zfs_arc_yearly.png?rand=%s',$now),'alt' => gettext('RRDGraphs Yearly ARC Graph')]);
 $document->render();
-?>
-<table id="area_data"><tbody><tr><td id="area_data_frame">
-	<table class="area_data_settings">
-		<colgroup>
-			<col style="width:100%">
-		</colgroup>
-		<thead>
-<?php
-			html_titleline2(gettext('ZFS ARC'),1);
-?>
-		</thead>
-		<tbody>
-			<tr><td><?=sprintf(gtext('Graph updates every %d seconds.'),$refresh);?></td></tr>
-			<tr><td>
-				<div align="center" style="min-width:840px;">
-					<br>
-					<img src="/images/rrd/rrd-zfs_arc_daily.png?rand=<?=time()?>" alt="RRDGraphs Daily ARC Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-zfs_arc_weekly.png?rand=<?=time()?>" alt="RRDGraphs Weekly ARC Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-zfs_arc_monthly.png?rand=<?=time()?>" alt="RRDGraphs Monthly ARC Graph">
-					<br><br>
-					<img src="/images/rrd/rrd-zfs_arc_yearly.png?rand=<?=time()?>" alt="RRDGraphs Yearly ARC Graph">
-				</div>
-			</td></tr>
-		</tbody>
-	</table>
-</td></tr></tbody></table>
-<?php
-include 'fend.inc';
