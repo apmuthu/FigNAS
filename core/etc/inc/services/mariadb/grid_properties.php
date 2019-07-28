@@ -36,41 +36,41 @@ use common\properties as myp;
 
 class grid_properties extends myp\container {
 	protected $x_enable;
-	public function init_enable() {
+	public function init_enable(): myp\property_enable {
 		$property = $this->x_enable = new myp\property_enable($this);
 		return $property;
 	}
-	final public function get_enable() {
+	final public function get_enable(): myp\property_enable {
 		return $this->x_enable ?? $this->init_enable();
 	}
 	protected $x_homedir;
-	public function init_homedir() {
+	public function init_homedir(): myp\property_text {
 		$property = $this->x_homedir = new myp\property_text($this);
 		$property->
 			set_name('homedir')->
 			set_title(gettext('Home Directory'));
 		return $property;
 	}
-	final public function get_homedir() {
+	final public function get_homedir(): myp\property_text {
 		return $this->x_homedir ?? $this->init_homedir();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 	protected $x_phrasecookieauth;
-	public function init_phrasecookieauth() {
+	public function init_phrasecookieauth(): myp\property_text {
 		$property = $this->x_phrasecookieauth = new myp\property_text($this);
 		$property->
 			set_name('phrasecookieauth')->
 			set_title(gettext('Passphrase'));
 		return $property;
 	}
-	final public function get_phrasecookieauth() {
+	final public function get_phrasecookieauth(): myp\property_text {
 		return $this->x_phrasecookieauth ?? $this->init_phrasecookieauth();
 	}
 }

@@ -32,14 +32,15 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\mariadb;
+use common\properties as myp;
 
 final class setting_properties extends grid_properties {
-	public function init_enable() {
+	public function init_enable(): myp\property_enable {
 		$property = parent::init_enable();
 		$property->set_defaultvalue(false);
 		return $property;
 	}
-	public function init_homedir() {
+	public function init_homedir(): myp\property_text {
 		$description =
 			gettext('Enter the path of the home directory for databases and configuration files.')
 			. '<br />'
@@ -64,13 +65,13 @@ final class setting_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to my.cnf');
 		$property = parent::init_auxparam();
 		$property->set_description($description);
 		return $property;
 	}
-	public function init_phrasecookieauth() {
+	public function init_phrasecookieauth(): myp\property_text {
 		$description = gettext("The cookie-based auth_type uses AES algorithm to encrypt the password. Enter a random passphrase of your choice. It will be used internally by the AES algorithm - you won't be prompted for this passphrase. The secret should be at least 32 or more characters long");
 		$placeholder = gettext('Passphrase');
 		$placeholderv = gettext('No Placeholder');
