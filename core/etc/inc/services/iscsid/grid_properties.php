@@ -36,7 +36,7 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$title = gettext('Name');
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
@@ -44,11 +44,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_targetname;
-	public function init_targetname() {
+	public function init_targetname(): myp\property_text {
 		$title = gettext('Target Name');
 		$property = $this->x_targetname = new myp\property_text($this);
 		$property->
@@ -56,11 +56,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_targetname() {
+	final public function get_targetname(): myp\property_text {
 		return $this->x_targetname ?? $this->init_targetname();
 	}
 	protected $x_targetaddress;
-	public function init_targetaddress() {
+	public function init_targetaddress(): myp\property_text {
 		$title = gettext('Target Address');
 		$property = $this->x_targetaddress = new myp\property_text($this);
 		$property->
@@ -68,11 +68,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_targetaddress() {
+	final public function get_targetaddress(): myp\property_text {
 		return $this->x_targetaddress ?? $this->init_targetaddress();
 	}
 	protected $x_initiatorname;
-	public function init_initiatorname() {
+	public function init_initiatorname(): myp\property_text {
 		$title = gettext('Initiator Name');
 		$property = $this->x_initiatorname = new myp\property_text($this);
 		$property->
@@ -80,19 +80,19 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_initiatorname() {
+	final public function get_initiatorname(): myp\property_text {
 		return $this->x_initiatorname ?? $this->init_initiatorname();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 	protected $x_authmethod;
-	public function init_authmethod() {
+	public function init_authmethod(): myp\property_list {
 		$property = $this->x_authmethod = new myp\property_list($this);
 		$title = gettext('Authentication Method');
 		$property->
@@ -100,11 +100,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_authmethod() {
+	final public function get_authmethod(): myp\property_list {
 		return $this->x_authmethod ?? $this->init_authmethod();
 	}
 	protected $x_chapiname;
-	public function init_chapiname() {
+	public function init_chapiname(): myp\property_text {
 		$title = gettext('CHAP Name');
 		$property = $this->x_chapiname = new myp\property_text($this);
 		$property->
@@ -112,11 +112,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_chapiname() {
+	final public function get_chapiname(): myp\property_text {
 		return $this->x_chapiname ?? $this->init_chapiname();
 	}
 	protected $x_chapsecret;
-	public function init_chapsecret() {
+	public function init_chapsecret(): myp\property_text {
 		$title = gettext('CHAP Secret');
 		$property = $this->x_chapsecret = new myp\property_text($this);
 		$property->
@@ -124,11 +124,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_chapsecret() {
+	final public function get_chapsecret(): myp\property_text {
 		return $this->x_chapsecret ?? $this->init_chapsecret();
 	}
 	protected $x_tgtchapname;
-	public function init_tgtchapname() {
+	public function init_tgtchapname(): myp\property_text {
 		$title = gettext('Mutual CHAP Name');
 		$property = $this->x_tgtchapname = new myp\property_text($this);
 		$property->
@@ -136,11 +136,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_tgtchapname() {
+	final public function get_tgtchapname(): myp\property_text {
 		return $this->x_tgtchapname ?? $this->init_tgtchapname();
 	}
 	protected $x_tgtchapsecret;
-	public function init_tgtchapsecret() {
+	public function init_tgtchapsecret(): myp\property_text {
 		$title = gettext('Mutual CHAP Secret');
 		$property = $this->x_tgtchapsecret = new myp\property_text($this);
 		$property->
@@ -148,11 +148,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_tgtchapsecret() {
+	final public function get_tgtchapsecret(): myp\property_text {
 		return $this->x_tgtchapsecret ?? $this->init_tgtchapsecret();
 	}
 	protected $x_headerdigest;
-	public function init_headerdigest() {
+	public function init_headerdigest(): myp\property_list {
 		$title = gettext('Header Digest');
 		$property = $this->x_headerdigest = new myp\property_list($this);
 		$property->
@@ -160,11 +160,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_headerdigest() {
+	final public function get_headerdigest(): myp\property_list {
 		return $this->x_headerdigest ?? $this->init_headerdigest();
 	}
 	protected $x_datadigest;
-	public function init_datadigest() {
+	public function init_datadigest(): myp\property_list {
 		$title = gettext('Data Digest');
 		$property = $this->x_datadigest = new myp\property_list($this);
 		$property->
@@ -172,11 +172,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_datadigest() {
+	final public function get_datadigest(): myp\property_list {
 		return $this->x_datadigest ?? $this->init_datadigest();
 	}
 	protected $x_protocol;
-	public function init_protocol() {
+	public function init_protocol(): myp\property_list {
 		$title = gettext('Protocol');
 		$property = $this->x_protocol = new myp\property_list($this);
 		$property->
@@ -184,11 +184,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_protocol() {
+	final public function get_protocol(): myp\property_list {
 		return $this->x_protocol ?? $this->init_protocol();
 	}
 	protected $x_offload;
-	public function init_offload() {
+	public function init_offload(): myp\property_text {
 		$title = gettext('Offload Driver');
 		$property = $this->x_offload = new myp\property_text($this);
 		$property->
@@ -196,11 +196,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_offload() {
+	final public function get_offload(): myp\property_text {
 		return $this->x_offload ?? $this->init_offload();
 	}
 	protected $x_sessionstate;
-	public function init_sessionstate() {
+	public function init_sessionstate(): myp\property_list {
 		$title = gettext('Session State');
 		$property = $this->x_sessionstate = new myp\property_list($this);
 		$property->
@@ -208,11 +208,11 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_sessionstate() {
+	final public function get_sessionstate(): myp\property_list {
 		return $this->x_sessionstate ?? $this->init_sessionstate();
 	}
 	protected $x_sessiontype;
-	public function init_sessiontype() {
+	public function init_sessiontype(): myp\property_list {
 		$title = gettext('Session Type');
 		$property = $this->x_sessiontype = new myp\property_list($this);
 		$property->
@@ -220,7 +220,7 @@ class grid_properties extends myp\container_row {
 			set_title($title);
 		return $property;
 	}
-	final public function get_sessiontype() {
+	final public function get_sessiontype(): myp\property_list {
 		return $this->x_sessiontype ?? $this->init_sessiontype();
 	}
 }

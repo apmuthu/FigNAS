@@ -32,21 +32,23 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\iscsid;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('This is a nickname and is for information only.');
-		$placeholder = gettext('Enter Name');
+		$placeholder = gettext('Name');
 		$property = parent::init_name();
 		$property->
 			set_defaultvalue('')->
 			set_description($description)->
 			set_id('name')->
+			set_placeholder($placeholder)->
 			set_size(20)->
 			filter_use_default();
 		return $property;
 	}
-	public function init_targetname() {
+	public function init_targetname(): myp\property_text {
 		$description = gettext('The name of the target.');
 		$property = parent::init_targetname();
 		$property->
@@ -57,7 +59,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_targetaddress() {
+	public function init_targetaddress(): myp\property_text {
 		$description = gettext('The IP address or the DNS name of the iSCSI target.');
 		$property = parent::init_targetaddress();
 		$property->
@@ -68,7 +70,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_initiatorname() {
+	public function init_initiatorname(): myp\property_text {
 		$description = gettext('The name of the initiator. By default, the name is concatenation of "iqn.1994-09.org.freebsd:" with the hostname.');
 		$placeholder = 'iqn.1994-09.org.freebsd:hostname';
 		$property = parent::init_initiatorname();
@@ -81,14 +83,14 @@ final class row_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to the configuration of this initiator.');
 		$property = parent::init_auxparam();
 		$property->
 			set_description($description);
 		return $property;
 	}
-	public function init_authmethod() {
+	public function init_authmethod(): myp\property_list {
 		$description = gettext('Sets the authentication type. Type can be either "None", or "CHAP". Default is "None". When set to CHAP, both chapIName and chapSecret must be defined.');
 		$options = [
 			'' => gettext('Default'),
@@ -104,7 +106,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_chapiname() {
+	public function init_chapiname(): myp\property_text {
 		$description = gettext('Login for CHAP authentication.');
 		$placeholder = gettext('Username');
 		$regexp = '/^\S{0,32}$/';
@@ -121,7 +123,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_chapsecret() {
+	public function init_chapsecret(): myp\property_text {
 		$description = gettext('Secret for CHAP authentication.');
 		$placeholder = gettext('Secret');
 		$regexp = '/^[^"]{0,32}$/';
@@ -140,7 +142,7 @@ final class row_properties extends grid_properties {
 			set_filter_group('ui',['empty','ui']);
 		return $property;
 	}
-	public function init_tgtchapname() {
+	public function init_tgtchapname(): myp\property_text {
 		$description = gettext('Target login for Mutual CHAP authentication.');
 		$placeholder = gettext('Username');
 		$regexp = '/^\S{0,32}$/';
@@ -157,7 +159,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_tgtchapsecret() {
+	public function init_tgtchapsecret(): myp\property_text {
 		$description = gettext('Target secret for Mutual CHAP authentication.');
 		$placeholder = gettext('Secret');
 		$regexp = '/^[^"]{0,32}$/';
@@ -176,7 +178,7 @@ final class row_properties extends grid_properties {
 			set_filter_group('ui',['empty','ui']);
 		return $property;
 	}
-	public function init_headerdigest() {
+	public function init_headerdigest(): myp\property_list {
 		$description = gettext('Sets the header digest; a checksum calculated over the header of iSCSI PDUs, and verified on receive. Digest can be either "None", or "CRC32C". Default is "None".');
 		$options = [
 			'' => gettext('Default'),
@@ -192,7 +194,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_datadigest() {
+	public function init_datadigest(): myp\property_list {
 		$description = gettext('Sets the data digest; a checksum calculated over the Data Section of iSCSI PDUs, and verified on receive. Digest can be either "None", or "CRC32C". Default is "None".');
 		$options = [
 			'' => gettext('Default'),
@@ -208,7 +210,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_protocol() {
+	public function init_protocol(): myp\property_list {
 		$description = gettext('Name of selected protocol. It can be either "iSER", for iSCSI over RDMA, or "iSCSI". Default is "iSCSI".');
 		$options = [
 			'' => gettext('Default'),
@@ -224,7 +226,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_offload() {
+	public function init_offload(): myp\property_text {
 		$description = gettext('Define iSCSI hardware offload driver. The default is "None".');
 		$placeholder = gettext('Driver Name');
 		$regexp = '/^\S{0,60}$/';
@@ -241,7 +243,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_sessionstate() {
+	public function init_sessionstate(): myp\property_list {
 		$description = gettext('Enable or disable the session. State can be either "On" or "Off". Default is "On".');
 		$options = [
 			'' => gettext('Default'),
@@ -257,7 +259,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_sessiontype() {
+	public function init_sessiontype(): myp\property_list {
 		$description = gettext('Sets the session type. Type can be either "Discovery", or "Normal". Default is "Normal". For normal sessions, the TargetName must be defined. Discovery sessions ignore the TargetName and will result in the initiator connecting to all the targets returned by SendTargets iSCSI discovery with the defined TargetAddress.');
 		$options = [
 			'' => gettext('Default'),
