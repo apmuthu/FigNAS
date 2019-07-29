@@ -36,66 +36,66 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('Target Name'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_alias;
-	public function init_alias() {
+	public function init_alias(): myp\property_text {
 		$property = $this->x_alias = new myp\property_text($this);
 		$property->
 			set_name('alias')->
 			set_title(gettext('Alias'));
 		return $property;
 	}
-	final public function get_alias() {
+	final public function get_alias(): myp\property_text {
 		return $this->x_alias ?? $this->init_alias();
 	}
 	protected $x_auth_group;
-	public function init_auth_group() {
+	public function init_auth_group(): myp\property_list {
 		$property = $this->x_auth_group = new myp\property_list($this);
 		$property->
 			set_name('auth_group')->
 			set_title(gettext('Auth Group'));
 		return $property;
 	}
-	final public function get_auth_group() {
+	final public function get_auth_group(): myp\property_list {
 		return $this->x_auth_group ?? $this->init_auth_group();
 	}
 	protected $x_portal_group;
-	public function init_portal_group() {
+	public function init_portal_group(): myp\property_list {
 		$property = $this->x_portal_group = new myp\property_list($this);
 		$property->
 			set_name('portal_group')->
 			set_title(gettext('Portal Group'));
 		return $property;
 	}
-	final public function get_portal_group() {
+	final public function get_portal_group(): myp\property_list {
 		return $this->x_portal_group ?? $this->init_portal_group();
 	}
 	protected $x_redirect;
-	public function init_redirect() {
+	public function init_redirect(): myp\property_ipaddress {
 		$property = $this->x_redirect = new myp\property_ipaddress($this);
 		$property->
 			set_name('redirect')->
 			set_title(gettext('Redirect'));
 		return $property;
 	}
-	final public function get_redirect() {
+	final public function get_redirect(): myp\property_ipaddress {
 		return $this->x_redirect ?? $this->init_redirect();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 }

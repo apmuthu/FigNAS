@@ -36,36 +36,36 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_ipaddress;
-	public function init_ipaddress() {
+	public function init_ipaddress(): myp\property_ipaddress {
 		$property = $this->x_ipaddress = new myp\property_ipaddress($this);
 		$property->
 			set_name('ipaddress')->
 			set_title(gettext('IP Address'));
 		return $property;
 	}
-	final public function get_ipaddress() {
+	final public function get_ipaddress(): myp\property_ipaddress {
 		return $this->x_ipaddress ?? $this->init_ipaddress();
 	}
 	protected $x_prefixlen;
-	public function init_prefixlen() {
+	public function init_prefixlen(): myp\property_int {
 		$property = $this->x_prefixlen = new myp\property_int($this);
 		$property->
 			set_name('prefixlen')->
 			set_title(gettext('IP Address Prefix'));
 		return $property;
 	}
-	final public function get_prefixlen() {
+	final public function get_prefixlen(): myp\property_int {
 		return $this->x_prefixlen ?? $this->init_prefixlen();
 	}
 	protected $x_group;
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$property = $this->x_group = new myp\property_list_multi($this);
 		$property->
 			set_name('group')->
 			set_title(gettext('Auth Group'));
 		return $property;
 	}
-	final public function get_group() {
+	final public function get_group(): myp\property_list_multi {
 		return $this->x_group ?? $this->init_group();
 	}
 }

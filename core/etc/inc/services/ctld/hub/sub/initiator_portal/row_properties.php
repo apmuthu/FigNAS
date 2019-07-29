@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\initiator_portal;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_ipaddress() {
+	public function init_ipaddress(): myp\property_ipaddress {
 		$description = gettext('An IPv4 or IPv6 address of an iSCSI initiator portal.');
 		$placeholder = gettext('IP Address');
 		$property = parent::init_ipaddress();
@@ -46,7 +47,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_prefixlen() {
+	public function init_prefixlen(): myp\property_int {
 		$description = gettext('Enter IP address prefix length.');
 		$placeholder = '';
 		$property = parent::init_prefixlen();
@@ -62,7 +63,7 @@ final class row_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Link initiator-portal to auth-groups. An Initiator matching this address will be allowed to connect to the selected auth-groups.');
 		$message_info = gettext('No auth groups found.');
 		$options = [];

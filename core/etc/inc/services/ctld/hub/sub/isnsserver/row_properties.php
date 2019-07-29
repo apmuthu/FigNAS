@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\isnsserver;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_ipaddress() {
+	public function init_ipaddress(): myp\property_ipaddress {
 		$description = gettext('IPv4 or IPv6 address of an iSNS server to register on.');
 		$placeholder = gettext('IP Address');
 		$property = parent::init_ipaddress();
@@ -46,7 +47,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_port() {
+	public function init_port(): myp\property_int {
 		$description = gettext('Port number of the iSNS server.');
 		$placeholder = '';
 		$property = parent::init_port();

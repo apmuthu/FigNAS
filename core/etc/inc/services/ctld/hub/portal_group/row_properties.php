@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\portal_group;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the Portal Group.');
 		$placeholder = gettext('Portal Group Name');
 		$regexp = '/^\S{1,223}$/';
@@ -51,13 +52,13 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to this portal-group.');
 		$property = parent::init_auxparam();
 		$property->set_description($description);
 		return $property;
 	}
-	public function init_discovery_auth_group() {
+	public function init_discovery_auth_group(): myp\property_list {
 		$description = gettext('Assign a previously defined authentication group to the portal group, to be used for target discovery.');
 		$options = [
 			'' => gettext('Deny discovery'),
@@ -72,7 +73,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_discovery_filter() {
+	public function init_discovery_filter(): myp\property_list {
 		$description = gettext('Determines which targets are returned during discovery.');
 		$options = [
 			'' => gettext('Discovery will return all targets assigned to this portal group.'),
@@ -89,7 +90,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_foreign() {
+	public function init_foreign(): myp\property_bool {
 		$caption = gettext('Specifies that this portal-group is listened by some other host. This host will announce it on discovery stage, but won\'t listen.');
 		$property = parent::init_foreign();
 		$property->
@@ -99,7 +100,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_offload() {
+	public function init_offload(): myp\property_text {
 		$description = gettext('Define iSCSI hardware offload driver to use for this portal-group. The default is "none".');
 		$placeholder = gettext('Driver');
 		$regexp = '/^\S{0,60}$/';
@@ -116,7 +117,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_redirect() {
+	public function init_redirect(): myp\property_ipaddress {
 		$description = gettext('IPv4 or IPv6 address to redirect initiators to. When configured, all initiators attempting to connect to portal belonging to this portal-group will get redirected using "Target moved temporarily" login response.');
 		$property = parent::init_redirect();
 		$property->
@@ -128,7 +129,7 @@ final class row_properties extends grid_properties {
 			set_filter_group('ui',['empty','ui']);
 		return $property;
 	}
-	public function init_tag() {
+	public function init_tag(): myp\property_int {
 		$description = gettext('Unique 16-bit tag value of this portal-group. If not specified, the value is generated automatically.');
 		$placeholder = gettext('Tag');
 		$property = parent::init_tag();

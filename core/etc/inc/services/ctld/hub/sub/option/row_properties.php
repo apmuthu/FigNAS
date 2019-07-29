@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\option;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the option.');
 		$regexp = '/^\S{1,223}$/';
 		$property = parent::init_name();
@@ -49,7 +50,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_value() {
+	public function init_value(): myp\property_text {
 		$description = gettext('Value of the option.');
 		$regexp = '/^.{1,223}$/';
 		$property = parent::init_value();
@@ -64,7 +65,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Link this option to selected portal-groups.');
 		$message_info = gettext('No portal groups found.');
 		$options = [];

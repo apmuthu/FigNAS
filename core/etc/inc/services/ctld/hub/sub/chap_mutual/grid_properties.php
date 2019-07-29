@@ -36,58 +36,58 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('User'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_secret;
-	public function init_secret() {
+	public function init_secret(): myp\property_text {
 		$property = $this->x_secret = new myp\property_text($this);
 		$property->
 			set_name('secret')->
 			set_title(gettext('Secret'));
 		return $property;
 	}
-	final public function get_secret() {
+	final public function get_secret(): myp\property_text {
 		return $this->x_secret ?? $this->init_secret();
 	}
 	protected $x_group;
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$property = $this->x_group = new myp\property_list_multi($this);
 		$property->
 			set_name('group')->
 			set_title(gettext('Auth Group'));
 		return $property;
 	}
-	final public function get_group() {
+	final public function get_group(): myp\property_list_multi {
 		return $this->x_group ?? $this->init_group();
 	}
 	protected $x_mutual_name;
-	public function init_mutual_name() {
+	public function init_mutual_name(): myp\property_text {
 		$property = $this->x_mutual_name = new myp\property_text($this);
 		$property->
 			set_name('mutual_name')->
 			set_title(gettext('Mutual User'));
 		return $property;
 	}
-	final public function get_mutual_name() {
+	final public function get_mutual_name(): myp\property_text {
 		return $this->x_mutual_name ?? $this->init_mutual_name();
 	}
 	protected $x_mutual_secret;
-	public function init_mutual_secret() {
+	public function init_mutual_secret(): myp\property_text {
 		$property = $this->x_mutual_secret = new myp\property_text($this);
 		$property->
 			set_name('mutual_secret')->
 			set_title(gettext('Mutual Secret'));
 		return $property;
 	}
-	final public function get_mutual_secret() {
+	final public function get_mutual_secret(): myp\property_text {
 		return $this->x_mutual_secret ?? $this->init_mutual_secret();
 	}
 }

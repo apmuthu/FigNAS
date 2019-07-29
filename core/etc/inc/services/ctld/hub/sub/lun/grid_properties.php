@@ -36,36 +36,36 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_number;
-	public function init_number() {
+	public function init_number(): myp\property_int {
 		$property = $this->x_number = new myp\property_int($this);
 		$property->
 			set_name('number')->
 			set_title(gettext('LUN Number'));
 		return $property;
 	}
-	final public function get_number() {
+	final public function get_number(): myp\property_int {
 		return $this->x_number ?? $this->init_number();
 	}
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_list {
 		$property = $this->x_name = new myp\property_list($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('LUN Name'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_list {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_group;
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$property = $this->x_group = new myp\property_list_multi($this);
 		$property->
 			set_name('group')->
 			set_title(gettext('Target'));
 		return $property;
 	}
-	final public function get_group() {
+	final public function get_group(): myp\property_list_multi {
 		return $this->x_group ?? $this->init_group();
 	}
 }

@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\initiator_name;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Enter an iSCSI initiator name.');
 		$placeholder = gettext('Name');
 		$regexp = '/^\S{1,223}$/';
@@ -51,7 +52,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Link initiator-name to auth-groups. An Initiator with this name will be allowed to connect to the selected auth-groups.');
 		$message_info = gettext('No auth groups found.');
 		$options = [];

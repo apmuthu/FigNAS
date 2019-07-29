@@ -36,33 +36,33 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('Auth Group Name'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_auth_type;
-	public function init_auth_type() {
+	public function init_auth_type(): myp\property_list {
 		$property = $this->x_auth_type = new myp\property_list($this);
 		$property->
 			set_name('auth_type')->
 			set_title(gettext('Auth Type'));
 		return $property;
 	}
-	final public function get_auth_type() {
+	final public function get_auth_type(): myp\property_list {
 		return $this->x_auth_type ?? $this->init_auth_type();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 }

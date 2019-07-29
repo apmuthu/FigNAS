@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\lun;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_number() {
+	public function init_number(): myp\property_int {
 		$description = gettext('LUN number');
 		$property = parent::init_number();
 		$property->
@@ -48,7 +49,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_name() {
+	public function init_name(): myp\property_list {
 		$description = gettext('Name of the LUN.');
 		$message_info = gettext('No LUNs found.');
 		$options = [];
@@ -61,7 +62,7 @@ final class row_properties extends grid_properties {
 			set_message_info($message_info);
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Select targets.');
 		$message_info = gettext('No targets found.');
 		$options = [];

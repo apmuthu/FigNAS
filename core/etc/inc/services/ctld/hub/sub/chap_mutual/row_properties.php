@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\chap_mutual;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Enter user name.');
 		$placeholder = gettext('User');
 		$regexp = '/^\S{1,32}$/';
@@ -51,7 +52,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_secret() {
+	public function init_secret(): myp\property_text {
 		$description = gettext('Enter secret.');
 		$placeholder = gettext('Secret');
 		$regexp = '/^[^"]{1,32}$/';
@@ -70,7 +71,7 @@ final class row_properties extends grid_properties {
 			set_filter_group('ui',['empty','ui']);
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Link mutual-chap configuration to auth-groups. Note that an auth-group may contain either chap or chap-mutual entries, but not both.');
 		$message_info = gettext('No auth groups found.');
 		$options = [];
@@ -84,7 +85,7 @@ final class row_properties extends grid_properties {
 			set_message_info($message_info);
 		return $property;
 	}
-	public function init_mutual_name() {
+	public function init_mutual_name(): myp\property_text {
 		$description = gettext('Enter mutual user name.');
 		$placeholder = gettext('Mutual User');
 		$regexp = '/^\S{1,32}$/';
@@ -101,7 +102,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_mutual_secret() {
+	public function init_mutual_secret(): myp\property_text {
 		$description = 'Enter mutual secret';
 		$placeholder = gettext('Mutual Secret');
 		$regexp = '/^[^"]{1,32}$/';

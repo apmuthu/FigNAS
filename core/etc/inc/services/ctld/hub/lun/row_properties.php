@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\lun;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the LUN.');
 		$placeholder = gettext('LUN Name');
 		$regexp = '/^\S{1,223}$/';
@@ -51,7 +52,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_backend() {
+	public function init_backend(): myp\property_list {
 		$description = gettext('The CTL backend to use for a given LUN.');
 		$options = [
 			'' => gettext('Default'),
@@ -68,7 +69,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_blocksize() {
+	public function init_blocksize(): myp\property_list {
 		$description = gettext('The blocksize visible to the initiator.');
 		$options = [
 			'' => gettext('Default'),
@@ -89,7 +90,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_ctl_lun() {
+	public function init_ctl_lun(): myp\property_text {
 		$description = gettext('Global numeric identifier to use for a given LUN inside CTL.');
 		$regexp = '/^(?:|[0-9]|[1-9][0-9]{1,2}|10[01][0-9]|102[0-3])$/';
 		$property = parent::init_ctl_lun();
@@ -104,9 +105,9 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_device_id() {
-		//	The device-id shall be 48 characters width,
-		//	Compatibility istgt: 16 bytes "iSCSI Disk     " + 32 bytes aligned serial number
+	public function init_device_id(): myp\property_text {
+//		The device-id shall be 48 characters width,
+//		Compatibility istgt: 16 bytes "iSCSI Disk     " + 32 bytes aligned serial number
 		$description = gettext('The SCSI Device Identification string presented to the initiator.');
 		$placeholder = gettext('Device ID');
 		$regexp = '/^\S{0,48}$/';
@@ -123,7 +124,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_device_type() {
+	public function init_device_type(): myp\property_list {
 		$description = gettext('Specify the SCSI device type to use when creating the LUN.');
 		$options = [
 			'' => gettext('Undefined'),
@@ -162,7 +163,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_passthrough_address() {
+	public function init_passthrough_address(): myp\property_text {
 		$description = gettext('Enter passthrough device address bus:path:lun');
 		$regexp = '/^(?:|[0-9]+:[0-9]+:[0-9]+)$/';
 		$property = parent::init_passthrough_address();
@@ -177,7 +178,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_path() {
+	public function init_path(): myp\property_text {
 		$description = gettext('The path to the file, device node, or zfs volume used to back the LUN.');
 		$regexp = '/^(?:|.{1,223})$/';
 		$property = parent::init_path();
@@ -192,7 +193,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_serial() {
+	public function init_serial(): myp\property_text {
 		$description = gettext('The SCSI serial number presented to the initiator.');
 		$regexp = '/^(?:|.{1,40})$/';
 		$property = parent::init_serial();
@@ -207,7 +208,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_size() {
+	public function init_size(): myp\property_text {
 		$description = gettext('The size of the LUN.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,16}[kmgtpezy]b?)$/i';
 		$property = parent::init_size();
@@ -222,7 +223,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_vendor() {
+	public function init_opt_vendor(): myp\property_text {
 		$description = gettext('Specifies LUN vendor string up to 8 chars.');
 		$placeholder = 'FreeBSD';
 		$regexp = '/^.{0,8}$/';
@@ -240,7 +241,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_product() {
+	public function init_opt_product(): myp\property_text {
 		$description = gettext('Specifies LUN product string up to 16 chars.');
 		$placeholder = 'iSCSI Disk';
 		$regexp = '/^.{0,16}$/';
@@ -258,7 +259,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_revision() {
+	public function init_opt_revision(): myp\property_text {
 		$description = gettext('Specifies LUN revision string up to 4 chars.');
 		$placeholder = '0123';
 		$regexp = '/^.{0,4}$/';
@@ -276,7 +277,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_scsiname() {
+	public function init_opt_scsiname(): myp\property_text {
 		$description = gettext('Specifies LUN SCSI name string.');
 		$placeholder = gettext('SCSI Name');
 		$regexp = '/^\S{0,223}$/';
@@ -293,7 +294,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_eui() {
+	public function init_opt_eui(): myp\property_text {
 		$description = gettext('Specifies LUN EUI-64 identifier.');
 		$placeholder = gettext('EUI-64');
 		$regexp = '/^(?:|[0-9a-f]{16})$/i';
@@ -310,7 +311,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_naa() {
+	public function init_opt_naa(): myp\property_text {
 		$description = gettext('Specifies LUN NAA identifier.');
 		$placeholder = gettext('NAA Identifier');
 		$regexp = '/^(?:|(?:[0-9a-f]{16}){1,2})$/i';
@@ -327,7 +328,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_uuid() {
+	public function init_opt_uuid(): myp\property_text {
 		$description = gettext('Specifies LUN locally assigned RFC 4122 UUID.');
 		$placeholder = gettext('UUID');
 		$regexp = '/^(?:|[0-9a-f]{4}(?:[0-9a-f]{4}-){4}[0-9a-f]{12})$/i';
@@ -344,7 +345,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_ha_role() {
+	public function init_opt_ha_role(): myp\property_list {
 		$description = gettext('Setting to "primary" or "secondary" overrides default role of the node in HA cluster.');
 		$options = [
 			'' => gettext('Default'),
@@ -360,7 +361,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_insecure_tpc() {
+	public function init_opt_insecure_tpc(): myp\property_list {
 		$description = gettext('Setting to "on" allows EXTENDED COPY command sent to this LUN access other LUNs on this host, not accessible otherwise. This allows to offload copying between different iSCSI targets residing on the same host in trusted environments.');
 		$options = [
 			'' => gettext('Off'),
@@ -375,7 +376,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_readcache() {
+	public function init_opt_readcache(): myp\property_list {
 		$description = gettext('Set to "off", disables read caching for the LUN, if supported by the backend.');
 		$options = [
 			'' => gettext('On'),
@@ -390,7 +391,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_readonly() {
+	public function init_opt_readonly(): myp\property_list {
 		$description = gettext('Set to "on", blocks all media write operations to the LUN reporting it as write protected.');
 		$options = [
 			'' => gettext('Off'),
@@ -405,7 +406,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_removable() {
+	public function init_opt_removable(): myp\property_list {
 		$description = gettext('Set to "on" makes LUN removable.');
 		$options = [
 			'' => gettext('Off'),
@@ -420,7 +421,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_reordering() {
+	public function init_opt_reordering(): myp\property_list {
 		$description = gettext('Set to "unrestricted", allows target to process commands with SIMPLE task attribute in arbitrary order.');
 		$options = [
 			'' => gettext('Restricted'),
@@ -435,7 +436,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_serseq() {
+	public function init_opt_serseq(): myp\property_list {
 		$description = '';
 		$options = [
 			'' => gettext('Default'),
@@ -452,7 +453,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_pblocksize() {
+	public function init_opt_pblocksize(): myp\property_text {
 		$description = gettext('Specify physical block size of the device.');
 		$regexp = '/^(?:|[1-9][0-9]{0,8}[kmgtpezy]b?)$/i';
 		$property = parent::init_opt_pblocksize();
@@ -467,7 +468,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_pblockoffset() {
+	public function init_opt_pblockoffset(): myp\property_text {
 		$description = gettext('Specify physical block offset of the device.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,8}[kmgtpezy]b?)$/i';
 		$property = parent::init_opt_pblockoffset();
@@ -482,7 +483,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_ublocksize() {
+	public function init_opt_ublocksize(): myp\property_text {
 		$description = gettext('Specify UNMAP block size of the device.');
 		$regexp = '/^(?:|[1-9][0-9]{0,8}[kmgtpezy]b?)$/i';
 		$property = parent::init_opt_ublocksize();
@@ -497,7 +498,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_ublockoffset() {
+	public function init_opt_ublockoffset(): myp\property_text {
 		$description = gettext('Specify UNMAP block offset of the device.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,8}[kmgtpezy]b?)$/i';
 		$property = parent::init_opt_ublockoffset();
@@ -512,12 +513,12 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_rpm() {
+	public function init_opt_rpm(): myp\property_text {
 		$description = gettext('Specifies medium rotation rate of the device.');
-		//	0: not reported
-		//	1: non-rotating (SSD)
-		//	>1024: value in	revolutions per minute
-		//	99999: max rpm
+//		0: not reported
+//		1: non-rotating (SSD)
+//		>1024: value in	revolutions per minute
+//		99999: max rpm
 		$regexp = '/^(?:|[01]|102[5-9]|10[3-9][0-9]|1[1-9][0-9]{2}|[2-9][0-9]{3}|[1-9][0-9]{4})$/';
 		$property = parent::init_opt_rpm();
 		$property->
@@ -531,7 +532,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_formfactor() {
+	public function init_opt_formfactor(): myp\property_list {
 		$description = gettext('Specifies nominal form factor of the device.');
 		$options = [
 			'' => gettext('Undefined'),
@@ -551,7 +552,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_provisioning_type() {
+	public function init_opt_provisioning_type(): myp\property_list {
 		$description = gettext('When UNMAP support is enabled, this option specifies provisioning type.');
 		$options = [
 			'' => gettext('Default'),
@@ -568,7 +569,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_unmap() {
+	public function init_opt_unmap(): myp\property_list {
 		$description = gettext('Setting to "on" or "off" controls UNMAP support for the logical unit. Default value is "on" if supported by the backend.');
 		$options = [
 			'' => gettext('Default'),
@@ -584,7 +585,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_unmap_max_lba() {
+	public function init_opt_unmap_max_lba(): myp\property_text {
 		$description = gettext('Specify maximum allowed number of LBAs per UNMAP command to report in Block Limits VPD page.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_unmap_max_lba();
@@ -599,7 +600,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_unmap_max_descr() {
+	public function init_opt_unmap_max_descr(): myp\property_text {
 		$description = gettext('Specify maximum allowed number of block descriptors per UNMAP command to report in Block Limits VPD page.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_unmap_max_descr();
@@ -614,7 +615,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_write_same_max_lba() {
+	public function init_opt_write_same_max_lba(): myp\property_text {
 		$description = gettext('Specify maximum allowed number of LBAs per WRITE SAME command to report in Block Limits VPD page.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_write_same_max_lba();
@@ -629,7 +630,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_avail_threshold() {
+	public function init_opt_avail_threshold(): myp\property_text {
 		$description = gettext('Set per-LUN/per-pool thin provisioning soft threshold.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_avail_threshold();
@@ -644,7 +645,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_used_threshold() {
+	public function init_opt_used_threshold(): myp\property_text {
 		$description = gettext('Set per-LUN/per-pool thin provisioning soft threshold.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_used_threshold();
@@ -659,7 +660,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_pool_avail_threshold() {
+	public function init_opt_pool_avail_threshold(): myp\property_text {
 		$description = gettext('Set per-LUN/per-pool thin provisioning soft threshold.');
 		$regexp = '/^(?:|0|[1-9][0-9]*)$/';
 		$property = parent::init_opt_pool_avail_threshold();
@@ -674,7 +675,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_pool_used_threshold() {
+	public function init_opt_pool_used_threshold(): myp\property_text {
 		$description = gettext('Set per-LUN/per-pool thin provisioning soft threshold.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,8})$/';
 		$property = parent::init_opt_pool_used_threshold();
@@ -689,7 +690,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_writecache() {
+	public function init_opt_writecache(): myp\property_list {
 		$description = gettext('Set to "off", disables write caching for the LUN, if supported by the backend.');
 		$options = [
 			'' => gettext('On'),
@@ -704,7 +705,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_opt_file() {
+	public function init_opt_file(): myp\property_text {
 		$description = gettext('Specifies file or device name to use for backing store.');
 		$regexp = '/^\S{0,223}$/';
 		$property = parent::init_opt_file();
@@ -717,7 +718,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_num_threads() {
+	public function init_opt_num_threads(): myp\property_text {
 		$description = gettext('Specifies number of backend threads to use for this LUN.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,8})$/';
 		$property = parent::init_opt_num_threads();
@@ -732,7 +733,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_opt_capacity() {
+	public function init_opt_capacity(): myp\property_text {
 		$description = gettext('Specifies capacity of backing store (maximum RAM for data). The default value is zero, that disables backing store completely, making all writes go to nowhere, while all reads return zeroes.');
 		$regexp = '/^(?:|0|[1-9][0-9]{0,8}[kmgtpezy]b?)$/i';
 		$property = parent::init_opt_capacity();
@@ -747,7 +748,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to this lun.');
 		$property = parent::init_auxparam();
 		$property->set_description($description);

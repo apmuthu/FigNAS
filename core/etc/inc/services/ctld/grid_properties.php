@@ -32,7 +32,6 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld;
-
 use common\properties as myp;
 
 class grid_properties extends myp\container {

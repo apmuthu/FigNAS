@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\auth_group;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the Auth Group.');
 		$placeholder = gettext('Auth Group Name');
 		$regexp = '/^\S{1,223}$/';
@@ -51,7 +52,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_auth_type() {
+	public function init_auth_type(): myp\property_list {
 		$description = gettext('Sets the authentication type.');
 		$options = [
 			'' => gettext('Undefined'),
@@ -69,7 +70,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to this auth-group.');
 		$property = parent::init_auxparam();
 		$property->set_description($description);

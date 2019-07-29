@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\target;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the target.');
 		$placeholder = gettext('Name');
 		$regexp = '/^(?:iqn|eui|naa)\.\S{1,219}$/';
@@ -51,13 +52,13 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters will be added to this target.');
 		$property = parent::init_auxparam();
 		$property->set_description($description);
 		return $property;
 	}
-	public function init_alias() {
+	public function init_alias(): myp\property_text {
 		$description = gettext('Assign a human-readable description to the target.');
 		$placeholder = gettext('Alias');
 		$regexp = '/^.{0,128}$/';
@@ -74,7 +75,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => NULL,'regexp' => $regexp]);
 		return $property;
 	}
-	public function init_auth_group() {
+	public function init_auth_group(): myp\property_list {
 		$description = gettext('Assign a previously defined authentication group to the target.');
 		$options = [
 			'' => gettext('Deny discovery'),
@@ -89,7 +90,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_portal_group() {
+	public function init_portal_group(): myp\property_list {
 		$description = gettext('Assign a previously defined portal group to the target.');
 		$options = [
 			'' => gettext('Default')
@@ -103,7 +104,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_redirect() {
+	public function init_redirect(): myp\property_ipaddress {
 		$description = gettext('IPv4 or IPv6 address to redirect initiators to. When configured, all initiators attempting to connect to this target will get redirected using "Target moved temporarily" login response.');
 		$property = parent::init_redirect();
 		$property->

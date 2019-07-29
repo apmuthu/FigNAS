@@ -36,88 +36,88 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('Portal Group Name'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_discovery_auth_group;
-	public function init_discovery_auth_group() {
+	public function init_discovery_auth_group(): myp\property_list {
 		$property = $this->x_discovery_auth_group = new myp\property_list($this);
 		$property->
 			set_name('discovery_auth_group')->
 			set_title(gettext('Discovery Auth Group'));
 		return $property;
 	}
-	final public function get_discovery_auth_group() {
+	final public function get_discovery_auth_group(): myp\property_list {
 		return $this->x_discovery_auth_group ?? $this->init_discovery_auth_group();
 	}
 	protected $x_discovery_filter;
-	public function init_discovery_filter() {
+	public function init_discovery_filter(): myp\property_list {
 		$property = $this->x_discovery_filter = new myp\property_list($this);
 		$property->
 			set_name('discovery_filter')->
 			set_title(gettext('Discovery Filter'));
 		return $property;
 	}
-	final public function get_discovery_filter() {
+	final public function get_discovery_filter(): myp\property_list {
 		return $this->x_discovery_filter ?? $this->init_discovery_filter();
 	}
 	protected $x_offload;
-	public function init_offload() {
+	public function init_offload(): myp\property_text {
 		$property = $this->x_offload = new myp\property_text($this);
 		$property->
 			set_name('offload')->
 			set_title(gettext('Offload'));
 		return $property;
 	}
-	final public function get_offload() {
+	final public function get_offload(): myp\property_text {
 		return $this->x_offload ?? $this->init_offload();
 	}
 	protected $x_redirect;
-	public function init_redirect() {
+	public function init_redirect(): myp\property_ipaddress {
 		$property = $this->x_redirect = new myp\property_ipaddress($this);
 		$property->
 			set_name('redirect')->
 			set_title(gettext('Redirect'));
 		return $property;
 	}
-	final public function get_redirect() {
+	final public function get_redirect(): myp\property_ipaddress {
 		return $this->x_redirect ?? $this->init_redirect();
 	}
 	protected $x_tag;
-	public function init_tag() {
+	public function init_tag(): myp\property_int {
 		$property = $this->x_tag = new myp\property_int($this);
 		$property->
 			set_name('tag')->
 			set_title(gettext('Tag'));
 		return $property;
 	}
-	final public function get_tag() {
+	final public function get_tag(): myp\property_int {
 		return $this->x_tag ?? $this->init_tag();
 	}
 	protected $x_foreign;
-	public function init_foreign() {
+	public function init_foreign(): myp\property_bool {
 		$property = $this->x_foreign = new myp\property_bool($this);
 		$property->
 			set_name('foreign')->
 			set_title(gettext('Foreign'));
 		return $property;
 	}
-	final public function get_foreign() {
+	final public function get_foreign(): myp\property_bool {
 		return $this->x_foreign ?? $this->init_foreign();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 }

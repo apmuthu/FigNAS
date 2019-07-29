@@ -36,25 +36,25 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_ipaddress;
-	public function init_ipaddress() {
+	public function init_ipaddress(): myp\property_ipaddress {
 		$property = $this->x_ipaddress = new myp\property_ipaddress($this);
 		$property->
 			set_name('ipaddress')->
 			set_title(gettext('IP Address'));
 		return $property;
 	}
-	final public function get_ipaddress() {
+	final public function get_ipaddress(): myp\property_ipaddress {
 		return $this->x_ipaddress ?? $this->init_ipaddress();
 	}
 	protected $x_port;
-	public function init_port() {
+	public function init_port(): myp\property_int {
 		$property = $this->x_port = new myp\property_int($this);
 		$property->
 			set_name('port')->
 			set_title(gettext('Port'));
 		return $property;
 	}
-	final public function get_port() {
+	final public function get_port(): myp\property_int {
 		return $this->x_port ?? $this->init_port();
 	}
 }

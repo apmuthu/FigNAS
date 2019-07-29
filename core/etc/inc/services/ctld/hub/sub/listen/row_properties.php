@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\ctld\hub\sub\listen;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_ipaddress() {
+	public function init_ipaddress(): myp\property_ipaddress {
 		$description = gettext('An IPv4 or IPv6 address to listen on for incoming connections.');
 		$placeholder = gettext('IP Address');
 		$property = parent::init_ipaddress();
@@ -46,7 +47,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_port() {
+	public function init_port(): myp\property_int {
 		$description = gettext('The port to listen on.');
 		$placeholder = '';
 		$property = parent::init_port();
@@ -62,7 +63,7 @@ final class row_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_group() {
+	public function init_group(): myp\property_list_multi {
 		$description = gettext('Link listener to portal groups. Selected portal groups will listen on this address for incoming connections.');
 		$message_info = gettext('No portal groups found.');
 		$options = [];
