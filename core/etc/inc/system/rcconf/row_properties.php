@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace system\rcconf;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('Name of the variable.');
 		$placeholder = gettext('Name');
 		$property = parent::init_name();
@@ -50,7 +51,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => '']);
 		return $property;
 	}
-	public function init_comment() {
+	public function init_comment(): myp\property_text {
 		$description = '';
 		$placeholder = gettext('Enter a description');
 		$property = parent::init_comment();
@@ -66,7 +67,7 @@ final class row_properties extends grid_properties {
 			set_filter_options(['default' => '']);
 		return $property;
 	}
-	public function init_value() {
+	public function init_value(): myp\property_text {
 		$property = parent::init_value();
 		$description = '';
 		$placeholder = gettext('Enter Value');

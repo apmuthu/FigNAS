@@ -36,47 +36,47 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_comment;
-	public function init_comment() {
+	public function init_comment(): myp\property_text {
 		$property = $this->x_comment = new myp\property_text($this);
 		$property->
 			set_name('comment')->
 			set_title(gettext('Description'));
 		return $property;
 	}
-	final public function get_comment() {
+	final public function get_comment(): myp\property_text {
 		return $this->x_comment ?? $this->init_comment();
 	}
 	protected $x_facility;
-	public function init_facility() {
+	public function init_facility(): myp\property_text {
 		$property = $this->x_facility= new myp\property_text($this);
 		$property->
 			set_name('facility')->
 			set_title(gettext('Facility'));
 		return $property;
 	}
-	final public function get_facility() {
+	final public function get_facility(): myp\property_text {
 		return $this->x_facility ?? $this->init_facility();
 	}
 	protected $x_level;
-	public function init_level() {
+	public function init_level(): myp\property_text {
 		$property = $this->x_level = new myp\property_text($this);
 		$property->
 			set_name('level')->
 			set_title(gettext('Level'));
 		return $property;
 	}
-	final public function get_level() {
+	final public function get_level(): myp\property_text {
 		return $this->x_level ?? $this->init_level();
 	}
 	protected $x_value;
-	public function init_value() {
+	public function init_value(): myp\property_text {
 		$property = $this->x_value = new myp\property_text($this);
 		$property->
 			set_name('value')->
 			set_title(gettext('Destination'));
 		return $property;
 	}
-	final public function get_value() {
+	final public function get_value(): myp\property_text {
 		return $this->x_value ?? $this->init_value();
 	}
 }

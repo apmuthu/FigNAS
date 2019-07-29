@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace system\syslogconf;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_comment() {
+	public function init_comment(): myp\property_text {
 		$property = parent::init_comment();
 		$description = '';
 		$placeholder = gettext('Enter a description');
@@ -53,7 +54,7 @@ final class row_properties extends grid_properties {
 			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('The value is invalid.')));
 		return $property;
 	}
-	public function init_facility() {
+	public function init_facility(): myp\property_text {
 		$property = parent::init_facility();
 		$description = '';
 		$placeholder = gettext('Enter facility name');
@@ -70,7 +71,7 @@ final class row_properties extends grid_properties {
 			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('The value is invalid.')));
 		return $property;
 	}
-	public function init_level() {
+	public function init_level(): myp\property_text {
 		$property = parent::init_level();
 		$description = '';
 		$placeholder = gettext('Enter level name');
@@ -87,7 +88,7 @@ final class row_properties extends grid_properties {
 			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('The value is invalid.')));
 		return $property;
 	}
-	public function init_value() {
+	public function init_value(): myp\property_text {
 		$property = parent::init_value();
 		$description = '';
 		$placeholder = gettext('Enter destination');

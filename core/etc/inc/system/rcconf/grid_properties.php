@@ -36,36 +36,36 @@ use common\properties as myp;
 
 class grid_properties extends myp\container_row {
 	protected $x_name;
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$property = $this->x_name = new myp\property_text($this);
 		$property->
 			set_name('name')->
 			set_title(gettext('Variable'));
 		return $property;
 	}
-	final public function get_name() {
+	final public function get_name(): myp\property_text {
 		return $this->x_name ?? $this->init_name();
 	}
 	protected $x_comment;
-	public function init_comment() {
+	public function init_comment(): myp\property_text {
 		$property = $this->x_comment = new myp\property_text($this);
 		$property->
 			set_name('comment')->
 			set_title(gettext('Description'));
 		return $property;
 	}
-	final public function get_comment() {
+	final public function get_comment(): myp\property_text {
 		return $this->x_comment ?? $this->init_comment();
 	}
 	protected $x_value;
-	public function init_value() {
+	public function init_value(): myp\property_text {
 		$property = $this->x_value = new myp\property_text($this);
 		$property->
 			set_name('value')->
 			set_title(gettext('Value'));
 		return $property;
 	}
-	final public function get_value() {
+	final public function get_value(): myp\property_text {
 		return $this->x_value ?? $this->init_value();
 	}
 }
