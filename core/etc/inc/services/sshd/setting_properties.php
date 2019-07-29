@@ -32,7 +32,6 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\sshd;
-
 use common\properties as myp;
 
 final class setting_properties extends grid_properties {

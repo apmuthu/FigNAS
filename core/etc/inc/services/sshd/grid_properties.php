@@ -32,7 +32,6 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\sshd;
-
 use common\properties as myp;
 
 class grid_properties extends myp\container {
@@ -52,7 +51,7 @@ class grid_properties extends myp\container {
 			set_title(gettext('Port'));
 		return $property;
 	}
-	final public function get_port() {
+	final public function get_port(): myp\property_int {
 		return $this->x_port ?? $this->init_port();
 	}
 	protected $x_allowpa;
