@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace disks\smartmontools\umass;
+use common\properties as myp;
 
 final class row_properties extends grid_properties {
-	public function init_name() {
+	public function init_name(): myp\property_text {
 		$description = gettext('The identifier reported as unknown by smartctl, including brackets.');
 		$placeholder = gettext('Enter Identifier');
 		$property = parent::init_name();
@@ -48,7 +49,7 @@ final class row_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_type() {
+	public function init_type(): myp\property_text {
 		$placeholder = gettext('Enter smartctl pass-through type.');
 		$property = parent::init_type();
 		$property->
