@@ -36,99 +36,99 @@ use common\properties as myp;
 
 class grid_properties extends myp\container {
 	protected $x_allowfilecreation;
-	public function init_allowfilecreation() {
+	public function init_allowfilecreation(): myp\property_bool {
 		$property = $this->x_allowfilecreation = new myp\property_bool($this);
 		$property->
 			set_name('allowfilecreation')->
 			set_title(gettext('Allow New Files'));
 		return $property;
 	}
-	final public function get_allowfilecreation() {
+	final public function get_allowfilecreation(): myp\property_bool {
 		return $this->x_allowfilecreation ?? $this->init_allowfilecreation();
 	}
 	protected $x_dir;
-	public function init_dir() {
+	public function init_dir(): myp\property_text {
 		$property = $this->x_dir = new myp\property_text($this);
 		$property->
 			set_name('dir')->
 			set_title(gettext('Directory'));
 		return $property;
 	}
-	final public function get_dir() {
+	final public function get_dir(): myp\property_text {
 		return $this->x_dir ?? $this->init_dir();
 	}
 	protected $x_enable;
-	public function init_enable() {
+	public function init_enable(): myp\property_enable {
 		$property = $this->x_enable = new myp\property_enable($this);
 		return $property;
 	}
-	final public function get_enable() {
+	final public function get_enable(): myp\property_enable {
 		return $this->x_enable ?? $this->init_enable();
 	}
 	protected $x_extraoptions;
-	public function init_extraoptions() {
+	public function init_extraoptions(): myp\property_text {
 		$property = $this->x_extraoptions = new myp\property_text($this);
 		$property->
 			set_name('extraoptions')->
 			set_title(gettext('Extra Options'));
 		return $property;
 	}
-	final public function get_extraoptions() {
+	final public function get_extraoptions(): myp\property_text {
 		return $this->x_extraoptions ?? $this->init_extraoptions();
 	}
 	protected $x_maxblocksize;
-	public function init_maxblocksize() {
+	public function init_maxblocksize(): myp\property_int {
 		$property = $this->x_maxblocksize = new myp\property_int($this);
 		$property->
 			set_name('maxblocksize')->
 			set_title(gettext('Max. Block Size'));
 		return $property;
 	}
-	final public function get_maxblocksize() {
+	final public function get_maxblocksize(): myp\property_int {
 		return $this->x_maxblocksize ?? $this->init_maxblocksize();
 	}
 	protected $x_port;
-	public function init_port() {
+	public function init_port(): myp\property_int {
 		$property = $this->x_port = new myp\property_int($this);
 		$property->
 			set_name('port')->
 			set_title(gettext('Port'));
 		return $property;
 	}
-	final public function get_port() {
+	final public function get_port(): myp\property_int {
 		return $this->x_port ?? $this->init_port();
 	}
 	protected $x_timeout;
-	public function init_timeout() {
+	public function init_timeout(): myp\property_int {
 		$property = $this->x_timeout = new myp\property_int($this);
 		$property->
 			set_name('timeout')->
 			set_title(gettext('Timeout'));
 		return $property;
 	}
-	final public function get_timeout() {
+	final public function get_timeout(): myp\property_int {
 		return $this->x_timeout ?? $this->init_timeout();
 	}
 	protected $x_umask;
-	public function init_umask() {
+	public function init_umask(): myp\property_text {
 		$property = $this->x_umask = new myp\property_text($this);
 		$property->
 			set_name('umask')->
 			set_title(gettext('Umask'));
 		return $property;
 	}
-	final public function get_umask() {
+	final public function get_umask(): myp\property_text {
 		return $this->x_umask ?? $this->init_umask();
 	}
 	protected $x_username;
-	public function init_username() {
+	public function init_username(): myp\property_list {
 		$property = $this->x_username = new myp\property_list($this);
 		$property->
 			set_name('username')->
 			set_title(gettext('Username'));
 		return $property;
 	}
-	final public function get_username() {
+	final public function get_username(): myp\property_list {
 		return $this->x_username ?? $this->init_username();
 	}
 }

@@ -32,9 +32,10 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace services\tftpd;
+use common\properties as myp;
 
 final class setting_properties extends grid_properties {
-	public function init_allowfilecreation() {
+	public function init_allowfilecreation(): myp\property_bool {
 		$caption = gettext('Allow new files to be created.');
 		$description = gettext('By default, only already existing files can be uploaded.');
 		$property = parent::init_allowfilecreation();
@@ -48,7 +49,7 @@ final class setting_properties extends grid_properties {
 			filter_use_default();
 		return $property;
 	}
-	public function init_dir() {
+	public function init_dir(): myp\property_text {
 		global $g;
 
 		$description = gettext('The directory containing the files you want to publish. The remote host does not need to pass along the directory as part of the transfer.');
@@ -68,12 +69,12 @@ final class setting_properties extends grid_properties {
 			set_filter_options(['default' => $g['media_path']]);
 		return $property;
 	}
-	public function init_enable() {
+	public function init_enable(): myp\property_enable {
 		$property = parent::init_enable();
 		$property->set_defaultvalue(false);
 		return $property;
 	}
-	public function init_extraoptions() {
+	public function init_extraoptions(): myp\property_text {
 		$description = gettext('Extra options (usually empty).');
 		$placeholder = gettext('Enter extra options');
 		$property = parent::init_extraoptions();
@@ -91,7 +92,7 @@ final class setting_properties extends grid_properties {
 			set_filter_options(['default' => '']);
 		return $property;
 	}
-	public function init_maxblocksize() {
+	public function init_maxblocksize(): myp\property_int {
 		$description = gettext('Specifies the maximum permitted block size. The permitted range for this parameter is from 512 to 65464.');
 		$placeholderv =$placeholder = gettext('16384');
 		$property = parent::init_maxblocksize();
@@ -110,7 +111,7 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_port() {
+	public function init_port(): myp\property_int {
 		$caption = gettext('Port of the TFTP service. Leave blank to use the default port.');
 		$description = gettext('Enter a custom port number if you do not want to use default port 69.');
 		$placeholder = gettext('69');
@@ -136,7 +137,7 @@ final class setting_properties extends grid_properties {
 			set_filter_group('ui',['empty','ui','69']);
 		return $property;
 	}
-	public function init_timeout() {
+	public function init_timeout(): myp\property_int {
 		$description = gettext('Determine the default timeout, in microseconds, before the first packet is retransmitted. The default is 1000000 (1 second).');
 		$placeholder = gettext('10000');
 		$property = parent::init_timeout();
@@ -156,7 +157,7 @@ final class setting_properties extends grid_properties {
 			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('Timeout must be a number between 10000 and 255000000.')));
 		return $property;
 	}
-	public function init_umask() {
+	public function init_umask(): myp\property_text {
 		$description = gettext('Sets the umask for newly created files. The default is 000 (anyone can read or write).');
 		$placeholder = gettext('000');
 		$property = parent::init_umask();
@@ -175,7 +176,7 @@ final class setting_properties extends grid_properties {
 			set_filter_options(['default' => null,'regexp' => '/^(|[0-7]{3})$/']);
 		return $property;
 	}
-	public function init_username() {
+	public function init_username(): myp\property_list {
 		$caption = gettext('Specifies the username under which the TFTP service should run.');
 		$property = parent::init_username();
 		$property->
