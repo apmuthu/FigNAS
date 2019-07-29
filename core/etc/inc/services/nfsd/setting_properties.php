@@ -68,7 +68,7 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$description = gettext('These parameters are appended to the exports file.');
 		$property = parent::init_auxparam();
 		$property->set_description($description);

@@ -58,25 +58,25 @@ class grid_properties extends myp\container_row {
 		return $this->x_mapall ?? $this->init_mapall();
 	}
 	protected $x_mapalltouser;
-	public function init_mapalltouser() {
+	public function init_mapalltouser(): myp\property_list {
 		$property = $this->x_mapalltouser = new myp\property_list($this);
 		$property->
 			set_name('mapalltouser')->
 			set_title(gettext('Map All To User'));
 		return $property;
 	}
-	final public function get_mapalltouser() {
+	final public function get_mapalltouser(): myp\property_list {
 		return $this->x_mapalltouser ?? $this->init_mapalltouser();
 	}
 	protected $x_maproottouser;
-	public function init_maproottouser() {
+	public function init_maproottouser(): myp\property_list {
 		$property = $this->x_maproottouser = new myp\property_list($this);
 		$property->
 			set_name('maproottouser')->
 			set_title(gettext('Map Root To User'));
 		return $property;
 	}
-	final public function get_maproottouser() {
+	final public function get_maproottouser(): myp\property_list {
 		return $this->x_maproottouser ?? $this->init_maproottouser();
 	}
 	protected $x_client;

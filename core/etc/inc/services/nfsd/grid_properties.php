@@ -36,41 +36,41 @@ use common\properties as myp;
 
 class grid_properties extends myp\container {
 	protected $x_enable;
-	public function init_enable() {
+	public function init_enable(): myp\property_enable {
 		$property = $this->x_enable = new myp\property_enable($this);
 		return $property;
 	}
-	final public function get_enable() {
+	final public function get_enable(): myp\property_enable {
 		return $this->x_enable ?? $this->init_enable();
 	}
 	protected $x_support_nfs_v4;
-	public function init_support_nfs_v4() {
+	public function init_support_nfs_v4(): myp\property_bool {
 		$property = $this->x_support_nfs_v4 = new myp\property_bool($this);
 		$property->
 			set_name('v4enable')->
 			set_title(gettext('NFSv4'));
 		return $property;
 	}
-	final public function get_support_nfs_v4() {
+	final public function get_support_nfs_v4(): myp\property_bool {
 		return $this->x_support_nfs_v4 ?? $this->init_support_nfs_v4();
 	}
 	protected $x_numproc;
-	public function init_numproc() {
+	public function init_numproc(): myp\property_int {
 		$property = $this->x_numproc = new myp\property_int($this);
 		$property->
 			set_name('numproc')->
 			set_title(gettext('Servers'));
 		return $property;
 	}
-	final public function get_numproc() {
+	final public function get_numproc(): myp\property_int {
 		return $this->x_numproc ?? $this->init_numproc();
 	}
 	protected $x_auxparam;
-	public function init_auxparam() {
+	public function init_auxparam(): myp\property_auxparam {
 		$property = $this->x_auxparam = new myp\property_auxparam($this);
 		return $property;
 	}
-	final public function get_auxparam() {
+	final public function get_auxparam(): myp\property_auxparam {
 		return $this->x_auxparam ?? $this->init_auxparam();
 	}
 }
