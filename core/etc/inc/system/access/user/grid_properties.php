@@ -32,7 +32,6 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace system\access\user;
-
 use common\properties as myp;
 
 class grid_properties extends myp\container_row {
@@ -147,14 +146,14 @@ class grid_properties extends myp\container_row {
 		return $this->x_homedir ?? $this->init_homedir();
 	}
 	protected $x_user_portal_access;
-	public function init_user_portal_access(): myp\property_bool {
-		$property = $this->x_user_portal_access = new myp\property_bool();
+	public function init_user_portal_access(): myp\property_list {
+		$property = $this->x_user_portal_access = new myp\property_list();
 		$property->
 			set_name('userportal')->
 			set_title(gettext('User Portal'));
 		return $property;
 	}
-	final public function get_user_portal_access(): myp\property_bool {
+	final public function get_user_portal_access(): myp\property_list {
 		return $this->x_user_portal_access ?? $this->init_user_portal_access();
 	}
 }

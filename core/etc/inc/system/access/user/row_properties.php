@@ -32,7 +32,6 @@
 	of XigmaNAS, either expressed or implied.
 */
 namespace system\access\user;
-
 use common\properties as myp;
 
 final class row_properties extends grid_properties {
@@ -174,13 +173,19 @@ final class row_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
-	public function init_user_portal_access(): myp\property_bool {
-		$caption = gettext('Grant access to the user portal.');
+	public function init_user_portal_access(): myp\property_list {
+		$description = gettext('User portal permission.');
+		$options = [
+			'' => gettext('No access to the user portal'),
+			'1' => gettext('User access'),
+			'admin' => gettext('Admin access')
+		];
 		$property = parent::init_user_portal_access();
 		$property->
-			set_caption($caption)->
-			set_defaultvalue(false)->
+			set_defaultvalue('')->
+			set_description($description)->
 			set_id('userportal')->
+			set_options($options)->
 			filter_use_default();
 		return $property;
 	}

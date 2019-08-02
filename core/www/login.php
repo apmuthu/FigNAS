@@ -46,118 +46,140 @@ endif;
 if(isset($rm_value)):
 	switch($rm_value):
 		case 'POST':
-			$username = filter_input(INPUT_POST,'username',FILTER_VALIDATE_REGEXP,['flags' => FILTER_REQUIRE_SCALAR,'options' => ['default' => NULL,'regexp' => '/^[a-z\d\.\-_]+$/i']]);
+//			FreeBSD reference for regular expression: usr.sbin/pw/pw_user.c -> pw_checkname
+			$regexp = '/^[0-9A-Za-z\.;\[\]_\{\}][0-9A-Za-z\-\.;\[\]_\{\}]*\$?$/';
+			$username = filter_input(INPUT_POST,'username',FILTER_VALIDATE_REGEXP,['flags' => FILTER_REQUIRE_SCALAR,'options' => ['default' => NULL,'regexp' => $regexp]]);
 			$remote_addr = (isset($_SERVER['REMOTE_ADDR']) && is_string($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : '';
 			if(isset($username)):
 				Session::start();
 				array_make_branch($config,'system');
 				if(isset($config['system']['username']) && is_string($config['system']['username']) && ($username === $config['system']['username'])):
 					$continue_checking = true;
-//					if($continue_checking):
+					if($continue_checking):
+						$continue_checking = false;
 						$password = (isset($_POST['password']) && is_string($_POST['password'])) ? $_POST['password'] : NULL;
 						if(isset($password)):
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: No password provided for user: %s from %s',$username,$remote_addr));
-						endif;
-//					endif;
-					if($continue_checking):
-						if(isset($config['system']['password']) && is_string($config['system']['password'])):
-						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: No password configured for user: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: No password provided for username %s from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-						if(password_verify($password,$config['system']['password'])):
-							Session::initAdmin();
-							header('Location: index.php');
-							exit;
+						$continue_checking = false;
+						if(isset($config['system']['password']) && is_string($config['system']['password'])):
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: Invalid password entererd for user: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: No password configured for username %s from IP address %s',$username,$remote_addr));
 						endif;
+					endif;
+					if($continue_checking):
+						$continue_checking = false;
+						if(password_verify($password,$config['system']['password'])):
+							$continue_checking = true;
+						else:
+							write_log(sprintf('AUTH: Invalid password entererd for username %s from IP address %s',$username,$remote_addr));
+						endif;
+					endif;
+					if($continue_checking):
+						write_log(sprintf('AUTH: %s logged in from IP address %s',$username,$remote_addr));
+						Session::initAdmin();
+						header('Location: index.php');
+						exit;
 					endif;
 				else:
 					$continue_checking = true;
-//					if($continue_checking):
-//						Check if username is listed as a system user
+					if($continue_checking):
+						$continue_checking = false;
+//						check if username is listed as a system user
 						$users = system_get_user_list();
 						$system_user_row_id = array_search_ex($username,$users,'name');
 						if(false !== $system_user_row_id):
-//							$continue_checking = true;
 							$system_user = $users[$system_user_row_id];
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: Username not found: %s from %s',$username,$remote_addr));
-						endif;
-//					endif;
-					if($continue_checking):
-//						Check if UID column exists
-						if(array_key_exists('uid',$system_user)):
-//							$continue_checking = true;
-						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: UID for username not found: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: Username %s not found from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-//						Check if it is a local user
+						$continue_checking = false;
+//						check if UID column exists
+						if(array_key_exists('uid',$system_user)):
+							$continue_checking = true;
+						else:
+							write_log(sprintf('AUTH: UID for username %s not found from IP address %s',$username,$remote_addr));
+						endif;
+					endif;
+					if($continue_checking):
+						$continue_checking = false;
+//						check if it is a local user
 						array_make_branch($config,'access','user');
 						$portal_user_row_id = array_search_ex($system_user['uid'],$config['access']['user'],'id');
 						if(false !== $portal_user_row_id):
-//							$continue_checking = true;
 							$portal_user = $config['access']['user'][$portal_user_row_id];
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: Username not found in portal configuration: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: Username %s not found in portal configuration from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
+						$continue_checking = false;
 //						check if a password has been received
 						$password = (isset($_POST['password']) && is_string($_POST['password'])) ? $_POST['password'] : NULL;
 						if(isset($password)):
-//							$continue_checking = true;
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: No password provided for user: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: No password provided for username %s from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-//						Check if password has been configured for user
+						$continue_checking = false;
+//						check if password has been configured for user
 						if(isset($system_user['password']) && is_string($system_user['password'])):
-//							$continue_checking = true;
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: No password configured for user: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: No password configured for username %s from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-//						Verify password
+						$continue_checking = false;
+//						verify password
 						if(password_verify($password,$system_user['password'])):
-//							$continue_checking = true;
+							$continue_checking = true;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: Invalid password entererd for user: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: Invalid password entererd for username %s from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 					if($continue_checking):
-//						Check if user is allowed to access the user portal
-						if(isset($portal_user['userportal'])):
-//							$continue_checking = true;
-							Session::initUser($system_user['uid'],$system_user['name']);
-							header('Location: index.php');
-							exit;
+						$continue_checking = false;
+						if(isset($portal_user['userportal']) && is_string($portal_user['userportal'])):
+							switch($portal_user['userportal']):
+								case 'admin':
+//									user has admin access permission
+									write_log(sprintf('AUTH: %s logged in from IP address %s',$username,$remote_addr));
+									Session::initUser($system_user['uid'],$system_user['name'],true);
+									header('Location: index.php');
+									exit;
+									break;
+								case '1':
+//									user has user portal permission
+									write_log(sprintf('AUTH: %s logged in from IP address %s',$username,$remote_addr));
+									Session::initUser($system_user['uid'],$system_user['name'],false);
+									header('Location: index.php');
+									exit;
+									break;
+								default:
+									write_log(sprintf('AUTH: No portal access for username %s from IP address %s',$username,$remote_addr));
+									break;
+							endswitch;
 						else:
-							$continue_checking = false;
-							write_log(sprintf('AUTH: No portal access for username: %s from %s',$username,$remote_addr));
+							write_log(sprintf('AUTH: No portal access configured for username %s from IP address %s',$username,$remote_addr));
 						endif;
 					endif;
 				endif;
 				$input_errors = gettext('Invalid login credentials.');
 			else:
-				write_log(sprintf('AUTH: Username contains invalid character(s): %s from %s',$username,$remote_addr));
-				$input_errors = gettext('Invalid username or password.');
+				write_log(sprintf('AUTH: Empty or invalid username %s from IP address %s',$username,$remote_addr));
+				$input_errors = gettext('Invalid login credentials.');
 			endif;
 			break;
 	endswitch;
@@ -177,7 +199,7 @@ $loginpagedata->
 				insIMG(['src' => '/images/lock.png','alt' => ''])->
 			pop()->
 			addDIV(['class' => 'lphlr'])->
-				addA(['title' => sprintf('www.%s',get_product_url()),'href' => sprintf('https://www.%s',get_product_url()),'target' => '_blank'])->
+				addA(['title' => sprintf('www.%s',get_product_url()),'href' => sprintf('https://www.%s',get_product_url()),'target' => '_blank','rel' => "noreferrer"])->
 					insIMG(['src' => '/images/login_logo.png','alt' => 'logo'])->
 		pop()->
 		addDIV(['class' => 'lphh'])->
@@ -197,13 +219,13 @@ $loginpagedata->
 	addElement('footer',['class' => 'lpf'])->
 		addUL()->
 			push()->addLI(['style' => 'padding-right: 4px;'])->
-				insA(['target' => '_blank','href' => 'https://www.xigmanas.com/forums/'],gettext('Forum'))->
+				insA(['target' => '_blank','rel' => 'noreferrer','href' => 'https://www.xigmanas.com/forums/'],gettext('Forum'))->
 			last()->addLI(['style' => 'padding: 0 4px;'])->
-				insA(['target' => '_blank','href' => 'https://www.xigmanas.com/wiki/doku.php'],gettext('Information & Manuals'))->
+				insA(['target' => '_blank','rel' => 'noreferrer','href' => 'https://www.xigmanas.com/wiki/doku.php'],gettext('Information & Manuals'))->
 			last()->addLI(['style' => 'padding: 0 4px;'])->
-				insA(['target' => '_blank','href' => 'https://webchat.freenode.net/?channels=#xigmanas'],gettext('IRC XigmaNAS'))->
+				insA(['target' => '_blank','rel' => 'noreferrer','href' => 'https://webchat.freenode.net/?channels=#xigmanas'],gettext('IRC XigmaNAS'))->
 			pop()->addLI(['style' => 'padding-left: 4px;'])->
-				insA(['target' => '_blank','href' => 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40xigmanas%2ecom&lc=US&item_name=XigmaNAS&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted'],gettext('Donate'));
+				insA(['target' => '_blank','rel' => 'noreferrer','href' => 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40xigmanas%2ecom&lc=US&item_name=XigmaNAS&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted'],gettext('Donate'));
 if(!empty($input_errors)):
 	$loginpagedata->
 		insDIV(['class' => 'lpe'],$input_errors);

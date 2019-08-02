@@ -242,7 +242,7 @@ $tbody->
 	c2_input_text($cop->get_uid(),$sphere,true,$cop->get_uid()->is_readonly_rowmode($isrecordnewornewmodify))->
 	c2_radio_grid($cop->get_usershell(),$sphere,true,$cop->get_usershell()->is_readonly_rowmode($isrecordnewornewmodify))->
 	c2_filechooser($cop->get_homedir(),$sphere,false,$cop->get_homedir()->is_readonly_rowmode($isrecordnewornewmodify))->
-	c2_checkbox($cop->get_user_portal_access(),$sphere,false,$cop->get_user_portal_access()->is_readonly_rowmode($isrecordnewornewmodify))->
+	c2_radio_grid($cop->get_user_portal_access(),$sphere,false,$cop->get_user_portal_access()->is_readonly_rowmode($isrecordnewornewmodify))->
 	c2_select($cop->get_primary_group(),$sphere,true,$cop->get_primary_group()->is_readonly_rowmode($isrecordnewornewmodify))->
 	c2_checkbox_grid($cop->get_additional_groups(),$sphere,false,$cop->get_additional_groups()->is_readonly_rowmode($isrecordnewornewmodify));
 $buttons = $document->add_area_buttons();
