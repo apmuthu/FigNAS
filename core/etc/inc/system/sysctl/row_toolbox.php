@@ -1,9 +1,9 @@
 <?php
 /*
-	system_sysctl.php
+	row_toolbox.php
 
 	Part of XigmaNAS (https://www.xigmanas.com).
-	Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+	Copyright © 2018-2019 XigmaNAS <info@xigmanas.com>.
 	All rights reserved.
 
 	Redistribution and use in source and binary forms, with or without
@@ -31,15 +31,41 @@
 	of the authors and should not be interpreted as representing official policies
 	of XigmaNAS, either expressed or implied.
 */
-require_once 'auth.inc';
-require_once 'guiconfig.inc';
-require_once 'autoload.php';
+namespace system\sysctl;
+use common\rmo as myr;
+use common\sphere as mys;
+/**
+ *	Wrapper class for autoloading functions
+ */
+final class row_toolbox {
+/**
+ *	Create the sphere object
+ *	@global array $config
+ *	@return \common\sphere\row The sphere object
+ */
+	public static function init_sphere() {
+		global $config;
 
-use system\sysctl\grid_toolbox as toolbox;
-
-//	init properties, sphere and rmo
-$cop = toolbox::init_properties();
-$sphere = toolbox::init_sphere();
-$rmo = toolbox::init_rmo($cop,$sphere);
-toolbox::looper($cop,$sphere,$rmo);
-toolbox::render($cop,$sphere);
+		$sphere = new mys\row();
+		shared_toolbox::init_sphere($sphere);
+		$sphere->
+			set_script('system_sysctl_edit')->
+			set_parent('system_sysctl');
+		return $sphere;
+	}
+/**
+ *	Create the request method object
+ *	@return \common\rmo\rmo The request method object
+ */
+	public static function init_rmo() {
+		return myr\rmo_row_templates::rmo_with_clone();
+	}
+/**
+ *	Create the properties object
+ *	@return \system\sysctl\row_properties The properties object
+ */
+	public static function init_properties() {
+		$cop = new row_properties();
+		return $cop;
+	}
+}

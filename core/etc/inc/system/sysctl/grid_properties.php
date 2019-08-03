@@ -1,9 +1,9 @@
 <?php
 /*
-	system_sysctl.php
+	grid_properties.php
 
 	Part of XigmaNAS (https://www.xigmanas.com).
-	Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+	Copyright © 2018-2019 XigmaNAS <info@xigmanas.com>.
 	All rights reserved.
 
 	Redistribution and use in source and binary forms, with or without
@@ -31,15 +31,37 @@
 	of the authors and should not be interpreted as representing official policies
 	of XigmaNAS, either expressed or implied.
 */
-require_once 'auth.inc';
-require_once 'guiconfig.inc';
-require_once 'autoload.php';
+namespace system\sysctl;
+use common\properties as myp;
 
-use system\sysctl\grid_toolbox as toolbox;
-
-//	init properties, sphere and rmo
-$cop = toolbox::init_properties();
-$sphere = toolbox::init_sphere();
-$rmo = toolbox::init_rmo($cop,$sphere);
-toolbox::looper($cop,$sphere,$rmo);
-toolbox::render($cop,$sphere);
+class grid_properties extends myp\container_row {
+	public function init_description(): myp\property_text {
+		$property = parent::init_description();
+		$property->
+			set_id('comment')->
+			set_name('comment');
+		return $property;
+	}
+	protected $x_name;
+	public function init_name(): myp\property_list {
+		$property = $this->x_name = new myp\property_list();
+		$property->
+			set_name('name')->
+			set_title(gettext('Variable'));
+		return $property;
+	}
+	final public function get_name(): myp\property_list {
+		return $this->x_name ?? $this->init_name();
+	}
+	protected $x_value;
+	public function init_value(): myp\property_text {
+		$property = $this->x_value = new myp\property_text($this);
+		$property->
+			set_name('value')->
+			set_title(gettext('Value'));
+		return $property;
+	}
+	final public function get_value(): myp\property_text {
+		return $this->x_value ?? $this->init_value();
+	}
+}

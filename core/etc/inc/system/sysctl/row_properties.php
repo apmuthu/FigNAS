@@ -1,9 +1,9 @@
 <?php
 /*
-	system_sysctl.php
+	row_properties.php
 
 	Part of XigmaNAS (https://www.xigmanas.com).
-	Copyright (c) 2018-2019 XigmaNAS <info@xigmanas.com>.
+	Copyright © 2018-2019 XigmaNAS <info@xigmanas.com>.
 	All rights reserved.
 
 	Redistribution and use in source and binary forms, with or without
@@ -31,15 +31,32 @@
 	of the authors and should not be interpreted as representing official policies
 	of XigmaNAS, either expressed or implied.
 */
-require_once 'auth.inc';
-require_once 'guiconfig.inc';
-require_once 'autoload.php';
+namespace system\sysctl;
+use common\properties as myp;
 
-use system\sysctl\grid_toolbox as toolbox;
-
-//	init properties, sphere and rmo
-$cop = toolbox::init_properties();
-$sphere = toolbox::init_sphere();
-$rmo = toolbox::init_rmo($cop,$sphere);
-toolbox::looper($cop,$sphere,$rmo);
-toolbox::render($cop,$sphere);
+final class row_properties extends grid_properties {
+	public function init_name(): myp\property_list {
+		$options = [];
+		$property = parent::init_name();
+		$property->
+			set_id('name')->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
+	public function init_value(): myp\property_text {
+		$description = gettext('The value of the setting.');
+		$placeholder = gettext('Value');
+		$property = parent::init_value();
+		$property->
+			set_id('value')->
+			set_description($description)->
+			set_placeholder($placeholder)->
+			set_defaultvalue('')->
+			set_size(60)->
+			set_maxlength(60)->
+			filter_use_default();
+		return $property;
+	}
+}
