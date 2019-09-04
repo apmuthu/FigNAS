@@ -102,7 +102,7 @@ $software = [
 		'Copyright © GNU General Public License. All Rights Reserved.'
 	]],
 	['GEOM RAID5',[
-		'GEOM RAID5 module (<a href="http://www.wgboome.org/geom_raid5-html" target="_blank" rel="noreferrer">http://www.wgboome.org/geom_raid5-html</a> & (<a href="http://lev.serebryakov.spb.ru/download/graid5/" target="_blank" rel="noreferrer">http://lev.serebryakov.spb.ru/download/graid5</a>).',
+		'GEOM RAID5 module (<a href="http://www.wgboome.org/geom_raid5-html" target="_blank" rel="noreferrer">http://www.wgboome.org/geom_raid5-html</a> & <a href="http://lev.serebryakov.spb.ru/download/graid5/" target="_blank" rel="noreferrer">http://lev.serebryakov.spb.ru/download/graid5</a>).',
 		'Copyright © 2006-2010 Originally written by Arne Woerner (<a href="mailto:graid5@wgboome.org">graid5@wgboome.org</a>).',
 		'Copyright © 2010-2014 Now maintained by Lev Serebryakov (<a href="mailto:lev@FreeBSD.org">lev@FreeBSD.org</a>).'
 	]],
