@@ -2633,10 +2633,12 @@ EOJ;
 		return $this;
 	}
 	public function c2_filechooser($p,$value,bool $is_required = false,bool $is_readonly = false) {
-		$this->
-			c2_row($p,$is_required,$is_readonly,true)->
-				ins_filechooser($p,$value,$is_required,$is_readonly)->
-				ins_description($p);
+		$hook = $this->c2_row($p,$is_required,$is_readonly,true);
+		$hook->
+			ins_filechooser($p,$value,$is_required,$is_readonly)->
+			ins_description($p);
+		$this->reset_hooks();
+		$this->add_hook($hook,'fc');
 		return $this;
 	}
 	public function c2_input_text($p,$value,bool $is_required = false,bool $is_readonly = false) {
