@@ -55,11 +55,17 @@ $a_referer = [
 	$cop->get_adddivsubmittodataframe(),
  */
 	$cop->get_cssfcfile(),
+	$cop->get_cssfcfilemode(),
 	$cop->get_cssguifile(),
+	$cop->get_cssguifilemode(),
 	$cop->get_cssloginfile(),
+	$cop->get_cssloginfilemode(),
 	$cop->get_cssnavbarfile(),
+	$cop->get_cssnavbarfilemode(),
 	$cop->get_csstabsfile(),
-	$cop->get_cssstylefile()
+	$cop->get_csstabsfilemode(),
+	$cop->get_cssstylefile(),
+	$cop->get_cssstylefilemode()
 ];
 $pending_changes = updatenotify_exists($sphere->get_notifier());
 list($page_method,$page_action,$page_mode) = $rmo->validate();
@@ -194,20 +200,56 @@ $content->
 		addTFOOT()->
 			c2_separator();
  */
-$content->
+$tbody = $content->
 	add_table_data_settings()->
 		push()->
 		ins_colgroup_data_settings()->
 		addTHEAD()->
 			c2_titleline(gettext('CSS Settings'))->
 		pop()->
-		addTBODY()->
-			c2_filechooser($cop->get_cssfcfile(),$sphere,false,$is_readonly)->
-			c2_filechooser($cop->get_cssguifile(),$sphere,false,$is_readonly)->
-			c2_filechooser($cop->get_cssloginfile(),$sphere,false,$is_readonly)->
-			c2_filechooser($cop->get_cssnavbarfile(),$sphere,false,$is_readonly)->
-			c2_filechooser($cop->get_csstabsfile(),$sphere,false,$is_readonly)->
-			c2_filechooser($cop->get_cssstylefile(),$sphere,false,$is_readonly);
+		addTBODY();
+$hooks_cssfcfile = $tbody->
+	c2_filechooser($cop->get_cssfcfile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_cssfcfile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_cssfcfilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_cssfcfilemode());
+$hooks_cssguifile = $tbody->
+	c2_filechooser($cop->get_cssguifile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_cssguifile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_cssguifilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_cssguifilemode());
+$hooks_cssloginfile = $tbody->
+	c2_filechooser($cop->get_cssloginfile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_cssloginfile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_cssloginfilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_cssloginfilemode());
+$hooks_cssnavbarfile = $tbody->
+	c2_filechooser($cop->get_cssnavbarfile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_cssnavbarfile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_cssnavbarfilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_cssnavbarfilemode());
+$hooks_csstabsfile = $tbody->
+	c2_filechooser($cop->get_csstabsfile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_csstabsfile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_csstabsfilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_csstabsfilemode());
+$hooks_cssstylefile = $tbody->
+	c2_filechooser($cop->get_cssstylefile(),$sphere,false,$is_readonly)->
+	get_hooks();
+$hooks_cssstylefile['fc']->
+	insDIV(['class' => 'gap'])->
+	ins_radio_grid($cop->get_cssstylefilemode(),$sphere,false,$is_readonly)->
+	ins_description($cop->get_cssstylefilemode());
 //	add buttons
 $buttons = $document->add_area_buttons();
 switch($page_mode):

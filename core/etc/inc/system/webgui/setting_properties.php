@@ -36,7 +36,7 @@ use common\properties as myp;
 
 final class setting_properties extends grid_properties {
 	public function init_cssfcfile(): myp\property_text {
-		$description = gettext('Fully qualified file name of a custom File Chooser CSS file.');
+		$description = gettext('Fully qualified file name of a custom file chooser CSS file.');
 		$placeholder = '/usr/local/www/css/fc.css';
 		$property = parent::init_cssfcfile();
 		$property->
@@ -46,6 +46,22 @@ final class setting_properties extends grid_properties {
 			set_placeholderv($placeholder)->
 			set_defaultvalue('')->
 			filter_use_default_or_empty();
+		return $property;
+	}
+	public function init_cssfcfilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom file chooser CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_cssfcfilemode();
+		$property->
+			set_id('cssfcfilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
 		return $property;
 	}
 	public function init_cssguifile(): myp\property_text {
@@ -61,8 +77,24 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
+	public function init_cssguifilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom GUI CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_cssguifilemode();
+		$property->
+			set_id('cssguifilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
 	public function init_cssloginfile(): myp\property_text {
-		$description = gettext('Fully qualified file name of a custom Login CSS file.');
+		$description = gettext('Fully qualified file name of a custom login CSS file.');
 		$placeholder = '/usr/local/www/css/login.css';
 		$property = parent::init_cssloginfile();
 		$property->
@@ -74,8 +106,24 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
+	public function init_cssloginfilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom login CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_cssloginfilemode();
+		$property->
+			set_id('cssloginfilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
 	public function init_cssnavbarfile(): myp\property_text {
-		$description = gettext('Fully qualified file name of a custom NavBar CSS file.');
+		$description = gettext('Fully qualified file name of a custom navigation bar CSS file.');
 		$placeholder = '/usr/local/www/css/navbar.css';
 		$property = parent::init_cssnavbarfile();
 		$property->
@@ -87,8 +135,24 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
+	public function init_cssnavbarfilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom navigation bar CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_cssnavbarfilemode();
+		$property->
+			set_id('cssnavbarfilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
 	public function init_csstabsfile(): myp\property_text {
-		$description = gettext('Fully qualified file name of a custom Tabs CSS file.');
+		$description = gettext('Fully qualified file name of a custom tabs CSS file.');
 		$placeholder = '/usr/local/www/css/tabs.css';
 		$property = parent::init_csstabsfile();
 		$property->
@@ -100,8 +164,24 @@ final class setting_properties extends grid_properties {
 			filter_use_default_or_empty();
 		return $property;
 	}
+	public function init_csstabsfilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom tabs CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_csstabsfilemode();
+		$property->
+			set_id('csstabsfilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
+		return $property;
+	}
 	public function init_cssstylefile(): myp\property_text {
-		$description = gettext('Fully qualified file name of a custom Quixplorer CSS file.');
+		$description = gettext('Fully qualified file name of a custom file manager CSS file.');
 		$placeholder = '/usr/local/www/quixplorer/_style/style.css';
 		$property = parent::init_cssstylefile();
 		$property->
@@ -111,6 +191,22 @@ final class setting_properties extends grid_properties {
 			set_placeholderv($placeholder)->
 			set_defaultvalue('')->
 			filter_use_default_or_empty();
+		return $property;
+	}
+	public function init_cssstylefilemode(): myp\property_list {
+		$description = gettext('Select file mode of the custom file manager CSS file.');
+		$options = [
+			'' => gettext('Disable'),
+			'replace' => gettext('Replace the default CSS file'),
+			'append' => gettext('Append content to the default CSS file')
+		];
+		$property = parent::init_cssstylefilemode();
+		$property->
+			set_id('cssstylefilemode')->
+			set_description($description)->
+			set_defaultvalue('')->
+			set_options($options)->
+			filter_use_default();
 		return $property;
 	}
 	public function init_enabletogglemode(): myp\property_bool {

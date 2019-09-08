@@ -34,31 +34,54 @@
 require_once 'config.inc';
 
 header('Content-type: text/css');
-echo '/*',PHP_EOL;
 $config_subkey = 'csstabsfile';
+$filemode_subkey = 'csstabsfilemode';
 $css_default_filename = sprintf('%1$s/css/%2$s',$g['www_path'],'tabs.css');
 $webgui_settings = &array_make_branch($config,'system','webgui');
-$css_override_filename = filter_var($webgui_settings[$config_subkey],FILTER_VALIDATE_REGEXP,['flags' => FILTER_REQUIRE_SCALAR,'options' => ['default' => NULL,'regexp' => '/\S/']]);
-$css_content = NULL;
-if(is_null($css_content) && isset($css_override_filename) && file_exists($css_override_filename)):
-	$css_content = file_get_contents($css_override_filename);
-	if(false === $css_content):
-		$css_content = NULL;
-	else:
-		echo "\t",'Using custom CSS file.',PHP_EOL;
-	endif;
-endif;
-if(is_null($css_content) && isset($css_default_filename) && file_exists($css_default_filename)):
-	$css_content = file_get_contents($css_default_filename);
-	if(false === $css_content):
-		$css_content = NULL;
-	else:
-		echo "\t",'Using default CSS file.',PHP_EOL;
-	endif;
-endif;
-if(is_null($css_content)):
-	$css_content = '';
-	echo "\t",'No CSS file found.',PHP_EOL;
-endif;
-echo '*/',PHP_EOL;
-echo $css_content;
+$css_filemode = filter_var($webgui_settings[$filemode_subkey],FILTER_VALIDATE_REGEXP,['flags' => FILTER_REQUIRE_SCALAR,'options' => ['default' => '','regexp' => '/^(|append|replace)$/']]);
+$css_custom_filename = filter_var($webgui_settings[$config_subkey],FILTER_VALIDATE_REGEXP,['flags' => FILTER_REQUIRE_SCALAR,'options' => ['default' => NULL,'regexp' => '/\S/']]);
+switch($css_filemode):
+	default:
+		if(file_exists($css_default_filename)):
+			$css_content = file_get_contents($css_default_filename);
+			if(false !== $css_content):
+				echo $css_content;
+			endif;
+		endif;
+		break;
+	case 'append':
+		if(file_exists($css_default_filename)):
+			$css_content = file_get_contents($css_default_filename);
+			if(false !== $css_content):
+				echo $css_content;
+			endif;
+		endif;
+//		append customizations
+		if(isset($css_custom_filename) && file_exists($css_custom_filename)):
+			$css_content = file_get_contents($css_custom_filename);
+			if(false !== $css_content):
+				echo "/*\n\tCustomizations\n*/\n",$css_content;
+			endif;
+		endif;
+		break;
+	case 'replace':
+		$css_content = null;
+		if(isset($css_custom_filename) && file_exists($css_custom_filename)):
+			$css_content = file_get_contents($css_custom_filename);
+			if(false === $css_content):
+				$css_content = NULL;
+			else:
+				echo "/*\n\tCustom CSS\n*/\n",$css_content;
+			endif;
+		endif;
+//		fallback
+		if(is_null($css_content)):
+			if(file_exists($css_default_filename)):
+				$css_content = file_get_contents($css_default_filename);
+				if(false !== $css_content):
+					echo $css_content;
+				endif;
+			endif;
+		endif;
+		break;
+endswitch;
