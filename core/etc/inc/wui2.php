@@ -1643,8 +1643,7 @@ trait co_DOMTools {
 		if(isset($target)):
 			$append_mode = true; // last element of header section
 			$div_attributes = [
-				'id' => 'area_tabnav',
-				'style' => 'padding: 0em 2em;'
+				'id' => 'area_tabnav'
 			];
 			if($append_mode):
 				$subnode = $target->
