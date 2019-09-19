@@ -241,81 +241,58 @@ function system_get_cpus() {
 	endif;
 	return $cpus;
 }
-
-// Get current CPU usage.
-// Return current CPU usage in percent.
-function cb_map_array_diff2($a,$b) {
-	return $b - $a;
-}
-function system_get_smp_cpu_usage() {
-	$cpus = system_get_cpus();
-	$a_stat1 = explode(' ',@exec("/sbin/sysctl -q -n kern.cp_times"));
+/**
+ *	Calculate cpu usage (cores) and returns an array containing
+ *	values between 0 and 100 for each core, representing 0% - 100% usage
+ *	@return array
+ */
+function system_get_smp_cpu_usage(): array {
+	$cpus = rtrim(`sysctl -nq kern.smp.cpus`);
+	$c_stats_1 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
 	sleep(1);
-	$a_stat2 = explode(' ',@exec("/sbin/sysctl -q -n kern.cp_times"));
-	$a_dstat = array_map("cb_map_array_diff2",$a_stat1,$a_stat2);
+	$c_stats_2 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
+	$a_stats_1 = explode(' ',$c_stats_1);
+	$a_stats_2 = explode(' ',$c_stats_2);
+	$a_diff = array_map(function($a,$b) { return $b - $a; },$a_stats_1,$a_stats_2);
 	$a_usage = array_fill_keys(range(0,$cpus - 1),0);
 	for($i = 0;$i < $cpus;$i++):
-		// user, nice, system, interrupt, idle
-		$a = array_splice($a_dstat,0,5);
-		$idle = $a[4];
-		$total = array_sum($a);
-		$a_usage[$i] = floor(100 * (($total - $idle) / $total));
+//		CPUSTATES: 0 => user, 1 => nice, 2 => system, 3 => interrupt, 4 => idle
+		$a = array_splice($a_diff,0,5);
+		$a_usage[$i] = floor(100 * ( 1 - $a[4] / array_sum($a)));
 	endfor;
 	return $a_usage;
 }
-
-function system_get_cpu_usage() {
-	$cpuTicks1 = explode(' ',shell_exec('/sbin/sysctl -n kern.cp_time'));
+/**
+ *	Calculate the cpu usage and returns a value between 0 and 100, representing 0% - 100% usage
+ *	@return float
+ */
+function system_get_cpu_usage(): float {
+	$c_stats_1 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
 	sleep(1);
-	$cpuTicks2 = explode(' ',shell_exec('/sbin/sysctl -n kern.cp_time'));
-	$diff = [];
-	$diff['user'] = ($cpuTicks2[0] - $cpuTicks1[0]);
-	$diff['nice'] = ($cpuTicks2[1] - $cpuTicks1[1]);
-	$diff['sys'] = ($cpuTicks2[2] - $cpuTicks1[2]);
-	$diff['intr'] = ($cpuTicks2[3] - $cpuTicks1[3]);
-	$diff['idle'] = ($cpuTicks2[4] - $cpuTicks1[4]);
-	$totalDiff = $diff['user'] + $diff['nice'] + $diff['sys'] + $diff['intr'] + $diff['idle'];
-	$totalused = $diff['user'] + $diff['nice'] + $diff['sys'] + $diff['intr'];
-	if(isset($totalused) && $totalused <= 0):
-		$totalused = 0.001;
-	endif;
-	return floor(100 * ($totalused / $totalDiff));
+	$c_stats_2 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
+	$a_stats_1 = explode(' ',$c_stats_1);
+	$a_stats_2 = explode(' ',$c_stats_2);
+	$a = array_map(function($a,$b) { return $b - $a; },$a_stats_1,$a_stats_2);
+//	CPUSTATES: 0 => user, 1 => nice, 2 => system, 3 => interrupt, 4 => idle
+	$f_usage = floor(100 * ( 1 - $a[4] / array_sum($a)));
+	return $f_usage;
 }
-
-// Get CPUID
-function system_get_cpuid($cpuidx,$level) {
-	$r = explode(' ',@exec("/usr/sbin/cpucontrol -i $level /dev/cpuctl${cpuidx} | awk '{ print $4, $5, $6, $7 }'"));
-	$a = [];
-	$a['eax'] = $r[0];
-	$a['ebx'] = $r[1];
-	$a['ecx'] = $r[2];
-	$a['edx'] = $r[3];
-	return $a;
-}
-
-// Get various CPU informations.
-// Result:
-//  Array (
-//    [number] => 1
-//    [model] => AMD Athlon(tm) 64 Processor 3200+
-//    [clockrate] => 1994
-//    [temperature] => 65C !!! May be empty if sensor is not available. !!!
-//    [freq] => 995
-//    [freqlevels] => 1990/67000 1791/64700 995/28600
-//  )
+/**
+ *	Get various CPU informations.
+ *	@return array Array with CPU information
+ */
 function system_get_cpu_info() {
 	$platform = '';
 	$cpuinfo = [];
-	$cpuinfo['number'] = chop(`/sbin/sysctl -n hw.ncpu`);
-	$cpuinfo['model'] = chop(`/sbin/sysctl -n hw.model`);
-	$cpuinfo['clockrate'] = chop(`/sbin/sysctl -n hw.clockrate`);
-	$cpuinfo['temperature'] = chop(`/sbin/sysctl -n hw.acpi.thermal.tz0.temperature`);
+	$cpuinfo['number'] = rtrim(`/sbin/sysctl -n hw.ncpu`);
+	$cpuinfo['model'] = rtrim(`/sbin/sysctl -n hw.model`);
+	$cpuinfo['clockrate'] = rtrim(`/sbin/sysctl -n hw.clockrate`);
+	$cpuinfo['temperature'] = rtrim(`/sbin/sysctl -n hw.acpi.thermal.tz0.temperature`);
 	$cpus = system_get_cpus();
 	$cpuinfo['temperature2'] = [];
 	$temp = @exec("/sbin/sysctl -q -n dev.cpu.0.temperature");
 	if($temp != '' && $temp != '-1'):
 		$adj = 0;
-		$cpuid = system_get_cpuid(0,"0x0");
 		for($i = 0; $i < $cpus; $i++):
 			$temp = @exec("/sbin/sysctl -q -n dev.cpu.{$i}.temperature");
 			if($temp != ''):
@@ -324,14 +301,13 @@ function system_get_cpu_info() {
 			$cpuinfo['temperature2'][$i] = $temp;
 		endfor;
 	endif;
-	$cpuinfo['freq'] = chop(`/sbin/sysctl -n dev.cpu.0.freq`);
-	$cpuinfo['freqlevels'] = chop(`/sbin/sysctl -n dev.cpu.0.freq_levels`);
+	$cpuinfo['freq'] = rtrim(`/sbin/sysctl -n dev.cpu.0.freq`);
+	$cpuinfo['freqlevels'] = rtrim(`/sbin/sysctl -n dev.cpu.0.freq_levels`);
 	return $cpuinfo;
 }
-
 /**
- * Get the system uptime (how long the system is already running).
- * @return The current uptime as string.
+ *	Get the system uptime (how long the system is already running).
+ *	@return The current uptime as string.
  */
 function system_get_uptime() {
 	exec("/sbin/sysctl -n kern.boottime",$boottime);
@@ -349,10 +325,10 @@ function system_get_uptime() {
 	$upmins = (int)($uptime / 60);
 	$upsecs = $uptime % 60;
 
-	$gt_seconds = (1 === $upsecs) ? gtext('Second') : gtext('Seconds');
-	$gt_minutes = (1 === $upmins) ? gtext('Minute') : gtext('Minutes');
-	$gt_hours = (1 === $uphours) ? gtext('Hour') : gtext('Hours');
-	$gt_days = (1 === $updays) ? gtext('Day') : gtext('Days');
+	$gt_seconds = (1 === $upsecs) ? gettext('Second') : gettext('Seconds');
+	$gt_minutes = (1 === $upmins) ? gettext('Minute') : gettext('Minutes');
+	$gt_hours = (1 === $uphours) ? gettext('Hour') : gettext('Hours');
+	$gt_days = (1 === $updays) ? gettext('Day') : gettext('Days');
 
 	if(($updays < 1) && ($uphours < 1)):
 		$uptime = sprintf('%d %s %d %s',$upmins,$gt_minutes,$upsecs,$gt_seconds);
@@ -361,9 +337,8 @@ function system_get_uptime() {
 	else:
 		$uptime = sprintf('%d %s %d %s %d %s %d %s',$updays,$gt_days,$uphours,$gt_hours,$upmins,$gt_minutes,$upsecs,$gt_seconds);
 	endif;
-	return $uptime;
+	return htmlspecialchars($uptime);
 }
-
 /**
  * Get the system date/time for conversion strings.
  * @return The current uptime as string.
@@ -418,20 +393,27 @@ function get_datetime_locale(int $timestamp = null,string $format = NULL) {
  *	@return array Returns an array with memory status information.
  */
 function system_get_ram_info() {
-	$raminfo = [];
+	$sphere = [];
 	unset($memory);
-	exec('/sbin/sysctl -n vm.stats.vm.v_active_count vm.stats.vm.v_inactive_count vm.stats.vm.v_wire_count vm.stats.vm.v_cache_count vm.stats.vm.v_free_count hw.physmem hw.realmem',$memory);
-	$raminfo['real'] = $memory[6];
-	$raminfo['physical'] = $memory[5];
-	$raminfo['total'] = $memory[0] + $memory[1] + $memory[2] + $memory[3] + $memory[4];
-	$raminfo['free'] = $memory[4] + $memory[1];
-	$raminfo['freepct'] = round(($raminfo['free'] * 100) / $raminfo['total'],0);
-	$raminfo['used'] = $raminfo['total'] - $raminfo['free'];
-	$raminfo['usedpct'] = 100 - $raminfo['freepct'];
-	$raminfo['caption'] = sprintf(gtext('%d%% of %s'),$raminfo['usedpct'],format_bytes($raminfo['physical'],2,false,false));
-	return $raminfo;
+	exec('/sbin/sysctl -n vm.stats.vm.v_inactive_count vm.stats.vm.v_free_count vm.stats.vm.v_page_count vm.stats.vm.v_page_size hw.physmem hw.realmem',$memory);
+	$sphere['pagesize'] = $memory[3];
+	$sphere['physical'] = $memory[4];
+	$sphere['real'] = $memory[5];
+	$sphere['vt'] = $memory[3] * $memory[2];
+	$sphere['vf'] = $memory[3] * ($memory[1] + $memory[0]);
+	$sphere['vu'] = $sphere['vt'] - $sphere['vf'];
+	$sphere['vth'] = format_bytes($sphere['vt'],2,false,false);
+	$sphere['vuh'] = format_bytes($sphere['vu'],2,false,false);
+	$sphere['vfh'] = format_bytes($sphere['vf'],2,false,false);
+	$sphere['pf'] = round($sphere['vf'] * 100 / $sphere['vt'],0);
+	$sphere['pu'] = 100 - $sphere['pf'];
+	$sphere['pfh'] = sprintf('%u%%',$sphere['pf']);
+	$sphere['puh'] = sprintf('%u%%',$sphere['pu']);
+	$sphere['tu'] = sprintf('%s',$sphere['puh']);
+	$sphere['tf'] = sprintf('%s',$sphere['pfh']);
+	$sphere['tt'] = sprintf(gettext('%1$s managed, %2$s used, %3$s available'),$sphere['vth'],$sphere['vuh'],$sphere['vfh']);
+	return $sphere;
 }
-
 // Get the current swap information.
 // Result:
 //  Array (
@@ -459,9 +441,12 @@ function system_get_swap_info() {
 		if(preg_match("/(\/dev\/.*)(?:\s+)(\d+)(?:\s+)(\d+)(?:\s+)(\d+)(?:\s)(.+)/",$swapv,$matches)):
 			$devswap = [];
 			$devswap['device'] = trim($matches[1]);
-			$devswap['total'] = format_bytes(trim($matches[2])*$val,2,false,$use_si);
-			$devswap['used'] = format_bytes(trim($matches[3])*$val,2,false,$use_si);
-			$devswap['avail'] = format_bytes(trim($matches[4])*$val,2,false,$use_si);
+			$devswap['vt'] = $matches[2] * $val;
+			$devswap['vu'] = $matches[3] * $val;
+			$devswap['vf'] = $matches[4] * $val;
+			$devswap['total'] = format_bytes($devswap['vt'],2,false,$use_si);
+			$devswap['used'] = format_bytes($devswap['vu'],2,false,$use_si);
+			$devswap['avail'] = format_bytes($devswap['vf'],2,false,$use_si);
 			$devswap['capacity'] = trim($matches[5]);
 			$swapinfo[] = $devswap;
 		endif;
@@ -533,7 +518,7 @@ function system_get_device_temp($devicespecialfile) {
 			$arawdatav = preg_split("/\s+/",$rawdatav);
 			if(!empty($arawdatav[1]) && ((0 == strncmp(trim($arawdatav[1]),"Temperature_",12)) || (0 == strncmp(trim($arawdatav[1]),"Airflow_Temperature_",20))) &&
 				((0 != strcmp(trim($arawdatav[0]),'190')) || (0 != strcmp(trim($arawdatav[0]),'194')) )):
-				$result = chop($arawdatav[9]);
+				$result = rtrim($arawdatav[9]);
 				break;
 			elseif(preg_match("/Current Drive Temperature:\s+(\d+) C.*/",$rawdatav,$matches)):
 				$result = $matches[1];
@@ -674,175 +659,413 @@ function system_get_volume_model($devicespecialfile) {
 function system_get_mount_usage() {
 	global $config,$g;
 
-	$result = [];
-	if(is_sidisksizevalues()):
-		exec('/bin/df -H',$rawdata);
-		$unit_suffix = 'B';
-	else:
-		exec('/bin/df -h',$rawdata);
-		$unit_suffix = 'iB';
-	endif;
-	foreach($rawdata as $line):
-		if(0 == preg_match("/^(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\d+%)\s+(.+)/",$line,$aline)):
-			continue;
-		endif;
-		$filesystem = chop($aline[1]);
-		$size = chop($aline[2]);
-		$used = chop($aline[3]);
-		$avail = chop($aline[4]);
-		$capacity = chop($aline[5]);
-		$mountpoint = chop($aline[6]);
-		if(is_array($config['mounts']) && is_array($config['mounts']['mount'])):
-			foreach($config['mounts']['mount'] as $mountcfg):
-				if(0 == strcmp($mountpoint,"{$g['media_path']}/{$mountcfg['sharename']}")):
-					$result[$mountpoint] = [];
-					$result[$mountpoint]['mountpoint'] = $mountpoint;
-					$result[$mountpoint]['name'] = $mountcfg['sharename'];
-					$result[$mountpoint]['filesystem'] = $filesystem;
-					$result[$mountpoint]['capacity'] = $capacity;
-					$result[$mountpoint]['avail'] = sprintf('%s%s',$avail,$unit_suffix);
-					$result[$mountpoint]['used'] = sprintf('%s%s',$used,$unit_suffix);
-					$result[$mountpoint]['size'] = sprintf('%s%s',$size,$unit_suffix);
-				endif;
+	$use_si = is_sidisksizevalues();
+	$sphere = [];
+	$a_mount = array_make_branch($config,'mounts','mount');
+	if(count($a_mount) > 0):
+		foreach($a_mount as &$r_mount):
+			$r_mount['fqmn'] = sprintf('%s/%s',$g['media_path'],$r_mount['sharename']);
+//			$r_mount['fsid'] = '';
+		endforeach;
+		unset($r_mount);
+//		query df with 512B block counts, retrieve json
+		$cmd = '/bin/df --libxo:J -P';
+		$json_string = shell_exec($cmd);
+		$rawdata = json_decode($json_string,true) ?? [];
+		if(is_array($rawdata)):
+			foreach($rawdata['storage-system-information']['filesystem'] as $r_rawdata):
+				foreach($a_mount as $r_mount):
+					if(0 == strcmp($r_rawdata['mounted-on'],$r_mount['fqmn'])):
+						$row = [];
+//						$row['id'] = $r_mount['fsid'];
+						$row['mountpoint'] = $r_rawdata['mounted-on'];
+						$row['name'] = $r_mount['sharename'];
+						$row['filesystem'] = $r_rawdata['name'];
+						$row['vt'] = $r_rawdata['total-blocks'] << 9;
+						$row['vu'] = $r_rawdata['used-blocks'] << 9;
+						$row['vf'] = $r_rawdata['available-blocks'] << 9;
+						$row['pu'] = $r_rawdata['used-percent'];
+						$row['pf'] = 100 - $row['pu'];
+						$row['vth'] = format_bytes($row['vt'],2,false,$use_si);
+						$row['vfh'] = format_bytes($row['vf'],2,false,$use_si);
+						$row['vuh'] = format_bytes($row['vu'],2,false,$use_si);
+						$row['puh'] = sprintf('%u%%',$row['pu']);
+						$row['pfh'] = sprintf('%u%%',$row['pf']);
+						$row['tu'] = $row['puh'];
+						$row['tf'] = $row['pfh'];
+						$row['tt'] = sprintf(gettext('%1$s total, %2$s used, %3$s available'),$row['vth'],$row['vuh'],$row['vfh']);
+						$sphere[$r_rawdata['mounted-on']] = $row;
+					endif;
+				endforeach;
 			endforeach;
 		endif;
-	endforeach;
-	return $result;
-}
-
-function get_disk_usage() {
-	$retval = [];
-	$a_diskusage = [];
-	$a_diskinfo = system_get_mount_usage();
-	if(!empty($a_diskinfo)):
-		foreach($a_diskinfo as $diskk => $diskv):
-			$id = get_mount_fsid($diskv['filesystem'],$diskk);
-			$r_diskusage = [];
-			$r_diskusage['id'] = $id;
-			$r_diskusage['mountpoint'] = $diskv['mountpoint'];
-			$r_diskusage['name'] = $diskv['name'];
-			$r_diskusage['capacity'] = $diskv['capacity'];
-			$r_diskusage['percentage'] = rtrim($diskv['capacity'],"%");
-			$r_diskusage['size'] = $diskv['size'];
-			$r_diskusage['used'] = $diskv['used'];
-			$r_diskusage['avail'] = $diskv['avail'];
-			$r_diskusage['capofsize'] = sprintf(gtext('%1$s %3$s %2$s'),$r_diskusage['capacity'],$r_diskusage['size'],gtext('of'));
-			$r_diskusage['tooltip']['used'] = sprintf(gtext('%1$s %3$s %2$s'),$r_diskusage['used'],$r_diskusage['size'],gtext('used of'));
-			$r_diskusage['tooltip']['avail'] = sprintf(gtext('%1$s %3$s %2$s'),$r_diskusage['avail'],$r_diskusage['size'],gtext('available of'));
-			$a_diskusage[] = $r_diskusage;
-		endforeach;
-		array_sort_key($a_diskusage,'name');
-		$retval = $a_diskusage;
 	endif;
-	return $retval;
+	return $sphere;
 }
+/*
+ *	supporting functions for index.php
+ */
+function get_vip_status() {
+	global $config;
 
+	if(empty($config['vinterfaces']['carp'])):
+		return '';
+	endif;
+	$a_vipaddrs = [];
+	foreach($config['vinterfaces']['carp'] as $carp):
+		$ifinfo = get_carp_info($carp['if']);
+		//$a_vipaddrs[] = $carp['vipaddr']." ({$ifinfo['state']},{$ifinfo['advskew']})";
+		$a_vipaddrs[] = $carp['vipaddr']." ({$ifinfo['state']})";
+	endforeach;
+	return implode(', ',$a_vipaddrs);
+}
+function get_vbox_vminfo($user,$uuid) {
+	$vminfo = [];
+	unset($rawdata);
+	mwexec2("/usr/local/bin/sudo -u {$user} /usr/local/bin/VBoxManage showvminfo --machinereadable {$uuid}",$rawdata);
+	foreach($rawdata as $line):
+		if(preg_match("/^([^=]+)=(\"([^\"]+)\"|[^\"]+)/",$line,$match)):
+			$a = [];
+			$a['raw'] = $match[0];
+			$a['key'] = $match[1];
+			$a['value'] = isset($match[3]) ? $match[3] : $match[2];
+			$vminfo[$a['key']] = $a;
+		endif;
+	endforeach;
+	return $vminfo;
+}
+function get_xen_info() {
+	$info = [];
+	unset($rawdata);
+	mwexec2("/usr/local/sbin/xl info",$rawdata);
+	foreach($rawdata as $line):
+		if(preg_match("/^([^:]+)\s+:\s+(.+)\s*$/",$line,$match)):
+			$a = [];
+			$a['raw'] = $match[0];
+			$a['key'] = trim($match[1]);
+			$a['value'] = trim($match[2]);
+			$info[$a['key']] = $a;
+		endif;
+	endforeach;
+	return $info;
+}
+function get_xen_console($domid) {
+	$info = [];
+	unset($rawdata);
+	mwexec2("/usr/local/bin/xenstore-ls /local/domain/{$domid}/console",$rawdata);
+	foreach($rawdata as $line):
+		if(preg_match("/^([^=]+)\s+=\s+\"(.+)\"$/",$line,$match)):
+			$a = [];
+			$a['raw'] = $match[0];
+			$a['key'] = trim($match[1]);
+			$a['value'] = trim($match[2]);
+			$info[$a['key']] = $a;
+		endif;
+	endforeach;
+	return $info;
+}
+/**
+ *	Translates the UPS status code into a human readable string
+ *	@param type $ups_status
+ *	@return string
+ */
+function get_ups_disp_status($ups_status) {
+	if(empty($ups_status)):
+		return '';
+	endif;
+	$upstodisplay = [
+		'WAIT' => gtext('UPS Waiting'),
+		'OFF' => gtext('UPS Off Line'),
+		'OL' => gtext('UPS On Line'),
+		'OB' => gtext('UPS On Battery'),
+		'TRIM' => gtext('SmartTrim'),
+		'BOOST' => gtext('SmartBoost'),
+		'OVER' => gtext('Overload'),
+		'LB' => gtext('Battery Low'),
+		'RB' => gtext('Replace Battery UPS'),
+		'CAL' => gtext('Calibration Battery'),
+		'CHRG' => gtext('Charging Battery')
+	];
+	$status = explode(' ',$ups_status);
+	$disp_status = [];
+	foreach($status as $condition):
+		$disp_status[] = $upstodisplay[$condition] ?? $condition;
+	endforeach;
+	return implode(', ',$disp_status);
+}
+/**
+ *	Collects UPS status information from UPS 1 and UPS 2
+ *	@global array $config
+ *	@return array Array with UPS information
+ */
+function get_upsinfo() {
+	global $config;
+
+	array_make_branch($config,'ups');
+	$sphere = [];
+	foreach([1,2] as $ups_index):
+		$row = [];
+		$ups_fqn = null;
+		switch($ups_index):
+			case 1:
+				if(isset($config['ups']['enable'])):
+					$ups_name = $config['ups']['upsname'];
+					$ups_fqn = sprintf('%s@%s',$ups_name,$config['ups']['ip']);
+				endif;
+				break;
+			case 2:
+				if(isset($config['ups']['enable']) && isset($config['ups']['ups2'])):
+					$ups_name = $config['ups']['ups2_upsname'];
+					$ups_fqn = sprintf('%s@%s',$ups_name,$config['ups']['ip']);
+				endif;
+				break;
+		endswitch;
+		if(is_null($ups_fqn)):
+		else:
+			$row['id'] = $ups_index;
+			$row['name'] = $ups_name;
+			$ups_query = [];
+			$cmd = sprintf('/usr/local/bin/upsc %s',escapeshellarg($ups_fqn));
+			unset($rawdata);
+			exec($cmd,$rawdata);
+			foreach($rawdata as $line):
+				$line = explode(':',$line);
+				$ups_query[$line[0]] = trim($line[1]);
+			endforeach;
+//			collect load status
+			if(array_key_exists('ups.load',$ups_query) && !empty($ups_query['ups.load'])):
+				$load_pct = $ups_query['ups.load'];
+			else:
+				$load_pct = 0;
+			endif;
+			$row_load = [];
+			$row_load['vt'] = 100;
+			$row_load['vu'] = $load_pct;
+			$row_load['vf'] = 100 - $row_load['vu'];
+			$row_load['vth'] = sprintf('%u%%',$row_load['vt']);
+			$row_load['vuh'] = sprintf('%u%%',$row_load['vu']);
+			$row_load['vfh'] = sprintf('%u%%',$row_load['vf']);
+			$row_load['pu'] = round($row_load['vu'] * 100 / $row_load['vt'],0);;
+			$row_load['pf'] = 100 - $row_load['pu'];
+			$row_load['puh'] = sprintf('%u%%',$row_load['pu']);
+			$row_load['pfh'] = sprintf('%u%%',$row_load['pf']);
+			$row_load['tu'] = sprintf('%s',$row_load['puh']);
+			$row_load['tf'] = sprintf('%s',$row_load['pfh']);
+			$row_load['tt'] = sprintf(gettext('%2$s used, %3$s available'),$row_load['vth'],$row_load['vuh'],$row_load['vfh']);
+			$row['load'] = $row_load;
+			unset($row_load);
+//			collect battery status
+			if(array_key_exists('battery.charge',$ups_query) && !empty($ups_query['battery.charge'])):
+				$battery_charge_pct = $ups_query['battery.charge'];
+			else:
+				$battery_charge_pct = 0;
+			endif;
+			$row_battery = [];
+			$row_battery['vt'] = 100;
+			$row_battery['vu'] = $battery_charge_pct;
+			$row_battery['vf'] = $row_battery['vt'] - $row_battery['vu'];
+			$row_battery['vth'] = sprintf('%u%%',$row_battery['vt']);
+			$row_battery['vuh'] = sprintf('%u%%',$row_battery['vu']);
+			$row_battery['vfh'] = sprintf('%u%%',$row_battery['vf']);
+			$row_battery['pu'] = round($row_battery['vu'] * 100 / $row_battery['vt'],0);
+			$row_battery['pf'] = 100 - $row_battery['pu'];
+			$row_battery['puh'] = sprintf('%u%%',$row_battery['pu']);
+			$row_battery['pfh'] = sprintf('%u%%',$row_battery['pf']);
+			$row_battery['tu'] = sprintf('%s',$row_battery['puh']);
+			$row_battery['tf'] = sprintf('%s',$row_battery['pfh']);
+			$row_battery['tt'] = sprintf(gettext('%2$s used, %3$s available'),$row_battery['vth'],$row_battery['vuh'],$row_battery['vfh']);
+			$row['battery'] = $row_battery;
+			unset($row_battery);
+//			collect UPS status
+			if(array_key_exists('ups.status',$ups_query)):
+				$disp_status = get_ups_disp_status($ups_query['ups.status']);
+			else:
+				$disp_status = gtext('Communication Error');
+			endif;
+			$row['disp_status'] = $disp_status;
+			$sphere[] = $row;
+			unset($row);
+		endif;
+	endforeach;
+	return $sphere;
+}
+/**
+ *	Collect disk usage information
+ *	@return array Array with disk usage information
+ */
+function get_disk_usage() {
+	$sphere = [];
+	$a_diskinfo = system_get_mount_usage();
+	ksort($a_diskinfo);
+	foreach($a_diskinfo as $k_diskinfo => $r_diskinfo):
+		$id = get_mount_fsid($r_diskinfo['filesystem'],$k_diskinfo);
+		$row = $r_diskinfo;
+		$row['id'] = $id;
+		$sphere[] = $row;
+		unset($row);
+	endforeach;
+	return $sphere;
+}
+/**
+ *	Collect pool usage information
+ *	@global array $config
+ *	@return array Array containing pool usage information
+ */
 function get_pool_usage() {
 	global $config;
- 	$retval = [];
-	$a_poolusage = [];
+
+	$sphere = [];
 	$use_si = is_sidisksizevalues();
 	$a_poolinfo = zfs_get_pool_list();
 	if(!empty($a_poolinfo)):
-		foreach($a_poolinfo as $poolk => $poolv):
-			$id = $poolv['name'];
-			$id = preg_replace('/[-\.: ]/','_',$id);
-			$r_poolusage = [];
-			$r_poolusage['id'] = $id;
-			$r_poolusage['name'] = $poolv['name'];
-			$r_poolusage['capacity'] = sprintf('%d%%',$poolv['cap']);
-			$r_poolusage['percentage'] = $poolv['cap'];
+		foreach($a_poolinfo as $r_poolinfo):
+			$row = [];
+			$row['id'] = $r_poolinfo['guid'];
+			$row['name'] = $r_poolinfo['name'];
+			$row['pu'] = $r_poolinfo['cap'];
+			$row['pf'] = 100 - $row['pu'];
+			$row['puh'] = sprintf('%u%%',$row['pu']);
+			$row['pfh'] = sprintf('%u%%',$row['pf']);
+			$row['tu'] = $row['puh'];
+			$row['tf'] = $row['pfh'];
 			if(isset($config['zfs']['settings']['showusedavail'])):
-				$r_poolusage['size'] = format_bytes($poolv['used'] + $poolv['avail'],2,false,$use_si);
-				$r_poolusage['gt_used'] = gtext('Used');
-				$r_poolusage['used'] = format_bytes($poolv['used'],2,false,$use_si);
-				$r_poolusage['gt_avail'] = gtext('Avail');
-				$r_poolusage['avail'] = format_bytes($poolv['avail'],2,false,$use_si);
-				$r_poolusage['tooltip']['used'] = sprintf('%1$s %3$s %2$s',$r_poolusage['used'],$r_poolusage['size'],gtext('used of'));
-				$r_poolusage['tooltip']['avail'] = sprintf('%1$s %3$s %2$s',$r_poolusage['avail'],$r_poolusage['size'],gtext('available of'));
+				$row['vu'] = $r_poolinfo['used'];
+				$row['vf'] = $r_poolinfo['avail'];
+				$row['vt'] = $row['vu'] + $row['vf'];
+				$row['vth'] = format_bytes($row['vt'],2,false,$use_si);
+				$row['vuh'] = format_bytes($row['vu'],2,false,$use_si);
+				$row['vfh'] = format_bytes($row['vf'],2,false,$use_si);
+				$row['tt'] = sprintf(gettext('%1$s total, %2$s used, %3$s available'),$row['vth'],$row['vuh'],$row['vfh']);
 			else: // this is the default setting
-				$r_poolusage['size'] = format_bytes($poolv['size'],2,false,$use_si);
-				$r_poolusage['gt_used'] = gtext('Alloc');
-				$r_poolusage['used'] = format_bytes($poolv['alloc'],2,false,$use_si);
-				$r_poolusage['gt_avail'] = gtext('Free');
-				$r_poolusage['avail'] = format_bytes($poolv['free'],2,false,$use_si);
-				$r_poolusage['tooltip']['used'] = sprintf('%1$s %3$s %2$s',$r_poolusage['used'],$r_poolusage['size'],gtext('allocated of'));
-				$r_poolusage['tooltip']['avail'] = sprintf('%1$s %3$s %2$s',$r_poolusage['avail'],$r_poolusage['size'],gtext('free of'));
+				$row['vu'] = $r_poolinfo['alloc'];
+				$row['vf'] = $r_poolinfo['free'];
+				$row['vt'] = $r_poolinfo['size'];
+				$row['vth'] = format_bytes($row['vt'],2,false,$use_si);
+				$row['vuh'] = format_bytes($row['vu'],2,false,$use_si);
+				$row['vfh'] = format_bytes($row['vf'],2,false,$use_si);
+				$row['tt'] = sprintf(gettext('%1$s total, %2$s allocated, %3$s free'),$row['vth'],$row['vuh'],$row['vfh']);
 			endif;
-			$r_poolusage['health'] = $poolv['health'];
-			$r_poolusage['capofsize'] = sprintf('%1$s %3$s %2$s',$r_poolusage['capacity'],$r_poolusage['size'],gtext('of'));
-			$a_poolusage[] = $r_poolusage;
+			$row['health'] = $r_poolinfo['health'];
+			$sphere[] = $row;
+			unset($row);
 		endforeach;
-		array_sort_key($a_poolusage,'name');
-		$retval = $a_poolusage;
+		array_sort_key($sphere,'name');
 	endif;
-	return $retval;
+	return $sphere;
 }
-
+/**
+ *	Collect swap usage information
+ *	@return array Array containing swap usage information
+ */
 function get_swap_usage() {
-	$retval = [];
-	$a_swapusage = [];
+	$sphere = [];
 	$a_swapinfo= system_get_swap_info();
 	if(!empty($a_swapinfo)):
 		$id = 0;
-		foreach($a_swapinfo as $swapk => $swapv):
-			$r_swapusage = [];
-			$r_swapusage['id'] = $id++;
-			$r_swapusage['name'] = $swapv['device'];
-			$r_swapusage['capacity'] = $swapv['capacity'];
-			$r_swapusage['percentage'] = rtrim($swapv['capacity'],"%");
-			$r_swapusage['size'] = $swapv['total'];
-			$r_swapusage['used'] = $swapv['used'];
-			$r_swapusage['avail'] = $swapv['avail'];
-			$r_swapusage['capofsize'] = sprintf(gtext("%s of %s"),$r_swapusage['capacity'],$r_swapusage['size']);
-			$r_swapusage['tooltip']['used'] = sprintf(gtext("%s used of %s"),$r_swapusage['used'],$r_swapusage['size']);
-			$r_swapusage['tooltip']['avail']  = sprintf(gtext("%s available of %s"),$r_swapusage['avail'],$r_swapusage['size']);
-			$a_swapusage[]= $r_swapusage;
+		foreach($a_swapinfo as $r_swapinfo):
+			$row = [];
+			$row['id'] = $id++;
+			$row['name'] = $r_swapinfo['device'];
+			$row['vt'] = $r_swapinfo['vt'];
+			$row['vu'] = $r_swapinfo['vu'];
+			$row['vf'] = $r_swapinfo['vf'];
+			$row['pu'] = round($row['vu'] * 100 / $row['vt'],0);
+			$row['pf'] = 100 - $row['pu'];
+			$row['vth'] = $r_swapinfo['total'];
+			$row['vuh'] = $r_swapinfo['used'];
+			$row['vfh'] = $r_swapinfo['avail'];
+			$row['puh'] = sprintf('%u%%',$row['pu']);
+			$row['pfh'] = sprintf('%u%%',$row['pf']);
+			$row['tu'] = $row['puh'];
+			$row['tf'] = $row['pfh'];
+			$row['tt'] = sprintf(gettext('%1$s total, %2$s used, %3$s available'),$row['vth'],$row['vuh'],$row['vfh']);
+			$sphere[] = $row;
+			unset($row);
 		endforeach;
-		array_sort_key($a_swapusage,'name');
-		$retval = $a_swapusage;
+		array_sort_key($sphere,'name');
 	endif;
-	return $retval;
+	return $sphere;
 }
-
 /**
- * Get various system informations.
- * @return An array containing the system informations.
+ *	Collect various system information.
+ *	@return array Array containing system information.
  */
 function system_get_sysinfo() {
-	$value = [];
-	$value['hostname'] = system_get_hostname();
-//	Get CPU counts.
-	$cpus = system_get_cpus();
-	$value['cpus'] = $cpus;
-//	Get RAM usage.
-	$raminfo = system_get_ram_info();
-	$value['memusage']['caption'] = $raminfo['caption'];
-	$value['memusage']['usedpct'] = $raminfo['usedpct'];
-	$value['memusage']['freepct'] = $raminfo['freepct'];
-//	Get load average.
-	exec('uptime',$result);
-	$value['loadaverage'] = substr(strrchr($result[0],'load averages:'),15);
-//	Get up-to-date CPU informations.
-	$cpuinfo = system_get_cpu_info();
-	$value['cputemp'] = $cpuinfo['temperature'];
-	$value['cpufreq'] = $cpuinfo['freq'];
-	if(!empty($cpuinfo['temperature2'])):
-		$value['cputemp2'] = $cpuinfo['temperature2'];
+	$sysinfo = [];
+	$sysinfo['vipstatus'] = get_vip_status();
+	$sysinfo['hostname'] = system_get_hostname();
+	$sysinfo['date'] = get_datetime_locale();
+	$sysinfo['uptime'] = system_get_uptime();
+	if(Session::isAdmin()):
+//		get number of CPU's
+		$sysinfo['cpus'] = system_get_cpus();
+//		get RAM usage
+		$sysinfo['memusage'] = system_get_ram_info();
+//		get load average
+		$sysinfo['loadaverage'] = implode(' ',array_map(function($e) { return sprintf('%.2f',$e); },sys_getloadavg()));
+//		get up-to-date CPU informations.
+		$cpuinfo = system_get_cpu_info();
+		$sysinfo['cpumodel'] = $cpuinfo['model'];
+		$sysinfo['cpufreq'] = $cpuinfo['freq'];
+//		get CPU temperatures
+		$cpu_t = $cpuinfo['temperature'];
+		if(empty($cpuinfo['temperature2'])):
+			$a_cpu_t = $sysinfo['cputemp2'] = [$cpuinfo['temperature']];
+		else:
+			$a_cpu_t = $sysinfo['cputemp2'] = $cpuinfo['temperature2'];
+		endif;
+		$row = [];
+		$row['vu'] = $cpu_t;
+		$row['vuh'] = sprintf('%u°C',$row['vu']);
+		$row['tu'] = $row['vuh'];
+		$sysinfo['cputemp'] = $row;
+		unset($row);
+		$sysinfo['cputemp2'] = [];
+		foreach($a_cpu_t as $r_cpu_t):
+			$row = [];
+			$row['vu'] = $r_cpu_t;
+			$row['vuh'] = sprintf('%u°C',$row['vu']);
+			$row['tu'] = $row['vuh'];
+			$sysinfo['cputemp2'][] = $row;
+			unset($row);
+		endforeach;
+//		get CPU usage
+		if($sysinfo['cpus'] > 1):
+			$a_cpu_u = system_get_smp_cpu_usage();
+			$cpu_u = floor(array_sum($a_cpu_u) / $sysinfo['cpus']);
+		else:
+			$cpu_u = system_get_cpu_usage();
+			$a_cpu_u = [$cpu_u];
+		endif;
+		$row = [];
+		$row['pu'] = $cpu_u;
+		$row['pf'] = 100 - $row['pu'];
+		$row['puh'] = sprintf('%u%%',$row['pu']);
+		$row['pfh'] = sprintf('%u%%',$row['pf']);
+		$row['tu'] = $row['puh'];
+		$row['tf'] = $row['pfh'];
+		$row['tt'] = $row['puh'];
+		$sysinfo['cpuusage'] = $row;
+		unset($row);
+		$sysinfo['cpuusage2'] = [];
+		foreach($a_cpu_u as $r_cpu_u):
+			$row = [];
+			$row['pu'] = $r_cpu_u;
+			$row['pf'] = 100 - $row['pu'];
+			$row['puh'] = sprintf('%u%%',$row['pu']);
+			$row['pfh'] = sprintf('%u%%',$row['pf']);
+			$row['tu'] = $row['puh'];
+			$row['tf'] = $row['pfh'];
+			$row['tt'] = $row['tu'];
+			$sysinfo['cpuusage2'][] = $row;
+			unset($row);
+		endforeach;
+//		get storage usage
+		$sysinfo['diskusage'] = get_disk_usage();
+		$sysinfo['poolusage'] = get_pool_usage();
+		$sysinfo['swapusage'] = get_swap_usage();
+//		get UPS status
+		$sysinfo['upsinfo'] = get_upsinfo();
 	endif;
-//	Get CPU usage.
-	if($cpus > 1):
-		$value['cpuusage2'] = system_get_smp_cpu_usage();
-		$value['cpuusage'] = floor(array_sum($value['cpuusage2']) / $cpus);
-	else:
-		$value['cpuusage'] = system_get_cpu_usage();
-		$value['cpuusage2'] = [$value['cpuusage']];
-	endif;
-	$value['diskusage'] = get_disk_usage(); // Get disk usage.
-	$value['poolusage'] = get_pool_usage(); // Get pool info.
-	$value['swapusage'] = get_swap_usage(); // Get swap info.
-//	Get uptime and date.
-	$value['uptime'] = system_get_uptime();
-	$value['date'] = get_datetime_locale();
-	return $value;
+	return $sysinfo;
 }

@@ -63,6 +63,7 @@ $pconfig['microcode_update'] = isset($config['system']['microcode_update']);
 $pconfig['enabletogglemode'] = isset($config['system']['enabletogglemode']);
 $pconfig['nonsidisksizevalues'] = isset($config['system']['nonsidisksizevalues']);
 $pconfig['skipviewmode'] = isset($config['system']['skipviewmode']);
+$pconfig['showcolorfulmeter'] = isset($config['system']['showcolorfulmeter']);
 $pconfig['disableextensionmenu'] = isset($config['system']['disableextensionmenu']);
 $pconfig['zeroconf'] = isset($config['system']['zeroconf']);
 $pconfig['powerd'] = isset($config['system']['powerd']);
@@ -149,6 +150,7 @@ if($_POST):
 		$config['system']['enabletogglemode'] = $cop->get_enabletogglemode()->validate_input();
 		$config['system']['nonsidisksizevalues'] = $cop->get_nonsidisksizevalues()->validate_input();
 		$config['system']['skipviewmode'] = $cop->get_skipviewmode()->validate_input();
+		$config['system']['showcolorfulmeter'] = $cop->get_showcolorfulmeter()->validate_input();
 		$_SESSION['g']['shrinkpageheader'] = $cop->get_shrinkpageheader()->validate_input();
 		$helpinghand = $cop->get_disableextensionmenu()->validate_input();
 		if(isset($config['system']['disableextensionmenu']) !== $helpinghand):
@@ -322,6 +324,7 @@ $document->render();
 			endif;
 			$node->c2_checkbox($cop->get_enabletogglemode(),!empty($pconfig['enabletogglemode']));
 			$node->c2_checkbox($cop->get_skipviewmode(),!empty($pconfig['skipviewmode']));
+			$node->c2_checkbox($cop->get_showcolorfulmeter(),!empty($pconfig['showcolorfulmeter']));
 			$node->c2_checkbox($cop->get_adddivsubmittodataframe(),!empty($pconfig['adddivsubmittodataframe']));
 			$node->c2_checkbox($cop->get_shrinkpageheader(),$_SESSION['g']['shrinkpageheader']);
 			$node->c2_checkbox($cop->get_disableextensionmenu(),!empty($pconfig['disableextensionmenu']));

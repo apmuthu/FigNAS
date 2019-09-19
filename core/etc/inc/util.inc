@@ -632,27 +632,25 @@ function get_mounts_list() {
 	endforeach;
 	return $amountlist;
 }
-/*
+/**
  *	Retrieve the fsid from mount point.
- *	$devicespecialfile - The device special name, e.g. /dev/ad6p1
- *	$mp - Name of the mount point, e.g. /mnt/1
- *	Return fsid or empty string.
+ *	@param string $devicespecialfile The device special name, e.g. /dev/ad6p1
+ *	@param string $mountpoint The name of the mount point, e.g. /mnt/1
+ *	@return string fsid or empty
  */
-function get_mount_fsid($devicespecialfile,$mp) {
-	exec("/sbin/mount -v",$rawdata);
-	if(empty($rawdata)):
-		return NULL;
+function get_mount_fsid($devicespecialfile,$mountpoint) {
+	unset($rawdata);
+	exec('/sbin/mount -v',$rawdata);
+	if(!empty($rawdata)):
+		$needle = sprintf('%s on %s ',$devicespecialfile,$mountpoint);
+		foreach($rawdata as $mountinfo):
+//			parse string: /dev/ad6p1 on /mnt/1 (ufs, local, soft-updates, acls, fsid 090db747f2d532ed)
+			if(1 === preg_match('/' . preg_quote($needle,'/') . '.+fsid (\S+).+/',$mountinfo,$info)):
+				return $info[1];
+			endif;
+		endforeach;
 	endif;
-	foreach($rawdata as $mountinfo):
-		// Parse string: /dev/ad6p1 on /mnt/1 (ufs, local, soft-updates, acls, fsid 090db747f2d532ed)
-		if(0 == preg_match("/(\S+) on (\S+).+fsid (\S+).+/",$mountinfo,$info)):
-			continue;
-		endif;
-		if(($info[1] === $devicespecialfile) && ($info[2] === $mp)):
-			return $info[3];
-		endif;
-	endforeach;
-	return NULL;
+	return '';
 }
 /*
  *	Return list of ALL software volume: gvinum, gmirror
@@ -952,7 +950,7 @@ function get_hast_disks_list() {
 }
 /**
  *	smartd and smartcl require a parameter if an alternative drive database is to be used.
- *	The parameter is created 
+ *	The parameter is created
  *	- when a filename is configured in config.xml ['smartd']['drivedb'] and exists.
  *	- when a filename is configured in rc.conf 'smartd_drivedb' and exists.
  *	The config.xml setting precedes the rc.conf setting.
@@ -961,7 +959,7 @@ function get_hast_disks_list() {
  */
 function get_smartmontools_drivedb_arg() {
 	global $config;
-	
+
 	array_make_branch($config,'smartd');
 	$drivedb_fqn = is_string($test = $config['smartd']['drivedb'] ?? '') ? $test : '';
 	if(1 === preg_match('/\S/',$drivedb_fqn) && file_exists($drivedb_fqn)):
@@ -1045,7 +1043,7 @@ function parse_camcontrol_info($devtype) {
 			if(preg_match('/\S/',$device[0])):
 				$device_name = $device[0] . $device[1];
 				$passthrough_device_name = $passthrough_device[0] . $passthrough_device[1];
-			
+
 				//	legacy compatibility: for scsi option, do not include ata drives, for ata option, do not include scsi drives
 				if((($devtype != 'scsi' && $controller[0] == $devtype) || ($devtype == 'scsi' & $controller[0] != 'ata')) && $controller[0] != 'mfi'):
 					//	ignore empty, CD-ROM and SCSI enclosure devices (ses)
@@ -1141,11 +1139,11 @@ function parse_umass_controller_desc($controller_id) {
 }
 function parse_umass_controller(&$device) {
 	global $config;
-	
+
 	$output = '';
 	$searchresult = '';
 	$smartd_drivedb_arg = get_smartmontools_drivedb_arg();
-	
+
 	$device['model'] = parse_device_desc($device['name']);
 	$device['controller_desc'] = parse_umass_controller_desc($device['controller_id']);
 
@@ -1154,7 +1152,7 @@ function parse_umass_controller(&$device) {
 	$device['smart']['devicefilepath'] = $devicefilepath;
 	$device['smart']['devicetype'] = '';
 	$device['smart']['devicetypearg'] = '';
-	
+
 	$cmd = sprintf('smartctl ' . $smartd_drivedb_arg . '-d test %s',escapeshellarg($devicefilepath));
 	mwexec2($cmd,$output);
 	foreach($output as $row):
@@ -1177,7 +1175,7 @@ function parse_umass_controller(&$device) {
 					$device['smart']['devicetype'] = $value;
 					$device['smart']['devicetypearg'] = $value;
 				endif;
-			endif;	
+			endif;
 			break;
 		endif;
 	endforeach;
@@ -2076,7 +2074,7 @@ function get_ipv6defaultgateway() {
  */
 function get_fstype_list() {
 	global $g_filesystems;
-	
+
 	return $g_filesystems;
 }
 /*
@@ -2450,7 +2448,7 @@ function get_bootdevice() {
  */
 function get_conf_physical_disks_list() {
 	global $config;
-	
+
 	$fallback = [];
 	array_make_branch($config,'disks','disk');
 	array_sort_key($config['disks']['disk'],'name');

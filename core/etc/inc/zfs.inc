@@ -55,38 +55,39 @@ require_once 'properties_zfs_dataset.php';
  *	@endcode
  */
 function zfs_get_pool_list() {
-	$a_result = [];
-	$a_zpool = cli_zpool_info();
+	$sphere = [];
+	$a_zpool = cli_zpool_info('','name,size,alloc,free,expandsz,frag,cap,dedup,health,altroot,guid');
 	if(!empty($a_zpool)):
 		foreach($a_zpool as $r_pool):
 //			map names of zpool list -o options to local options
 			$pool_name = $r_pool['name'];
-			$r_poolinfo = [];
-			$r_poolinfo['name'] = $pool_name;
-			$r_poolinfo['size'] = $r_pool['size'];
-			$r_poolinfo['alloc'] = $r_pool['alloc'];
-			$r_poolinfo['free'] = $r_pool['free'];
-			$r_poolinfo['expandsz'] = $r_pool['expandsz'];
-			$r_poolinfo['frag'] = $r_pool['frag'];
-			$r_poolinfo['cap'] = $r_pool['cap'];
-			$r_poolinfo['dedup'] = $r_pool['dedup'];
-			$r_poolinfo['health'] = $r_pool['health'];
-			$r_poolinfo['altroot'] = $r_pool['altroot'];
+			$row = [];
+			$row['name'] = $pool_name;
+			$row['size'] = $r_pool['size'];
+			$row['alloc'] = $r_pool['alloc'];
+			$row['free'] = $r_pool['free'];
+			$row['expandsz'] = $r_pool['expandsz'];
+			$row['frag'] = $r_pool['frag'];
+			$row['cap'] = $r_pool['cap'];
+			$row['dedup'] = $r_pool['dedup'];
+			$row['health'] = $r_pool['health'];
+			$row['altroot'] = $r_pool['altroot'];
+			$row['guid'] = $r_pool['guid'];
 			$a_zfs = cli_zfs_info($pool_name,'used,avail');
 			if(empty($a_zfs)):
-				$r_poolinfo['used'] = 'Unknown';
-				$r_poolinfo['avail'] = 'Unknown';
+				$row['used'] = 'Unknown';
+				$row['avail'] = 'Unknown';
 			else:
 				foreach($a_zfs as $r_zfs):
 //					there should be only one row
-					$r_poolinfo['used'] = $r_zfs['used'];
-					$r_poolinfo['avail'] = $r_zfs['avail'];
+					$row['used'] = $r_zfs['used'];
+					$row['avail'] = $r_zfs['avail'];
 				endforeach;
 			endif;
-			$a_result[$pool_name] = $r_poolinfo;
+			$sphere[$pool_name] = $row;
 		endforeach;
 	endif;
-	return $a_result;
+	return $sphere;
 }
 /**
  *	Get zpool information via cli

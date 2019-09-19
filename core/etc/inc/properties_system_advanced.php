@@ -245,6 +245,27 @@ class properties_system_advanced extends co_property_container {
 			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('The value is invalid.')));
 		return $property;
 	}
+	protected $x_showcolorfulmeter;
+	public function get_showcolorfulmeter() {
+		return $this->x_showcolorfulmeter ?? $this->init_showcolorfulmeter();
+	}
+	public function init_showcolorfulmeter() {
+		$caption = gettext('Enable this option if you want to display colorful meter states.');
+		$property = $this->x_showcolorfulmeter = new property_bool($this);
+		$property->
+			set_name('showcolorfulmeter')->
+			set_title(gettext('Colorful Meters'));
+		$property->
+			set_id('showcolorfulmeter')->
+			set_caption($caption)->
+			set_description('')->
+			set_defaultvalue(false)->
+			filter_use_default()->
+			set_editableonadd(true)->
+			set_editableonmodify(true)->
+			set_message_error(sprintf('%s: %s',$property->get_title(),gettext('The value is invalid.')));
+		return $property;
+	}
 	protected $x_disableextensionmenu;
 	public function get_disableextensionmenu() {
 		return $this->x_disableextensionmenu ?? $this->init_disableextensionmenu();
