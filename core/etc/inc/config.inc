@@ -1719,6 +1719,9 @@ function config_preinit() {
 		echo 'Saving configuration',PHP_EOL;
 		write_config();
 	endif;
+	if(stristr($g['platform'],'livecd') || stristr($g['platform'],'liveusb')):
+		exec('/usr/bin/sed -i.bak -e "/^ttyv0/ s/Pc/autologin/" -e "/^ttyu0/ s/3wire/autologin/" /etc/ttys');
+	endif;
 }
 /**
  *	Hook for postinit

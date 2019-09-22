@@ -1,31 +1,33 @@
 XigmaNAS 12.0.0.4 - Reticulus
 -----------------------------
 Changes:
-- Upgrade to FreeBSD 12.0-RELEASE P6.
+- Upgrade to FreeBSD 12.0-RELEASE P10.
 - isboot.ko driver not available.
 - Add public key management for SSH.
 - Upgrade APCu to 5.1.17.
-- Upgrade dialog to 1.3-20190211.
 - Upgrade arcconf to 3.00.23488.
 - Upgrade smartmontools to 7.0.
-- Upgrade zoneinfo to 2019a.
-- Upgrade bash to 5.0 p7.
-- Upgrade msmtp to 1.8.4.
 - Upgrade tmux to 2.9a.
-- Upgrade samba to 4.8.12.
 - Upgrade jQuery to 3.4.1.
 - Upgrade lighttpd to 1.4.54.
-- Upgrade php to 7.3.6.
-- Upgrade virtualbox-ose to 5.2.30.
-- Upgrade e2fsprogs to 1.45.2.
 - Upgrade beadm to 1.3.0.
 - Upgrade phpmyadmin to 4.9.0.
-- Upgrade syncthing to 1.1.4.
-- Upgrade devcpu-data to 1.22.
-- Upgrade nano to 4.3.
 - Upgrade bsnmp-ucd to 0.4.3.
-- Upgrade mariadb to 10.2.25.
 - Upgrade iperf3 to 3.7.
+- Upgrade bash to 5.0 P11.
+- Upgrade e2fsprogs to 1.45.3.
+- Upgrade nano to 4.4.
+- Upgrade php to 7.3.9.
+- Upgrade mariadb to 10.2.26.
+- Upgrade virtualbox-ose to 5.2.32.
+- Upgrade syncthing to 1.2.2.
+- Upgrade zoneinfo to 2019c.
+- Upgrade rrdtool to 1.7.2.
+- Upgrade mDNSResponder to 878.260.1.
+- Upgrade dialog to 1.3-20190808.
+- Upgrade msmtp to 1.8.5.
+- Upgrade devcpu-data to 1.24.
+- Upgrade samba to 4.10.8.
 
 Fixes:
 

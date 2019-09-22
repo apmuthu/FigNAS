@@ -782,6 +782,12 @@ usr/sbin/wpa_supplicant
 ## mountd -- service remote NFS mount requests
 usr/sbin/mountd
 
+## mprutil -- Utility for managing LSI Fusion-MPT 2/3 controllers
+usr/sbin/mprutil
+
+## mpsutil -- Utility for managing LSI Fusion-MPT 2/3 controllers
+usr/sbin/mpsutil
+
 ## nfsd -- remote NFS server
 usr/sbin/nfsd
 

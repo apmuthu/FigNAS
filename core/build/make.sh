@@ -1706,6 +1706,14 @@ copy_files() {
 	echo "===> Copy new port php73-APCu to ports/devel/"
 	cp -Rpv ${XIGMANAS_SVNDIR}/build/ports/copy-ports/files/php73-APCu /usr/ports/devel
 	echo "===> Copy new port files to /usr/ports/devel/php73-APCu done!"
+	echo ""
+	echo "===> Delete current virtualbox-ose from ports"
+	rm -rf /usr/ports/emulators/virtualbox-ose
+	echo "===> Delete completed!"
+	echo ""
+	echo "===> Copy new port virtualbox-ose to ports/emulators/"
+	cp -Rpv ${XIGMANAS_SVNDIR}/build/ports/copy-ports/files/virtualbox-ose /usr/ports/emulators
+	echo "===> Copy new port files to /usr/ports/emulators/virtualbox-ose done!"
 	return 0
 }
 build_ports() {
