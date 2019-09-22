@@ -48,12 +48,11 @@
     SUBDIR += phpmyadmin
     SUBDIR += phpvirtualbox
     SUBDIR += proftpd
-    SUBDIR += python2
+    SUBDIR += python3
     SUBDIR += rconf
     SUBDIR += rrdtool
     SUBDIR += rsync
-    SUBDIR += samba47
-    SUBDIR += samba48
+    SUBDIR += samba410
     SUBDIR += scponly
     SUBDIR += sipcalc
     SUBDIR += smartmontools

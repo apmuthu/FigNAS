@@ -1,6 +1,6 @@
 PORTNAME=		rrdtool
-PORTVERSION=		1.7.0
-PORTREVISION=		1
+PORTVERSION=		1.7.2
+PORTREVISION=		0
 CATEGORIES=		databases graphics
 
 COMMENT=		Round Robin Database Tools
@@ -47,9 +47,9 @@ do-install:
 	@${INSTALL_PROGRAM} -v ${DEP_STAGEDIR}${PREFIX}/bin/rrdinfo ${XIGMANAS_ROOTFS}/usr/local/bin
 	@${INSTALL_PROGRAM} -v ${DEP_STAGEDIR}${PREFIX}/bin/rrdtool ${XIGMANAS_ROOTFS}/usr/local/bin
 	@${INSTALL_PROGRAM} -v ${DEP_STAGEDIR}${PREFIX}/bin/rrdupdate ${XIGMANAS_ROOTFS}/usr/local/bin
-	@${INSTALL_PROGRAM} -v ${DEP_STAGEDIR}${PREFIX}/lib/librrd.so.8.1.0 ${XIGMANAS_ROOTFS}/usr/local/lib
-	@${LN} -fsv /usr/local/lib/librrd.so.8.1.0 ${XIGMANAS_ROOTFS}/usr/local/lib/librrd.so
-	@${LN} -fsv /usr/local/lib/librrd.so.8.1.0 ${XIGMANAS_ROOTFS}/usr/local/lib/librrd.so.8
+	@${INSTALL_PROGRAM} -v ${DEP_STAGEDIR}${PREFIX}/lib/librrd.so.8.2.1 ${XIGMANAS_ROOTFS}/usr/local/lib
+	@${LN} -fsv /usr/local/lib/librrd.so.8.2.1 ${XIGMANAS_ROOTFS}/usr/local/lib/librrd.so
+	@${LN} -fsv /usr/local/lib/librrd.so.8.2.1 ${XIGMANAS_ROOTFS}/usr/local/lib/librrd.so.8
 # bindings
 	@${MKDIR} -p ${XIGMANAS_ROOTFS}${SITE_PERL}/${PERL_ARCH}/${PERL_VER}/auto/RRDs
 	@${CP} -pv ${DEP_STAGEDIR}${SITE_PERL}/${PERL_ARCH}/${PERL_VER}/auto/RRDs/RRDs.so ${XIGMANAS_ROOTFS}${SITE_PERL}/${PERL_ARCH}/${PERL_VER}/auto/RRDs/
