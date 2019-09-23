@@ -46,13 +46,10 @@ else:
 		$time = gettimeofday();
 		$timing = (double)$time["sec"] + (double)$time["usec"] / 1000000.0;
 		echo "$timing|" . $ifinfo['inbytes'] . "|" . $ifinfo['outbytes'] . "\n";
-	else:
-		if (isset($param['cpu'])):
-			if ($param['cpu'] == 0):
-				$_SESSION['cpu'] = @system_get_smp_cpu_usage();
-			endif; 
-			echo $_SESSION['cpu'][$param['cpu']]; 
+	elseif(isset($param['cpu'])):
+		if($param['cpu'] == 0):
+			$_SESSION['cpu'] = @system_get_smp_cpu_usage();
 		endif;
+		echo $_SESSION['cpu'][$param['cpu']];
 	endif;
 endif;
-?>

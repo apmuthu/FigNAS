@@ -267,9 +267,9 @@ function system_get_smp_cpu_usage(): array {
  *	@return float
  */
 function system_get_cpu_usage(): float {
-	$c_stats_1 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
+	$c_stats_1 = rtrim(`/sbin/sysctl -nq kern.cp_time`);
 	sleep(1);
-	$c_stats_2 = rtrim(`/sbin/sysctl -nq kern.cp_times`);
+	$c_stats_2 = rtrim(`/sbin/sysctl -nq kern.cp_time`);
 	$a_stats_1 = explode(' ',$c_stats_1);
 	$a_stats_2 = explode(' ',$c_stats_2);
 	$a = array_map(function($a,$b) { return $b - $a; },$a_stats_1,$a_stats_2);
