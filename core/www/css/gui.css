@@ -42,6 +42,8 @@
 	bop-: border properties => [border width] [border style] [border color]
 */
 	--bgc-root: #D9DCE1;
+	--txc-root: #000000;
+
 	--txc-page-title: #777777;
 
 	--bgc-area-data: #EEEEEE;
@@ -79,15 +81,22 @@
 /*
 	cron scheduler
 */
-	--bgc-cblo: mediumseagreen;
-	--txc-cblo: white;
-	--bgc-rblo: lightcoral;
-	--txc-rblo: white;
+	--bgc-cblo: #3CB371;
+	--txc-cblo: #FFFFFF;
+	--bgc-rblo: #F08080;
+	--txc-rblo: #FFFFFF;
+/*
+	meter bar
+*/
+	--bgi-meter-bar: linear-gradient(to bottom, #DDDDDD,#EEEEEE 20%,#CCCCCC 45%,#CCCCCC 55%,#DDDDDD);
+    --bgi-meter-opt: linear-gradient(to bottom, #AADD77,#CCEEAA 20%,#77AA33 45%,#77AA33 55%,#AADD77);
+    --bgi-meter-sub: linear-gradient(to bottom, #FFEE77,#FFFFCC 20%,#DDBB33 45%,#DDBB33 55%,#FFEE77);
+    --bgi-meter-elg: linear-gradient(to bottom, #FF7777,#FFCCCC 20%,#DD4444 45%,#DD4444 55%,#FF7777);
 /*
 	footer
 */
 	--bgc-footer: #000000;
-	--bgi-footer: linear-gradient(#9c9c9c,#000000);
+	--bgi-footer: linear-gradient(#9C9C9C,#000000);
 	--txc-footer: #FFFFFF;
 }
 
@@ -126,6 +135,8 @@ body,
 div#gapheader,
 div#gapfooter
 {
+	color: #000000;
+	color: var(--txc-root);
 	background-color: #D9DCE1;
 	background-color: var(--bgc-root);
 }
@@ -410,8 +421,8 @@ input[type='checkbox']:checked ~ div.hideifchecked
 .formfldro
 {
 	background-color: transparent;
-	border: 1px outset #eeeeee;
-	color: black;
+	border: 1px outset #EEEEEE;
+	color: #000000;
 }
 
 .formfld[type=file]
@@ -1055,13 +1066,13 @@ div#swapusage .capofsize
 
 .warningtext
 {
-	color: orange;
+	color: #FFA500;
 	font-weight: bold;
 }
 
 .errortext
 {
-	color: red;
+	color: #FF0000;
 	font-weight: bold;
 }
 
@@ -1247,9 +1258,9 @@ input[type="checkbox"].cblo
 
 input[type="checkbox"].cblo:checked + span
 {
-	background-color: mediumseagreen;
+	background-color: #3CB371;
 	background-color: var(--bgc-cblo);
-	color: white;
+	color: #FFFFFF;
 	color: var(--txc-cblo);
 }
 
@@ -1276,9 +1287,9 @@ input[type="radio"].rblo
 
 input[type="radio"].rblo:checked + span
 {
-	background-color: lightcoral;
+	background-color: #F08080;
 	background-color: var(--bgc-rblo);
-	color: white;
+	color: #FFFFFF;
 	color: var(--txc-rblo);
 }
 
@@ -1353,16 +1364,20 @@ object.rrdgraphs
 	meter tag
  */
 meter::-webkit-meter-bar {
-    background-image: linear-gradient(to bottom, #ddd, #eee 20%, #ccc 45%, #ccc 55%, #ddd);
+    background-image: linear-gradient(to bottom, #DDDDDD,#EEEEEE 20%,#CCCCCC 45%,#CCCCCC 55%,#DDDDDD);
+	background-image: var(--bgi-meter-bar);
 }
 meter::-webkit-meter-optimum-value {
-    background-image: linear-gradient(to bottom, #ad7, #cea 20%, #7a3 45%, #7a3 55%, #ad7);
+    background-image: linear-gradient(to bottom, #AADD77,#CCEEAA 20%,#77AA33 45%,#77AA33 55%,#AADD77);
+	background-image: var(--bgi-meter-opt);
 }
 meter::-webkit-meter-suboptimum-value {
-    background-image: linear-gradient(to bottom, #fe7, #ffc 20%, #db3 45%, #db3 55%, #fe7);
+    background-image: linear-gradient(to bottom, #FFEE77,#FFFFCC 20%,#DDBB33 45%,#DDBB33 55%,#FFEE77);
+	background-image: var(--bgi-meter-sub);
 }
 meter::-webkit-meter-even-less-good-value {
-    background-image: linear-gradient(to bottom, #f77, #fcc 20%, #d44 45%, #d44 55%, #f77);
+    background-image: linear-gradient(to bottom, #FF7777,#FFCCCC 20%,#DD4444 45%,#DD4444 55%,#FF7777);
+	background-image: var(--bgi-meter-elg);
 }
 
 meter.cpuusage,

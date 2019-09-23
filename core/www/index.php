@@ -134,7 +134,7 @@ function render_cpuusage2() {
 									echo '<td class="padr1"></td>';
 								endif;
 							endfor;
-							echo '<td class="nopad100">';
+							echo '<td class="nopad100"></td>';
 							echo '</tr>';
 						endfor;
 					echo '</tbody></table>';

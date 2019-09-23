@@ -930,7 +930,7 @@ function install_newfs(string $disk,string $volname,int $sector,int $fsize,int $
  *	@param array $devinfo Return array containing ['device'], ['partition'] and ['size'] information
  *	@return int Return 0 if successful, otherwise 1
  */
-function install_detect_installation(string $mode,array &$devinfo) {
+function install_detect_installation(string $mode,&$devinfo) {
 	global $g;
 
 	$imgfile = get_product_name(). "-{$g['arch']}-embedded.xz";
