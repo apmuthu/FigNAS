@@ -1,12 +1,13 @@
 # FigNAS
 * This fork initially tries to keep abreast of XigmaNAS codebase consolidating commits to the same file
 * The name change was done to avoid misrepresentation and a missive from the Trademark owner on 2019-09-23
-* This fork primarily came into being since the XigmaNAS code base could not be compiled by me
-* It serves me as a base for understanding code changes by organising whitespace and code block movement changes from the actual code changes
+* This fork primarily came into being since the XigmaNAS code base could not be compiled by me (will update on successful compilation)
+* It serves as a base for understanding code changes by organising whitespace and code block movement changes from the actual code changes in separate commits
 * It also provides for code extensions by indicating which files need to be changed for what functionality class
 
 # About XigmaNAS
-* XigmaNAS is an Open Source fork of NAS4Free which is a fork of FreeNAS
+* XigmaNAS is a fork of Open Source FreeNAS v7.x
+* XigmaNAS was first named as NAS4Free and got changed when FreeNAS v8.x onwards got bought over by others
 * [The Trademark owner of XigmaNAS is Michael Zoon](http://tsdr.uspto.gov/#caseNumber=87689146&amp;caseSearchType=US_APPLICATION&amp;caseType=SERIAL_NO&amp;searchType=statusSearch)
 
 * Home Page: http://www.xigmanas.com - GeoIP blocks Asian IPs.
