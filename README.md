@@ -1,7 +1,7 @@
 # FigNAS
 * This fork initially tries to keep abreast of XigmaNAS codebase consolidating commits to the same file
 * The name change was done to avoid misrepresentation and a missive from the Trademark owner on 2019-09-23
-* This fork primarily came into being since the original XigmaNAS code base could not be compiled by me
+* This fork primarily came into being since the XigmaNAS code base could not be compiled by me
 * It serves me as a base for understanding code changes by organising whitespace and code block movement changes from the actual code changes
 * It also provides for code extensions by indicating which files need to be changed for what functionality class
 
@@ -16,7 +16,7 @@
 * This fork will be updated when time permits and comes with no claims - use it at your own risk.
 * Only the `trunk` branch of the upstream repo (r6743) from June 2019 is available here
 
-## Building XigmaNAS
+## Building FigNAS
 * Read the file at `build/README`
 
 ## Post Release Updation of web facing files
@@ -26,4 +26,4 @@
 	* locale => /usr/local/share/locale
 
 # find / -name "locale"
-* Gets all locakle folders and files
+* Gets all locale folders and files
