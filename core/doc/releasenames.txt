@@ -1,8 +1,9 @@
 All XigmaNAS release names are taken from the novel 'Dune' from Frank Herbert.
 
-Omnius	    / 11.2.0.4
-Reticulus   / 12.0.0.4 
+Omnius		/ 11.2.0.4
+Parmentier	/ 11.3.0.4
+Reticulus	/ 12.0.0.4 
 
 Also see:
-http://dune.wikia.com/wiki/Category:Original_Dune
-http://dune.wikia.com/wiki/Category:Expanded_Dune
+https://dune.wikia.com/wiki/Category:Original_Dune
+https://dune.wikia.com/wiki/Category:Expanded_Dune
