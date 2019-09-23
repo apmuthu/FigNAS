@@ -1,5 +1,13 @@
-# XigmaNAS
-XigmaNAS is an Open Source fork of NAS4Free which is a fork of FreeNAS
+# FigNAS
+* This fork initially tries to keep abreast of XigmaNAS codebase consolidating commits to the same file
+* The name change was done to avoid misrepresentation and a missive from the Trademark owner on 2019-09-23
+* This fork primarily ame into being since the original XigmaNAS code base could not be compiled by me
+* It serves me as a base for understanding code changes by organising whitespace and code block movement changes from the actual code changes
+* It also provides for code extensions by indicating which files need to be changed for what functionality class
+
+# About XigmaNAS
+* XigmaNAS is an Open Source fork of NAS4Free which is a fork of FreeNAS
+* [The Trademark owner of XigmaNAS is Michael Zoon](http://tsdr.uspto.gov/#caseNumber=87689146&amp;caseSearchType=US_APPLICATION&amp;caseType=SERIAL_NO&amp;searchType=statusSearch)
 
 * Home Page: http://www.xigmanas.com - GeoIP blocks Asian IPs.
 * Upstream Project Page: http://sf.net/p/xigmanas
