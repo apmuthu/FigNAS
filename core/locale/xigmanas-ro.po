@@ -2,20 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-01-17 22:04+0000\n"
-"Last-Translator: peter <peterswebdesign2010@gmail.com>\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-07-30 06:25+0000\n"
+"Last-Translator: Laurentiu Bubuianu <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: ro_RO\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid " No private key"
-msgstr ""
+msgstr " Nicoo cheie privată"
 
 msgid " interfaces:"
 msgstr " interfețe:"
@@ -24,12 +24,24 @@ msgid " was assigned to "
 msgstr " a fost alocat la "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s este utilizat pentru a crea %2$s volumele."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -50,10 +62,6 @@ msgstr "%d an"
 #, php-format
 msgid "%d years"
 msgstr "%d ani"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% din %s"
 
 #, php-format
 msgid "%dB / block"
@@ -194,13 +202,13 @@ msgid "*** Imported duplicate ***"
 msgstr "*** Duplicat importat ***"
 
 msgid "+upnp:class,+upnp:originalTrackNumber,+dc:title"
-msgstr ""
+msgstr "+upnp:class,+upnp:originalTrackNumber,+dc:title"
 
 msgid "/mnt"
-msgstr ""
+msgstr "/mnt"
 
 msgid "000"
-msgstr ""
+msgstr "000"
 
 msgid "0=disabled, 1-255=enabled command queuing with specified depth."
 msgstr "0=dezactivat, 1-255=listă activă de comenzi cu lungimea specificată."
@@ -218,19 +226,19 @@ msgid "1.8\""
 msgstr "1.8\""
 
 msgid "1000"
-msgstr ""
+msgstr "1000"
 
 msgid "10000"
-msgstr ""
+msgstr "10000"
 
 msgid "16 KiB"
 msgstr "16 KiB"
 
 msgid "16384"
-msgstr ""
+msgstr "16384"
 
 msgid "192.168.0.0/24"
-msgstr ""
+msgstr "192.168.0.0/24"
 
 msgid "2"
 msgstr "2"
@@ -248,7 +256,7 @@ msgid "2.5\""
 msgstr "2.5\""
 
 msgid "22"
-msgstr ""
+msgstr "22"
 
 msgid "3"
 msgstr "3"
@@ -260,7 +268,7 @@ msgid "3.5\""
 msgstr "3.5\""
 
 msgid "300"
-msgstr ""
+msgstr "300"
 
 msgid "32 KiB"
 msgstr "32 KiB"
@@ -293,7 +301,7 @@ msgid "802.1Q VLAN tag (between 1 and 4094)."
 msgstr "Etichetă VLAN 802.1Q (între 1 și 4094)."
 
 msgid "8200"
-msgstr ""
+msgstr "8200"
 
 msgid ""
 "A NTP time server name may only contain the following characters: a-z, 0-9, "
@@ -602,16 +610,16 @@ msgid "Add Listen Record"
 msgstr "Adauga registru Reproduce Registru"
 
 msgid "Add Media Folder"
-msgstr ""
+msgstr "Adăugare folder Media"
 
 msgid "Add Mutual CHAP User"
 msgstr "Adauga utilizator CHAP reciproc"
 
 msgid "Add NFS Export"
-msgstr ""
+msgstr "Adăugare Export NFS"
 
 msgid "Add NFS Root"
-msgstr ""
+msgstr "Adăugare Root NFS"
 
 msgid "Add Option"
 msgstr "Adăugare opțiuni"
@@ -629,7 +637,7 @@ msgid "Add Portal Group"
 msgstr "Adăugare Grup Portal"
 
 msgid "Add Public Key"
-msgstr ""
+msgstr "Adăugare cheie pblică"
 
 msgid "Add RAID"
 msgstr "Adăugare RAID"
@@ -713,7 +721,7 @@ msgid "Add extent"
 msgstr "Adăugare extensie"
 
 msgid "Add iSCSI Initiator"
-msgstr ""
+msgstr "Adăugare inițiator iSCSI"
 
 msgid "Add iSNS Server"
 msgstr "Adauga Server iSNS"
@@ -739,20 +747,20 @@ msgstr "Adăugare regulă"
 msgid "Add self-test"
 msgstr "Adăugare auto-test"
 
-msgid "Add sysctl variable"
+msgid "Add sysctl setting"
 msgstr ""
 
 msgid "Add target"
 msgstr "Adăugare destinație"
 
 msgid "Add the selected device to the existing mirror."
-msgstr ""
+msgstr "Adăugarea dispozitivului slectat la o imagine existentă."
 
 msgid "Add user to additional groups."
-msgstr ""
+msgstr "Adăugarea utilizatorului la un grup adițional."
 
 msgid "Additional Information"
-msgstr ""
+msgstr "Informatii suplimentare"
 
 msgid "Additional Network"
 msgstr "Rețele adiționale"
@@ -780,6 +788,9 @@ msgstr "Adresa daemon-ului hastd (trebuie să fie o adresă IP statică)."
 
 msgid "Admin Password"
 msgstr "Parola Admin"
+
+msgid "Admin access"
+msgstr ""
 
 msgid "Administration Password"
 msgstr "Parolă administrare"
@@ -828,9 +839,6 @@ msgid ""
 msgstr ""
 "După selectarea butonului \"Salvare\" va trebui să reporniți serverul pentru "
 "activarea modificărilor."
-
-msgid "Age"
-msgstr "Vechime"
 
 msgid "Aggregation Protocol"
 msgstr "Protocol agregare"
@@ -894,7 +902,7 @@ msgid "Allow"
 msgstr "Permite"
 
 msgid "Allow GSSAPI authentication."
-msgstr ""
+msgstr "Persmisiune autentificare GSSAPI"
 
 msgid "Allow New Files"
 msgstr "Permite fișiere noi"
@@ -903,7 +911,7 @@ msgid "Allow Serial Ports"
 msgstr "Permite porturi seriale"
 
 msgid "Allow TCP forwarding."
-msgstr ""
+msgstr "Permisiune TCP forwarding."
 
 msgid "Allow TLS connections only."
 msgstr "Permite doar conexiuni TLS."
@@ -932,19 +940,19 @@ msgid "Allow consecutive read/writes to be issued in parallel"
 msgstr "Permisiune citiri/scrieri consecutive în paralel"
 
 msgid "Allow keyboard-interactive authentication."
-msgstr ""
+msgstr "Permisiune autentificare cu tastatura interactivă."
 
 msgid "Allow new files to be created."
 msgstr "Permite crearea de fișiere noi."
 
 msgid "Allow password authentication."
-msgstr ""
+msgstr "Permisiune autentificare cu parolă."
 
 msgid "Allow public key authentication."
-msgstr ""
+msgstr "Permisiune autentificare cu cheie publică."
 
 msgid "Allow root to login via ssh."
-msgstr ""
+msgstr "Permisiune autentificare root via ssh."
 
 msgid "Allow symlinks that point outside defined media folders."
 msgstr ""
@@ -1114,6 +1122,9 @@ msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Toate serviciile care folosesc aceste discuri pot deveni invalide sau "
 "innacesibile!"
+
+msgid "Append content to the default CSS file"
+msgstr ""
 
 msgid "Append user defined shares"
 msgstr "Adaugă partajările definite"
@@ -1432,8 +1443,8 @@ msgstr ""
 msgid "Battery Details"
 msgstr "Detalii acumulator"
 
-msgid "Battery Level"
-msgstr "Nivel acumulator"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "Acumulator descărcat"
@@ -1747,6 +1758,9 @@ msgstr ""
 "citire/scriere)."
 
 msgid "CRC32C"
+msgstr "CRC32C"
+
+msgid "CSS Settings"
 msgstr ""
 
 msgid "CTL LUN"
@@ -1904,7 +1918,7 @@ msgid "Clear device errors"
 msgstr "Ștergere erori dispozitiv"
 
 msgid "Clear metadata on the selected device."
-msgstr ""
+msgstr "Ștergere metadata pentru dispozitivul selectat."
 
 msgid "Client"
 msgstr "Client"
@@ -1926,6 +1940,9 @@ msgstr "Colectare inițială date, vă rugam asteptați..."
 
 msgid "Collisions"
 msgstr "Coliziuni"
+
+msgid "Colorful Meters"
+msgstr ""
 
 msgid "Cols"
 msgstr "Coloane"
@@ -1983,6 +2000,9 @@ msgstr "Comentariu"
 
 msgid "Common Internet File System"
 msgstr "Sistemul de Fișiere utilizat"
+
+msgid "Communication Error"
+msgstr ""
 
 msgid "Community"
 msgstr "Comunitate"
@@ -2417,7 +2437,7 @@ msgid "Create PV Guest"
 msgstr "Creare cont PV Guest"
 
 msgid "Create Work Directory"
-msgstr ""
+msgstr "Creare Work Directory"
 
 msgid "Create ZFS on a GPT partition."
 msgstr "Creare partiție ZFS sau GPT."
@@ -2506,6 +2526,12 @@ msgstr "Configuratie Actuala"
 msgid "Current Version"
 msgstr "Versiunea curentă"
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "Temperatura internă curentă."
 
@@ -2514,6 +2540,9 @@ msgstr "Parola curentă"
 
 msgid "Current password is incorrectly entered."
 msgstr "Parola curentă a fost introdusă greșit."
+
+msgid "Current quarter"
+msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "Starea curentă a discului pe baza curbei de viață."
@@ -2530,6 +2559,9 @@ msgstr "Valoare curent pentru puterea aparentă (Volți-Amperi)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Valoarea curentă pentru puterea reală (Wați)"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "Personalizat"
@@ -2883,6 +2915,9 @@ msgstr "Ștergere partajări selectate"
 
 msgid "Delete Selected Snapshots"
 msgstr "Ștergere Snapshot-uri selectate"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr "Ștergere Destinații selectate"
@@ -3247,6 +3282,9 @@ msgstr "Dezactivare joburi Rsync selectate"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Dezactivare module Rsync selectate"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Disable Selected Targets"
 msgstr "Dezactivare Destinații selectate"
@@ -3654,6 +3692,9 @@ msgstr "Ștergeți partajările selectate?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "Ștergeți snapshot-urile selectate?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to delete selected targets?"
 msgstr ""
 
@@ -3744,6 +3785,9 @@ msgstr "Dezactivați joburile rsync selectate?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Dezactivați modulele rsync selectate?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr ""
 
@@ -3824,6 +3868,9 @@ msgstr "Activați joburile rsync selectate?"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Activați modulele rsync selectate?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to enable selected targets?"
 msgstr ""
@@ -3914,6 +3961,9 @@ msgstr "Inversați starea joburilor rsync selectate?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Inversați starea modulelo rsync selectate?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to toggle selected targets?"
 msgstr ""
@@ -4209,7 +4259,7 @@ msgstr "Editare regulă"
 msgid "Edit self-test"
 msgstr "Editare auto-test"
 
-msgid "Edit sysctl variable"
+msgid "Edit sysctl setting"
 msgstr ""
 
 msgid "Edit target"
@@ -4359,6 +4409,9 @@ msgstr "Activare joburi Rsync selectate"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Activare module Rsync selectate"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Enable Selected Targets"
 msgstr ""
@@ -4549,6 +4602,9 @@ msgstr "Activare protocol identificare (RFC1413)."
 msgid "Enable the server power control utility."
 msgstr "Activare utilitar pentru controlul puterii serverului."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4595,9 +4651,6 @@ msgstr "Activare transcodare."
 
 msgid "Enable traps."
 msgstr "Activare capcane software (traps)."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Activare optimizare variabile kernel."
 
 msgid "Enable tuning switch"
 msgstr "Activare opțiuni optimizare"
@@ -4674,9 +4727,6 @@ msgstr ""
 
 msgid "Enter Identifier"
 msgstr "Introducere Identificator"
-
-msgid "Enter Name"
-msgstr ""
 
 msgid "Enter Password"
 msgstr "Introduceți parola"
@@ -5121,6 +5171,9 @@ msgid ""
 "File (default) - use a ._ AppleDouble file compatible with OS X and Netatalk."
 msgstr ""
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr "Editor Fișiere"
 
@@ -5129,6 +5182,9 @@ msgstr "Manager de Fișiere"
 
 msgid "File Mask"
 msgstr "Mască fișier"
+
+msgid "File Mode"
+msgstr ""
 
 msgid "File Path"
 msgstr "Cale fișier"
@@ -5303,6 +5359,24 @@ msgstr "Complet"
 msgid "Full Name"
 msgstr "Nume Complet"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5351,6 +5425,9 @@ msgstr "partiție GPT"
 msgid "GSSAPI Authentication"
 msgstr ""
 
+msgid "GUI"
+msgstr ""
+
 msgid "Gateway"
 msgstr "Gateway"
 
@@ -5397,14 +5474,15 @@ msgstr ""
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr ""
 
-msgid "Grant access to the user portal."
-msgstr "Permite accesul utilizatorilor locali la portal."
-
 msgid "Grant shell access to user"
 msgstr ""
 
 msgid "Graph shows last 120 seconds"
 msgstr "Graficul afișează ultimele 120 secunde"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr ""
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5776,6 +5854,9 @@ msgstr "IdentLookups"
 
 msgid "Identifier"
 msgstr "Identificator"
+
+msgid "Identifier:"
+msgstr ""
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6201,9 +6282,6 @@ msgstr "Format invalid fișier."
 msgid "Invalid login credentials."
 msgstr "Nume de utilizator/parolă incorecte"
 
-msgid "Invalid username or password."
-msgstr "Nume utilizator sau parolă invalide."
-
 msgid "Invert Selection"
 msgstr "Inversare selecție"
 
@@ -6420,6 +6498,9 @@ msgstr "Limba utilizată pentru interfață"
 msgid "Large Read/Write"
 msgstr "Citire/Scriere în blocuri mari de date"
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6442,6 +6523,9 @@ msgstr ""
 "capacitatea maximă. Valoarea normalizată este setată în 1 în cazul unei "
 "erori la test sau 11 dacă capacitorul a fost testat în condiții de "
 "temperatură excesivă, în rest valoarea normală este 100."
+
+msgid "Last week"
+msgstr ""
 
 msgid "Latency"
 msgstr "Latență"
@@ -6597,6 +6681,9 @@ msgstr ""
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr ""
 "Încărcarea UPS-ului pentru comutare în modul suprasarcină (\"SUPRASARCINĂ\")"
+
+msgid "Load:"
+msgstr ""
 
 msgid "Loadbalance"
 msgstr "Echilibrare Încărcare"
@@ -7312,6 +7399,9 @@ msgstr "Numele variabilei."
 msgid "Native - store characters with their native ASCII value."
 msgstr ""
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "Nici datele utilizator și nici metadatele nu vor fi stocate în ARC."
 
@@ -7479,6 +7569,9 @@ msgstr ""
 msgid "No RSYNC Client configured."
 msgstr "Nu există niciun client RSYNC configurat."
 
+msgid "No access to the user portal"
+msgstr ""
+
 msgid "No additional parameters"
 msgstr ""
 
@@ -7508,9 +7601,6 @@ msgstr ""
 
 msgid "No devices have been selected"
 msgstr "Nu a fost selectat niciun dispozitiv"
-
-msgid "No disk configured"
-msgstr "Niciun disc configurat"
 
 msgid "No disks available."
 msgstr "Niciun disc disponibil."
@@ -7772,6 +7862,21 @@ msgstr ""
 
 msgid "Old Passphrase"
 msgstr "Frază-parolă veche"
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
+msgstr ""
 
 msgid "On"
 msgstr "Pornit"
@@ -8207,6 +8312,9 @@ msgstr "Verificați fișierele log"
 msgid "Please read the documentation"
 msgstr ""
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr "Timp verificare"
 
@@ -8224,6 +8332,9 @@ msgstr ""
 
 msgid "Pool Information & Status"
 msgstr "Informații & Stare Pool"
+
+msgid "Pool Space Usage"
+msgstr ""
 
 msgid "Pool State"
 msgstr "Stare pool"
@@ -8417,6 +8528,12 @@ msgstr "Păstrare timpi modificări."
 
 msgid "Prevent deep discharge of battery"
 msgstr "Prevenire descărcare totală acumulator"
+
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
+msgstr ""
 
 msgid "Primary"
 msgstr "Primar"
@@ -8633,6 +8750,126 @@ msgid "RAW info"
 msgstr "Informații brute"
 
 msgid "RPM"
+msgstr ""
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
 msgstr ""
 
 #, php-format
@@ -8923,6 +9160,9 @@ msgstr "Înlocuiți acumulatorul"
 
 msgid "Replace a device"
 msgstr "Înlocuire dispozitiv"
+
+msgid "Replace the default CSS file"
+msgstr ""
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9430,6 +9670,24 @@ msgstr "Selectați momentul în care va fi executată comanda."
 msgid "Select configuration file:"
 msgstr "Selectare fișier configurare:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr "Selectare format sistem fișiere."
 
@@ -9497,6 +9755,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Selectat"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr "Dispozitivele/etichetele specificate nu există."
@@ -10213,6 +10474,9 @@ msgstr "Start"
 msgid "Start TLS from within the session."
 msgstr ""
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr "Static"
 
@@ -10230,6 +10494,9 @@ msgstr "Stare & Informații"
 
 msgid "Status report successfully sent."
 msgstr "Raportul de stare a fost trimis cu succes."
+
+msgid "Status:"
+msgstr ""
 
 msgid "Step"
 msgstr "Pas"
@@ -10352,13 +10619,16 @@ msgstr "Sincronizare"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
+msgid "Sysctl Setting"
 msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
+msgid "Sysctl setting is locked"
 msgstr ""
 
-msgid "Sysctl variable is unlocked"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
 msgstr ""
 
 msgid "Syslog Level"
@@ -10477,6 +10747,9 @@ msgstr "Verificare certificat TLS Server"
 
 msgid "TLS Trust File"
 msgstr "Fișier TLS"
+
+msgid "Tabs"
+msgstr ""
 
 msgid "Tag"
 msgstr "Etichetă"
@@ -11449,6 +11722,9 @@ msgstr "Fișierul a fost parțial încărcat."
 msgid "The value is invalid."
 msgstr "Valoare invalidă."
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr "Valoarea variabilei."
 
@@ -11573,7 +11849,7 @@ msgid "These parameters will be added to this target."
 msgstr ""
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
 
@@ -11692,6 +11968,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Aceasta nu este o adresă IP validă."
+
+msgid "This month"
+msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -11946,6 +12225,9 @@ msgstr "Acest utilizator există deja."
 msgid "This virtual device name already exists."
 msgstr "Acest nume de dispozitiv virtual există deja."
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12097,6 +12379,9 @@ msgstr ""
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 
+msgid "Today"
+msgstr ""
+
 msgid "Toggle Mode"
 msgstr "Inversare selecție"
 
@@ -12165,6 +12450,9 @@ msgstr "Inversare stare selecție joburi Rsync"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Inversare stare selecție module Rsync"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
 
 msgid "Toggle Selected Targets"
 msgstr ""
@@ -12239,14 +12527,6 @@ msgstr ""
 "Numărul total de încărcare a capetelor magnetice (timp în afara zonei de "
 "parcare)."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr ""
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Total: %s | Utilizat: %s | Liber: %s"
-
 msgid "Traceroute"
 msgstr "Trasare Ruta"
 
@@ -12316,9 +12596,6 @@ msgstr "Mar"
 
 msgid "Tuesday"
 msgstr "Marți"
-
-msgid "Tuning"
-msgstr "Optimizări"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Intrare monitor în modul StandBy după N secunde."
@@ -12415,9 +12692,6 @@ msgstr "Stare semnalizare acustică UPS"
 
 msgid "UPS coldstarts from battery"
 msgstr "Pornire la rece de pe acumulator"
-
-msgid "UPS disabled"
-msgstr "UPS dezactivat"
 
 msgid "UPS external contact sensors"
 msgstr "Senzori de contact externi UPS"
@@ -12765,6 +13039,9 @@ msgstr "Partajări utilizator"
 msgid "User Suffix"
 msgstr "Sufix utilizator"
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr "Contul de utilizator este marcat pentru ștergere"
 
@@ -12773,6 +13050,9 @@ msgstr "Contul utilizator este protejat"
 
 msgid "User account is unlocked"
 msgstr "Contul utilizator este deblocat"
+
+msgid "User portal permission."
+msgstr ""
 
 msgid "Username"
 msgstr "Nume Utilizator"
@@ -13205,6 +13485,9 @@ msgstr "Da"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Da - Activare suport Time Machine pentru această partajare."
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13337,6 +13620,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "Utilizare ZFS ARC"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr "Informații & Stare sistem ZFS"
 
@@ -13347,6 +13633,9 @@ msgid "ZFS L2ARC"
 msgstr ""
 
 msgid "ZFS L2ARC Usage"
+msgstr ""
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
@@ -13392,17 +13681,8 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "alocate din"
-
 msgid "and"
 msgstr "și"
-
-msgid "available"
-msgstr "disponibil"
-
-msgid "available of"
-msgstr "disponibil din"
 
 msgid "bash - Bourne Again Shell"
 msgstr ""
@@ -13429,9 +13709,6 @@ msgstr "ex. %s"
 
 msgid "filechooser"
 msgstr "selector fișiere"
-
-msgid "free of"
-msgstr "libere din"
 
 msgid "get target info failed."
 msgstr "eșuare găsire info destinație."
@@ -13577,9 +13854,6 @@ msgstr ""
 msgid "none"
 msgstr "nimic"
 
-msgid "of"
-msgstr "din"
-
 msgid "off"
 msgstr "dezactivat"
 
@@ -13642,9 +13916,6 @@ msgstr "demontare"
 
 msgid "unknown"
 msgstr ""
-
-msgid "used of"
-msgstr "utilizat din"
 
 msgid "visible"
 msgstr "vizibil"

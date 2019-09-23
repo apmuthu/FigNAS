@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-19 18:12+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-09-22 15:59+0000\n"
 "Last-Translator: zoon01 <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "X-Poedit-Country: Netherlands\n"
 "Language: \n"
 "X-Poedit-Language: Dutch\n"
@@ -26,12 +26,24 @@ msgid " was assigned to "
 msgstr " werd toegewezen aan "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s wordt gebruikt om %2$s volumes te maken."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr "%1$s beheerd, %2$s gebruikt, %3$s beschikbaar"
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr "%1$s totaal, %2$s toegewezen, %3$s vrij"
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr "%1$s totaal, %2$s gebruikt, %3$s beschikbaar"
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr "%2$s gebruikt, %3$s beschikbaar"
 
 #, php-format
 msgid "%d days"
@@ -52,10 +64,6 @@ msgstr "%d jaar"
 #, php-format
 msgid "%d years"
 msgstr "%d jaren"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% van %s"
 
 #, php-format
 msgid "%dB / block"
@@ -746,8 +754,8 @@ msgstr "Regel toevoegen"
 msgid "Add self-test"
 msgstr "Zelf-test toevoegen"
 
-msgid "Add sysctl variable"
-msgstr "Sysctl variable toevoegen"
+msgid "Add sysctl setting"
+msgstr "Toevoegen sysctl instelling"
 
 msgid "Add target"
 msgstr "Doel toevoegen"
@@ -789,6 +797,9 @@ msgstr ""
 
 msgid "Admin Password"
 msgstr "Admin Wachtwoord"
+
+msgid "Admin access"
+msgstr "Admin toegang"
 
 msgid "Administration Password"
 msgstr "Administratie Wachtwoord"
@@ -838,9 +849,6 @@ msgid ""
 msgstr ""
 "Na gebruik van de knop \"Opslaan\" moet u de server opnieuw opstarten om de "
 "wijzigingen door te voeren."
-
-msgid "Age"
-msgstr "Leeftijd"
 
 msgid "Aggregation Protocol"
 msgstr "Aggregation Protocol"
@@ -1128,6 +1136,9 @@ msgstr "Alle"
 msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Elke service die deze schijven gebruiken kan ongeldig of onbereikbaar worden!"
+
+msgid "Append content to the default CSS file"
+msgstr "Voeg inhoud toe aan het standaard CSS bestand"
 
 msgid "Append user defined shares"
 msgstr "Toevoegen gebruiker gedefinieerde delingen"
@@ -1444,8 +1455,8 @@ msgstr ""
 msgid "Battery Details"
 msgstr "Batterij Informatie"
 
-msgid "Battery Level"
-msgstr "Batterijniveau"
+msgid "Battery Level:"
+msgstr "Batterijniveau:"
 
 msgid "Battery Low"
 msgstr "Batterij Leeg"
@@ -1776,6 +1787,9 @@ msgstr ""
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr "CSS Instellingen"
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1956,6 +1970,9 @@ msgstr "Bezig met het ophalen van data, Even geduld a.u.b."
 msgid "Collisions"
 msgstr "Conflicten"
 
+msgid "Colorful Meters"
+msgstr "Kleurrijke Meters"
+
 msgid "Cols"
 msgstr "Kolommen"
 
@@ -2012,6 +2029,9 @@ msgstr "Opmerking"
 
 msgid "Common Internet File System"
 msgstr "Algemeen Internet Bestands Systeem"
+
+msgid "Communication Error"
+msgstr "Communicatiefout"
 
 msgid "Community"
 msgstr "Gemeenschap"
@@ -2537,6 +2557,12 @@ msgstr "Huidige Instelling"
 msgid "Current Version"
 msgstr "Huidige Versie"
 
+msgid "Current and previous month"
+msgstr "Huidige en vorige maand"
+
+msgid "Current and previous year"
+msgstr "Huidige en vorig jaar"
+
 msgid "Current internal temperature."
 msgstr "Huidige interne temperatuur."
 
@@ -2545,6 +2571,9 @@ msgstr "Huidig wachtwoord"
 
 msgid "Current password is incorrectly entered."
 msgstr "Huidig wachtwoord is onjuist ingevoerd."
+
+msgid "Current quarter"
+msgstr "Huidig kwartaal"
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "Huidige staat werking van de schijf op basis van de Levens Curve."
@@ -2561,6 +2590,9 @@ msgstr "Huidige waarde van schijnbaar vermogen (Volt-Amps)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Huidige waarde van het reële vermogen (watt)"
+
+msgid "Current year"
+msgstr "Huidige jaar"
 
 msgid "Custom"
 msgstr "Aangepast"
@@ -2914,6 +2946,9 @@ msgstr "Geselecteerde Delingen Verwijderen"
 
 msgid "Delete Selected Snapshots"
 msgstr "Geselecteerde Snapshots Verwijderen"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr "Geselecteerde Sysctl Instellingen Verwijderen"
 
 msgid "Delete Selected Targets"
 msgstr "Geselecteerde Doelen Verwijderen"
@@ -3280,6 +3315,9 @@ msgstr "Geselecteerde Rsync Taken Uitschakelen"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Geselecteerde Rsync Modules Uitschakelen"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr "Geselecteerde Sysctl Instellingen Uitschakelen"
 
 msgid "Disable Selected Targets"
 msgstr "Geselecteerde  Doelen Uitschakelen"
@@ -3700,6 +3738,9 @@ msgstr "Wilt u de geselecteerde delingen verwijderen?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "Wilt u de geselecteerde snapshots verwijderen?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr "Wilt u de geselecteerde sysctl instellingen verwijderen?"
+
 msgid "Do you want to delete selected targets?"
 msgstr "Wilt u de geselecteerde doelen verwijderen?"
 
@@ -3790,6 +3831,9 @@ msgstr "Wilt u de geselecteerde rsync taken uitschakelen?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Wilt u de geselecteerde rsync modules uitschakelen?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr "Wilt u de geselecteerde sysctl instellingen uitschakelen?"
+
 msgid "Do you want to disable selected targets?"
 msgstr "Wilt u de geselecteerde doelen uitschakelen?"
 
@@ -3870,6 +3914,9 @@ msgstr "Wilt u de geselecteerde rsync taken inschakelen?"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Wilt u de geselecteerde rsync modules inschakelen?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr "Wilt u de geselecteerde sysctl instellingen inschakelen?"
 
 msgid "Do you want to enable selected targets?"
 msgstr "Wilt u de geselecteerde doelen inschakelen?"
@@ -3960,6 +4007,9 @@ msgstr "Wilt u de geselecteerde rsync taken omkeren?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Wilt u de geselecteerde rsync modules omkeren?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr "Wilt u de geselecteerde sysctl instellingen omkeren?"
 
 msgid "Do you want to toggle selected targets?"
 msgstr "Wilt u de geselecteerde doelen omkeren?"
@@ -4258,8 +4308,8 @@ msgstr "Regel bewerken"
 msgid "Edit self-test"
 msgstr "Zelf-test bewerken"
 
-msgid "Edit sysctl variable"
-msgstr "Sysctl variable bewerken"
+msgid "Edit sysctl setting"
+msgstr "sysctl instelling bewerken"
 
 msgid "Edit target"
 msgstr "Doel bewerken"
@@ -4412,6 +4462,9 @@ msgstr "Geselecteerde Rsync Taken Inschakelen"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Geselecteerde Rsync Modules Inschakelen"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr "Geselecteerde Sysctl Instellingen Inschakelen"
 
 msgid "Enable Selected Targets"
 msgstr "Activeer de geselecteerde doelen"
@@ -4610,6 +4663,10 @@ msgstr "Inschakelen van de ident protocol (RFC1413)."
 msgid "Enable the server power control utility."
 msgstr "Inschakelen server energiebeheer modus."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+"Schakelen deze optie in als u kleurrijke meterstatussen wilt weergeven."
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4654,9 +4711,6 @@ msgstr "Inschakelen hercoderen."
 
 msgid "Enable traps."
 msgstr "Traps inschakelen."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Inschakelen kernel optimalisatie (aanbevolen)."
 
 msgid "Enable tuning switch"
 msgstr "Inschakelen prestatie optimalisatie"
@@ -4733,9 +4787,6 @@ msgstr "Geef de prefixlengte van het IP-adres op."
 
 msgid "Enter Identifier"
 msgstr "Geef identificator"
-
-msgid "Enter Name"
-msgstr "Naam Invoeren"
 
 msgid "Enter Password"
 msgstr "Geef Wachtwoord"
@@ -5191,6 +5242,9 @@ msgstr ""
 "Bestand (standaard) - gebruik een ._ AppleDouble bestand compatibel met OS X "
 "en Netatalk."
 
+msgid "File Chooser"
+msgstr "Bestandskiezer"
+
 msgid "File Editor"
 msgstr "Bestand Bewerker"
 
@@ -5199,6 +5253,9 @@ msgstr "Bestands Manager"
 
 msgid "File Mask"
 msgstr "Bestandsmachtiging"
+
+msgid "File Mode"
+msgstr "Bestandsmodus"
 
 msgid "File Path"
 msgstr "Bestandslocatie"
@@ -5374,6 +5431,34 @@ msgstr "Volledig"
 msgid "Full Name"
 msgstr "Volledige Naam"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepast GUI CSS bestand."
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepaste bestandskiezer CSS "
+"bestand."
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepast bestandsbeheer CSS "
+"bestand."
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepast login CSS bestand."
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepaste navigatiebalk CSS "
+"bestand."
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+"Volledig gekwalificeerde bestandsnaam van een aangepaste tabbladen CSS "
+"bestand."
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5421,6 +5506,9 @@ msgstr "GPT partitie"
 
 msgid "GSSAPI Authentication"
 msgstr "GSSAPI Verificatie"
+
+msgid "GUI"
+msgstr "GUI"
 
 msgid "Gateway"
 msgstr "Gateway"
@@ -5472,14 +5560,15 @@ msgstr ""
 "Globaal numerieke identificatie te gebruiken voor een bepaalde LUN binnen "
 "CTL."
 
-msgid "Grant access to the user portal."
-msgstr "Verleen toegang tot de gebruikers portaal."
-
 msgid "Grant shell access to user"
 msgstr "Verleen Shell toegang aan gebruiker"
 
 msgid "Graph shows last 120 seconds"
 msgstr "Grafiek van de laatste 120 seconden"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr "Grafiek toont recente 120 seconden."
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5858,6 +5947,9 @@ msgstr "IdentLookups"
 
 msgid "Identifier"
 msgstr "Identificatie"
+
+msgid "Identifier:"
+msgstr "Identificatie:"
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6278,9 +6370,6 @@ msgstr "Ongeldig bestandsformaat."
 msgid "Invalid login credentials."
 msgstr "Ongeldige inloggegevens."
 
-msgid "Invalid username or password."
-msgstr "Gebruikersnaam of wachtwoord onjuist."
-
 msgid "Invert Selection"
 msgstr "Selectie Omkeren"
 
@@ -6500,6 +6589,9 @@ msgstr "Taal die wordt gebruikt op het voorpaneel"
 msgid "Large Read/Write"
 msgstr "Groot Lezen/Schrijven"
 
+msgid "Last month"
+msgstr "Vorige maand"
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6521,6 +6613,9 @@ msgstr ""
 "inschakel cyclus,  verzadigd op maximale waarde. Genormaliseerde waarde is "
 "ingesteld op een op test fout of 11 als de condensator is getest in een "
 "buitensporige temperatuur conditie, anders 100."
+
+msgid "Last week"
+msgstr "Vorige week"
 
 msgid "Latency"
 msgstr "Latentie"
@@ -6693,6 +6788,9 @@ msgstr ""
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr ""
 "De belasting wanneer de UPS schakelt naar overbelasting modus  (\"OVER\")"
+
+msgid "Load:"
+msgstr "Belasting:"
 
 msgid "Loadbalance"
 msgstr "Loadbalance (Netwerkbelasting verdelen)"
@@ -7419,6 +7517,9 @@ msgstr "Naam van de variable."
 msgid "Native - store characters with their native ASCII value."
 msgstr "Native - sla karakters op met hun native ASCII waarde."
 
+msgid "Navigation Bar"
+msgstr "Navigatiebalk"
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "Gebruikers-gegevens noch metadata wordt gecached in ARC."
 
@@ -7587,6 +7688,9 @@ msgstr "Geen RAID5 informatie gevonden."
 msgid "No RSYNC Client configured."
 msgstr "Er is geen RSYNC Cliënt geconfigureerd."
 
+msgid "No access to the user portal"
+msgstr "Geen toegang tot het gebruikersportaal"
+
 msgid "No additional parameters"
 msgstr "Geen extra parameters"
 
@@ -7616,9 +7720,6 @@ msgstr "Geen dataset informatie beschikbaar."
 
 msgid "No devices have been selected"
 msgstr "Er zijn geen schijven geselecteerd"
-
-msgid "No disk configured"
-msgstr "Er is geen schijf geconfigureerd"
 
 msgid "No disks available."
 msgstr "Er zijn geen schijven beschikbaar."
@@ -7884,6 +7985,21 @@ msgstr "Offload Stuurprogramma"
 
 msgid "Old Passphrase"
 msgstr "Oud wachtwoordzin"
+
+msgid "Older than last month"
+msgstr "Ouder dan vorige maand"
+
+msgid "Older than last week"
+msgstr "Ouder dan vorige week"
+
+msgid "Older than previous quarter"
+msgstr "Ouder dan vorig kwartaal"
+
+msgid "Older than previous year"
+msgstr "Ouder dan vorig jaar"
+
+msgid "Older than yesterday"
+msgstr "Ouder dan gisteren"
 
 msgid "On"
 msgstr "Aan"
@@ -8321,6 +8437,9 @@ msgstr "Controleer de logbestanden"
 msgid "Please read the documentation"
 msgstr "Lees de documentatie"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr "Update uw browser of gebruik Internet Explorer 10 of hoger."
+
 msgid "Polling Time"
 msgstr "Verzendtijd Rapportage"
 
@@ -8338,6 +8457,9 @@ msgstr "Pool Informatie"
 
 msgid "Pool Information & Status"
 msgstr "Pool Informatie & Status"
+
+msgid "Pool Space Usage"
+msgstr "Pool Ruimtegebruik"
 
 msgid "Pool State"
 msgstr "Pool Staat"
@@ -8532,6 +8654,12 @@ msgstr "Reserveer modificatie tijden."
 
 msgid "Prevent deep discharge of battery"
 msgstr "Voorkom diep ontladen van de batterij"
+
+msgid "Previous quarter"
+msgstr "Vorig kwartaal"
+
+msgid "Previous year"
+msgstr "Vorig jaar"
 
 msgid "Primary"
 msgstr "Primair"
@@ -8753,6 +8881,126 @@ msgstr "Ruwe info"
 
 msgid "RPM"
 msgstr "RPM"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr "RRDGraphs Dagelijkse ARC Grafiek"
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr "RRDGraphs Dagelijkse CPU Frequentie Grafiek"
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr "RRDGraphs Dagelijkse CPU Temperatuur Grafiek"
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr "RRDGraphs Dagelijkse CPU Gebruik Grafiek"
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr "RRDGraphs Dagelijkse L2ARC Grafiek"
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr "RRDGraphs Dagelijkse Gemiddelde Belasting Grafiek"
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr "RRDGraphs Dagelijkse Netwerk Latentie Grafiek"
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr "RRDGraphs Dagelijkse Processen Grafiek"
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr "RRDGraphs Dagelijkse UPS Grafiek"
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr "RRDGraphs Dagelijkse Uptime Grafiek"
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr "RRDGraphs Maandelijkse ARC Grafiek"
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr "RRDGraphs Maandelijkse CPU Frequentie Grafiek"
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr "RRDGraphs Maandelijkse CPU Temperatuur Grafiek"
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr "RRDGraphs Maandelijkse CPU Gebruik Grafiek"
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr "RRDGraphs Maandelijkse L2ARC Grafiek"
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr "RRDGraphs Maandelijkse Gemiddelde Belasting Grafiek"
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr "RRDGraphs Maandelijkse Netwerk Latentie Grafiek"
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr "RRDGraphs Maandelijkse Processen Grafiek"
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr "RRDGraphs Maandelijkse UPS Grafiek"
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr "RRDGraphs Maandelijkse Uptime Grafiek"
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr "RRDGraphs Wekelijkse ARC Grafiek"
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr "RRDGraphs Wekelijkse CPU Frequentie Grafiek"
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr "RRDGraphs Wekelijkse CPU Temperatuur Grafiek"
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr "RRDGraphs Wekelijkse CPU Gebruik Grafiek"
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr "RRDGraphs Wekelijkse L2ARC Grafiek"
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr "RRDGraphs Wekelijkse Gemiddelde Belasting Grafiek"
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr "RRDGraphs Wekelijkse Netwerk Latentie Grafiek"
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr "RRDGraphs Wekelijkse Processen Grafiek"
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr "RRDGraphs Wekelijkse UPS Grafiek"
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr "RRDGraphs Wekelijkse Uptime Grafiek"
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr "RRDGraphs Jaarlijkse ARC Grafiek"
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr "RRDGraphs Jaarlijkse CPU Frequentie Grafiek"
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr "RRDGraphs Jaarlijkse CPU Temperatuur Grafiek"
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr "RRDGraphs Jaarlijkse CPU Gebruik Grafiek"
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr "RRDGraphs Jaarlijkse L2ARC Grafiek"
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr "RRDGraphs Jaarlijkse Gemiddelde Belasting Grafiek"
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr "RRDGraphs Jaarlijkse Netwerk Latentie Grafiek"
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr "RRDGraphs Jaarlijkse Processen Grafiek"
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr "RRDGraphs Jaarlijkse UPS Grafiek"
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr "RRDGraphs Jaarlijkse Uptime Grafiek"
 
 #, php-format
 msgid ""
@@ -9046,6 +9294,9 @@ msgstr "Vervang Batterij UPS"
 
 msgid "Replace a device"
 msgstr "Vervang een schijf"
+
+msgid "Replace the default CSS file"
+msgstr "Vervang het standaard CSS bestand"
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9556,6 +9807,28 @@ msgstr "Selecteer in welk stadium de opdracht moet worden uitgevoerd."
 msgid "Select configuration file:"
 msgstr "Selecteer configuratiebestand:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr "Selecteer de bestandsmodus van het aangepaste GUI CSS bestand."
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+"Selecteer de bestandsmodus van het aangepaste bestandskiezer CSS bestand."
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+"Selecteer de bestandsmodus van het aangepaste bestandsbeheer CSS bestand."
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+"Selecteer de bestandsmodus van het aangepaste inlogbestand CSS bestand."
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+"Selecteer de bestandsmodus van het aangepaste navigatiebalk CSS bestand."
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr "Selecteer de bestandsmodus van de aangepaste tabbladen CSS bestand."
+
 msgid "Select file system format."
 msgstr "Selecteer het bestandssysteem voor het formatteren."
 
@@ -9626,6 +9899,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Geselecteerd"
+
+msgid "Selected UPS"
+msgstr "Selecteer UPS"
 
 msgid "Selected device or label does not exist."
 msgstr "Geselecteerde schijf of label bestaat niet."
@@ -10412,6 +10688,9 @@ msgstr "Start"
 msgid "Start TLS from within the session."
 msgstr "Start TLS vanuit de sessie."
 
+msgid "State: "
+msgstr "Staat: "
+
 msgid "Static"
 msgstr "Statisch"
 
@@ -10429,6 +10708,9 @@ msgstr "Status & Informatie"
 
 msgid "Status report successfully sent."
 msgstr "Het status rapport is met succes verzonden."
+
+msgid "Status:"
+msgstr "Status:"
 
 msgid "Step"
 msgstr "Stap"
@@ -10555,14 +10837,17 @@ msgstr "Synchronisatie"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
-msgstr "Sysctl variable is vergrendeld"
+msgid "Sysctl Setting"
+msgstr "Sysctl Instellingen"
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "Sysctl variable is gemarkeerd voor verwijdering"
+msgid "Sysctl setting is locked"
+msgstr "Sysctl Instellingen is vergrendeld"
 
-msgid "Sysctl variable is unlocked"
-msgstr "Sysctl variable is ontgrendeld"
+msgid "Sysctl setting is marked for deletion"
+msgstr "Sysctl instelling is gemarkeerd voor verwijdering"
+
+msgid "Sysctl setting is unlocked"
+msgstr "Sysctl instelling  is ontgrendeld"
 
 msgid "Syslog Level"
 msgstr "Syslog niveau"
@@ -10680,6 +10965,9 @@ msgstr "TLS Server Certificaat Controle"
 
 msgid "TLS Trust File"
 msgstr "TLS Vertrouwd Bestand"
+
+msgid "Tabs"
+msgstr "Tabs"
 
 msgid "Tag"
 msgstr "Markering"
@@ -11699,6 +11987,9 @@ msgstr "Het geuploade bestand werd slechts gedeeltelijk geupload."
 msgid "The value is invalid."
 msgstr "De waarde is ongeldig."
 
+msgid "The value of the setting."
+msgstr "De waarde van de instelling."
+
 msgid "The value of the variable."
 msgstr "De waarde van de variabele."
 
@@ -11832,7 +12123,7 @@ msgid "These parameters will be added to this target."
 msgstr "Deze parameters worden toegevoegd aan deze doel."
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
 "Deze sysctl variabelen worden toegevoegd aan /etc/sysctl.conf. Hiermee kunt "
@@ -11957,6 +12248,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Dit is geen geldig IP-adres."
+
+msgid "This month"
+msgstr "Deze maand"
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -12219,6 +12513,9 @@ msgstr "Deze gebruiker bestaat reeds."
 msgid "This virtual device name already exists."
 msgstr "Deze virtuele schijfnaam bestaat reeds."
 
+msgid "This week"
+msgstr "Deze week"
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12374,6 +12671,9 @@ msgstr ""
 msgid "To use subdirectories, you must mount each directory."
 msgstr "Om submappen te gebruiken, moet je elke map aankoppelen."
 
+msgid "Today"
+msgstr "Vandaag"
+
 msgid "Toggle Mode"
 msgstr "Schakel Modus"
 
@@ -12442,6 +12742,9 @@ msgstr "Geselecteerde Rsync Taken Omschakelen"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Geselecteerde Rsync Modules Omschakelen"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr "Omschakelen Geselecteerde Sysctl Instellingen"
 
 msgid "Toggle Selected Targets"
 msgstr "Geselecteerde Doelen Omschakelen"
@@ -12518,14 +12821,6 @@ msgstr ""
 "Totale tijd van laden op de magneetkoppen actuator (tijd niet doorgebracht "
 "in het parkeer gebied)."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "Totaal: %s | %s: %s | %s: %s | Staat: %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Totaal: %s | Gebruikt: %s | Vrij: %s"
-
 msgid "Traceroute"
 msgstr "Traceer route"
 
@@ -12595,9 +12890,6 @@ msgstr "Di"
 
 msgid "Tuesday"
 msgstr "Dinsdag"
-
-msgid "Tuning"
-msgstr "Optimalisatie"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Schakelt de monitor in de stand-by stand na X seconden."
@@ -12695,9 +12987,6 @@ msgstr "UPS piep status"
 
 msgid "UPS coldstarts from battery"
 msgstr "UPS koudstart van batterij"
-
-msgid "UPS disabled"
-msgstr "UPS uitgeschakeld"
 
 msgid "UPS external contact sensors"
 msgstr "UPS externe contact sensoren"
@@ -13050,6 +13339,9 @@ msgstr "Gebruiker Delingen"
 msgid "User Suffix"
 msgstr "Gebruiker Suffix"
 
+msgid "User access"
+msgstr "Gebruikerstoegang"
+
 msgid "User account is marked for deletion"
 msgstr "Gebruikersaccount is gemarkeerd voor verwijdering"
 
@@ -13058,6 +13350,9 @@ msgstr "Gebruikersaccount is beschermd"
 
 msgid "User account is unlocked"
 msgstr "Gebruikersaccount is ontgrendeld"
+
+msgid "User portal permission."
+msgstr "Gebruikersportaal toestemming."
 
 msgid "Username"
 msgstr "Gebruikersnaam"
@@ -13499,6 +13794,9 @@ msgstr "Ja"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Ja - Inschakelen Time Machine ondersteuning voor deze deling."
 
+msgid "Yesterday"
+msgstr "Gisteren"
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13630,6 +13928,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "ZFS ARC Gebruik"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr "ZFS Adaptive Replacement Cache (ARC)"
+
 msgid "ZFS Dataset Information & Status"
 msgstr "ZFS Dataset Informatie & Status"
 
@@ -13641,6 +13942,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "ZFS L2ARC Gebruik"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "ZFS Pool I/U  Statistieken"
@@ -13686,17 +13990,8 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "toegewezen van"
-
 msgid "and"
 msgstr "en"
-
-msgid "available"
-msgstr "beschikbaar"
-
-msgid "available of"
-msgstr "beschikbaar van"
 
 msgid "bash - Bourne Again Shell"
 msgstr "bash - Bourne Again Shell"
@@ -13723,9 +14018,6 @@ msgstr "bijv. %s"
 
 msgid "filechooser"
 msgstr "bestandsselector"
-
-msgid "free of"
-msgstr "vrij van"
 
 msgid "get target info failed."
 msgstr "doel info opvragen is mislukt."
@@ -13879,9 +14171,6 @@ msgstr "geen pools beschikbaar"
 msgid "none"
 msgstr "geen"
 
-msgid "of"
-msgstr "van"
-
 msgid "off"
 msgstr "uit"
 
@@ -13944,9 +14233,6 @@ msgstr "loskoppelen"
 
 msgid "unknown"
 msgstr "onbekend"
-
-msgid "used of"
-msgstr "gebruikt van"
 
 msgid "visible"
 msgstr "zichtbaar"

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-20 03:18+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-09-20 07:45+0000\n"
 "Last-Translator: Anders Malm <anders.malm@brevet.se>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:48+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "X-Poedit-Country: SWEDEN\n"
 "Language: \n"
 "X-Poedit-Language: Swedish\n"
@@ -26,12 +26,24 @@ msgid " was assigned to "
 msgstr " tilldelades "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s används för att skapa %2$s volumer."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr "%1$s hanterat, %2$s använt, %3$s tillgängligt"
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr "%1$s totalt, %2$s allokerat, %3$s ledigt"
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr "%1$s totalt, %2$s använt, %3$stillgängligt"
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr "%2$s använt, %3$s tillgängligt"
 
 #, php-format
 msgid "%d days"
@@ -52,10 +64,6 @@ msgstr "%d år"
 #, php-format
 msgid "%d years"
 msgstr "%d år"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% av %s"
 
 #, php-format
 msgid "%dB / block"
@@ -722,8 +730,8 @@ msgstr "Lägg till regel"
 msgid "Add self-test"
 msgstr "Lägg till självtest"
 
-msgid "Add sysctl variable"
-msgstr "Lägg till sysctl variabel"
+msgid "Add sysctl setting"
+msgstr "lägg till sysctl inställning"
 
 msgid "Add target"
 msgstr "Lägg till mål"
@@ -764,6 +772,9 @@ msgstr "Adress till fjärr hastd demonen. Det måste vara en fast IP-adress."
 
 msgid "Admin Password"
 msgstr "Administratörslösenord"
+
+msgid "Admin access"
+msgstr "Administratörsåtkomst"
 
 msgid "Administration Password"
 msgstr "Administratörslösenord"
@@ -811,9 +822,6 @@ msgid ""
 msgstr ""
 "Efter det att du klickat på \"Spara\" behöver du starta om servern innan "
 "ändringarna aktiveras."
-
-msgid "Age"
-msgstr "Ålder"
 
 msgid "Aggregation Protocol"
 msgstr "Sammanslagningsprotokoll"
@@ -1097,6 +1105,9 @@ msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Eventuella tjänster som använder dessa diskar kan bli felaktiga eller inte "
 "tillgängliga!"
+
+msgid "Append content to the default CSS file"
+msgstr "Lägg till innehållet i standard CSS filen"
 
 msgid "Append user defined shares"
 msgstr "Lägg till användardefinierade delningar"
@@ -1407,8 +1418,8 @@ msgstr "Grundnamnet kommer bifogas automatiskt när det startas utan 'iqn.'."
 msgid "Battery Details"
 msgstr "Batteri detaljer"
 
-msgid "Battery Level"
-msgstr "Batterinivå"
+msgid "Battery Level:"
+msgstr "Batterinivå:"
 
 msgid "Battery Low"
 msgstr "Låg batterinivå"
@@ -1726,6 +1737,9 @@ msgstr "CRC felräknare. Räknar antal CRC fel (läs/skriv data FIS CRC fel)."
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr "CSS Inställningar"
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1900,6 +1914,9 @@ msgstr "Samlar in initial data, var god vänta..."
 msgid "Collisions"
 msgstr "Kollisioner"
 
+msgid "Colorful Meters"
+msgstr "Färgglada mätare"
+
 msgid "Cols"
 msgstr "Kolumner"
 
@@ -1956,6 +1973,9 @@ msgstr "Kommentar"
 
 msgid "Common Internet File System"
 msgstr "Vanligt internet filsystem"
+
+msgid "Communication Error"
+msgstr "Kommunikationsfel"
 
 msgid "Community"
 msgstr "Community"
@@ -2454,6 +2474,12 @@ msgstr "Nuvarande inställningar"
 msgid "Current Version"
 msgstr "Aktuell version"
 
+msgid "Current and previous month"
+msgstr "Denna och föregående månad"
+
+msgid "Current and previous year"
+msgstr "Detta och föregående år"
+
 msgid "Current internal temperature."
 msgstr "Aktuell innertemperatur"
 
@@ -2462,6 +2488,9 @@ msgstr "Aktuellt lösenord"
 
 msgid "Current password is incorrectly entered."
 msgstr "Lösenordet är felaktigt inmatat."
+
+msgid "Current quarter"
+msgstr "Detta kvartal"
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "Aktuell status på diskfunktion baserat på livskurvan."
@@ -2478,6 +2507,9 @@ msgstr "Aktuell skenbar effekt (VA)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Aktuell effekt (W)"
+
+msgid "Current year"
+msgstr "Detta år"
 
 msgid "Custom"
 msgstr "Anpassad"
@@ -2831,6 +2863,9 @@ msgstr "Ta bort valda utdelningar"
 
 msgid "Delete Selected Snapshots"
 msgstr "Ta bort vald ögonblicksbild"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr "Ta bort valtd Sysctl inställning"
 
 msgid "Delete Selected Targets"
 msgstr "Ta bort valda mål"
@@ -3193,6 +3228,9 @@ msgstr "Inaktivera valda Rsync jobb"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Inaktivera valda Rsync moduler"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr "Inaktivera vald Sysctl inställning"
 
 msgid "Disable Selected Targets"
 msgstr "Inaktivera valda mål"
@@ -3601,6 +3639,9 @@ msgstr "Vill du ta bort valda utdelningar?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "Vill du ta bort valda ögonblicksbilder"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr "Vill du ta bort vald Sysctl inställning?"
+
 msgid "Do you want to delete selected targets?"
 msgstr "Vill du ta bort valda mål?"
 
@@ -3691,6 +3732,9 @@ msgstr "Vill du inaktivera valda rsync jobb?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Vill du inaktivera valda rsync moduler?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr "Vill du inaktivera vald Sysctl inställning?"
+
 msgid "Do you want to disable selected targets?"
 msgstr "Vill du inaktivera valda mål?"
 
@@ -3771,6 +3815,9 @@ msgstr "Vill du aktivera valda rsync jobb?"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Vill du aktivera valda rsync moduler?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr "Vill du aktivera vald Sysctl inställning?"
 
 msgid "Do you want to enable selected targets?"
 msgstr "Vill du aktivera valda mål?"
@@ -3861,6 +3908,9 @@ msgstr "Vill du växla valda rsync jobb?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Vill du växla valda rsync moduler?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr "Vill du växla vald Sysctl inställning?"
 
 msgid "Do you want to toggle selected targets?"
 msgstr "Vill du växla valda mål?"
@@ -4155,8 +4205,8 @@ msgstr "Redigera regel"
 msgid "Edit self-test"
 msgstr "Redigera självtest"
 
-msgid "Edit sysctl variable"
-msgstr "Ändra sysctl variabel"
+msgid "Edit sysctl setting"
+msgstr "Åndra sysctl inställning"
 
 msgid "Edit target"
 msgstr "Redigera mål"
@@ -4307,6 +4357,9 @@ msgstr "Aktivera valda Rsync jbb"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Aktivera valda Rsynk moduler"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr "Aktivera vald Sysctl inställning?"
 
 msgid "Enable Selected Targets"
 msgstr "Aktivera valda mål"
@@ -4500,6 +4553,9 @@ msgstr "Aktivera identifieringsprotokoll (RFC1413)."
 msgid "Enable the server power control utility."
 msgstr "Aktivera serverns effektkontrollfunktion."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr "Välj denna option om du vill visa färgglada mätare"
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4545,9 +4601,6 @@ msgstr "Aktivera omkodning."
 
 msgid "Enable traps."
 msgstr "Aktivera fällor."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Aktivera justering av vissa kärnvariabler."
 
 msgid "Enable tuning switch"
 msgstr "Aktivera tunings val"
@@ -4624,9 +4677,6 @@ msgstr "Mata in IP adress förledslängd."
 
 msgid "Enter Identifier"
 msgstr "Mata in identifierare"
-
-msgid "Enter Name"
-msgstr "Ange namn"
 
 msgid "Enter Password"
 msgstr "Ange lösenord"
@@ -5074,6 +5124,9 @@ msgstr ""
 "Fil (standard) - använd en ._AppleDouble fil kompatibel med OS X och "
 "Netatalk."
 
+msgid "File Chooser"
+msgstr "Filväljare"
+
 msgid "File Editor"
 msgstr "Filredigerare"
 
@@ -5082,6 +5135,9 @@ msgstr "Filhanterare"
 
 msgid "File Mask"
 msgstr "Filmask"
+
+msgid "File Mode"
+msgstr "Filrättigheter:"
 
 msgid "File Path"
 msgstr "Filsökväg"
@@ -5256,6 +5312,24 @@ msgstr "Fullständig"
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr "Komplett filnamn för en användar GUI CSS fil."
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr "Komplett filnamn för en användar filvals CSS fil."
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr "Komplett filnamn för en användar filhanterar CSS fil."
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr "Komplett filnamn för en användar inloggnings CSS fil."
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr "Komplett filnamn för en användar navigationsmeny CSS fil."
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr "Komplett filnamn för en användar tabell CSS fil."
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5303,6 +5377,9 @@ msgstr "GPT Partition"
 
 msgid "GSSAPI Authentication"
 msgstr "GSSAPI Autentisering"
+
+msgid "GUI"
+msgstr "GUI"
 
 msgid "Gateway"
 msgstr "Gateway"
@@ -5352,14 +5429,15 @@ msgstr "Globala inställningar"
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr "Global numerisk identitet att använda för en given LUN i CTL."
 
-msgid "Grant access to the user portal."
-msgstr "Tilldela åtkomst till användarportalen."
-
 msgid "Grant shell access to user"
 msgstr "Ge komandoskalaccess till användaren"
 
 msgid "Graph shows last 120 seconds"
 msgstr "Diagrammet visar senaste 120 sekunder"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr "Grafen visar senaste 120 sekunderna."
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5731,6 +5809,9 @@ msgstr "Kintrollerade identiteter"
 
 msgid "Identifier"
 msgstr "Identifierare"
+
+msgid "Identifier:"
+msgstr "Identifierare:"
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6145,9 +6226,6 @@ msgstr "Ogiltigt filformat."
 msgid "Invalid login credentials."
 msgstr "Felaktiga inloggningsuppgifter"
 
-msgid "Invalid username or password."
-msgstr "Ogiltigt användarnamn eller lösenord."
-
 msgid "Invert Selection"
 msgstr "Invertera markering"
 
@@ -6366,6 +6444,9 @@ msgstr "Språk för frontpanel"
 msgid "Large Read/Write"
 msgstr "Stor Läs/skriv"
 
+msgid "Last month"
+msgstr "Förra månaden"
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6377,6 +6458,9 @@ msgid ""
 "Normalized value is set to one on test failure or 11 if the capacitor has "
 "been tested in an excessive temperature condition, otherwise 100."
 msgstr "Senaste testresultat"
+
+msgid "Last week"
+msgstr "Förra veckan"
 
 msgid "Latency"
 msgstr "Accesstid"
@@ -6544,6 +6628,9 @@ msgstr "Ladda drivrutinen vid boot när instruktionsuppsättningen stöds."
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "Överlastgräns för UPS"
+
+msgid "Load:"
+msgstr "Belastning:"
 
 msgid "Loadbalance"
 msgstr "Lastbalans"
@@ -7256,6 +7343,9 @@ msgstr "Namn på variabeln."
 msgid "Native - store characters with their native ASCII value."
 msgstr "Native - spara tecken med deras ursprungliga ASCII värde."
 
+msgid "Navigation Bar"
+msgstr "Navigeringsmeny"
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "Varken användardata eller metadata kommer att mellanlagras i ARC."
 
@@ -7422,6 +7512,9 @@ msgstr "Ingen RAID5 information hittad."
 msgid "No RSYNC Client configured."
 msgstr "Ingen RSYNC klient är konfigurerad."
 
+msgid "No access to the user portal"
+msgstr "Ingen tillgång till användarportalen"
+
 msgid "No additional parameters"
 msgstr "Inga extra parametrar"
 
@@ -7451,9 +7544,6 @@ msgstr "Ingen information om datsetet tillgänglig."
 
 msgid "No devices have been selected"
 msgstr "Ingen enhet har valts"
-
-msgid "No disk configured"
-msgstr "Ingen disk konfigurerad"
 
 msgid "No disks available."
 msgstr "Inga diskar tillgängliga."
@@ -7714,6 +7804,21 @@ msgstr "Avlastningsdrivrutin"
 
 msgid "Old Passphrase"
 msgstr "Gamla lösenordet"
+
+msgid "Older than last month"
+msgstr "Äldre än förra månaden"
+
+msgid "Older than last week"
+msgstr "Äldre än förra veckan"
+
+msgid "Older than previous quarter"
+msgstr "Äldre än förra kvartalet"
+
+msgid "Older than previous year"
+msgstr "Äldre än förra året"
+
+msgid "Older than yesterday"
+msgstr "Äldre än igår"
 
 msgid "On"
 msgstr "På"
@@ -8145,6 +8250,11 @@ msgstr "Kolla i logfilerna"
 msgid "Please read the documentation"
 msgstr "Vänligen läs dokumentationen"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+"Vänligen uppdatera din internetbrowser eller använd Internet Explorer 10 "
+"eller högre."
+
 msgid "Polling Time"
 msgstr "Intervall"
 
@@ -8162,6 +8272,9 @@ msgstr "Pool information"
 
 msgid "Pool Information & Status"
 msgstr "Pool Information & Status"
+
+msgid "Pool Space Usage"
+msgstr "Användning av poolutrymme"
 
 msgid "Pool State"
 msgstr "Poolläge"
@@ -8354,6 +8467,12 @@ msgstr "Bevara modifieringstidsstämplar."
 
 msgid "Prevent deep discharge of battery"
 msgstr "Undvik djupurladdning av batteri"
+
+msgid "Previous quarter"
+msgstr "Föregående kvartal"
+
+msgid "Previous year"
+msgstr "Föregående år"
 
 msgid "Primary"
 msgstr "Primär"
@@ -8573,6 +8692,126 @@ msgstr "RAW information"
 
 msgid "RPM"
 msgstr "RPM"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr "RRDGraphs Daglig ARC graf"
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr "RRDGraphs Daglig CPU frekvensgraf"
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr "RRDGraphs Daglig CPU temperaturgraf"
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr "RRDGraphs Daglig CPU användningsgraf"
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr "RRDGraphs Daglig L2ARC graf"
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr "RRDGraphs Daglig belastningsmedelvärdesgraf"
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr "RRDGraphs Daglig nätverkslatensgraf"
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr "RRDGraphs Daglig processgraf"
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr "RRDGraphs Daglig UPS-graf"
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr "RRDGraphs Daglig uppetidsgraf"
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr "RRDGraphs Månatlig ARC graf"
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr "RRDGraphs Månatlig CPU frekvensgraf"
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr "RRDGraphs Månatlig CPU teperaturgraf"
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr "RRDGraphs Månatlig CPU användningsgraf"
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr "RRDGraphs Månatlig L2ARC graf"
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr "RRDGraphs Månatlig belastningsmedelvärdesgraf"
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr "RRDGraphs Månatlig nätverkslatensgraf"
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr "RRDGraphs Månatlig processgraf"
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr "RRDGraphs Månatlig UPS graf"
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr "RRDGraphs Månatlig upptidsgraf"
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr "RRDGraphs Vecko ARCgraf"
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr "RRDGraphs Vecko CPU frekvensgraf"
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr "RRDGraphs Vecko CPU temperaturgraf"
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr "RRDGraphs Vecko CPU användningsgraf"
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr "RRDGraphs Vecko L2ARC graf"
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr "RRDGraphs Vecko belastningsmedelgraf"
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr "RRDGraphs Vecko nätverkslatensgraf"
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr "RRDGraphs Vecko processgraf"
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr "RRDGraphs Vecko UPS graf"
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr "RRDGraphs Vecko upptidsgraf"
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr "RRDGraphs Årlig ARC graf"
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr "RRDGraphs Årlig CPU frekvensgraf"
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr "RRDGraphs Årlig CPU temperaturgraf"
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr "RRDGraphs Årlig CPU användningsgraf"
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr "RRDGraphs Årlig L2ARC graf"
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr "RRDGraphs Årlig belastningsmedelsgraf"
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr "RRDGraphs Årlig nätverkslatensgraf"
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr "RRDGraphs Årlig processgraf"
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr "RRDGraphs Årlig UPS graf"
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr "RRDGraphs Årlig upptidsgraf"
 
 #, php-format
 msgid ""
@@ -8863,6 +9102,9 @@ msgstr "Byt UPS-batteri"
 
 msgid "Replace a device"
 msgstr "Ersätt en enhet"
+
+msgid "Replace the default CSS file"
+msgstr "Ersätt standard-CSS filen"
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9365,6 +9607,24 @@ msgstr "Välj i vilket steg kommandot skall köras."
 msgid "Select configuration file:"
 msgstr "Välj konfigurationsfil:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr "Välj filegenskap för användar GUI CSS filen."
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr "Välj filegenskap för användar filvals filen."
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr "Välj filegenskap för användar filhanterarfilen."
+
+msgid "Select file mode of the custom login CSS file."
+msgstr "Välj filegenskap för användar inloggnings CSS filen."
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr "Välj filegenskap för användar navigationsmeny CSS filen."
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr "Välj filegenskap för användar tabell CSS filen."
+
 msgid "Select file system format."
 msgstr "Välj filsystemsformat"
 
@@ -9431,6 +9691,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Markerade"
+
+msgid "Selected UPS"
+msgstr "Vald UPS"
 
 msgid "Selected device or label does not exist."
 msgstr "Vald enhet eller etikett existerar inte."
@@ -10198,6 +10461,9 @@ msgstr "Starta"
 msgid "Start TLS from within the session."
 msgstr "Starta TLS inifrån sessionen."
 
+msgid "State: "
+msgstr "Tillstånd: "
+
 msgid "Static"
 msgstr "Statisk"
 
@@ -10215,6 +10481,9 @@ msgstr "Status & Information"
 
 msgid "Status report successfully sent."
 msgstr "Statusrapport skickad med lyckat resultat."
+
+msgid "Status:"
+msgstr "Tillstånd:"
 
 msgid "Step"
 msgstr "Steg"
@@ -10341,14 +10610,17 @@ msgstr "Synkronisera"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
-msgstr "Sysctl variabeln är låst"
+msgid "Sysctl Setting"
+msgstr "Sysctl Inställning"
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "Sysctl variabeln är märkt för borttagning"
+msgid "Sysctl setting is locked"
+msgstr "Sysctl inställningar är låsta"
 
-msgid "Sysctl variable is unlocked"
-msgstr "Sysctl variabeln är olåst"
+msgid "Sysctl setting is marked for deletion"
+msgstr "Sysctl inställningar är markerade för borttagning"
+
+msgid "Sysctl setting is unlocked"
+msgstr "Sysctl inställningar är olåsta"
 
 msgid "Syslog Level"
 msgstr "Syslognivå"
@@ -10466,6 +10738,9 @@ msgstr "TLS Servercertifikatkontroll"
 
 msgid "TLS Trust File"
 msgstr "TLS Betroddfil"
+
+msgid "Tabs"
+msgstr "Tabbar"
 
 msgid "Tag"
 msgstr "Etikett"
@@ -11453,6 +11728,9 @@ msgstr "Den uppladdade filen blev inte fullständigt överförd."
 msgid "The value is invalid."
 msgstr "Värdet är felaktigt."
 
+msgid "The value of the setting."
+msgstr "Värdet för inställningen"
+
 msgid "The value of the variable."
 msgstr "Värdet på variabeln."
 
@@ -11580,10 +11858,10 @@ msgid "These parameters will be added to this target."
 msgstr "Dessa parametrar kommer läggas till i detta mål."
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
-"Dessa sysctl variabler kommer läggas till i /etc/sysctl.conf. Detta ger dig "
+"Dessa sysctl variabler kommer läggas till /etc/sysctl.conf. Detta ger dig "
 "möjlighet att göra ändringar i ett system som körs."
 
 msgid "Thin Provisioning"
@@ -11698,6 +11976,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Detta är inte en giltig IP adress."
+
+msgid "This month"
+msgstr "Denna månad"
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -11951,6 +12232,9 @@ msgstr "Den här användaren finns redan."
 msgid "This virtual device name already exists."
 msgstr "Namnet på den virtuella enheten finns redan."
 
+msgid "This week"
+msgstr "Denna vecka"
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12100,6 +12384,9 @@ msgstr "För att använda Active Directory kommer CIFS/SMB tjänsten aktiveras."
 msgid "To use subdirectories, you must mount each directory."
 msgstr "För att använda underkataloger behöver du montera varje katalog."
 
+msgid "Today"
+msgstr "Idag"
+
 msgid "Toggle Mode"
 msgstr "Växla läge"
 
@@ -12168,6 +12455,9 @@ msgstr "Växla valda Rsync jobb"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Växla valda Rsync moduler"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr "Växla vald Sysctl inställningar"
 
 msgid "Toggle Selected Targets"
 msgstr "Växla valda mål"
@@ -12243,14 +12533,6 @@ msgid ""
 "parking area)."
 msgstr "Total tid när magnethuvudena inte varit i parkeringsarean."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "Total: %s | %s: %s | %s: %s | Status: %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Totalt: %s | Använt: %s | Ledigt: %s"
-
 msgid "Traceroute"
 msgstr "Traceroute"
 
@@ -12320,9 +12602,6 @@ msgstr "tis"
 
 msgid "Tuesday"
 msgstr "tisdag"
-
-msgid "Tuning"
-msgstr "Justering (Tuning)"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Sätter monitorn i väntläge efter N sekunder."
@@ -12419,9 +12698,6 @@ msgstr "Status för UPS-summer"
 
 msgid "UPS coldstarts from battery"
 msgstr "UPS kallstartar från batteri"
-
-msgid "UPS disabled"
-msgstr "UPS-enhet inaktiverad"
 
 msgid "UPS external contact sensors"
 msgstr "UPS externa sensorer"
@@ -12772,6 +13048,9 @@ msgstr "Användarutdelningar"
 msgid "User Suffix"
 msgstr "Användarändelse"
 
+msgid "User access"
+msgstr "Användaråtkomst"
+
 msgid "User account is marked for deletion"
 msgstr "Användarkontot är markerat för borttagning"
 
@@ -12780,6 +13059,9 @@ msgstr "Användarkontot är skyddat"
 
 msgid "User account is unlocked"
 msgstr "Användarkontot är olåst"
+
+msgid "User portal permission."
+msgstr "Användarportalrättigheter"
 
 msgid "Username"
 msgstr "Användarnamn"
@@ -13211,6 +13493,9 @@ msgstr "Ja"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Ja - Aktiverar Time Machine stöd för denna utdelning."
 
+msgid "Yesterday"
+msgstr "Igår"
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13336,6 +13621,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "ZFS ARC Användning"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr "ZFS Adaptive Replacement Cache (ARC)"
+
 msgid "ZFS Dataset Information & Status"
 msgstr "ZFS Dataset Information & Status"
 
@@ -13347,6 +13635,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "ZFS L2ARC användning"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "ZFS Pool I/O Statistik"
@@ -13390,17 +13681,8 @@ msgstr "ZFS volymstorlek. Du kan använda ändelser som K, KB, M, GB."
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "allokerat av"
-
 msgid "and"
 msgstr "och"
-
-msgid "available"
-msgstr "tillgängligt"
-
-msgid "available of"
-msgstr "tillgängligt av"
 
 msgid "bash - Bourne Again Shell"
 msgstr "bash - Bourne Again Shell"
@@ -13427,9 +13709,6 @@ msgstr "t.ex. %s"
 
 msgid "filechooser"
 msgstr "filväljare"
-
-msgid "free of"
-msgstr "ledigt av"
 
 msgid "get target info failed."
 msgstr "hämtning av målinfo misslyckades."
@@ -13584,9 +13863,6 @@ msgstr "inga pooler tillgängliga"
 msgid "none"
 msgstr "ingen"
 
-msgid "of"
-msgstr "av"
-
 msgid "off"
 msgstr "av"
 
@@ -13621,10 +13897,10 @@ msgid "sh - Bourne Shell"
 msgstr "sh - Bourne Shell"
 
 msgid "smallest settable high voltage transfer point"
-msgstr "Minsta inställningen för hög spänning till överförings punkt."
+msgstr "Minsta tillåtna tröskelinställning för hög spänning."
 
 msgid "smallest settable low voltage transfer point"
-msgstr "Minsta inställningen till låg spänning till överförings punkten."
+msgstr "Minsta tillåtna tröskelinställning för låg spänning."
 
 msgid "successfully."
 msgstr "lyckades"
@@ -13649,9 +13925,6 @@ msgstr "umount"
 
 msgid "unknown"
 msgstr "okänd"
-
-msgid "used of"
-msgstr "använt av"
 
 msgid "visible"
 msgstr "synlig"

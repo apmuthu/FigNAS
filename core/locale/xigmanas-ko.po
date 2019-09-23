@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
 "PO-Revision-Date: 2018-07-06 10:26+0000\n"
 "Last-Translator: zoon01 <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: ko\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -24,12 +24,24 @@ msgid " was assigned to "
 msgstr " 가 할당된 "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
+msgid "%1$s is used to create %2$s volumes."
+msgstr "%1$s 이(가)  %2$s 볼륨을 만드는 데 사용됩니다."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
 msgstr ""
 
 #, php-format
-msgid "%1$s is used to create %2$s volumes."
-msgstr "%1$s 이(가)  %2$s 볼륨을 만드는 데 사용됩니다."
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -50,10 +62,6 @@ msgstr "%d년"
 #, php-format
 msgid "%d years"
 msgstr "%d년"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr ""
 
 #, php-format
 msgid "%dB / block"
@@ -699,7 +707,7 @@ msgstr "규칙 추가"
 msgid "Add self-test"
 msgstr "자체 테스트 추가"
 
-msgid "Add sysctl variable"
+msgid "Add sysctl setting"
 msgstr ""
 
 msgid "Add target"
@@ -740,6 +748,9 @@ msgstr "원격지 hastd데몬 주소. 이 값은 고정 IP 주소여야 합니�
 
 msgid "Admin Password"
 msgstr "관리자 암호"
+
+msgid "Admin access"
+msgstr ""
 
 msgid "Administration Password"
 msgstr "관리 목적 암호"
@@ -783,9 +794,6 @@ msgid ""
 "After you click \"Save\" you must reboot the server to make the changes take "
 "effect."
 msgstr "\"저장\"을 누른 후 재시동해야만 변경 사항이 적용됩니다."
-
-msgid "Age"
-msgstr "기간"
 
 msgid "Aggregation Protocol"
 msgstr "집계 프로토콜"
@@ -1042,6 +1050,9 @@ msgstr "모두"
 
 msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr "디스크를 이용중인 모든 서비스는 무효화 되거나 접근이 불가능해 집니다."
+
+msgid "Append content to the default CSS file"
+msgstr ""
 
 msgid "Append user defined shares"
 msgstr "사용자 정의 공유 추가"
@@ -1336,8 +1347,8 @@ msgstr "'iqn.'이 없이 시작할 때 기본 이름이 자동으로 추가될 �
 msgid "Battery Details"
 msgstr "베터리 상세"
 
-msgid "Battery Level"
-msgstr "배터리 잔량"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "배터리 부족"
@@ -1647,6 +1658,9 @@ msgstr "CRC 오류 개수. CRC 오류의 개수(자료 읽기/쓰기 FIS CRC 오
 msgid "CRC32C"
 msgstr ""
 
+msgid "CSS Settings"
+msgstr ""
+
 msgid "CTL LUN"
 msgstr ""
 
@@ -1815,6 +1829,9 @@ msgstr "초기 데이터 수집 중이므로 잠시 기다려 주십시오..."
 msgid "Collisions"
 msgstr "충돌"
 
+msgid "Colorful Meters"
+msgstr ""
+
 msgid "Cols"
 msgstr "열"
 
@@ -1869,6 +1886,9 @@ msgstr "설명"
 
 msgid "Common Internet File System"
 msgstr "공용 인터넷 파일 시스텡"
+
+msgid "Communication Error"
+msgstr ""
 
 msgid "Community"
 msgstr "커뮤니티"
@@ -2326,6 +2346,12 @@ msgstr ""
 msgid "Current Version"
 msgstr "현재 버전"
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "현재 내부 온도"
 
@@ -2334,6 +2360,9 @@ msgstr "현재 암호"
 
 msgid "Current password is incorrectly entered."
 msgstr "현재 암호를 잘못 입력하셨습니다."
+
+msgid "Current quarter"
+msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "생존 곡선을 기반으로 한 드라이브 작동의 현재 상태."
@@ -2348,6 +2377,9 @@ msgstr "현재 피상 전류 값(볼트-암페어)"
 
 msgid "Current value of real power (Watts)"
 msgstr "현재 실 전류 값(와트)"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "사용자 정의"
@@ -2692,6 +2724,9 @@ msgstr "선택된 공유 삭제"
 
 msgid "Delete Selected Snapshots"
 msgstr "선택된 스냅샷 삭제"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr ""
@@ -3048,6 +3083,9 @@ msgstr "선택된 rsync 작업들 사용 안 함"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "선택된 rsync 모듈들 사용 안 함"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Disable Selected Targets"
 msgstr ""
@@ -3438,6 +3476,9 @@ msgstr "선택된 공유를 삭제하시겠습니까?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "선택된 스냅샷들을 삭제하시겠습니까?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to delete selected targets?"
 msgstr ""
 
@@ -3528,6 +3569,9 @@ msgstr "선택된 rsync 작업들을 사용하지 않으시겠습니까?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "선택된 rsync 모듈들을 사용하지 않으시겠습니까?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr ""
 
@@ -3608,6 +3652,9 @@ msgstr "선택된 rsync 작업들을 사용하시겠습니까?"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "선택된 rsync 모듈들을 사용하시겠습니까?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to enable selected targets?"
 msgstr ""
@@ -3698,6 +3745,9 @@ msgstr "선택된 rsync 작업들을 전환하시겠습니까?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "선택된 rsync 모듈들을 전환하시겠습니까?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to toggle selected targets?"
 msgstr ""
@@ -3991,7 +4041,7 @@ msgstr "규칙 편집"
 msgid "Edit self-test"
 msgstr "자체 테스트 편집"
 
-msgid "Edit sysctl variable"
+msgid "Edit sysctl setting"
 msgstr ""
 
 msgid "Edit target"
@@ -4141,6 +4191,9 @@ msgstr "선택된 rsync 작업들 사용 함"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "선택된 rsync 모듈들 사용 함"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Enable Selected Targets"
 msgstr ""
@@ -4327,6 +4380,9 @@ msgstr "ident 프로토콜(RFC1413) 활성화."
 msgid "Enable the server power control utility."
 msgstr "서버 전원 관리 유틸리티를 사용합니다."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4360,9 +4416,6 @@ msgstr "트랜스코딩 활성화."
 
 msgid "Enable traps."
 msgstr "트랩 활성화."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "일부 커널 변수의 최적화를 사용합니다."
 
 msgid "Enable tuning switch"
 msgstr "최적화 스위치 사용 함"
@@ -4437,9 +4490,6 @@ msgstr ""
 
 msgid "Enter Identifier"
 msgstr "식별자 입력"
-
-msgid "Enter Name"
-msgstr ""
 
 msgid "Enter Password"
 msgstr "암호 입력"
@@ -4860,6 +4910,9 @@ msgid ""
 "File (default) - use a ._ AppleDouble file compatible with OS X and Netatalk."
 msgstr ""
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr "파일 편집기"
 
@@ -4868,6 +4921,9 @@ msgstr "파일 관리자"
 
 msgid "File Mask"
 msgstr "파일 마스크"
+
+msgid "File Mode"
+msgstr ""
 
 msgid "File Path"
 msgstr "파일 경로"
@@ -5037,6 +5093,24 @@ msgstr "전체"
 msgid "Full Name"
 msgstr "전체 이름"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5085,6 +5159,9 @@ msgstr "GPT 분할 영역"
 msgid "GSSAPI Authentication"
 msgstr ""
 
+msgid "GUI"
+msgstr ""
+
 msgid "Gateway"
 msgstr "게이트웨이"
 
@@ -5130,14 +5207,15 @@ msgstr ""
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr ""
 
-msgid "Grant access to the user portal."
-msgstr "사용자 포털에 대해 접근 권한 부여."
-
 msgid "Grant shell access to user"
 msgstr ""
 
 msgid "Graph shows last 120 seconds"
 msgstr "그래프는 지난 1백20초을 보여줍니다"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr ""
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5495,6 +5573,9 @@ msgstr "Ident 조회"
 
 msgid "Identifier"
 msgstr "식별자"
+
+msgid "Identifier:"
+msgstr ""
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -5878,9 +5959,6 @@ msgstr "무효한 파일 포맷."
 msgid "Invalid login credentials."
 msgstr "로그인 정보가 올바르지 않습니다."
 
-msgid "Invalid username or password."
-msgstr "사용자 이름 또는 암호가 올바르지 않습니다."
-
 msgid "Invert Selection"
 msgstr "선택 반전"
 
@@ -6086,6 +6164,9 @@ msgstr "전면 패널 언어"
 msgid "Large Read/Write"
 msgstr "대량 읽기/쓰기"
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6096,6 +6177,9 @@ msgid ""
 "number of tests, not incremented on power cycle, saturates at max value. "
 "Normalized value is set to one on test failure or 11 if the capacitor has "
 "been tested in an excessive temperature condition, otherwise 100."
+msgstr ""
+
+msgid "Last week"
 msgstr ""
 
 msgid "Latency"
@@ -6248,6 +6332,9 @@ msgstr ""
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "UPS 스위치의 과부하 조건이 (\"OVER\")로 되었을 경우 로드"
+
+msgid "Load:"
+msgstr ""
 
 msgid "Loadbalance"
 msgstr "부하분산"
@@ -6948,6 +7035,9 @@ msgstr "변수의 이름."
 msgid "Native - store characters with their native ASCII value."
 msgstr ""
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "사용자 데이터나 메타데이터는 ARC에 캐시되지 않습니다."
 
@@ -7108,6 +7198,9 @@ msgstr ""
 msgid "No RSYNC Client configured."
 msgstr "RSYNC 클라이언트가 구성되지 않았습니다."
 
+msgid "No access to the user portal"
+msgstr ""
+
 msgid "No additional parameters"
 msgstr ""
 
@@ -7137,9 +7230,6 @@ msgstr ""
 
 msgid "No devices have been selected"
 msgstr "장치들이 선택되지 않음"
-
-msgid "No disk configured"
-msgstr "디스크가 구성되지 않았습니다"
 
 msgid "No disks available."
 msgstr "사용 가능한 디스크가 없습니다."
@@ -7397,6 +7487,21 @@ msgstr ""
 
 msgid "Old Passphrase"
 msgstr "이전 암호문"
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
+msgstr ""
 
 msgid "On"
 msgstr "켬"
@@ -7817,6 +7922,9 @@ msgstr "로그 파일을 확인해 주십시오"
 msgid "Please read the documentation"
 msgstr ""
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr "폴링 시간"
 
@@ -7834,6 +7942,9 @@ msgstr ""
 
 msgid "Pool Information & Status"
 msgstr "풀 정보 및 상태"
+
+msgid "Pool Space Usage"
+msgstr ""
 
 msgid "Pool State"
 msgstr "풀 상태"
@@ -8017,6 +8128,12 @@ msgstr "변경 시간 보존."
 
 msgid "Prevent deep discharge of battery"
 msgstr "배터리의 심한 방전 방지"
+
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
+msgstr ""
 
 msgid "Primary"
 msgstr "주"
@@ -8231,6 +8348,126 @@ msgid "RAW info"
 msgstr "RAW 정보"
 
 msgid "RPM"
+msgstr ""
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
 msgstr ""
 
 #, php-format
@@ -8506,6 +8743,9 @@ msgstr "UPS 베터리 교체"
 
 msgid "Replace a device"
 msgstr "장치 교체"
+
+msgid "Replace the default CSS file"
+msgstr ""
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -8992,6 +9232,24 @@ msgstr ""
 msgid "Select configuration file:"
 msgstr "설정 파일 선택:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr "파일 시스템 형식을 선택하십시오."
 
@@ -9052,6 +9310,9 @@ msgstr "주어진 암호화 알고리듬에서 사용할 키 길이를 선택하
 
 msgid "Selected"
 msgstr "선택됨"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr "선택된 장치나 라벨이 존재하지 않습니다."
@@ -9737,6 +9998,9 @@ msgstr "시작"
 msgid "Start TLS from within the session."
 msgstr ""
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr "스태틱"
 
@@ -9754,6 +10018,9 @@ msgstr "상태와 정보"
 
 msgid "Status report successfully sent."
 msgstr "상태 보고서가 성공적으로 전송되었습니다."
+
+msgid "Status:"
+msgstr ""
 
 msgid "Step"
 msgstr "단계"
@@ -9876,13 +10143,16 @@ msgstr "동기화"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
+msgid "Sysctl Setting"
 msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
+msgid "Sysctl setting is locked"
 msgstr ""
 
-msgid "Sysctl variable is unlocked"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
 msgstr ""
 
 msgid "Syslog Level"
@@ -10000,6 +10270,9 @@ msgstr "TLS 서버 인증서 확인"
 
 msgid "TLS Trust File"
 msgstr "TLS 신뢰 파일"
+
+msgid "Tabs"
+msgstr ""
 
 msgid "Tag"
 msgstr "태그"
@@ -10879,6 +11152,9 @@ msgstr "업로드 된 파일은 일부만 업로드 되었습니다."
 msgid "The value is invalid."
 msgstr "값이 올바르지 않음."
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr "변수의 값."
 
@@ -10994,7 +11270,7 @@ msgid "These parameters will be added to this target."
 msgstr ""
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
 
@@ -11095,6 +11371,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "올바른 IP 주소가 아닙니다."
+
+msgid "This month"
+msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr "이 이름은 시스템의 UPS를 유일하게 식별하는 이름입니다."
@@ -11301,6 +11580,9 @@ msgstr "이 사용자는 이미 존재합니다."
 msgid "This virtual device name already exists."
 msgstr "이 가상 장치 명은 이미 존재합니다."
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -11436,6 +11718,9 @@ msgstr "Active Directory를 사용하기 위해 CIFS/SMB 서비스도 활성화 
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 
+msgid "Today"
+msgstr ""
+
 msgid "Toggle Mode"
 msgstr "모드 전환"
 
@@ -11505,6 +11790,9 @@ msgstr "선택된 rsync 작업 전환"
 msgid "Toggle Selected Rsync Modules"
 msgstr "선택된 rsync 모듈들 전환"
 
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
+
 msgid "Toggle Selected Targets"
 msgstr ""
 
@@ -11566,14 +11854,6 @@ msgid ""
 "Total time of loading on the magnetic heads actuator (time not spent in "
 "parking area)."
 msgstr ""
-
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr ""
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "전체: %s | 사용: %s | 여유: %s"
 
 msgid "Traceroute"
 msgstr "traceroute"
@@ -11642,9 +11922,6 @@ msgstr "화요일"
 
 msgid "Tuesday"
 msgstr "화요일"
-
-msgid "Tuning"
-msgstr "미세 조정"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "N 초 후에 모니터를 대기 상태로 합니다."
@@ -11738,9 +12015,6 @@ msgstr "UPS 신호기 상태"
 
 msgid "UPS coldstarts from battery"
 msgstr "베터리 상태에서 UPS 완전 시동"
-
-msgid "UPS disabled"
-msgstr "UPS 비활성화됨"
 
 msgid "UPS external contact sensors"
 msgstr "외부 UPS 접촉 센서"
@@ -12067,6 +12341,9 @@ msgstr "사용자 공유"
 msgid "User Suffix"
 msgstr "사용자 접미사"
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr "사용자 계정 삭제 표시됨"
 
@@ -12075,6 +12352,9 @@ msgstr "사용자 계정 보호됨"
 
 msgid "User account is unlocked"
 msgstr "사용자 계정 잠금 해제됨"
+
+msgid "User portal permission."
+msgstr ""
 
 msgid "Username"
 msgstr "사용자 이름"
@@ -12490,6 +12770,9 @@ msgstr "예"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr ""
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -12598,6 +12881,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "ZFS ARC 사용량"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr "ZFS 데이터셋 정보 및 상태"
 
@@ -12608,6 +12894,9 @@ msgid "ZFS L2ARC"
 msgstr ""
 
 msgid "ZFS L2ARC Usage"
+msgstr ""
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
@@ -12650,17 +12939,8 @@ msgstr "ZFS 볼륨 크기. K, KB, M, GB와 같은 사람이 읽을 수 있는 �
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr ""
-
 msgid "and"
 msgstr "그리고"
-
-msgid "available"
-msgstr "사용 가능"
-
-msgid "available of"
-msgstr ""
 
 msgid "bash - Bourne Again Shell"
 msgstr ""
@@ -12685,9 +12965,6 @@ msgstr "예. %s"
 
 msgid "filechooser"
 msgstr "파일 선택기"
-
-msgid "free of"
-msgstr ""
 
 msgid "get target info failed."
 msgstr "타겟 정보 얻기가 실패했습니다."
@@ -12831,9 +13108,6 @@ msgstr ""
 msgid "none"
 msgstr "없음"
 
-msgid "of"
-msgstr "의"
-
 msgid "off"
 msgstr "끄기"
 
@@ -12895,9 +13169,6 @@ msgid "umount"
 msgstr "탑재 해제"
 
 msgid "unknown"
-msgstr ""
-
-msgid "used of"
 msgstr ""
 
 msgid "visible"

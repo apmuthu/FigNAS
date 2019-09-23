@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
 "PO-Revision-Date: 2018-07-06 09:53+0000\n"
 "Last-Translator: Stefan Vasilev <sadefa@abv.bg>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:56+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "X-Poedit-Country: BULGARIA\n"
 "Language: \n"
 "X-Poedit-Language: Bulgarian\n"
@@ -26,12 +26,24 @@ msgid " was assigned to "
 msgstr " беше зададен на "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s е използвано за създаването на %2$s дялове."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -52,10 +64,6 @@ msgstr "%d година"
 #, php-format
 msgid "%d years"
 msgstr "%d години"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% of %s"
 
 #, php-format
 msgid "%dB / block"
@@ -701,7 +709,7 @@ msgstr "Добави правило"
 msgid "Add self-test"
 msgstr "Добави само-тест"
 
-msgid "Add sysctl variable"
+msgid "Add sysctl setting"
 msgstr ""
 
 msgid "Add target"
@@ -741,6 +749,9 @@ msgid "Address of the remote hastd daemon. It must be a static IP address."
 msgstr "Адрес на отдалечения hastd демон. Трябва да бъде статичен IP адрес."
 
 msgid "Admin Password"
+msgstr ""
+
+msgid "Admin access"
 msgstr ""
 
 msgid "Administration Password"
@@ -790,9 +801,6 @@ msgid ""
 msgstr ""
 "След натискане на \"Save\" трябва да рестартирате сървъра, за да влязат в "
 "сила промените."
-
-msgid "Age"
-msgstr "Възраст"
 
 msgid "Aggregation Protocol"
 msgstr ""
@@ -1064,6 +1072,9 @@ msgid "Any"
 msgstr "Всеки"
 
 msgid "Any service using these disks might become invalid or inaccessible!"
+msgstr ""
+
+msgid "Append content to the default CSS file"
 msgstr ""
 
 msgid "Append user defined shares"
@@ -1365,8 +1376,8 @@ msgstr "Автоматично ще бъде добавено Основно И�
 msgid "Battery Details"
 msgstr "Подробности за  батерията"
 
-msgid "Battery Level"
-msgstr "Ниво на батерията"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "Ниско ниво на батерията"
@@ -1686,6 +1697,9 @@ msgstr ""
 msgid "CRC32C"
 msgstr ""
 
+msgid "CSS Settings"
+msgstr ""
+
 msgid "CTL LUN"
 msgstr ""
 
@@ -1859,6 +1873,9 @@ msgstr "Събиране на първоначална информация, м�
 msgid "Collisions"
 msgstr "Сблъсаци"
 
+msgid "Colorful Meters"
+msgstr ""
+
 msgid "Cols"
 msgstr "Колони"
 
@@ -1913,6 +1930,9 @@ msgstr "Коментар"
 
 msgid "Common Internet File System"
 msgstr "Обща Интернет Файлова Система"
+
+msgid "Communication Error"
+msgstr ""
 
 msgid "Community"
 msgstr "Общност"
@@ -2389,6 +2409,12 @@ msgstr ""
 msgid "Current Version"
 msgstr ""
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "Текуща вътрешна температура."
 
@@ -2396,6 +2422,9 @@ msgid "Current password"
 msgstr "Настояща парола"
 
 msgid "Current password is incorrectly entered."
+msgstr ""
+
+msgid "Current quarter"
 msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
@@ -2411,6 +2440,9 @@ msgstr "Настояща стойност на пълната мощност (Vo
 
 msgid "Current value of real power (Watts)"
 msgstr "Текуща стойност на истинската мощност(Ватове)"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "Потребителски"
@@ -2750,6 +2782,9 @@ msgstr ""
 
 msgid "Delete Selected Snapshots"
 msgstr "Изтрий Избраните Snapshots"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr ""
@@ -3100,6 +3135,9 @@ msgid "Disable Selected Rsync Jobs"
 msgstr ""
 
 msgid "Disable Selected Rsync Modules"
+msgstr ""
+
+msgid "Disable Selected Sysctl Settings"
 msgstr ""
 
 msgid "Disable Selected Targets"
@@ -3494,6 +3532,9 @@ msgstr ""
 msgid "Do you want to delete selected snapshots?"
 msgstr ""
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to delete selected targets?"
 msgstr ""
 
@@ -3584,6 +3625,9 @@ msgstr ""
 msgid "Do you want to disable selected rsync modules?"
 msgstr ""
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr ""
 
@@ -3663,6 +3707,9 @@ msgid "Do you want to enable selected rsync jobs?"
 msgstr ""
 
 msgid "Do you want to enable selected rsync modules?"
+msgstr ""
+
+msgid "Do you want to enable selected sysctl settings?"
 msgstr ""
 
 msgid "Do you want to enable selected targets?"
@@ -3753,6 +3800,9 @@ msgid "Do you want to toggle selected rsync jobs?"
 msgstr ""
 
 msgid "Do you want to toggle selected rsync modules?"
+msgstr ""
+
+msgid "Do you want to toggle selected sysctl settings?"
 msgstr ""
 
 msgid "Do you want to toggle selected targets?"
@@ -4047,7 +4097,7 @@ msgstr "Редактирай правило"
 msgid "Edit self-test"
 msgstr ""
 
-msgid "Edit sysctl variable"
+msgid "Edit sysctl setting"
 msgstr ""
 
 msgid "Edit target"
@@ -4194,6 +4244,9 @@ msgid "Enable Selected Rsync Jobs"
 msgstr ""
 
 msgid "Enable Selected Rsync Modules"
+msgstr ""
+
+msgid "Enable Selected Sysctl Settings"
 msgstr ""
 
 msgid "Enable Selected Targets"
@@ -4380,6 +4433,9 @@ msgstr ""
 msgid "Enable the server power control utility."
 msgstr ""
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4412,9 +4468,6 @@ msgid "Enable transcoding."
 msgstr ""
 
 msgid "Enable traps."
-msgstr ""
-
-msgid "Enable tuning of some kernel variables."
 msgstr ""
 
 msgid "Enable tuning switch"
@@ -4489,9 +4542,6 @@ msgid "Enter IP address prefix length."
 msgstr ""
 
 msgid "Enter Identifier"
-msgstr ""
-
-msgid "Enter Name"
 msgstr ""
 
 msgid "Enter Password"
@@ -4913,6 +4963,9 @@ msgid ""
 "File (default) - use a ._ AppleDouble file compatible with OS X and Netatalk."
 msgstr ""
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr ""
 
@@ -4920,6 +4973,9 @@ msgid "File Manager"
 msgstr ""
 
 msgid "File Mask"
+msgstr ""
+
+msgid "File Mode"
 msgstr ""
 
 msgid "File Path"
@@ -5090,6 +5146,24 @@ msgstr ""
 msgid "Full Name"
 msgstr "Пълно име"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr ""
 
@@ -5138,6 +5212,9 @@ msgstr ""
 msgid "GSSAPI Authentication"
 msgstr ""
 
+msgid "GUI"
+msgstr ""
+
 msgid "Gateway"
 msgstr "Шлюз"
 
@@ -5183,13 +5260,14 @@ msgstr ""
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr ""
 
-msgid "Grant access to the user portal."
-msgstr ""
-
 msgid "Grant shell access to user"
 msgstr ""
 
 msgid "Graph shows last 120 seconds"
+msgstr ""
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
 msgstr ""
 
 #, php-format
@@ -5541,6 +5619,9 @@ msgid "IdentLookups"
 msgstr ""
 
 msgid "Identifier"
+msgstr ""
+
+msgid "Identifier:"
 msgstr ""
 
 msgid ""
@@ -5912,9 +5993,6 @@ msgstr ""
 msgid "Invalid login credentials."
 msgstr ""
 
-msgid "Invalid username or password."
-msgstr ""
-
 msgid "Invert Selection"
 msgstr ""
 
@@ -6120,6 +6198,9 @@ msgstr ""
 msgid "Large Read/Write"
 msgstr ""
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6130,6 +6211,9 @@ msgid ""
 "number of tests, not incremented on power cycle, saturates at max value. "
 "Normalized value is set to one on test failure or 11 if the capacitor has "
 "been tested in an excessive temperature condition, otherwise 100."
+msgstr ""
+
+msgid "Last week"
 msgstr ""
 
 msgid "Latency"
@@ -6275,6 +6359,9 @@ msgid "Load driver during boot when the instruction set is supported."
 msgstr ""
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
+msgstr ""
+
+msgid "Load:"
 msgstr ""
 
 msgid "Loadbalance"
@@ -6975,6 +7062,9 @@ msgstr ""
 msgid "Native - store characters with their native ASCII value."
 msgstr ""
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr ""
 
@@ -7134,6 +7224,9 @@ msgstr ""
 msgid "No RSYNC Client configured."
 msgstr ""
 
+msgid "No access to the user portal"
+msgstr ""
+
 msgid "No additional parameters"
 msgstr ""
 
@@ -7163,9 +7256,6 @@ msgstr ""
 
 msgid "No devices have been selected"
 msgstr ""
-
-msgid "No disk configured"
-msgstr "Няма конфигуриран диск"
 
 msgid "No disks available."
 msgstr ""
@@ -7417,6 +7507,21 @@ msgid "Offload Driver"
 msgstr ""
 
 msgid "Old Passphrase"
+msgstr ""
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
 msgstr ""
 
 msgid "On"
@@ -7834,6 +7939,9 @@ msgstr ""
 msgid "Please read the documentation"
 msgstr ""
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr ""
 
@@ -7850,6 +7958,9 @@ msgid "Pool Information"
 msgstr ""
 
 msgid "Pool Information & Status"
+msgstr ""
+
+msgid "Pool Space Usage"
 msgstr ""
 
 msgid "Pool State"
@@ -8033,6 +8144,12 @@ msgid "Preserve modification times."
 msgstr ""
 
 msgid "Prevent deep discharge of battery"
+msgstr ""
+
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
 msgstr ""
 
 msgid "Primary"
@@ -8248,6 +8365,126 @@ msgid "RAW info"
 msgstr ""
 
 msgid "RPM"
+msgstr ""
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
 msgstr ""
 
 #, php-format
@@ -8522,6 +8759,9 @@ msgid "Replace Battery UPS"
 msgstr ""
 
 msgid "Replace a device"
+msgstr ""
+
+msgid "Replace the default CSS file"
 msgstr ""
 
 msgid ""
@@ -9004,6 +9244,24 @@ msgstr ""
 msgid "Select configuration file:"
 msgstr ""
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr ""
 
@@ -9063,6 +9321,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Маркирани"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr ""
@@ -9737,6 +9998,9 @@ msgstr ""
 msgid "Start TLS from within the session."
 msgstr ""
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr ""
 
@@ -9753,6 +10017,9 @@ msgid "Status & Information"
 msgstr ""
 
 msgid "Status report successfully sent."
+msgstr ""
+
+msgid "Status:"
 msgstr ""
 
 msgid "Step"
@@ -9876,13 +10143,16 @@ msgstr ""
 msgid "Syncthing"
 msgstr ""
 
-msgid "Sysctl variable is locked"
+msgid "Sysctl Setting"
 msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
+msgid "Sysctl setting is locked"
 msgstr ""
 
-msgid "Sysctl variable is unlocked"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
 msgstr ""
 
 msgid "Syslog Level"
@@ -9997,6 +10267,9 @@ msgid "TLS Server Certificate Check"
 msgstr ""
 
 msgid "TLS Trust File"
+msgstr ""
+
+msgid "Tabs"
 msgstr ""
 
 msgid "Tag"
@@ -10863,6 +11136,9 @@ msgstr ""
 msgid "The value is invalid."
 msgstr ""
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr ""
 
@@ -10976,7 +11252,7 @@ msgid "These parameters will be added to this target."
 msgstr ""
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
 
@@ -11070,6 +11346,9 @@ msgid ""
 msgstr ""
 
 msgid "This is not a valid IP Address."
+msgstr ""
+
+msgid "This month"
 msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
@@ -11256,6 +11535,9 @@ msgstr ""
 msgid "This virtual device name already exists."
 msgstr ""
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -11391,6 +11673,9 @@ msgstr ""
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 
+msgid "Today"
+msgstr ""
+
 msgid "Toggle Mode"
 msgstr ""
 
@@ -11460,6 +11745,9 @@ msgstr ""
 msgid "Toggle Selected Rsync Modules"
 msgstr ""
 
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
+
 msgid "Toggle Selected Targets"
 msgstr ""
 
@@ -11520,14 +11808,6 @@ msgstr ""
 msgid ""
 "Total time of loading on the magnetic heads actuator (time not spent in "
 "parking area)."
-msgstr ""
-
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr ""
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
 msgstr ""
 
 msgid "Traceroute"
@@ -11597,9 +11877,6 @@ msgstr ""
 
 msgid "Tuesday"
 msgstr ""
-
-msgid "Tuning"
-msgstr "Настройки"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr ""
@@ -11690,9 +11967,6 @@ msgid "UPS beeper status"
 msgstr ""
 
 msgid "UPS coldstarts from battery"
-msgstr ""
-
-msgid "UPS disabled"
 msgstr ""
 
 msgid "UPS external contact sensors"
@@ -12017,6 +12291,9 @@ msgstr ""
 msgid "User Suffix"
 msgstr ""
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr ""
 
@@ -12024,6 +12301,9 @@ msgid "User account is protected"
 msgstr ""
 
 msgid "User account is unlocked"
+msgstr ""
+
+msgid "User portal permission."
 msgstr ""
 
 msgid "Username"
@@ -12437,6 +12717,9 @@ msgstr "Да"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr ""
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -12546,6 +12829,9 @@ msgstr ""
 msgid "ZFS ARC Usage"
 msgstr ""
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr ""
 
@@ -12556,6 +12842,9 @@ msgid "ZFS L2ARC"
 msgstr ""
 
 msgid "ZFS L2ARC Usage"
+msgstr ""
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
@@ -12598,16 +12887,7 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr ""
 
-msgid "allocated of"
-msgstr ""
-
 msgid "and"
-msgstr ""
-
-msgid "available"
-msgstr ""
-
-msgid "available of"
 msgstr ""
 
 msgid "bash - Bourne Again Shell"
@@ -12632,9 +12912,6 @@ msgid "e.g. %s"
 msgstr ""
 
 msgid "filechooser"
-msgstr ""
-
-msgid "free of"
 msgstr ""
 
 msgid "get target info failed."
@@ -12779,9 +13056,6 @@ msgstr ""
 msgid "none"
 msgstr ""
 
-msgid "of"
-msgstr ""
-
 msgid "off"
 msgstr ""
 
@@ -12843,9 +13117,6 @@ msgid "umount"
 msgstr ""
 
 msgid "unknown"
-msgstr ""
-
-msgid "used of"
 msgstr ""
 
 msgid "visible"

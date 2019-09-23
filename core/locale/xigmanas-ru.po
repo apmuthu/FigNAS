@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-21 05:42+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-09-21 18:53+0000\n"
 "Last-Translator: Evgeny Sokolov <sea1.150@gmail.com>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Language: \n"
 "X-Poedit-Language: Russian\n"
@@ -26,12 +26,24 @@ msgid " was assigned to "
 msgstr " был присвоен "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s используется для создания %2$s тома."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr "%1$s всего, %2$s использовано, %3$s доступно"
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr "%1$s всего, %2$s распределено, %3$s своболно"
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr "%1$s всего, %2$s использовано, %3$s доступно"
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr "%2$s использовано, %3$s доступно"
 
 #, php-format
 msgid "%d days"
@@ -52,10 +64,6 @@ msgstr "%d год"
 #, php-format
 msgid "%d years"
 msgstr "%d года(лет)"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% из %s"
 
 #, php-format
 msgid "%dB / block"
@@ -735,8 +743,8 @@ msgstr "Добавить правило"
 msgid "Add self-test"
 msgstr "Добавить самотестирование"
 
-msgid "Add sysctl variable"
-msgstr "Добавить переменную sysctl"
+msgid "Add sysctl setting"
+msgstr "Добавить настройку sysctl"
 
 msgid "Add target"
 msgstr "Добавить цель"
@@ -776,6 +784,9 @@ msgstr "Адрес удалённой службы hastd. Это должен б
 
 msgid "Admin Password"
 msgstr "Пароль администратора"
+
+msgid "Admin access"
+msgstr "Доступ администратора"
 
 msgid "Administration Password"
 msgstr "Пароль администратора"
@@ -826,9 +837,6 @@ msgid ""
 msgstr ""
 "После нажатия кнопки \"Сохранить\", вы должны перезагрузить сервер, чтобы "
 "изменения вступили в силу."
-
-msgid "Age"
-msgstr "Возраст"
 
 msgid "Aggregation Protocol"
 msgstr "Агрегационный протокол"
@@ -1114,6 +1122,9 @@ msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Любая служба, использующая эти диски, может стать недействительной или "
 "недоступной!"
+
+msgid "Append content to the default CSS file"
+msgstr "Добавить содержимое в файл CSS по умолчанию"
 
 msgid "Append user defined shares"
 msgstr "Добавить пользовательские общие ресурсы"
@@ -1431,8 +1442,8 @@ msgstr ""
 msgid "Battery Details"
 msgstr "Информация о батарее"
 
-msgid "Battery Level"
-msgstr "Заряд батареи"
+msgid "Battery Level:"
+msgstr "Уровень заряда батареи:"
 
 msgid "Battery Low"
 msgstr "Низкий заряд батареи"
@@ -1758,6 +1769,9 @@ msgstr ""
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr "Настройки CSS"
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1934,6 +1948,9 @@ msgstr "Сбор исходных данных. Пожалуйста, подож
 msgid "Collisions"
 msgstr "Коллизий"
 
+msgid "Colorful Meters"
+msgstr "Цветные состояния индикатора."
+
 msgid "Cols"
 msgstr "Колонки"
 
@@ -1990,6 +2007,9 @@ msgstr "Комментарий"
 
 msgid "Common Internet File System"
 msgstr "Common Internet File System (CIFS/SMB)"
+
+msgid "Communication Error"
+msgstr "Ошибка соединения"
 
 msgid "Community"
 msgstr "Сообщество"
@@ -2502,6 +2522,12 @@ msgstr "Текущая настройка"
 msgid "Current Version"
 msgstr "Текущая версия"
 
+msgid "Current and previous month"
+msgstr "Текущий и предыдущий месяц"
+
+msgid "Current and previous year"
+msgstr "Текущий и предыдущий год"
+
 msgid "Current internal temperature."
 msgstr "Текущая внутренняя температура."
 
@@ -2510,6 +2536,9 @@ msgstr "Текущий пароль"
 
 msgid "Current password is incorrectly entered."
 msgstr "Текущий пароль введен неверно."
+
+msgid "Current quarter"
+msgstr "Текущий квартал"
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "Текущее состояние работы привода на основе Life Curve."
@@ -2526,6 +2555,9 @@ msgstr "Текущее значение полной мощности (ВА)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Текущее значение действующей можности (Вт)"
+
+msgid "Current year"
+msgstr "Текущий год"
 
 msgid "Custom"
 msgstr "Custom"
@@ -2881,6 +2913,9 @@ msgstr "Удалить выбранные общие ресурсы"
 
 msgid "Delete Selected Snapshots"
 msgstr "Удалить выбранные снимки"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr "Удалить выбранные настройки Sysctl"
 
 msgid "Delete Selected Targets"
 msgstr "Удалить выбранные цели"
@@ -3244,6 +3279,9 @@ msgstr "Отключить выбранные задания RSYNC"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Отключить выбранные модули RSYNC"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr "Отключить выбранные настройки Sysctl"
 
 msgid "Disable Selected Targets"
 msgstr "Отключить выбранные цели"
@@ -3658,6 +3696,9 @@ msgstr "Вы хотите удалить выбранные общие ресу�
 msgid "Do you want to delete selected snapshots?"
 msgstr "Вы хотите удалить выбранные снимки?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr "Вы хотите удалить выбранные настройки sysctl?"
+
 msgid "Do you want to delete selected targets?"
 msgstr "Вы хотите удалить выбранные цели?"
 
@@ -3749,6 +3790,9 @@ msgstr "Вы хотите отключить выбранные задания r
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Вы хотите отключить выбранные модули rsync?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr "Вы хотите отключить выбранные настройки sysctl?"
+
 msgid "Do you want to disable selected targets?"
 msgstr "Вы хотите отключить выбранные цели?"
 
@@ -3829,6 +3873,9 @@ msgstr "Вы хотите включить выбранные задания rsy
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Вы хотите включить выбранные модули rsync?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr "Вы хотите включить выбранные настройки sysctl?"
 
 msgid "Do you want to enable selected targets?"
 msgstr "Вы хотите включить выбранные цели?"
@@ -3919,6 +3966,9 @@ msgstr "Вы хотите переключить выбранные задани
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Вы хотите переключить выбранные модули rsync?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr "Вы хотите переключать выбранные настройки sysctl?"
 
 msgid "Do you want to toggle selected targets?"
 msgstr "Вы хотите переключать выбранные цели?"
@@ -4217,8 +4267,8 @@ msgstr "Редактировать правило"
 msgid "Edit self-test"
 msgstr "Редактировать самотестирование"
 
-msgid "Edit sysctl variable"
-msgstr "Изменить переменную sysctl"
+msgid "Edit sysctl setting"
+msgstr "Изменить настройки sysctl"
 
 msgid "Edit target"
 msgstr "Изменить цель"
@@ -4370,6 +4420,9 @@ msgstr "Включить выбранные задания Rsync"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Включить выбранные модули Rsync"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr "Включить выбранные настройки Sysctl"
 
 msgid "Enable Selected Targets"
 msgstr "Включить выбранные цели"
@@ -4564,6 +4617,10 @@ msgstr "Разрешить протокол идентификации (RFC1413)
 msgid "Enable the server power control utility."
 msgstr "Включение утилиты управления питанием сервера."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+"Включите эту опцию, если вы хотите отображать цветные индикаторы состояния."
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4604,9 +4661,6 @@ msgstr "Включить транскодирование"
 
 msgid "Enable traps."
 msgstr "Разрешить отправку сообщений (traps)"
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Включить настройку некоторых переменных ядра."
 
 msgid "Enable tuning switch"
 msgstr "Включить настройку некоторых переменных ядра."
@@ -4683,9 +4737,6 @@ msgstr "Введите длину префикса IP-адреса."
 
 msgid "Enter Identifier"
 msgstr "Введите идентификатор"
-
-msgid "Enter Name"
-msgstr "Введите название"
 
 msgid "Enter Password"
 msgstr "Введите пароль"
@@ -5138,6 +5189,9 @@ msgstr ""
 "Файл (по умолчанию) - используется файл ._ AppleDouble, совместимый с OS X и "
 "Netatalk."
 
+msgid "File Chooser"
+msgstr "Выбор файла"
+
 msgid "File Editor"
 msgstr "Файловый редактор"
 
@@ -5146,6 +5200,9 @@ msgstr "Файловый менеджер"
 
 msgid "File Mask"
 msgstr "Маска файла"
+
+msgid "File Mode"
+msgstr "Файловый режим"
 
 msgid "File Path"
 msgstr "Путь к файлу"
@@ -5324,6 +5381,24 @@ msgstr "Полный"
 msgid "Full Name"
 msgstr "Полное имя"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr "Полное имя файла пользовательского CSS-файла GUI."
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr "Полное имя пользовательского CSS-файла страницы выбора файлов."
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr "Полное имя пользовательского CSS-файла страницы файлового менеджера."
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr "Полное имя пользовательского CSS-файла страницы логина."
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr "Полное имя пользовательского CSS-файла панели навигации."
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr "Полное имя пользовательского CSS-файла вкладок."
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5371,6 +5446,9 @@ msgstr "Раздел GPT"
 
 msgid "GSSAPI Authentication"
 msgstr "GSSAPI аутентификация"
+
+msgid "GUI"
+msgstr "Графический интерфейс пользователя"
 
 msgid "Gateway"
 msgstr "Шлюз"
@@ -5423,14 +5501,15 @@ msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr ""
 "Глобальный числовой идентификатор для использования данного LUN внутри CTL."
 
-msgid "Grant access to the user portal."
-msgstr "Предоставить доступ к порталу пользователя"
-
 msgid "Grant shell access to user"
 msgstr "Предоставить пользователю доступ к оболочке"
 
 msgid "Graph shows last 120 seconds"
 msgstr "График показывает последние 120 секунд"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr "График показывает последние 120 секунд."
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5805,6 +5884,9 @@ msgstr "Идентификатор для просмотра"
 
 msgid "Identifier"
 msgstr "Идентификатор"
+
+msgid "Identifier:"
+msgstr "Идентификатор:"
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6227,9 +6309,6 @@ msgstr "Неверный формат файла."
 msgid "Invalid login credentials."
 msgstr "Неверные логин или пароль."
 
-msgid "Invalid username or password."
-msgstr "Неправильное имя пользователя или пароль."
-
 msgid "Invert Selection"
 msgstr "Инвертировать выделение"
 
@@ -6447,6 +6526,9 @@ msgstr "Язык, используемый на лицевой панели"
 msgid "Large Read/Write"
 msgstr "Чтение/запись большими блоками"
 
+msgid "Last month"
+msgstr "Прошлый месяц"
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6469,6 +6551,9 @@ msgstr ""
 "режиме питания, изменяется при максимальном значении. Нормированная величина "
 "устанавливается в 1 при провале испытаний или 11 если конденсатор был "
 "испытан в чрезмерном температурном режиме, в противном случае 100."
+
+msgid "Last week"
+msgstr "На прошлой неделе"
 
 msgid "Latency"
 msgstr "Задержка"
@@ -6641,6 +6726,9 @@ msgstr ""
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr ""
 "Уровень нагрузки, при которой ИБП переключается в режим перегрузки (\"OVER\")"
+
+msgid "Load:"
+msgstr "Нагрузка:"
 
 msgid "Loadbalance"
 msgstr "Балансировка нагрузки"
@@ -7366,6 +7454,9 @@ msgstr "Имя переменной."
 msgid "Native - store characters with their native ASCII value."
 msgstr "Native - хранить символы с их собственным значением ASCII."
 
+msgid "Navigation Bar"
+msgstr "Панель навигации"
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "Ни данные пользователя ни метаданные не будут кэшироваться в ARC."
 
@@ -7533,6 +7624,9 @@ msgstr "Информация о RAID5 не найдена."
 msgid "No RSYNC Client configured."
 msgstr "RSYNC Клиент не сконфигурирован."
 
+msgid "No access to the user portal"
+msgstr "Нет доступа к пользовательскому порталу"
+
 msgid "No additional parameters"
 msgstr "Нет дополнительных параметров"
 
@@ -7562,9 +7656,6 @@ msgstr "Информация о наборе данных отсутствует
 
 msgid "No devices have been selected"
 msgstr "Не выбраны устройства"
-
-msgid "No disk configured"
-msgstr "Нет сконфигурированных дисков"
 
 msgid "No disks available."
 msgstr "Нет доступных дисков."
@@ -7829,6 +7920,21 @@ msgstr "Драйвер разгрузки"
 
 msgid "Old Passphrase"
 msgstr "Утстаревшая парольная фраза"
+
+msgid "Older than last month"
+msgstr "Старее прошлого месяца"
+
+msgid "Older than last week"
+msgstr "Старее прошлой недели"
+
+msgid "Older than previous quarter"
+msgstr "Старее предыдущего квартала"
+
+msgid "Older than previous year"
+msgstr "Старее предыдущего года"
+
+msgid "Older than yesterday"
+msgstr "Старее чем вчера"
 
 msgid "On"
 msgstr "Вкл."
@@ -8264,6 +8370,11 @@ msgstr "Пожалуйста, проверьте файлы журналов"
 msgid "Please read the documentation"
 msgstr "Прочтите документацию"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+"Пожалуйста, обновите ваш браузер или используйте Internet Explorer 10 или "
+"выше."
+
 msgid "Polling Time"
 msgstr "Время опроса"
 
@@ -8281,6 +8392,9 @@ msgstr "Информация о пуле"
 
 msgid "Pool Information & Status"
 msgstr "Информация и статус пулов"
+
+msgid "Pool Space Usage"
+msgstr "Использование пространства пула"
 
 msgid "Pool State"
 msgstr "Состояние пула"
@@ -8474,6 +8588,12 @@ msgstr "Сохранять время изменения"
 
 msgid "Prevent deep discharge of battery"
 msgstr "Предотвращать глубокий разряд батареи"
+
+msgid "Previous quarter"
+msgstr "Предыдущий квартал"
+
+msgid "Previous year"
+msgstr "Предыдущий год"
 
 msgid "Primary"
 msgstr "Первичный (Primary)"
@@ -8698,6 +8818,126 @@ msgstr "RAW информация"
 
 msgid "RPM"
 msgstr "RPM"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr "RRDGraphs суточный ARC график"
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr "RRDGraphs График частоты процессора за сутки"
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr "RRDGraphs График температуры процессора за сутки"
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr "RRDGraphs График использования процессора за сутки"
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr "RRDGraphs График L2ARC за сутки"
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr "RRDGraphs График нагрузки за сутки"
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr "RRDGraphs График задержки сети за сутки"
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr "RRDGraphs График процессов за сутки"
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr "RRDGraphs График UPS за сутки"
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr "RRDGraphs График работы за сутки"
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr "RRDGraphs График ARC за месяц"
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr "RRDGraphs График частоты процессора за месяц"
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr "RRDGraphs График температуры процессора за месяц"
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr "RRDGraphs График использования процессора за месяц"
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr "RRDGraphs График L2ARC  за месяц"
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr "RRDGraphs График нагрузки за месяц"
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr "RRDGraphs График задержки сети за месяц"
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr "RRDGraphs График процессов за месяц"
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr "RRDGraphs График UPS за месяц"
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr "RRDGraphs График аптайм за месяц"
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr "RRDGraphs График ARC за неделю"
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr "RRDGraphs График частоты процессора за неделю"
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr "RRDGraphs График температуры процессора за неделю"
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr "RRDGraphs График использования процессора за неделю"
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr "RRDGraphs График L2ARC  за неделю"
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr "RRDGraphs График нагрузки  за неделю"
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr "RRDGraphs График задержки сети за неделю"
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr "RRDGraphs График процессов за неделю"
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr "RRDGraphs График UPS за неделю"
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr "RRDGraphs График аптайм за неделю"
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr "RRDGraphs График ARC за год"
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr "RRDGraphs График частоты процессора за год"
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr "RRDGraphs График температуры процессора за год"
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr "RRDGraphs График использования процессора за год"
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr "RRDGraphs График L2ARC  за год"
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr "RRDGraphs График средней нагрузки  за год"
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr "RRDGraphs График задержки сети  за год"
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr "RRDGraphs График процессов  за год"
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr "RRDGraphs График UPS  за год"
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr "RRDGraphs График аптайм за год"
 
 #, php-format
 msgid ""
@@ -8990,6 +9230,9 @@ msgstr "Замените батарею ИБП (UPS)"
 
 msgid "Replace a device"
 msgstr "Заменить устройство (Replace a device)"
+
+msgid "Replace the default CSS file"
+msgstr "Заменить файл CSS по умолчанию"
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9490,6 +9733,24 @@ msgstr "Выберите, на каком этапе должна выполня
 msgid "Select configuration file:"
 msgstr "Выберите файл конфигурации:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr "Выберите формат файловой системы."
 
@@ -9562,6 +9823,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Выбранные"
+
+msgid "Selected UPS"
+msgstr "Выбранный ИБП"
 
 msgid "Selected device or label does not exist."
 msgstr "Выбранные устройство или метка не существуют."
@@ -10339,6 +10603,9 @@ msgstr "Старт"
 msgid "Start TLS from within the session."
 msgstr "Использовать TLS в сеансе."
 
+msgid "State: "
+msgstr "Состояние: "
+
 msgid "Static"
 msgstr "Static"
 
@@ -10356,6 +10623,9 @@ msgstr "Статус и информация"
 
 msgid "Status report successfully sent."
 msgstr "Отчет отправлен успешно."
+
+msgid "Status:"
+msgstr "Статус:"
 
 msgid "Step"
 msgstr "Шаг"
@@ -10481,14 +10751,17 @@ msgstr "Синхронизация"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
-msgstr "Переменная Sysctl заблокирована"
+msgid "Sysctl Setting"
+msgstr "Настройка Sysctl"
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "Переменная Sysctl помечена для удаления"
+msgid "Sysctl setting is locked"
+msgstr "Настройка Sysctl заблокирована"
 
-msgid "Sysctl variable is unlocked"
-msgstr "Переменная Sysctl разблокирована"
+msgid "Sysctl setting is marked for deletion"
+msgstr "Параметр Sysctl помечен для удаления"
+
+msgid "Sysctl setting is unlocked"
+msgstr "Настройка Sysctl разблокирована"
 
 msgid "Syslog Level"
 msgstr "Уровень syslog"
@@ -10606,6 +10879,9 @@ msgstr "Проверка TLS сертификата сервера"
 
 msgid "TLS Trust File"
 msgstr "Файл доверия TLS"
+
+msgid "Tabs"
+msgstr "Вкладки"
 
 msgid "Tag"
 msgstr "Метка"
@@ -11616,6 +11892,9 @@ msgstr "Загружаемый файл был загружен лишь час�
 msgid "The value is invalid."
 msgstr "Значение недействительно."
 
+msgid "The value of the setting."
+msgstr "Значение настройки."
+
 msgid "The value of the variable."
 msgstr "Значение переменной."
 
@@ -11738,11 +12017,11 @@ msgid "These parameters will be added to this target."
 msgstr "Эти параметры будут добавлены к этой цели."
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
-"Эти переменные sysctl будут добавлены в /etc/sysctl.conf. Это позволяет вам "
-"вносить изменения в запущенную систему."
+"Эти переменные sysctl будут добавлены в /etc/sysctl.conf. Это позволяет "
+"вносить изменения в работающую систему."
 
 msgid "Thin Provisioning"
 msgstr "Тонкое резервирование"
@@ -11857,6 +12136,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Это недействительный IP-адрес."
+
+msgid "This month"
+msgstr "Текущий месяц"
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -12113,6 +12395,9 @@ msgstr "Задано существующее имя пользователя."
 msgid "This virtual device name already exists."
 msgstr "Виртуальное устройство с таким именем уже существует."
 
+msgid "This week"
+msgstr "Эта неделя"
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12268,6 +12553,9 @@ msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 "Чтобы использовать подкаталоги, вы должны смонтировать каждый каталог."
 
+msgid "Today"
+msgstr "Сегодня"
+
 msgid "Toggle Mode"
 msgstr "Режим переключения"
 
@@ -12336,6 +12624,9 @@ msgstr "Переключить выбранные задания Rsync"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Переключить выбранные модули Rsync"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr "Переключить выбранные настройки Sysctl"
 
 msgid "Toggle Selected Targets"
 msgstr "Переключить выбранные цели"
@@ -12411,14 +12702,6 @@ msgstr ""
 "Время, за которое привод выгружает магнитные головки из парковочной области "
 "на рабочую поверхность диска."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "Всего: %s | %s: %s | %s: %s | State: %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Всего: %s | Использовано: %s | Свободно: %s"
-
 msgid "Traceroute"
 msgstr "Команда traceroute"
 
@@ -12489,9 +12772,6 @@ msgstr "вт."
 
 msgid "Tuesday"
 msgstr "вторник"
-
-msgid "Tuning"
-msgstr "Настройка"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Переводить монитор в режим энергопотребления через N секунд."
@@ -12588,9 +12868,6 @@ msgstr "Состояние зумера ИБП"
 
 msgid "UPS coldstarts from battery"
 msgstr "Холодный старт от батареи ИБП (UPS)"
-
-msgid "UPS disabled"
-msgstr "Служба UPS отключена"
 
 msgid "UPS external contact sensors"
 msgstr "Контакт ИБП (UPS) для внешних датчиков"
@@ -12951,6 +13228,9 @@ msgstr "Пользовательские общие ресурсы"
 msgid "User Suffix"
 msgstr "Суффикс пользователя"
 
+msgid "User access"
+msgstr "Доступ пользователя"
+
 msgid "User account is marked for deletion"
 msgstr "Учетная запись пользователя помечена для удаления"
 
@@ -12959,6 +13239,9 @@ msgstr "Учетная запись пользователя защищена"
 
 msgid "User account is unlocked"
 msgstr "Учетная запись пользователя разблокирована"
+
+msgid "User portal permission."
+msgstr "Разрешение пользователя портала."
 
 msgid "Username"
 msgstr "Имя пользователя"
@@ -13398,6 +13681,9 @@ msgstr "Да"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Да - включает поддержку Time Machine для этого ресурса."
 
+msgid "Yesterday"
+msgstr "Вчера"
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13528,6 +13814,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "Использование ZFS ARC"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr "ZFS Adaptive Replacement Cache (ARC)"
+
 msgid "ZFS Dataset Information & Status"
 msgstr "Информация и статус ZFS Dataset'ов"
 
@@ -13539,6 +13828,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "Использование ZFS L2ARC"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "Статистика ввода/вывода ZFS пула"
@@ -13583,17 +13875,8 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "выделено из"
-
 msgid "and"
 msgstr "и"
-
-msgid "available"
-msgstr "доступно"
-
-msgid "available of"
-msgstr "доступно из"
 
 msgid "bash - Bourne Again Shell"
 msgstr "bash - Bourne Again Shell"
@@ -13620,9 +13903,6 @@ msgstr "Доменный суффикс (например  %s)."
 
 msgid "filechooser"
 msgstr "Выбор файла"
-
-msgid "free of"
-msgstr "свободно из"
 
 msgid "get target info failed."
 msgstr "неудачное получение информации о цели."
@@ -13780,9 +14060,6 @@ msgstr "нет доступных пулов"
 msgid "none"
 msgstr "none"
 
-msgid "of"
-msgstr "из"
-
 msgid "off"
 msgstr "выкл."
 
@@ -13847,9 +14124,6 @@ msgstr "размонтировать"
 
 msgid "unknown"
 msgstr "неизвестно"
-
-msgid "used of"
-msgstr "использовано из"
 
 msgid "visible"
 msgstr "показать"

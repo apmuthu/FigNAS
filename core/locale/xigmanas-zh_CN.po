@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-04-01 03:12+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-07-25 08:50+0000\n"
 "Last-Translator: tianmo <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:48+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: zh_CN\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,128,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid " No private key"
-msgstr ""
+msgstr " 没有私钥"
 
 msgid " interfaces:"
 msgstr " 接口："
@@ -25,12 +25,24 @@ msgid " was assigned to "
 msgstr " 被指派为 "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s已被用于创建%2$s卷。"
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -51,10 +63,6 @@ msgstr "%d 年"
 #, php-format
 msgid "%d years"
 msgstr "%d 年"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%%，共%s"
 
 #, php-format
 msgid "%dB / block"
@@ -173,10 +181,10 @@ msgid "*** Imported duplicate ***"
 msgstr "*** 重复导入 ***"
 
 msgid "+upnp:class,+upnp:originalTrackNumber,+dc:title"
-msgstr ""
+msgstr "+upnp:class,+upnp:originalTrackNumber,+dc:title"
 
 msgid "/mnt"
-msgstr ""
+msgstr "/mnt"
 
 msgid "000"
 msgstr "000"
@@ -197,7 +205,7 @@ msgid "1.8\""
 msgstr "1.8\""
 
 msgid "1000"
-msgstr ""
+msgstr "1000"
 
 msgid "10000"
 msgstr "10000"
@@ -209,7 +217,7 @@ msgid "16384"
 msgstr "16384"
 
 msgid "192.168.0.0/24"
-msgstr ""
+msgstr "192.168.0.0/24"
 
 msgid "2"
 msgstr "2"
@@ -227,7 +235,7 @@ msgid "2.5\""
 msgstr "2.5\""
 
 msgid "22"
-msgstr ""
+msgstr "22"
 
 msgid "3"
 msgstr "3"
@@ -239,7 +247,7 @@ msgid "3.5\""
 msgstr "3.5\""
 
 msgid "300"
-msgstr ""
+msgstr "300"
 
 msgid "32 KiB"
 msgstr "32 KiB"
@@ -272,7 +280,7 @@ msgid "802.1Q VLAN tag (between 1 and 4094)."
 msgstr "802.1Q VLAN 标签 （介于1和4094之间）。"
 
 msgid "8200"
-msgstr ""
+msgstr "8200"
 
 msgid ""
 "A NTP time server name may only contain the following characters: a-z, 0-9, "
@@ -549,16 +557,16 @@ msgid "Add Listen Record"
 msgstr "添加侦听记录"
 
 msgid "Add Media Folder"
-msgstr ""
+msgstr "添加媒体文件夹"
 
 msgid "Add Mutual CHAP User"
 msgstr "添加双方CHAP用户"
 
 msgid "Add NFS Export"
-msgstr ""
+msgstr "添加NFS导出"
 
 msgid "Add NFS Root"
-msgstr ""
+msgstr "添加NFS Root"
 
 msgid "Add Option"
 msgstr "添加选项"
@@ -576,7 +584,7 @@ msgid "Add Portal Group"
 msgstr "添加门户组"
 
 msgid "Add Public Key"
-msgstr ""
+msgstr "添加公钥"
 
 msgid "Add RAID"
 msgstr "添加RAID"
@@ -686,8 +694,8 @@ msgstr "添加规则"
 msgid "Add self-test"
 msgstr "添加自检"
 
-msgid "Add sysctl variable"
-msgstr "添加sysctl变量"
+msgid "Add sysctl setting"
+msgstr ""
 
 msgid "Add target"
 msgstr "添加目标"
@@ -696,7 +704,7 @@ msgid "Add the selected device to the existing mirror."
 msgstr "将选中设备添加到已经存在的镜像中。"
 
 msgid "Add user to additional groups."
-msgstr ""
+msgstr "将用户添加到其他组。"
 
 msgid "Additional Information"
 msgstr "附加信息"
@@ -727,6 +735,9 @@ msgstr "远程hastd守护进程的地址。 它必须是静态IP地址。"
 
 msgid "Admin Password"
 msgstr "管理密码"
+
+msgid "Admin access"
+msgstr ""
 
 msgid "Administration Password"
 msgstr "管理员密码"
@@ -770,9 +781,6 @@ msgid ""
 "After you click \"Save\" you must reboot the server to make the changes take "
 "effect."
 msgstr "点击保存后必须重启服务器来让改变生效。"
-
-msgid "Age"
-msgstr "时间"
 
 msgid "Aggregation Protocol"
 msgstr "聚合协议"
@@ -829,7 +837,7 @@ msgid "Allow"
 msgstr "允许"
 
 msgid "Allow GSSAPI authentication."
-msgstr ""
+msgstr "允许GSSAPI身份验证。"
 
 msgid "Allow New Files"
 msgstr "允许新文件"
@@ -838,7 +846,7 @@ msgid "Allow Serial Ports"
 msgstr "允许串行端口"
 
 msgid "Allow TCP forwarding."
-msgstr ""
+msgstr "允许TCP转发。"
 
 msgid "Allow TLS connections only."
 msgstr "只允许TLS连接。"
@@ -850,7 +858,7 @@ msgid "Allow USB Serial Ports"
 msgstr "允许USB串行端口"
 
 msgid "Allow challenge-response authentication."
-msgstr ""
+msgstr "允许质询 - 响应身份验证。"
 
 msgid "Allow client access to accounts that have null passwords."
 msgstr "允许没有设置密码的帐号访问。"
@@ -866,22 +874,22 @@ msgid "Allow consecutive read/writes to be issued in parallel"
 msgstr "允许并行发出连续的读/写操作"
 
 msgid "Allow keyboard-interactive authentication."
-msgstr ""
+msgstr "允许键盘交互式身份验证。"
 
 msgid "Allow new files to be created."
 msgstr "允许创建新文件。"
 
 msgid "Allow password authentication."
-msgstr ""
+msgstr "允许密码验证。"
 
 msgid "Allow public key authentication."
-msgstr ""
+msgstr "允许公钥认证。"
 
 msgid "Allow root to login via ssh."
-msgstr ""
+msgstr "允许root通过ssh登录。"
 
 msgid "Allow symlinks that point outside defined media folders."
-msgstr ""
+msgstr "允许指向外部已定义媒体文件夹的符号链接。"
 
 msgid "Allow to start UPS from battery"
 msgstr "允许 UPS 从电池启动"
@@ -1023,6 +1031,9 @@ msgstr "任何"
 
 msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr "使用这些磁盘的任何服务可能会变得无效或无法访问！"
+
+msgid "Append content to the default CSS file"
+msgstr ""
 
 msgid "Append user defined shares"
 msgstr "追加用户自定义的用户共享"
@@ -1315,8 +1326,8 @@ msgstr "当启动时没有'iqn.' ，会自动添加基本名称。"
 msgid "Battery Details"
 msgstr "电池信息"
 
-msgid "Battery Level"
-msgstr "电池电量"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "电力不足"
@@ -1356,7 +1367,7 @@ msgid "Battery voltage"
 msgstr "电池电压"
 
 msgid "Be Quiet"
-msgstr ""
+msgstr "安静"
 
 msgid "Be careful with turning on these options."
 msgstr "开启这些选项时要小心。"
@@ -1369,7 +1380,7 @@ msgstr "之前 - 文件删除将在传输开始之前执行。"
 
 msgid ""
 "Before a Unison client can start to work, you need to perform the following:"
-msgstr ""
+msgstr "在Unison客户端开始工作之前，你需要执行以下操作："
 
 msgid "Best available"
 msgstr "现有最佳"
@@ -1461,7 +1472,7 @@ msgstr "广播间隔"
 msgid ""
 "Broadcasts its availability every configured seconds on the network, the "
 "default is 300 seconds."
-msgstr ""
+msgstr "在网络上每个配置的秒数广播其可用性，默认值为300秒。"
 
 msgid "Browseable"
 msgstr "可浏览"
@@ -1625,6 +1636,9 @@ msgstr "CRC错误计数。统计CRC错误数量（读写FIS数据CRC错误）。
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr ""
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1689,7 +1703,7 @@ msgid ""
 msgstr "TLS的证书吊销列表（CRL）文件，用于检查吊销的证书。"
 
 msgid "Challenge-Response Authentication"
-msgstr ""
+msgstr "挑战 - 响应认证"
 
 msgid "Change"
 msgstr "更改"
@@ -1791,6 +1805,9 @@ msgstr "收集初始数据，请稍候..."
 msgid "Collisions"
 msgstr "封包冲撞"
 
+msgid "Colorful Meters"
+msgstr ""
+
 msgid "Cols"
 msgstr "栏"
 
@@ -1846,6 +1863,9 @@ msgstr "注释"
 msgid "Common Internet File System"
 msgstr "通用网络文件系统(CIFS)"
 
+msgid "Communication Error"
+msgstr ""
+
 msgid "Community"
 msgstr "社群"
 
@@ -1884,7 +1904,7 @@ msgid ""
 "should be a subsystem name and a command (with optional arguments) to "
 "execute upon subsystem request. Leave this field empty to use the default "
 "settings."
-msgstr ""
+msgstr "配置外部子系统（例如文件传输守护程序）。 参数应该是子系统名称和在子系统请求时执行的命令（带有可选参数）。 将此字段留空以使用默认设置。"
 
 msgid "Configuring"
 msgstr "设置中"
@@ -2199,7 +2219,7 @@ msgid "Create PV Guest"
 msgstr "创建PV客户机"
 
 msgid "Create Work Directory"
-msgstr ""
+msgstr "创建工作目录"
 
 msgid "Create ZFS on a GPT partition."
 msgstr "在GPT分区上创建ZFS。"
@@ -2286,6 +2306,12 @@ msgstr "当前设置"
 msgid "Current Version"
 msgstr "当前版本"
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "当前的内部温度。"
 
@@ -2294,6 +2320,9 @@ msgstr "当前密码"
 
 msgid "Current password is incorrectly entered."
 msgstr "输入的当前密码错误"
+
+msgid "Current quarter"
+msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "基于寿命曲线的驱动器操作的当前状态。"
@@ -2308,6 +2337,9 @@ msgstr "当前的视在功率（伏安）"
 
 msgid "Current value of real power (Watts)"
 msgstr "当前的实际功率（瓦特）"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "自定"
@@ -2331,16 +2363,16 @@ msgid "DAAP"
 msgstr "DAAP"
 
 msgid "DEBUG - log debugging information"
-msgstr ""
+msgstr "DEBUG  - 记录调试信息"
 
 msgid "DEBUG1 - same as DEBUG"
-msgstr ""
+msgstr "DEBUG1  - 与DEBUG相同"
 
 msgid "DEBUG2 - log detailed debugging information"
-msgstr ""
+msgstr "DEBUG2  - 记录详细的调试信息"
 
 msgid "DEBUG3 - log all debugging information"
-msgstr ""
+msgstr "DEBUG3  - 记录所有调试信息"
 
 msgid "DHCP"
 msgstr "DHCP"
@@ -2591,16 +2623,16 @@ msgid "Delete Selected Listen Records"
 msgstr "删除选定的侦听记录"
 
 msgid "Delete Selected Media Folders"
-msgstr ""
+msgstr "删除所选媒体文件夹"
 
 msgid "Delete Selected Mutual CHAP Users"
 msgstr "删除选定的相互CHAP用户"
 
 msgid "Delete Selected NFS Exports"
-msgstr ""
+msgstr "删除选定的NFS导出"
 
 msgid "Delete Selected NFS Root Directories"
-msgstr ""
+msgstr "删除选定的NFS根目录"
 
 msgid "Delete Selected Notifier"
 msgstr "删除选定的通知"
@@ -2621,7 +2653,7 @@ msgid "Delete Selected Portal Groups"
 msgstr "删除选定的门户组"
 
 msgid "Delete Selected Public Keys"
-msgstr ""
+msgstr "删除选定的公钥"
 
 msgid "Delete Selected RAID Volumes"
 msgstr "删除选中的RAID卷"
@@ -2649,6 +2681,9 @@ msgstr "删除选中的共享"
 
 msgid "Delete Selected Snapshots"
 msgstr "删除选中的快照"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr "删除选定的目标"
@@ -2945,7 +2980,7 @@ msgid "Disable Selected Commands"
 msgstr "禁用选中的命令"
 
 msgid "Disable Selected Groups"
-msgstr ""
+msgstr "删除选定的组"
 
 msgid "Disable Selected Initiator Names"
 msgstr "禁用选定的启动器名称"
@@ -2966,16 +3001,16 @@ msgid "Disable Selected Listen Records"
 msgstr "禁用选定的侦听记录"
 
 msgid "Disable Selected Media Folders"
-msgstr ""
+msgstr "禁用所选媒体文件夹"
 
 msgid "Disable Selected Mutual CHAP Users"
 msgstr "禁用所选的相互CHAP用户"
 
 msgid "Disable Selected NFS Exports"
-msgstr ""
+msgstr "禁用选定的NFS导出"
 
 msgid "Disable Selected NFS Root Directories"
-msgstr ""
+msgstr "禁用选定的NFS根目录"
 
 msgid "Disable Selected Option Records"
 msgstr "禁用选定的选项记录"
@@ -2990,7 +3025,7 @@ msgid "Disable Selected Portal Groups"
 msgstr "禁用选定的门户组"
 
 msgid "Disable Selected Public Keys"
-msgstr ""
+msgstr "禁用所选公钥"
 
 msgid "Disable Selected Records"
 msgstr "禁用选中的记录"
@@ -3001,11 +3036,14 @@ msgstr "禁用选中的Rsync任务"
 msgid "Disable Selected Rsync Modules"
 msgstr "禁用选中的Rsync模块"
 
+msgid "Disable Selected Sysctl Settings"
+msgstr ""
+
 msgid "Disable Selected Targets"
 msgstr "禁用选定的目标"
 
 msgid "Disable Selected Users"
-msgstr ""
+msgstr "禁用所选用户"
 
 msgid "Disable Selected WebDAV Records"
 msgstr "禁用所选的WebDAV记录"
@@ -3017,7 +3055,7 @@ msgid "Disable Selected iSNS Servers"
 msgstr "禁用选定的iSNS服务器"
 
 msgid "Disable Subtitles"
-msgstr ""
+msgstr "禁用字幕"
 
 msgid "Disable TCP wrapper (mod_wrap module)."
 msgstr "关闭 TCP Wrapper（mod_wrap 模块）。"
@@ -3038,7 +3076,7 @@ msgid "Disable speaker beep on startup and shutdown."
 msgstr "禁用扬声器启动和关机时发出蜂鸣声。"
 
 msgid "Disable subtitle support on unknown clients."
-msgstr ""
+msgstr "禁用未知客户端上的字幕支持。"
 
 msgid "Disable the compression of repeating lines."
 msgstr "禁用重复行的压缩。"
@@ -3286,10 +3324,10 @@ msgid "Do you want to delete selected Mutual CHAP users?"
 msgstr "你想删除选定的相互CHAP用户？"
 
 msgid "Do you want to delete selected NFS exports?"
-msgstr ""
+msgstr "是否要删除选定的NFS导出？"
 
 msgid "Do you want to delete selected NFS root directories?"
-msgstr ""
+msgstr "是否要删除选定的NFS根目录？"
 
 msgid "Do you want to delete selected RAID volumes?"
 msgstr "您是否要删除选中的RAID卷？"
@@ -3346,7 +3384,7 @@ msgid "Do you want to delete selected listen records?"
 msgstr "你想删除选定的侦听记录吗？"
 
 msgid "Do you want to delete selected media folders?"
-msgstr ""
+msgstr "要删除所选的媒体文件夹吗？"
 
 msgid "Do you want to delete selected notifier?"
 msgstr "你想删除选定的通知？"
@@ -3367,7 +3405,7 @@ msgid "Do you want to delete selected portal groups?"
 msgstr "你想删除选定的门户组？"
 
 msgid "Do you want to delete selected public keys?"
-msgstr ""
+msgstr "要删除所选的公钥吗？"
 
 msgid "Do you want to delete selected records?"
 msgstr "要删除选中的记录吗？"
@@ -3389,6 +3427,9 @@ msgstr "要删除选中的共享吗？"
 
 msgid "Do you want to delete selected snapshots?"
 msgstr "要删除选中的快照吗？"
+
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to delete selected targets?"
 msgstr "你想删除选定的目标？"
@@ -3418,10 +3459,10 @@ msgid "Do you want to disable selected Mutual CHAP users?"
 msgstr "你想禁用选定的相互CHAP用户吗？"
 
 msgid "Do you want to disable selected NFS exports?"
-msgstr ""
+msgstr "是否要禁用所选的NFS导出？"
 
 msgid "Do you want to disable selected NFS root directories?"
-msgstr ""
+msgstr "是否要禁用所选的NFS根目录？"
 
 msgid "Do you want to disable selected WebDAV records?"
 msgstr "是否要禁用所选的WebDAV记录？"
@@ -3433,7 +3474,7 @@ msgid "Do you want to disable selected commands?"
 msgstr "要禁用选中的命令吗？"
 
 msgid "Do you want to disable selected groups?"
-msgstr ""
+msgstr "要禁用所选组吗？"
 
 msgid "Do you want to disable selected iSCSI initiators?"
 msgstr "你想要禁用选中的iSCSI启动器吗？"
@@ -3454,7 +3495,7 @@ msgid "Do you want to disable selected listen records?"
 msgstr "你想禁用选定的侦听记录吗？"
 
 msgid "Do you want to disable selected media folders?"
-msgstr ""
+msgstr "是否要禁用所选的媒体文件夹？"
 
 msgid "Do you want to disable selected option records?"
 msgstr "你想禁用选定的选项记录吗？"
@@ -3469,7 +3510,7 @@ msgid "Do you want to disable selected portal groups?"
 msgstr "你想禁用选定的门户组？"
 
 msgid "Do you want to disable selected public keys?"
-msgstr ""
+msgstr "要禁用所选公钥吗？"
 
 msgid "Do you want to disable selected records?"
 msgstr "要禁用选中的记录吗？"
@@ -3480,11 +3521,14 @@ msgstr "是否要禁用选中的rsync任务？"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "是否要禁用选中的rsync模块？"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr "你想禁用选定的目标？"
 
 msgid "Do you want to disable selected users?"
-msgstr ""
+msgstr "要禁用所选用户吗？"
 
 msgid "Do you want to enable selected CHAP users?"
 msgstr "你想启用选定的CHAP用户吗？"
@@ -3499,10 +3543,10 @@ msgid "Do you want to enable selected Mutual CHAP users?"
 msgstr "你想启用选定的相互CHAP用户吗？"
 
 msgid "Do you want to enable selected NFS exports?"
-msgstr ""
+msgstr "是否要启用选定的NFS导出？"
 
 msgid "Do you want to enable selected NFS root directories?"
-msgstr ""
+msgstr "是否要启用选定的NFS根目录？"
 
 msgid "Do you want to enable selected WebDAV records?"
 msgstr "是否要启用所选的WebDAV记录？"
@@ -3514,7 +3558,7 @@ msgid "Do you want to enable selected commands?"
 msgstr "是否要启用选中的命令？"
 
 msgid "Do you want to enable selected groups?"
-msgstr ""
+msgstr "要启用选定的组吗？"
 
 msgid "Do you want to enable selected iSCSI initiators?"
 msgstr "你想要启用选中的iSCSI启动器吗？"
@@ -3535,7 +3579,7 @@ msgid "Do you want to enable selected listen records?"
 msgstr "你想启用选定的侦听记录吗？"
 
 msgid "Do you want to enable selected media folders?"
-msgstr ""
+msgstr "是否要启用所选的媒体文件夹？"
 
 msgid "Do you want to enable selected option records?"
 msgstr "你想启用选定的选项记录吗？"
@@ -3550,7 +3594,7 @@ msgid "Do you want to enable selected portal groups?"
 msgstr "你想启用选定的门户群组吗？"
 
 msgid "Do you want to enable selected public keys?"
-msgstr ""
+msgstr "要启用所选公钥吗？"
 
 msgid "Do you want to enable selected records?"
 msgstr "要启用选中的记录吗？"
@@ -3561,11 +3605,14 @@ msgstr "是否要启用选中的rsync任务？"
 msgid "Do you want to enable selected rsync modules?"
 msgstr "是否要启用选中的rsync模块？"
 
+msgid "Do you want to enable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to enable selected targets?"
 msgstr "你想启用选定的目标？"
 
 msgid "Do you want to enable selected users?"
-msgstr ""
+msgstr "要启用所选用户吗？"
 
 msgid "Do you want to import disks?"
 msgstr "要导入磁盘吗？"
@@ -3589,10 +3636,10 @@ msgid "Do you want to toggle selected Mutual CHAP users?"
 msgstr "你想切换选定的相互CHAP用户吗？"
 
 msgid "Do you want to toggle selected NFS exports?"
-msgstr ""
+msgstr "是否要切换选定的NFS导出？"
 
 msgid "Do you want to toggle selected NFS root directories?"
-msgstr ""
+msgstr "是否要切换选定的NFS根目录？"
 
 msgid "Do you want to toggle selected WebDAV records?"
 msgstr "是否要切换选定的WebDAV记录？"
@@ -3604,7 +3651,7 @@ msgid "Do you want to toggle selected commands?"
 msgstr "是否要切换选中的命令？"
 
 msgid "Do you want to toggle selected groups?"
-msgstr ""
+msgstr "你想切换选定的群组吗？"
 
 msgid "Do you want to toggle selected iSCSI initiators?"
 msgstr "你想要切换选中的iSCSI启动器吗？"
@@ -3625,7 +3672,7 @@ msgid "Do you want to toggle selected listen records?"
 msgstr "你想切换选定的侦听记录吗？"
 
 msgid "Do you want to toggle selected media folders?"
-msgstr ""
+msgstr "是否要切换选定的媒体文件夹？"
 
 msgid "Do you want to toggle selected option records?"
 msgstr "你想切换选定的选项记录吗？"
@@ -3640,7 +3687,7 @@ msgid "Do you want to toggle selected portal groups?"
 msgstr "你想切换选定的门户组吗？"
 
 msgid "Do you want to toggle selected public keys?"
-msgstr ""
+msgstr "要切换选定的公钥吗？"
 
 msgid "Do you want to toggle selected records?"
 msgstr "要切换选中的记录吗？"
@@ -3651,11 +3698,14 @@ msgstr "要切换选中的rsync任务吗？"
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "要切换选中的rsync模块吗？"
 
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to toggle selected targets?"
 msgstr "你想切换选定的目标吗？"
 
 msgid "Do you want to toggle selected users?"
-msgstr ""
+msgstr "你想切换选定的用户吗？"
 
 msgid "Do you want to unlock selected records?"
 msgstr "要解锁选中的记录吗？"
@@ -3767,7 +3817,7 @@ msgid "EFI/GPT partition can be use with UFS only."
 msgstr "EFI/GPT 只相容于 UFS 文件系统。"
 
 msgid "ERROR - log errors"
-msgstr ""
+msgstr "错误 - 记录错误"
 
 msgid "ERROR:"
 msgstr "错误："
@@ -3824,16 +3874,16 @@ msgid "Edit Listen Record"
 msgstr "编辑侦听记录"
 
 msgid "Edit Media Folder"
-msgstr ""
+msgstr "编辑媒体文件夹"
 
 msgid "Edit Mutual CHAP User"
 msgstr "编辑相互CHAP用户"
 
 msgid "Edit NFS Export"
-msgstr ""
+msgstr "编辑NFS导出"
 
 msgid "Edit NFS Root"
-msgstr ""
+msgstr "编辑NFS Root"
 
 msgid "Edit Option"
 msgstr "编辑选项"
@@ -3851,7 +3901,7 @@ msgid "Edit Portal Group"
 msgstr "编辑门户组"
 
 msgid "Edit Public Key"
-msgstr ""
+msgstr "编辑公钥"
 
 msgid "Edit RAID"
 msgstr "编辑RAID"
@@ -3943,8 +3993,8 @@ msgstr "编辑规则"
 msgid "Edit self-test"
 msgstr "编辑自我检测流程"
 
-msgid "Edit sysctl variable"
-msgstr "编辑sysctl变量"
+msgid "Edit sysctl setting"
+msgstr ""
 
 msgid "Edit target"
 msgstr "编辑目标"
@@ -4016,7 +4066,7 @@ msgid "Enable SMTP authentication."
 msgstr "启用 SMTP 认证。"
 
 msgid "Enable SSH service"
-msgstr ""
+msgstr "启用SSH服务"
 
 msgid ""
 "Enable SSL/TLS for secured connections. You also need to configure the TLS "
@@ -4036,7 +4086,7 @@ msgid "Enable Selected Commands"
 msgstr "启用选中的命令"
 
 msgid "Enable Selected Groups"
-msgstr ""
+msgstr "启用所选组"
 
 msgid "Enable Selected Initiator Names"
 msgstr "启用选定的启动器名称"
@@ -4057,16 +4107,16 @@ msgid "Enable Selected Listen Records"
 msgstr "启用选定的侦听记录"
 
 msgid "Enable Selected Media Folders"
-msgstr ""
+msgstr "启用选定的媒体文件夹"
 
 msgid "Enable Selected Mutual CHAP Users"
 msgstr "启用选定的相互CHAP用户"
 
 msgid "Enable Selected NFS Exports"
-msgstr ""
+msgstr "启用选定的NFS导出"
 
 msgid "Enable Selected NFS Root Directories"
-msgstr ""
+msgstr "启用选定的NFS根目录"
 
 msgid "Enable Selected Option Records"
 msgstr "启用选定的选项记录"
@@ -4081,7 +4131,7 @@ msgid "Enable Selected Portal Groups"
 msgstr "启用选定的门户组"
 
 msgid "Enable Selected Public Keys"
-msgstr ""
+msgstr "启用选定的公钥"
 
 msgid "Enable Selected Records"
 msgstr "启用选中的记录"
@@ -4092,11 +4142,14 @@ msgstr "启用选中的Rsync任务"
 msgid "Enable Selected Rsync Modules"
 msgstr "启用选中的Rsync模块"
 
+msgid "Enable Selected Sysctl Settings"
+msgstr ""
+
 msgid "Enable Selected Targets"
 msgstr "启用选定的目标"
 
 msgid "Enable Selected Users"
-msgstr ""
+msgstr "启用选定的用户"
 
 msgid "Enable Selected WebDAV Records"
 msgstr "启用选定的WebDAV记录"
@@ -4177,7 +4230,7 @@ msgid "Enable collecting uptime statistics."
 msgstr "启用收集正常运行时间统计信息。"
 
 msgid "Enable compression after the user has authenticated successfully."
-msgstr ""
+msgstr "用户成功通过身份验证后启用压缩。"
 
 msgid "Enable console screensaver."
 msgstr "启用控制台屏幕保护。"
@@ -4276,6 +4329,9 @@ msgstr "启用 ident 协议（RFC1413）。"
 msgid "Enable the server power control utility."
 msgstr "启用服务器电源控制工具。"
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4309,9 +4365,6 @@ msgstr "启用转码功能。"
 
 msgid "Enable traps."
 msgstr "启用 traps。"
-
-msgid "Enable tuning of some kernel variables."
-msgstr "启用调整一些内核变量。"
 
 msgid "Enable tuning switch"
 msgstr "启用调谐开关"
@@ -4387,9 +4440,6 @@ msgstr "输入IP地址前缀长度。"
 msgid "Enter Identifier"
 msgstr "输入标识符"
 
-msgid "Enter Name"
-msgstr "输入名称"
-
 msgid "Enter Password"
 msgstr "输入密码"
 
@@ -4414,7 +4464,7 @@ msgid ""
 msgstr "如果要覆盖默认值（HTTP为80，HTTPS为443），请输入WebGUI的自定义端口号。"
 
 msgid "Enter a custom port number if you do not want to use default port 22."
-msgstr ""
+msgstr "如果您不想使用默认端口22，请输入自定义端口号。"
 
 msgid "Enter a custom port number if you do not want to use default port 69."
 msgstr "如果您不想使用默认端口69，请输入自定义端口号。"
@@ -4487,7 +4537,7 @@ msgid "Enter facility name"
 msgstr "输入设备名称"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "输入组名"
 
 msgid "Enter hostname or IP address."
 msgstr "输入主机名或IP地址"
@@ -4496,7 +4546,7 @@ msgid "Enter level name"
 msgstr "输入级别名称"
 
 msgid "Enter login name."
-msgstr ""
+msgstr "输入登录名。"
 
 msgid "Enter mutual user name."
 msgstr "输入相互用户名。"
@@ -4519,19 +4569,19 @@ msgid "Enter the command"
 msgstr "输入命令"
 
 msgid "Enter the full user name."
-msgstr ""
+msgstr "输入完整用户名。"
 
 msgid "Enter the location of the share"
 msgstr "输入共享的位置"
 
 msgid "Enter the name of the master user account."
-msgstr ""
+msgstr "输入主用户帐户的名称。"
 
 msgid "Enter the name of the share"
 msgstr "输入共享的名字"
 
 msgid "Enter the network that is authorised to access the NFS share."
-msgstr ""
+msgstr "输入有权访问NFS共享的网络。"
 
 msgid ""
 "Enter the passphrase that will be used in WPA-PSK mode. This must be between "
@@ -4539,7 +4589,7 @@ msgid ""
 msgstr "请输入在 WPA-PSK 模式中使用的密码短语。这个密语长度必须在 8 到 63 个字元之间。"
 
 msgid "Enter the password of the master user account."
-msgstr ""
+msgstr "输入主用户帐户的密码。"
 
 msgid ""
 "Enter the path of the home directory for databases and configuration files."
@@ -4558,7 +4608,7 @@ msgstr "输入VirtualBox的主目录的路径。 将在指定的目录下创建V
 msgid ""
 "Enter the path to the home directory of the user. Leave this field empty to "
 "use default path /mnt."
-msgstr ""
+msgstr "输入用户主目录的路径。 将此字段留空以使用默认路径/mnt。"
 
 msgid ""
 "Enter the path to the home directory. This directory will store the "
@@ -4628,7 +4678,7 @@ msgid "Export Rules"
 msgstr "导出规则"
 
 msgid "Export Subfolders"
-msgstr ""
+msgstr "导出子文件夹"
 
 msgid "Export a pool from the system"
 msgstr "从系统导出池"
@@ -4637,10 +4687,10 @@ msgid "Export all the directories in the specified path."
 msgstr "导出指定的路径中的所有目录。"
 
 msgid "Export as WebNFS."
-msgstr ""
+msgstr "导出为WebNFS。"
 
 msgid "Export the file system in read-only mode."
-msgstr ""
+msgstr "以只读模式导出文件系统。"
 
 msgid "Exported"
 msgstr "已导出"
@@ -4702,7 +4752,7 @@ msgid "FAT32"
 msgstr "FAT32"
 
 msgid "FATAL - log fatal errors only"
-msgstr ""
+msgstr "致命 - 仅记录致命错误"
 
 msgid "FRU Information"
 msgstr "FRU信息"
@@ -4807,6 +4857,9 @@ msgid ""
 "File (default) - use a ._ AppleDouble file compatible with OS X and Netatalk."
 msgstr "文件（默认） - 使用与OS X和Netatalk兼容的._ AppleDouble文件。"
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr "文件编辑器"
 
@@ -4815,6 +4868,9 @@ msgstr "文件管理器"
 
 msgid "File Mask"
 msgstr "文件掩码"
+
+msgid "File Mode"
+msgstr ""
 
 msgid "File Path"
 msgstr "文件路径"
@@ -4984,6 +5040,24 @@ msgstr "额满"
 msgid "Full Name"
 msgstr "全名"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5030,6 +5104,9 @@ msgid "GPT partition"
 msgstr "GPT 分区"
 
 msgid "GSSAPI Authentication"
+msgstr "GSSAPI身份验证"
+
+msgid "GUI"
 msgstr ""
 
 msgid "Gateway"
@@ -5069,7 +5146,7 @@ msgid ""
 "Gives the verbosity level that is used when logging messages from sshd. "
 "Logging with a DEBUG level violates the privacy of users and is not "
 "recommended."
-msgstr ""
+msgstr "提供从sshd记录消息时使用的详细级别。 使用DEBUG级别进行日志记录会侵犯用户的隐私，因此不建议这样做。"
 
 msgid "Global Settings"
 msgstr "全局设置"
@@ -5077,14 +5154,15 @@ msgstr "全局设置"
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr "用于CTL内给定LUN的全局数字标识符。"
 
-msgid "Grant access to the user portal."
-msgstr "授予对用户门户的访问权。"
-
 msgid "Grant shell access to user"
-msgstr ""
+msgstr "授予对用户的shell访问权限"
 
 msgid "Graph shows last 120 seconds"
 msgstr "图表显示最近120秒"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr ""
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5109,7 +5187,7 @@ msgid "Group ID"
 msgstr "群组 ID"
 
 msgid "Group Name"
-msgstr ""
+msgstr "组名称"
 
 msgid "Group Settings"
 msgstr "群组设置"
@@ -5246,10 +5324,10 @@ msgid "Hide Dot Files"
 msgstr "隐藏点文件"
 
 msgid "Hide System Groups"
-msgstr ""
+msgstr "隐藏系统组"
 
 msgid "Hide System Users"
-msgstr ""
+msgstr "隐藏系统用户"
 
 msgid "High voltage boosting transfer point"
 msgstr "高升压转换点"
@@ -5334,7 +5412,7 @@ msgid "IG"
 msgstr "IG"
 
 msgid "INFO - log status messages"
-msgstr ""
+msgstr "信息 - 记录状态消息"
 
 msgid "IP"
 msgstr "IP 地址"
@@ -5371,7 +5449,7 @@ msgid "IPv4 DNS Servers"
 msgstr "IPv4 DNS服务器"
 
 msgid "IPv4 Routes"
-msgstr ""
+msgstr "IPv4路由"
 
 msgid "IPv4 Settings"
 msgstr "IPv4 设置"
@@ -5407,7 +5485,7 @@ msgid "IPv6 Prefix"
 msgstr "IPv6 前缀"
 
 msgid "IPv6 Routes"
-msgstr ""
+msgstr "IPv6路由"
 
 msgid "IPv6 Settings"
 msgstr "IPv6 设置"
@@ -5439,6 +5517,9 @@ msgstr "Ident查找"
 
 msgid "Identifier"
 msgstr "识别码"
+
+msgid "Identifier:"
+msgstr ""
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -5812,9 +5893,6 @@ msgstr "文件格式无效。"
 msgid "Invalid login credentials."
 msgstr "无效的登录凭证。"
 
-msgid "Invalid username or password."
-msgstr "无效的用户名或密码。"
-
 msgid "Invert Selection"
 msgstr "反向选择"
 
@@ -5903,7 +5981,7 @@ msgid "Key Management Protocol"
 msgstr "密钥管理协议"
 
 msgid "Keyboard-Interactive Authentication"
-msgstr ""
+msgstr "键盘交互式身份验证"
 
 msgid "L2 Cache"
 msgstr "２级缓存"
@@ -6020,6 +6098,9 @@ msgstr "前置面板的语言"
 msgid "Large Read/Write"
 msgstr "大型读/写"
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6035,6 +6116,9 @@ msgstr ""
 "1：上次测试结果以毫秒为单位的放电上限，饱和在最大值。 测试结果预期在范围25 <=结果<= 5000000，下表示特定错误代码。 字节2-"
 "3：自上次测试以来的分钟数，饱和在最大值。 字节4-5：测试的生命周期数，在电源周期不增加，饱和在最大值。 "
 "标准化值在测试失败时设置为1，如果电容器在过高的温度条件下测试，则设置为11，否则设置为100。"
+
+msgid "Last week"
+msgstr ""
 
 msgid "Latency"
 msgstr "延时"
@@ -6187,6 +6271,9 @@ msgstr "在支持指令集时，在引导过程中加载驱动程序。"
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "UPS切换到超载的情况时的加载（“OVER”）"
 
+msgid "Load:"
+msgstr ""
+
 msgid "Loadbalance"
 msgstr "负载平衡"
 
@@ -6226,7 +6313,7 @@ msgid "Location where the content database file will be stored."
 msgstr "储存内容资料库文件的位置。"
 
 msgid "Location where work files will be stored."
-msgstr ""
+msgstr "将存储工作文件的位置。"
 
 msgid "Lock Selected Records"
 msgstr "锁定选中的记录"
@@ -6286,7 +6373,7 @@ msgid "Login"
 msgstr "登录"
 
 msgid "Login Name"
-msgstr ""
+msgstr "登录名"
 
 msgid "Login for CHAP authentication."
 msgstr "登陆以进行CHAP验证"
@@ -6321,7 +6408,7 @@ msgid "MBR partition"
 msgstr "MBR 分区"
 
 msgid "MD4 Password"
-msgstr ""
+msgstr "MD4密码"
 
 msgid "MIRROR"
 msgstr "镜像"
@@ -6375,10 +6462,10 @@ msgid "Manufacturing date"
 msgstr "制造日期"
 
 msgid "Map All To User"
-msgstr ""
+msgstr "全部映射到用户"
 
 msgid "Map Root To User"
-msgstr ""
+msgstr "将Root映射到用户"
 
 msgid "Map to Guest"
 msgstr "映射到Guest"
@@ -6387,10 +6474,10 @@ msgid "Map to User"
 msgstr "映射到用户"
 
 msgid "Map users or map root to the specified user."
-msgstr ""
+msgstr "映射用户或将root映射到指定的用户。"
 
 msgid "Mapping"
-msgstr ""
+msgstr "映射"
 
 msgid "Mapping DOS Attributes"
 msgstr "映射DOS属性"
@@ -6416,13 +6503,13 @@ msgid "Masquerade Address"
 msgstr "伪装地址"
 
 msgid "Master"
-msgstr ""
+msgstr "主要"
 
 msgid "Master Password"
-msgstr ""
+msgstr "主密码"
 
 msgid "Master User"
-msgstr ""
+msgstr "主用户"
 
 msgid "Max Processes"
 msgstr "最大进程"
@@ -6518,28 +6605,28 @@ msgid "Media Directory"
 msgstr "媒体目录"
 
 msgid "Media Folder"
-msgstr ""
+msgstr "媒体文件夹"
 
 msgid "Media Folder is locked"
-msgstr ""
+msgstr "媒体文件夹已锁定"
 
 msgid "Media Folder is marked for deletion"
-msgstr ""
+msgstr "媒体文件夹标记为删除"
 
 msgid "Media Folder is unlocked"
-msgstr ""
+msgstr "媒体文件夹已解锁"
 
 msgid "Media Library"
 msgstr "媒体库"
 
 msgid "Media Server Name."
-msgstr ""
+msgstr "媒体服务器名称。"
 
 msgid "Media Size"
 msgstr "媒体大小"
 
 msgid "Media Type"
-msgstr ""
+msgstr "媒体类型"
 
 msgid "Media library"
 msgstr "媒体库"
@@ -6668,13 +6755,13 @@ msgid "Monitoring"
 msgstr "监控"
 
 msgid "Monitoring Password"
-msgstr ""
+msgstr "监控密码"
 
 msgid "Monitoring Setup"
 msgstr "监控设置"
 
 msgid "Monitoring User"
-msgstr ""
+msgstr "监控用户"
 
 msgid "Months"
 msgstr "月"
@@ -6779,22 +6866,22 @@ msgid "NFS"
 msgstr "NFS"
 
 msgid "NFS Export is locked"
-msgstr ""
+msgstr "NFS导出已锁定"
 
 msgid "NFS Export is marked for deletion"
-msgstr ""
+msgstr "NFS导出标记为删除"
 
 msgid "NFS Export is unlocked"
-msgstr ""
+msgstr "NFS导出已解锁"
 
 msgid "NFS Root is locked"
-msgstr ""
+msgstr "NFS Root已被锁定"
 
 msgid "NFS Root is marked for deletion"
-msgstr ""
+msgstr "NFS Root被标记为删除"
 
 msgid "NFS Root is unlocked"
-msgstr ""
+msgstr "NFS Root已解锁"
 
 msgid "NFSv4"
 msgstr "NFSv4"
@@ -6884,6 +6971,9 @@ msgstr "改名名称。"
 msgid "Native - store characters with their native ASCII value."
 msgstr "原生 - 使用其原生ASCII值存储字符。"
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "用户数据和元数据都不会缓存在ARC中。"
 
@@ -6900,7 +6990,7 @@ msgid "NetBIOS Name"
 msgstr "NetBIOS名"
 
 msgid "NetIf"
-msgstr ""
+msgstr "NetIf"
 
 msgid "Netatalk (default) - use Netatalk compatible xattr."
 msgstr "Netatalk（默认） - 使用Netatalk兼容的xattr。"
@@ -7002,10 +7092,10 @@ msgid "No IPMI Sensor data available."
 msgstr "无IPMI传感器数据可用。"
 
 msgid "No IPv4 routing information found."
-msgstr ""
+msgstr "未找到IPv4路由信息。"
 
 msgid "No IPv6 routing information found."
-msgstr ""
+msgstr "未找到IPv6路由信息。"
 
 msgid "No Initiator Group has been configured."
 msgstr "未配置启动器组。"
@@ -7017,7 +7107,7 @@ msgid "No LUNs found."
 msgstr "找不到LUN"
 
 msgid "No Login"
-msgstr ""
+msgstr "没有登录"
 
 msgid "No Mutual-CHAP users found."
 msgstr "找不到Mutual-CHAP用户。"
@@ -7042,6 +7132,9 @@ msgstr "未找到RAID5信息。"
 
 msgid "No RSYNC Client configured."
 msgstr "未配置RSYNC客户端。"
+
+msgid "No access to the user portal"
+msgstr ""
 
 msgid "No additional parameters"
 msgstr "没有其他参数"
@@ -7072,9 +7165,6 @@ msgstr "没有可用的数据集信息。"
 
 msgid "No devices have been selected"
 msgstr "未选择任何设备"
-
-msgid "No disk configured"
-msgstr "尚未配置硬盘"
 
 msgid "No disks available."
 msgstr "没有磁盘可用"
@@ -7249,7 +7339,7 @@ msgid "Note"
 msgstr "提示"
 
 msgid "Note that only one file system can be WebNFS exported on a server."
-msgstr ""
+msgstr "请注意，只有一个文件系统可以在服务器上导出WebNFS。"
 
 msgid ""
 "Note: Ctrl-click (or command-click on the Mac) to select multiple entries."
@@ -7329,6 +7419,21 @@ msgstr "卸载驱动"
 
 msgid "Old Passphrase"
 msgstr "旧密码短语"
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
+msgstr ""
 
 msgid "On"
 msgstr "开"
@@ -7441,7 +7546,7 @@ msgid "Overwrite disks configuration"
 msgstr "覆盖硬盘配置"
 
 msgid "Overwrite the sort criteria passed by the client."
-msgstr ""
+msgstr "覆盖客户端传递的排序条件。"
 
 msgid "Owner"
 msgstr "拥有者"
@@ -7597,7 +7702,7 @@ msgid ""
 msgstr "密码服务器的名称或IP 地址（例如Active Directory域控制器）。"
 
 msgid "Paste a RSA PRIVATE KEY in PEM format"
-msgstr ""
+msgstr "以PEM格式粘贴RSA私钥"
 
 msgid "Paste a private key in PEM format here."
 msgstr "在此处以PEM格式粘贴私钥。"
@@ -7618,7 +7723,7 @@ msgid "Path of the URL relative to document root."
 msgstr "URL 相对路径（从根目录开始）。"
 
 msgid "Path to be included."
-msgstr ""
+msgstr "要包含的路径。"
 
 msgid "Path to be shared to be synchronized."
 msgstr "要同步的共享路径"
@@ -7747,6 +7852,9 @@ msgstr "请查看日志文件"
 msgid "Please read the documentation"
 msgstr "请阅读文档"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr "轮询时间"
 
@@ -7764,6 +7872,9 @@ msgstr "池信息"
 
 msgid "Pool Information & Status"
 msgstr "存储池信息和状态"
+
+msgid "Pool Space Usage"
+msgstr ""
 
 msgid "Pool State"
 msgstr "池状态"
@@ -7822,7 +7933,7 @@ msgid "Port number of the iSNS server."
 msgstr "iSNS服务器的端口号。"
 
 msgid "Port of the SSH service. Leave blank to use the default port."
-msgstr ""
+msgstr "SSH服务的端口。 留空以使用默认端口。"
 
 msgid "Port of the TFTP service. Leave blank to use the default port."
 msgstr "TFTP服务的端口。 留空以使用默认端口。"
@@ -7860,7 +7971,7 @@ msgstr "监听端口。只有动态或私有端口可以使用（从 %d 到 %d  
 msgid ""
 "Port to listen on. Port number must be between 1024 and 65535. Default port "
 "is 8200."
-msgstr ""
+msgstr "侦听端口。 端口号必须介于1024和65535之间。默认端口为8200。"
 
 msgid "Portal Group"
 msgstr "门户组（Portal Group）"
@@ -7948,6 +8059,12 @@ msgstr "保留更改次数。"
 msgid "Prevent deep discharge of battery"
 msgstr "防止电池深度漏电"
 
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
+msgstr ""
+
 msgid "Primary"
 msgstr "主要"
 
@@ -8021,28 +8138,28 @@ msgid "Proxy"
 msgstr "代理服务器"
 
 msgid "Public Key"
-msgstr ""
+msgstr "公钥"
 
 msgid "Public Key Authentication"
-msgstr ""
+msgstr "公钥认证"
 
 msgid "Public Key Settings"
-msgstr ""
+msgstr "公钥设置"
 
 msgid "Public Keys"
-msgstr ""
+msgstr "公钥"
 
 msgid "Public key information."
-msgstr ""
+msgstr "公钥信息。"
 
 msgid "Public key is marked for deletion"
-msgstr ""
+msgstr "公钥被标记为删除"
 
 msgid "Public key is protected"
-msgstr ""
+msgstr "公钥受到保护"
 
 msgid "Public key is unlocked"
-msgstr ""
+msgstr "公钥已解锁"
 
 msgid "Pull"
 msgstr "拉取"
@@ -8056,7 +8173,7 @@ msgid ""
 msgstr "在上次访问磁盘后的所选时间内，将磁盘置于待机模式。"
 
 msgid "QUIET - disable logging"
-msgstr ""
+msgstr "QUIET  - 禁用日志记录"
 
 msgid "Queue Depth"
 msgstr "伫列深度"
@@ -8162,6 +8279,126 @@ msgstr "RAW 信息"
 
 msgid "RPM"
 msgstr "每分钟转速"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr ""
 
 #, php-format
 msgid ""
@@ -8387,7 +8624,7 @@ msgstr "远程Syslog服务器"
 msgid ""
 "Remote accesses by root will result in using a credential of 65534:65533. "
 "All other users will be mapped to their remote credential."
-msgstr ""
+msgstr "root的远程访问将导致使用65534:65533的凭证。 所有其他用户将映射到他们的远程凭证。"
 
 msgid ""
 "Remote monitoring password. Must be equal on both master and slave system."
@@ -8439,6 +8676,9 @@ msgstr "更换UPS电池"
 
 msgid "Replace a device"
 msgstr "更换设备"
+
+msgid "Replace the default CSS file"
+msgstr ""
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -8520,7 +8760,7 @@ msgid "Restore metadata from the given file to the given provider."
 msgstr "从文件还原元数据给指定提供者。"
 
 msgid "Restrict folder to a specific media type."
-msgstr ""
+msgstr "将文件夹限制为特定媒体类型。"
 
 msgid "Restricted"
 msgstr "受限"
@@ -8565,10 +8805,10 @@ msgid "Root Bind Password"
 msgstr "Root绑定密码"
 
 msgid "Root Directory"
-msgstr ""
+msgstr "Root目录"
 
 msgid "Root Login"
-msgstr ""
+msgstr "Root登录"
 
 msgid "Rotation Rate"
 msgstr "旋转速率"
@@ -8660,7 +8900,7 @@ msgid "SCSI Name"
 msgstr "SCSI名称"
 
 msgid "SHA Password"
-msgstr ""
+msgstr "SHA密码"
 
 msgid "SHA-256, Verify"
 msgstr "SHA-256，验证"
@@ -8776,19 +9016,19 @@ msgstr ""
 "每N秒扫描文件系统，以查看是否已添加或删除任何文件。 设置为0以禁用后台扫描。 如果禁用了背景重新扫描，仍可以从管理Web界面的状态页面强制执行扫描。"
 
 msgid "Scan folder for all media types."
-msgstr ""
+msgstr "扫描文件夹所有的媒体类型。"
 
 msgid "Scan folder for audio files."
-msgstr ""
+msgstr "扫描文件夹的音频文件。"
 
 msgid "Scan folder for image files."
-msgstr ""
+msgstr "扫描文件夹的图片文件。"
 
 msgid "Scan folder for video and image files."
-msgstr ""
+msgstr "扫描文件夹的视频和图片文件。"
 
 msgid "Scan folder for video files."
-msgstr ""
+msgstr "扫描文件夹的视频文件。"
 
 msgid "Schedule Time"
 msgstr "排程时间"
@@ -8851,7 +9091,7 @@ msgid "Secret for CHAP authentication."
 msgstr "CHAP身份验证的密钥。"
 
 msgid "Security Flavor"
-msgstr ""
+msgstr "Security Flavor"
 
 msgid "Security Warning"
 msgstr "安全警告"
@@ -8904,7 +9144,7 @@ msgid "Select Spare Device"
 msgstr "选择备用设备"
 
 msgid "Select a container as the root of the tree exposed to clients."
-msgstr ""
+msgstr "选择一个容器作为向客户端公开的树的根。"
 
 msgid "Select a date format."
 msgstr "选择一个日期格式"
@@ -8920,6 +9160,24 @@ msgstr "选择命令应在哪个阶段执行。"
 
 msgid "Select configuration file:"
 msgstr "选择配置文件："
+
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
 
 msgid "Select file system format."
 msgstr "选择文件系统格式。"
@@ -8980,6 +9238,9 @@ msgstr "选择要用于给定加密算法的密钥长度。"
 
 msgid "Selected"
 msgstr "已选择"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr "选定的设备或标签不存在。"
@@ -9131,7 +9392,7 @@ msgid "Set UID"
 msgstr "设置 UID"
 
 msgid "Set User Password"
-msgstr ""
+msgstr "设置用户密码"
 
 msgid "Set browseable."
 msgstr "设为可浏览。"
@@ -9142,7 +9403,7 @@ msgid ""
 msgstr "将磁盘检查的间隔设置为N秒。 最小允许值为10。"
 
 msgid "Set password"
-msgstr ""
+msgstr "设置密码"
 
 msgid "Set per-LUN/per-pool thin provisioning soft threshold."
 msgstr "设置每个LUN /每个池精简资源调配软阈值。"
@@ -9160,7 +9421,7 @@ msgid ""
 msgstr "为其他人设置读取和执行位权限（访问限制|模式）用于%s中的挂载点%s，并单击保存以使其生效。"
 
 msgid "Set the account's primary group."
-msgstr ""
+msgstr "设置帐户的主要组。"
 
 msgid "Set the content location(s) to or from the media library."
 msgstr "设置从或到媒体库的内容位置。"
@@ -9220,7 +9481,7 @@ msgid "Set user login shell."
 msgstr "设置用户登录shell。"
 
 msgid "Set user password."
-msgstr ""
+msgstr "设置用户密码"
 
 msgid "Setkey"
 msgstr "Setkey"
@@ -9343,10 +9604,10 @@ msgid "Show RAW UPS Info"
 msgstr "显示RAW UPS的信息"
 
 msgid "Show System Groups"
-msgstr ""
+msgstr "显示系统组"
 
 msgid "Show System Users"
-msgstr ""
+msgstr "显示系统用户"
 
 msgid "Show UPS Information"
 msgstr "显示UPS信息"
@@ -9410,7 +9671,7 @@ msgid "Skip View Mode"
 msgstr "跳过查看模式"
 
 msgid "Slave"
-msgstr ""
+msgstr "从属"
 
 msgid "Sleep - Check the device unless it is in SLEEP mode."
 msgstr "睡眠 - 设备除了在睡眠模式之外都将检查。"
@@ -9468,7 +9729,7 @@ msgid "Sort"
 msgstr "排序"
 
 msgid "Sort Criteria"
-msgstr ""
+msgstr "排序规则"
 
 msgid "Source"
 msgstr "来源位置"
@@ -9606,7 +9867,7 @@ msgstr "指定设备的UNMAP块大小。"
 msgid ""
 "Specify a list of acceptable security flavors to be used for remote access. "
 "The\tdefault\tsecurity flavor\tis sys."
-msgstr ""
+msgstr "指定要用于远程访问的可接受安全性标记的列表。\t默认\tsecurity flavor\t是sys。"
 
 msgid ""
 "Specify maximum allowed number of LBAs per UNMAP command to report in Block "
@@ -9633,10 +9894,10 @@ msgid "Specify the SCSI device type to use when creating the LUN."
 msgstr "指定创建LUN时要使用的SCSI设备类型。"
 
 msgid "Specify the group numeric id."
-msgstr ""
+msgstr "指定组的数字ID。"
 
 msgid "Specify the user/account numeric id."
-msgstr ""
+msgstr "指定用户/帐户的数字ID。"
 
 msgid "Split request"
 msgstr "拆分请求"
@@ -9663,6 +9924,9 @@ msgstr "启动"
 msgid "Start TLS from within the session."
 msgstr "从会话中启动TLS。"
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr "静态"
 
@@ -9680,6 +9944,9 @@ msgstr "状态和信息"
 
 msgid "Status report successfully sent."
 msgstr "状态报告已成功传送。"
+
+msgid "Status:"
+msgstr ""
 
 msgid "Step"
 msgstr "Step"
@@ -9802,14 +10069,17 @@ msgstr "同步"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
-msgstr "Sysctl变量已被锁定"
+msgid "Sysctl Setting"
+msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "Sysctl变量标记为删除"
+msgid "Sysctl setting is locked"
+msgstr ""
 
-msgid "Sysctl variable is unlocked"
-msgstr "Sysctl变量已解锁"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
+msgstr ""
 
 msgid "Syslog Level"
 msgstr "Syslog级别"
@@ -9841,7 +10111,7 @@ msgid "System Events"
 msgstr "系统事件"
 
 msgid "System Group"
-msgstr ""
+msgstr "系统组"
 
 msgid "System Information"
 msgstr "系统资料"
@@ -9868,7 +10138,7 @@ msgid "System Uptime"
 msgstr "系统运行时间"
 
 msgid "System User"
-msgstr ""
+msgstr "系统用户"
 
 msgid "System info"
 msgstr "系统信息"
@@ -9926,6 +10196,9 @@ msgstr "TLS服务器证书检查"
 
 msgid "TLS Trust File"
 msgstr "TLS信任文件"
+
+msgid "Tabs"
+msgstr ""
 
 msgid "Tag"
 msgstr "标签"
@@ -10692,10 +10965,10 @@ msgid "The recommended queue depth is %d."
 msgstr "建议的队列深度是 %d。"
 
 msgid "The recommended range for the group id is between 1000 and 32000."
-msgstr ""
+msgstr "组ID的建议范围介于1000和32000之间。"
 
 msgid "The recommended range for the user id is between 1000 and 32000."
-msgstr ""
+msgstr "用户ID的建议范围介于1000和32000之间。"
 
 #, php-format
 msgid "The removable area mapped to LUN%d."
@@ -10799,6 +11072,9 @@ msgstr "只上传了部分的文件。"
 msgid "The value is invalid."
 msgstr "该值无效。"
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr "变量的值。"
 
@@ -10859,7 +11135,7 @@ msgid ""
 msgstr "这些参数添加到驱动程序的硬件特定部分。"
 
 msgid "These parameters are appended to /etc/ssh/sshd_config."
-msgstr ""
+msgstr "这些参数将附加到/etc/ssh/sshd_config。"
 
 msgid "These parameters are appended to the exports file."
 msgstr "这些参数将附加到导出文件中。"
@@ -10877,7 +11153,7 @@ msgid "These parameters will be added to global settings in %s."
 msgstr "这些参数将被添加到 %s 的全局设置。"
 
 msgid "These parameters will be added to minidlna.conf"
-msgstr ""
+msgstr "这些参数将添加到minidlna.conf中"
 
 msgid "These parameters will be added to my.cnf"
 msgstr "这些参数将添加到my.cnf"
@@ -10912,9 +11188,9 @@ msgid "These parameters will be added to this target."
 msgstr "这些参数将添加到此目标。"
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
-msgstr "这些sysctl变量将添加到/etc/sysctl.conf中。 这允许您对正在运行的系统进行更改。"
+msgstr ""
 
 msgid "Thin Provisioning"
 msgstr "精简配置"
@@ -11009,6 +11285,9 @@ msgstr "此服务器名称被用于Zeroconf/Bonjour/Rendezvous，也是通过DAA
 
 msgid "This is not a valid IP Address."
 msgstr "这不是有效的IP地址。"
+
+msgid "This month"
+msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr "此名称用来识别这个系统的 UPS。"
@@ -11201,10 +11480,13 @@ msgstr "此用户已经存在。"
 msgid "This virtual device name already exists."
 msgstr "此虚拟设备的名称已经存在。"
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
-msgstr ""
+msgstr "这将允许服务器端缩小非常大的JPEG图像，它可能会影响某些DLNA设备上的JPEG服务性能。"
 
 msgid "This will create a recycle bin on the share."
 msgstr "在分享区创建回收站。"
@@ -11334,6 +11616,9 @@ msgid "To use Active Directory the CIFS/SMB service will enabled as well."
 msgstr "要使用Active Directory，也将启用CIFS / SMB服务。"
 
 msgid "To use subdirectories, you must mount each directory."
+msgstr "要使用子目录，必须挂载每个目录。"
+
+msgid "Today"
 msgstr ""
 
 msgid "Toggle Mode"
@@ -11349,7 +11634,7 @@ msgid "Toggle Selected Commands"
 msgstr "切换选中的命令"
 
 msgid "Toggle Selected Groups"
-msgstr ""
+msgstr "切换选中的组"
 
 msgid "Toggle Selected Initiator Names"
 msgstr "切换选定的启动器名称"
@@ -11370,16 +11655,16 @@ msgid "Toggle Selected Listen Records"
 msgstr "切换选定的侦听记录"
 
 msgid "Toggle Selected Media Folders"
-msgstr ""
+msgstr "切换选中的媒体文件夹"
 
 msgid "Toggle Selected Mutual CHAP Users"
 msgstr "切换选定的相互CHAP用户"
 
 msgid "Toggle Selected NFS Exports"
-msgstr ""
+msgstr "切换选定的NFS导出"
 
 msgid "Toggle Selected NFS Root Directories"
-msgstr ""
+msgstr "切换选定的NFS根目录"
 
 msgid "Toggle Selected Option Records"
 msgstr "切换选定的选项记录"
@@ -11394,7 +11679,7 @@ msgid "Toggle Selected Portal Groups"
 msgstr "切换选定的门户组"
 
 msgid "Toggle Selected Public Keys"
-msgstr ""
+msgstr "切换选定的公钥"
 
 msgid "Toggle Selected Records"
 msgstr "切换选中的记录"
@@ -11405,11 +11690,14 @@ msgstr "切换选中的Rsync任务"
 msgid "Toggle Selected Rsync Modules"
 msgstr "切换选中的Rsync模块"
 
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
+
 msgid "Toggle Selected Targets"
 msgstr "切换选定的目标"
 
 msgid "Toggle Selected Users"
-msgstr ""
+msgstr "切换选中的用户"
 
 msgid "Toggle Selected WebDAV Records"
 msgstr "切换选定的WebDAV记录"
@@ -11466,14 +11754,6 @@ msgid ""
 "Total time of loading on the magnetic heads actuator (time not spent in "
 "parking area)."
 msgstr "磁头致动器上的总加载时间（停止区域不花费时间）。"
-
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "总计：%s | %s: %s | %s: %s | 状态： %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "总共： %s | 已使用： %s | 空闲： %s"
 
 msgid "Traceroute"
 msgstr "路由追踪（Traceroute）"
@@ -11542,9 +11822,6 @@ msgstr "周二"
 
 msgid "Tuesday"
 msgstr "周二"
-
-msgid "Tuning"
-msgstr "微调"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "N 秒后，显示器进入待机。"
@@ -11638,9 +11915,6 @@ msgstr "UPS的蜂鸣器状态"
 
 msgid "UPS coldstarts from battery"
 msgstr "UPS由电池冷启动"
-
-msgid "UPS disabled"
-msgstr "UPS 关闭"
 
 msgid "UPS external contact sensors"
 msgstr "UPS外置接触式传感器"
@@ -11823,7 +12097,7 @@ msgid "Uptime Statistics"
 msgstr "运行时间统计"
 
 msgid "Use"
-msgstr ""
+msgstr "使用"
 
 msgid "Use Bytes/sec instead of Bits/sec for network throughput display."
 msgstr "使用字节/秒而不是位/秒来进行网络吞吐量显示。"
@@ -11858,7 +12132,7 @@ msgid "Use default TLS trust file /usr/local/etc/ssl/cert.pem."
 msgstr "使用默认的TLS信任文件/usr/local/etc/ssl/cert.pem。"
 
 msgid "Use inotify monitoring to automatically discover new media files."
-msgstr ""
+msgstr "使用inotify监控自动发现新的媒体文件。"
 
 msgid "Use local user authentication."
 msgstr "使用本地用户认证。"
@@ -11870,16 +12144,16 @@ msgid ""
 msgstr "对%s图使用对数y轴缩放。 （不能与正/负y轴范围一起使用）"
 
 msgid "Use the \"Browse Directory\" container"
-msgstr ""
+msgstr "使用“浏览目录”容器"
 
 msgid "Use the \"Music\" container"
-msgstr ""
+msgstr "使用“音乐”容器"
 
 msgid "Use the \"Pictures\" container"
-msgstr ""
+msgstr "使用“图片”容器"
 
 msgid "Use the \"Video\" container"
-msgstr ""
+msgstr "使用“视频”容器"
 
 msgid ""
 "Use the new 64k streaming read and write variant SMB requests introduced "
@@ -11890,7 +12164,7 @@ msgid "Use the specified NTP server."
 msgstr "使用指定的 NTP 服务器。"
 
 msgid "Use the standard container (this is the default)"
-msgstr ""
+msgstr "使用标准容器（这是默认值）"
 
 msgid "Use these specials actions for debugging only!"
 msgstr "使用这些特殊操作仅用于调试！"
@@ -11963,6 +12237,9 @@ msgstr "用户共享"
 msgid "User Suffix"
 msgstr "用户后缀"
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr "用户帐户标记为删除"
 
@@ -11971,6 +12248,9 @@ msgstr "用户账户被保护"
 
 msgid "User account is unlocked"
 msgstr "用户账号已解锁"
+
+msgid "User portal permission."
+msgstr ""
 
 msgid "Username"
 msgstr "用户名"
@@ -11994,13 +12274,13 @@ msgid "Using %s bytes fragment size."
 msgstr "%s 字节的片段大小（fragment size）。"
 
 msgid "Using defaults"
-msgstr ""
+msgstr "使用默认值"
 
 msgid "VCPUs"
 msgstr "VCPUs"
 
 msgid "VERBOSE - log detailed information"
-msgstr ""
+msgstr "VERBOSE  - 记录详细信息"
 
 msgid "VFS fruit:encoding"
 msgstr "VFS fruit：编码"
@@ -12069,7 +12349,7 @@ msgid "Vendor ID"
 msgstr "供应商 ID"
 
 msgid "Verbosity of information that is logged."
-msgstr ""
+msgstr "记录的信息的详细程度。"
 
 msgid "Verify"
 msgstr "验证"
@@ -12265,7 +12545,7 @@ msgid "WebGUI and Root Password"
 msgstr "WebGUI和Root密码"
 
 msgid "WebNFS"
-msgstr ""
+msgstr "WebNFS"
 
 msgid "Webserver"
 msgstr "网页服务器"
@@ -12383,6 +12663,9 @@ msgstr "是"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "是 - 启用此共享的Time Machine支持。"
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -12491,6 +12774,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "ZFS ARC使用"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr "ZFS 数据集信息和状态"
 
@@ -12502,6 +12788,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "ZFS L2ARC使用率"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "ZFS池I/O统计"
@@ -12543,20 +12832,11 @@ msgstr "ZFS卷大小。 你可以使用可读的后缀，如K，KB，M，GB。"
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "已分配"
-
 msgid "and"
 msgstr "and"
 
-msgid "available"
-msgstr "可用"
-
-msgid "available of"
-msgstr "可用的"
-
 msgid "bash - Bourne Again Shell"
-msgstr ""
+msgstr "bash - Bourne Again Shell"
 
 msgid "change failed."
 msgstr "更改失败。"
@@ -12565,7 +12845,7 @@ msgid "chroot() everyone, but root."
 msgstr "chroot() 所有用户，除了 root。"
 
 msgid "csh - C Shell"
-msgstr ""
+msgstr "csh - C Shell"
 
 msgid ""
 "decoded as: byte 0-1-2 = good block count (big endian) and byte 3-4 = "
@@ -12578,9 +12858,6 @@ msgstr "例如：%s"
 
 msgid "filechooser"
 msgstr "filechooser"
-
-msgid "free of"
-msgstr "空闲"
 
 msgid "get target info failed."
 msgstr "获取目标信息失败。"
@@ -12669,15 +12946,15 @@ msgstr "无限制"
 msgid ""
 "krb5 - Use Kerberos V5 protocol to authenticate users before granting access "
 "to the shared filesystem."
-msgstr ""
+msgstr "krb5  - 在授予对共享文件系统的访问权限之前，使用Kerberos V5协议对用户进行身份验证。"
 
 msgid "krb5i - Use Kerberos V5 authentication with data integrity checksums."
-msgstr ""
+msgstr "krb5i  - 将Kerberos V5身份验证与数据完整性校验和配合使用。"
 
 msgid ""
 "krb5p - Use Kerberos V5 authentication with data integrity checksums and "
 "data encryption."
-msgstr ""
+msgstr "krb5p  - 将Kerberos V5身份验证与数据完整性校验和和数据加密一起使用。"
 
 msgid "less then 1.8\"."
 msgstr "小于1.8“。"
@@ -12689,12 +12966,12 @@ msgid "loader.conf"
 msgstr "loader.conf"
 
 msgid "mapall - Specifies a mapping for all client UIDs (including root)"
-msgstr ""
+msgstr "mapall  - 指定所有客户端UID（包括root）的映射"
 
 msgid ""
 "maproot - The credential of the specified user is used for remote access by "
 "root."
-msgstr ""
+msgstr "maproot  - 指定用户的凭证用于root用户的远程访问。"
 
 msgid "missing"
 msgstr "丢失"
@@ -12724,9 +13001,6 @@ msgstr "没有可用的池"
 msgid "none"
 msgstr "无"
 
-msgid "of"
-msgstr "/"
-
 msgid "off"
 msgstr "关闭"
 
@@ -12752,13 +13026,13 @@ msgid "scan target failed."
 msgstr "扫描目标失败"
 
 msgid "scponly - Secure Copy Protocol only"
-msgstr ""
+msgstr "scponly  - 仅限安全复制协议"
 
 msgid "seconds)"
 msgstr "秒）"
 
 msgid "sh - Bourne Shell"
-msgstr ""
+msgstr "sh - Bourne Shell"
 
 msgid "smallest settable high voltage transfer point"
 msgstr "最小可设定高电压转换点"
@@ -12770,7 +13044,7 @@ msgid "successfully."
 msgstr "成功。"
 
 msgid "sys - Use AUTH_SYS authentication."
-msgstr ""
+msgstr "sys  - 使用AUTH_SYS身份验证。"
 
 msgid "sysctl.conf"
 msgstr "sysctl.conf"
@@ -12779,7 +13053,7 @@ msgid "syslog.conf"
 msgstr "syslog.conf"
 
 msgid "tcsh - TENEX C Shell"
-msgstr ""
+msgstr "tcsh - TENEX C Shell"
 
 msgid "to"
 msgstr "到"
@@ -12789,9 +13063,6 @@ msgstr "卸载"
 
 msgid "unknown"
 msgstr "未知"
-
-msgid "used of"
-msgstr "已用的"
 
 msgid "visible"
 msgstr "可见"

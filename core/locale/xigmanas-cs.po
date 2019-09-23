@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-07 14:32+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-08-08 13:31+0000\n"
 "Last-Translator: Pavel Borecki <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: cs_CZ\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -24,12 +24,24 @@ msgid " was assigned to "
 msgstr " bylo přiřazeno k "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "Z %1$s je vytvořeno %2$s svazků."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -50,10 +62,6 @@ msgstr "%d rok"
 #, php-format
 msgid "%d years"
 msgstr "%d let"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% z %s"
 
 #, php-format
 msgid "%dB / block"
@@ -194,7 +202,7 @@ msgid "+upnp:class,+upnp:originalTrackNumber,+dc:title"
 msgstr ""
 
 msgid "/mnt"
-msgstr ""
+msgstr "/mnt"
 
 msgid "000"
 msgstr "000"
@@ -231,7 +239,7 @@ msgid "16384"
 msgstr "16384"
 
 msgid "192.168.0.0/24"
-msgstr ""
+msgstr "192.168.0.0/24"
 
 msgid "2"
 msgstr "2"
@@ -295,7 +303,7 @@ msgstr ""
 "Značka virtuální sítě (VLAN) dle normy 802.1Q – číslo z rozsahu 1 až 4094."
 
 msgid "8200"
-msgstr ""
+msgstr "8200"
 
 msgid ""
 "A NTP time server name may only contain the following characters: a-z, 0-9, "
@@ -742,8 +750,8 @@ msgstr "Přidat pravidlo"
 msgid "Add self-test"
 msgstr "Přidat samotest"
 
-msgid "Add sysctl variable"
-msgstr "Přidat proměnnou sysctl"
+msgid "Add sysctl setting"
+msgstr ""
 
 msgid "Add target"
 msgstr "Přidat cíl"
@@ -787,6 +795,9 @@ msgstr ""
 
 msgid "Admin Password"
 msgstr "Heslo správce"
+
+msgid "Admin access"
+msgstr ""
 
 msgid "Administration Password"
 msgstr "Heslo pro správu"
@@ -834,9 +845,6 @@ msgid ""
 msgstr ""
 "Poté co kliknete na „Uložit“ bude třeba server restartovat, aby se provedené "
 "změny uplatnily."
-
-msgid "Age"
-msgstr "Stáří"
 
 msgid "Aggregation Protocol"
 msgstr "Agregační protokol"
@@ -1123,6 +1131,9 @@ msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Všechny služby které používají tyto jednotky datového úložiště přestanou být "
 "platné nebo dostupné!"
+
+msgid "Append content to the default CSS file"
+msgstr ""
 
 msgid "Append user defined shares"
 msgstr "Připojit (přidat) uživatelsky definovaná sdílení"
@@ -1434,8 +1445,8 @@ msgstr "Pokud nezačíná na „iqn“, bude název základu připojen automatic
 msgid "Battery Details"
 msgstr "Podrobnosti o akumulátoru"
 
-msgid "Battery Level"
-msgstr "Stav nabití akumulátorů"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "Téměř vybitý akumulátor"
@@ -1756,6 +1767,9 @@ msgstr ""
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr ""
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1937,6 +1951,9 @@ msgstr "Shromažďování údajů – čekejte…"
 msgid "Collisions"
 msgstr "Kolize"
 
+msgid "Colorful Meters"
+msgstr ""
+
 msgid "Cols"
 msgstr "Kolz"
 
@@ -1997,6 +2014,9 @@ msgstr "Komentář"
 
 msgid "Common Internet File System"
 msgstr "Common Internet File System"
+
+msgid "Communication Error"
+msgstr ""
 
 msgid "Community"
 msgstr "Komunita (přihlašovací jméno)"
@@ -2507,6 +2527,12 @@ msgstr "Aktuální nastavení"
 msgid "Current Version"
 msgstr "Stávající verze"
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "Vnitřní teplota v tomto okamžiku"
 
@@ -2515,6 +2541,9 @@ msgstr "Stávající heslo"
 
 msgid "Current password is incorrectly entered."
 msgstr "Stávající heslo není správně zadané."
+
+msgid "Current quarter"
+msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr ""
@@ -2532,6 +2561,9 @@ msgstr "Aktuální výše zdánlivého výkonu (VA)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Aktuální výše činného výkonu (W)"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "Vlastní"
@@ -2886,6 +2918,9 @@ msgstr "Smazat označená sdílení"
 
 msgid "Delete Selected Snapshots"
 msgstr "Smazat označené zachycené stavy"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr "Smazat označené cíle"
@@ -3252,6 +3287,9 @@ msgstr "Vypnout označené Rsync úlohy"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Vypnout označené Rsync moduly"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Disable Selected Targets"
 msgstr "Vypnout označené cíle"
@@ -3663,6 +3701,9 @@ msgstr "Opravdu smazat označená sdílení?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "Opravdu smazat označené zachycené stavy?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to delete selected targets?"
 msgstr "Opravdu chcete smazat označené portály?"
 
@@ -3757,6 +3798,9 @@ msgstr "Opravdu vypnout označené rsync úlohy?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Opravdu vypnout označené rsync moduly?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr "Opravdu chcete vypnout označené cíle?"
 
@@ -3840,6 +3884,9 @@ msgstr "Opravdu zapnout označené rsync úlohy?"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Opravdu zapnout označené rsync moduly?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to enable selected targets?"
 msgstr "Opravdu chcete zapnout označené cíle?"
@@ -3934,6 +3981,9 @@ msgstr "Opravdu přepnout označené rsync úlohy?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Opravdu přepnout označené rsync moduly?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to toggle selected targets?"
 msgstr "Opravdu chcete přepnout označené cíle?"
@@ -4229,8 +4279,8 @@ msgstr "Upravit pravidlo"
 msgid "Edit self-test"
 msgstr "Upravit samotest"
 
-msgid "Edit sysctl variable"
-msgstr "Upravit sysctl proměnnou"
+msgid "Edit sysctl setting"
+msgstr ""
 
 msgid "Edit target"
 msgstr "Upravit cíl"
@@ -4381,6 +4431,9 @@ msgstr "Provádět označené Rsync úlohy"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Používat označené Rsync moduly"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Enable Selected Targets"
 msgstr "Zapnout označené cíle"
@@ -4575,6 +4628,9 @@ msgstr "Používat protokol ident (norma RFC1413)"
 msgid "Enable the server power control utility."
 msgstr "Zapnout nástroj pro řízení napájení serveru."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4615,9 +4671,6 @@ msgstr "Zapnout převod kódování znaků"
 
 msgid "Enable traps."
 msgstr "Zapnout SNMP hlášení."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Umožnit ladění některých proměnných jádra systému."
 
 msgid "Enable tuning switch"
 msgstr "Zapnout přepínač vyladění"
@@ -4694,9 +4747,6 @@ msgstr "Zadejte délku předpony IP adresy"
 
 msgid "Enter Identifier"
 msgstr "Zadejte identifikátor"
-
-msgid "Enter Name"
-msgstr "Zadejte název"
 
 msgid "Enter Password"
 msgstr "Zadejte heslo"
@@ -4801,7 +4851,7 @@ msgid "Enter facility name"
 msgstr "Zadejte název zařízení (facility)"
 
 msgid "Enter group name."
-msgstr ""
+msgstr "Zadejte název skupiny."
 
 msgid "Enter hostname or IP address."
 msgstr "Zadejte název nebo IP adresu stroje."
@@ -5141,6 +5191,9 @@ msgstr ""
 "Soubor (výchozí) – použít ._ AppleDouble soubor kompatibilní s OS X a "
 "Netatalk."
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr "Editor souborů"
 
@@ -5149,6 +5202,9 @@ msgstr "Správce souborů"
 
 msgid "File Mask"
 msgstr "Maska souboru"
+
+msgid "File Mode"
+msgstr ""
 
 msgid "File Path"
 msgstr "Popis umístění souboru"
@@ -5326,6 +5382,24 @@ msgstr "Plné"
 msgid "Full Name"
 msgstr "Úplný název"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5372,6 +5446,9 @@ msgid "GPT partition"
 msgstr "Oddíl GPT"
 
 msgid "GSSAPI Authentication"
+msgstr ""
+
+msgid "GUI"
 msgstr ""
 
 msgid "Gateway"
@@ -5421,14 +5498,15 @@ msgstr "Globální nastavení"
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr "Globální číselný identifikátor který použít pro dané LUN uvnitř CTL."
 
-msgid "Grant access to the user portal."
-msgstr "Umožnit přístup na portál uživatele."
-
 msgid "Grant shell access to user"
 msgstr ""
 
 msgid "Graph shows last 120 seconds"
 msgstr "Graf zobrazuje předchozích 120 sekund"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr ""
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5807,6 +5885,9 @@ msgstr "Hledání identifikace"
 
 msgid "Identifier"
 msgstr "Identifikátor"
+
+msgid "Identifier:"
+msgstr ""
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6228,9 +6309,6 @@ msgstr "Neplatný formát souboru"
 msgid "Invalid login credentials."
 msgstr "Neplatné přihlašovací údaje."
 
-msgid "Invalid username or password."
-msgstr "Neplatné uživatelské jméno nebo heslo."
-
 msgid "Invert Selection"
 msgstr "Obrátit výběr"
 
@@ -6449,6 +6527,9 @@ msgstr "Jazyk pro zobrazení na čelním panelu"
 msgid "Large Read/Write"
 msgstr "Velká čtení/zápis"
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6473,6 +6554,9 @@ msgstr ""
 "hodnota je nastavena na 1 (jedna) v případě neúspěšné zkoušky či 11 "
 "(jedenáct) pokud zkouška proběhla v příliš vysoké teplotě. Ve všech "
 "ostatních případech 100."
+
+msgid "Last week"
+msgstr ""
 
 msgid "Latency"
 msgstr "Prodleva"
@@ -6648,6 +6732,9 @@ msgstr ""
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "Odběr, při kterém se UPS zdroj přepne do stavu přetíženo („OVER“)"
+
+msgid "Load:"
+msgstr ""
 
 msgid "Loadbalance"
 msgstr "Vyrovnávání zátěže"
@@ -7382,6 +7469,9 @@ msgstr "Název proměnné"
 msgid "Native - store characters with their native ASCII value."
 msgstr "Nativní – ukládat znaky s jejich nativní ASCII hodnotou."
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "V ARC mezipaměti nebudou uchovávána ani data, ani metadata."
 
@@ -7548,6 +7638,9 @@ msgstr "Nebyly nalezeny žádné informace o RAID5."
 msgid "No RSYNC Client configured."
 msgstr "Nebyl nastaven žádný RSYNC klient."
 
+msgid "No access to the user portal"
+msgstr ""
+
 msgid "No additional parameters"
 msgstr "Žádné další parametry"
 
@@ -7577,9 +7670,6 @@ msgstr "Nejsou k dispozici žádné informace o datové sadě."
 
 msgid "No devices have been selected"
 msgstr "Nejsou označená žádná zařízení"
-
-msgid "No disk configured"
-msgstr "Není nastaven žádný disk"
 
 msgid "No disks available."
 msgstr "Nejsou k dispozici žádné jednotky datových úložišť."
@@ -7845,6 +7935,21 @@ msgstr "Ovladač předání na hardware"
 
 msgid "Old Passphrase"
 msgstr "Původní heslová fráze"
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
+msgstr ""
 
 msgid "On"
 msgstr "Zapnuto"
@@ -8276,6 +8381,9 @@ msgstr "Zkontrolujte soubory se záznamem událostí."
 msgid "Please read the documentation"
 msgstr "Přečtěte si dokumentaci"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr "Okamžik dotazování"
 
@@ -8293,6 +8401,9 @@ msgstr "Informace o fondu"
 
 msgid "Pool Information & Status"
 msgstr "Fond – informace a stav"
+
+msgid "Pool Space Usage"
+msgstr ""
 
 msgid "Pool State"
 msgstr "Sav fondu"
@@ -8486,6 +8597,12 @@ msgstr "Zachovat časy úprav."
 
 msgid "Prevent deep discharge of battery"
 msgstr "Zabraňovat hlubokému vybití akumulátoru"
+
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
+msgstr ""
 
 msgid "Primary"
 msgstr "Hlavní"
@@ -8712,6 +8829,126 @@ msgstr "Informace v nezpracovaném stavu"
 
 msgid "RPM"
 msgstr "Otáčky média"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr ""
 
 #, php-format
 msgid ""
@@ -9002,6 +9239,9 @@ msgstr "Vyměňte akumulátory v UPS zdroji"
 
 msgid "Replace a device"
 msgstr "Nahradit zařízení"
+
+msgid "Replace the default CSS file"
+msgstr ""
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9508,6 +9748,24 @@ msgstr "Vyberte která fáze příkazu má být vykonána."
 msgid "Select configuration file:"
 msgstr "Vyberte soubor s nastaveními:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr "Vyberte formát souborového systému."
 
@@ -9577,6 +9835,9 @@ msgstr "Vyberte jakou délku klíče použít pro daný kryptografický algoritm
 
 msgid "Selected"
 msgstr "Vybráno"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr "Označené zařízení nebo štítek neexistuje."
@@ -10339,6 +10600,9 @@ msgstr "Spustit"
 msgid "Start TLS from within the session."
 msgstr "Spustit TLS ze sezení"
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr "Statické"
 
@@ -10356,6 +10620,9 @@ msgstr "Stav a informace"
 
 msgid "Status report successfully sent."
 msgstr "Zpráva o stavu byla úspěšně odeslána."
+
+msgid "Status:"
+msgstr ""
 
 msgid "Step"
 msgstr "Velikost změny"
@@ -10481,14 +10748,17 @@ msgstr "Synchronizovat"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
-msgstr "Sysctl proměnná je uzamčena"
+msgid "Sysctl Setting"
+msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "Sysctl proměnná je označena pro smazání"
+msgid "Sysctl setting is locked"
+msgstr ""
 
-msgid "Sysctl variable is unlocked"
-msgstr "Systctl proměnná je odemčena"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
+msgstr ""
 
 msgid "Syslog Level"
 msgstr "Úroveň podrobností pro syslog"
@@ -10606,6 +10876,9 @@ msgstr "Kontrola TLS certifikátu serveru"
 
 msgid "TLS Trust File"
 msgstr "Soubor se seznamem důvěřovaných pro TLS"
+
+msgid "Tabs"
+msgstr ""
 
 msgid "Tag"
 msgstr "Značka"
@@ -11638,6 +11911,9 @@ msgstr "Na server dorazila pouze část souboru."
 msgid "The value is invalid."
 msgstr "Zadaná hodnota není platná."
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr "Hodnota proměnné."
 
@@ -11759,11 +12035,9 @@ msgid "These parameters will be added to this target."
 msgstr "Tyto parametry budou přidány do tohoto cíle."
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
-"Tyto sysctl proměnné budou přidáno do /etc/sysctl.conf. To umožní dělat "
-"změny za chodu systému."
 
 msgid "Thin Provisioning"
 msgstr "Poskytování dle potřeby"
@@ -11878,6 +12152,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Toto není platná IP adresa."
+
+msgid "This month"
+msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -12139,6 +12416,9 @@ msgstr "Toto uživatelské jméno je už  v systému používáno."
 msgid "This virtual device name already exists."
 msgstr "Tento název je už používán jiným virtuálním zařízením."
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12287,6 +12567,9 @@ msgstr "Společně se službou Active Directory bude zapnuta i služba CIFS/SMB.
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 
+msgid "Today"
+msgstr ""
+
 msgid "Toggle Mode"
 msgstr "Přepnout režim"
 
@@ -12355,6 +12638,9 @@ msgstr "Přepnout označené Rsync úlohy"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Přepnout označené Rsync moduly"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
 
 msgid "Toggle Selected Targets"
 msgstr "Vyp/zap označené cíle"
@@ -12433,14 +12719,6 @@ msgstr ""
 "Celková doba, po kterou hlavičky byly v pracovní poloze (tj. doba strávená "
 "mimo parkovací oblast)."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "Celkem: %s | %s: %s | %s: %s | Stav: %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Celkem: %s | Použito: %s | Volno: %s"
-
 msgid "Traceroute"
 msgstr "Sledování směrování na síti (traceroute)"
 
@@ -12512,9 +12790,6 @@ msgstr "út"
 
 msgid "Tuesday"
 msgstr "úterý"
-
-msgid "Tuning"
-msgstr "Ladění"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Přepnout obrazovku po N sekundách do pohotovostního režimu."
@@ -12611,9 +12886,6 @@ msgstr "Stav zvukové signalizace UPS zdroje"
 
 msgid "UPS coldstarts from battery"
 msgstr "Spouštení UPS zdroje z akumulátorů"
-
-msgid "UPS disabled"
-msgstr "UPS zdroj vypnut"
 
 msgid "UPS external contact sensors"
 msgstr "Vnější spínače UPS zdroje"
@@ -12970,6 +13242,9 @@ msgstr "Uživatelova sdílení"
 msgid "User Suffix"
 msgstr "Přípona uživatele"
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr "Uživatelský účet je označen ke smazání"
 
@@ -12978,6 +13253,9 @@ msgstr "Uživatelský účet je chráněný"
 
 msgid "User account is unlocked"
 msgstr "Uživatelský účet je odemčený"
+
+msgid "User portal permission."
+msgstr ""
 
 msgid "Username"
 msgstr "Uživatelské jméno"
@@ -13417,6 +13695,9 @@ msgstr "Ano"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Ano – zapíná pro toto sdílení podporu Time Machine"
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13544,6 +13825,9 @@ msgstr "ZFS ARC mezipaměť"
 msgid "ZFS ARC Usage"
 msgstr "Využití ZFS ARC mezipaměti"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr "Stav a informace o ZFS datové sadě"
 
@@ -13555,6 +13839,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "Využití ZFS L2ARC"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "Vst./výst. statistiky ZFS fondu úložišť"
@@ -13600,17 +13887,8 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "přiděleno"
-
 msgid "and"
 msgstr "a"
-
-msgid "available"
-msgstr "k dispozici"
-
-msgid "available of"
-msgstr "dostupné z"
 
 msgid "bash - Bourne Again Shell"
 msgstr ""
@@ -13638,9 +13916,6 @@ msgstr "např. %s"
 
 msgid "filechooser"
 msgstr "vyberte soubor"
-
-msgid "free of"
-msgstr "volné z"
 
 msgid "get target info failed."
 msgstr "Nezdařilo se získat informace o cíli."
@@ -13790,9 +14065,6 @@ msgstr "žádné fondy k dispozici"
 msgid "none"
 msgstr "žádné"
 
-msgid "of"
-msgstr "z"
-
 msgid "off"
 msgstr "vypnuto"
 
@@ -13859,9 +14131,6 @@ msgstr "odpojit (umount)"
 
 msgid "unknown"
 msgstr "neznámé"
-
-msgid "used of"
-msgstr "využito z"
 
 msgid "visible"
 msgstr "viditelné"

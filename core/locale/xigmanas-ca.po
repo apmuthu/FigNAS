@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xigmanas\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
-"PO-Revision-Date: 2019-06-24 21:39+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
+"PO-Revision-Date: 2019-09-22 06:26+0000\n"
 "Last-Translator: Vicente Soriano <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:56+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:49+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: ca_ES\n"
 
 msgid " No private key"
@@ -28,12 +28,24 @@ msgid " was assigned to "
 msgstr " va ser assignat a "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s s'utilitza per crear %2$s volums."
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr "%1$s gestionat, %2$s utilitzat, %3$s disponible"
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr "%1$s total, %2$s assignat, %3$s lliure"
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr "%1$s total, %2$s usat, %3$s disponible"
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr "%2$s usat, %3$s disponible"
 
 #, php-format
 msgid "%d days"
@@ -54,10 +66,6 @@ msgstr "%d any"
 #, php-format
 msgid "%d years"
 msgstr "%d anys"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% de %s"
 
 #, php-format
 msgid "%dB / block"
@@ -739,8 +747,8 @@ msgstr "Afegir una regla"
 msgid "Add self-test"
 msgstr "Afegir auto-prova"
 
-msgid "Add sysctl variable"
-msgstr "Afegeix variable sysctl"
+msgid "Add sysctl setting"
+msgstr "Afegiu la configuració de sysctl"
 
 msgid "Add target"
 msgstr "Afegir objetiu"
@@ -781,6 +789,9 @@ msgstr "Adreça del dimoni remot hastd. Ha de esser una adreça IP estàtica."
 
 msgid "Admin Password"
 msgstr "Contrasenya d'administrador"
+
+msgid "Admin access"
+msgstr "Accés d'administrador"
 
 msgid "Administration Password"
 msgstr "Gestió de contrasenyes"
@@ -830,9 +841,6 @@ msgid ""
 msgstr ""
 "Després de fer clic a \"Desa\" ha de reiniciar el servidor perquè els canvis "
 "tinguin efecte."
-
-msgid "Age"
-msgstr "Edat"
 
 msgid "Aggregation Protocol"
 msgstr "Protocol d'agregació"
@@ -1122,6 +1130,9 @@ msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr ""
 "Qualsevol servei que fa servir aquests discs quedarà invalidat o "
 "inaccessible."
+
+msgid "Append content to the default CSS file"
+msgstr "Afegeix contingut al fitxer CSS predeterminat"
 
 msgid "Append user defined shares"
 msgstr "Annexar recursos definits per l'usuari"
@@ -1437,8 +1448,8 @@ msgstr "Nom base s'afegirà automàticament quan comenci sense 'iqn.'."
 msgid "Battery Details"
 msgstr "Detalls de la bateria"
 
-msgid "Battery Level"
-msgstr "Nivell de bateria"
+msgid "Battery Level:"
+msgstr "Nivell de bateria:"
 
 msgid "Battery Low"
 msgstr "Bateria baixa"
@@ -1768,6 +1779,9 @@ msgstr ""
 msgid "CRC32C"
 msgstr "CRC32C"
 
+msgid "CSS Settings"
+msgstr "Configuració CSS"
+
 msgid "CTL LUN"
 msgstr "CTL LUN"
 
@@ -1945,6 +1959,9 @@ msgstr "Recullin dades d'inici, si us plau esperi..."
 msgid "Collisions"
 msgstr "Colisions"
 
+msgid "Colorful Meters"
+msgstr "Medidors de colors"
+
 msgid "Cols"
 msgstr "Columnes"
 
@@ -2001,6 +2018,9 @@ msgstr "comentaris"
 
 msgid "Common Internet File System"
 msgstr "Sistema d'arxiu comú d'Internet"
+
+msgid "Communication Error"
+msgstr "Error de comunicació"
 
 msgid "Community"
 msgstr "Comunitat"
@@ -2526,6 +2546,12 @@ msgstr "Configuració actual"
 msgid "Current Version"
 msgstr "Versió actual"
 
+msgid "Current and previous month"
+msgstr "Mes actual i anterior"
+
+msgid "Current and previous year"
+msgstr "Any actual i anterior"
+
 msgid "Current internal temperature."
 msgstr "Temperatura interna actual."
 
@@ -2534,6 +2560,9 @@ msgstr "Contrasenya actual"
 
 msgid "Current password is incorrectly entered."
 msgstr "Es va introduir incorrectament la contrasenya real."
+
+msgid "Current quarter"
+msgstr "Trimestre actual"
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr ""
@@ -2551,6 +2580,9 @@ msgstr "Valor actual de potencia aparent (Volt-Amps)"
 
 msgid "Current value of real power (Watts)"
 msgstr "Valor actual de la potencia real (Watts)"
+
+msgid "Current year"
+msgstr "Any actual"
 
 msgid "Custom"
 msgstr "Personalitzat"
@@ -2904,6 +2936,9 @@ msgstr "Suprimeix recursos seleccionats"
 
 msgid "Delete Selected Snapshots"
 msgstr "Suprimeix instantànies seleccionats"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr "Suprimeix la configuració de Sysctl seleccionada"
 
 msgid "Delete Selected Targets"
 msgstr "Suprimeix objectius seleccionats"
@@ -3269,6 +3304,9 @@ msgstr "Eliminar treballs seleccionats Rsync"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "Eliminar mòduls seleccionats Rsync"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr "Desactiva la configuració de Sysctl seleccionada"
 
 msgid "Disable Selected Targets"
 msgstr "Desactiveu els objectius seleccionats"
@@ -3689,6 +3727,9 @@ msgstr "Voleu eliminar els recursos seleccionats?"
 msgid "Do you want to delete selected snapshots?"
 msgstr "Vols esborrar els instantanis seleccionats?"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr "Voleu suprimir la configuració de sysctl seleccionada?"
+
 msgid "Do you want to delete selected targets?"
 msgstr "Voleu eliminar els objectius seleccionats?"
 
@@ -3779,6 +3820,9 @@ msgstr "Vols desactivar els treballs Rsync seleccionats?"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "Vols desactivar els mòduls Rsync seleccionats?"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr "Voleu desactivar la configuració de sysctl seleccionada?"
+
 msgid "Do you want to disable selected targets?"
 msgstr "Voleu desactivar els objectius seleccionats?"
 
@@ -3859,6 +3903,9 @@ msgstr "Vols activar els treballs Rsync seleccionats"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "Vols activar els mòduls Rsync seleccionats?"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr "Voleu activar la configuració de sysctl seleccionada?"
 
 msgid "Do you want to enable selected targets?"
 msgstr "Voleu activar els objectius seleccionats?"
@@ -3949,6 +3996,9 @@ msgstr "Voleu mostrar els treballs seleccionats Rsync?"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "Voleu mostrar els mòduls seleccionats Rsync?"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr "Voleu canviar la configuració de sysctl seleccionada?"
 
 msgid "Do you want to toggle selected targets?"
 msgstr "Voleu canviar els objectius seleccionats?"
@@ -4245,8 +4295,8 @@ msgstr "Editar una regla"
 msgid "Edit self-test"
 msgstr "Editar auto-prova"
 
-msgid "Edit sysctl variable"
-msgstr "Editar variable sysctl"
+msgid "Edit sysctl setting"
+msgstr "Edita la configuració de sysctl"
 
 msgid "Edit target"
 msgstr "Editar objetiu"
@@ -4400,6 +4450,9 @@ msgstr "Activar els treballs Rsync seleccionats"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "Activar els mòduls Rsync seleccionats"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr "Activa la configuració de Sysctl seleccionada"
 
 msgid "Enable Selected Targets"
 msgstr "Activar els objectius seleccionats?"
@@ -4594,6 +4647,10 @@ msgstr "Activar el protocol d'identificació (RFC1413)."
 msgid "Enable the server power control utility."
 msgstr "Activa la utilitat de control d'alimentació del servidor."
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+"Habiliteu aquesta opció si voleu mostrar estats del comptador de colors."
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4640,9 +4697,6 @@ msgstr "Activar transcodificació."
 
 msgid "Enable traps."
 msgstr "Activar les trampes."
-
-msgid "Enable tuning of some kernel variables."
-msgstr "Habilitar el tunejat d'algunes variables del nucli."
 
 msgid "Enable tuning switch"
 msgstr "Habilitar commutador de tunejat"
@@ -4719,9 +4773,6 @@ msgstr "Introduïu la longitud de prefix de l'adreça IP."
 
 msgid "Enter Identifier"
 msgstr "Introduïu l'identificador"
-
-msgid "Enter Name"
-msgstr "Introduïu el nom"
 
 msgid "Enter Password"
 msgstr "Introduïu la contrasenya"
@@ -5178,6 +5229,9 @@ msgstr ""
 "Fitxer (per defecte): utilitzeu un fitxer ._ AppleDouble compatible amb OS X "
 "i Netatalk."
 
+msgid "File Chooser"
+msgstr "Selector de fitxers"
+
 msgid "File Editor"
 msgstr "Editor de fitxers"
 
@@ -5186,6 +5240,9 @@ msgstr "Gestor de fitxers"
 
 msgid "File Mask"
 msgstr "Màscara d'arxiu"
+
+msgid "File Mode"
+msgstr "Mode fitxer"
 
 msgid "File Path"
 msgstr "Ruta del fitxer"
@@ -5365,6 +5422,35 @@ msgstr "Completa"
 msgid "Full Name"
 msgstr "Nom complet"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat d’un fitxer GUI CSS personalitzat."
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat del fitxer CSS de selecció "
+"personalitzada de fitxers."
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat d’un fitxer CSS de gestor de fitxers "
+"personalitzat."
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat d’un fitxer CSS d’inici de sessió "
+"personalitzat."
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat d’un fitxer CSS de barra de navegació "
+"personalitzada."
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+"Nom de fitxer completament qualificat d’un fitxer CSS amb pestanyes "
+"personalitzades."
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5412,6 +5498,9 @@ msgstr "Partició GPT"
 
 msgid "GSSAPI Authentication"
 msgstr "Autenticació GSSAPI"
+
+msgid "GUI"
+msgstr "Interfície gràfica"
 
 msgid "Gateway"
 msgstr "Porta d'enllaç"
@@ -5463,14 +5552,15 @@ msgstr ""
 "Identificador numèric global que s'utilitzarà per a un LUN determinat dins "
 "del CTL."
 
-msgid "Grant access to the user portal."
-msgstr "Concedir accés al portal d'usuari."
-
 msgid "Grant shell access to user"
 msgstr "Permetre l’accés al shell dels usuaris"
 
 msgid "Graph shows last 120 seconds"
 msgstr "El gràfic mostra els últims 120 segons"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr "El gràfic mostra els darrers 120 segons."
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5851,6 +5941,9 @@ msgstr "IdentLookups"
 
 msgid "Identifier"
 msgstr "Identificador"
+
+msgid "Identifier:"
+msgstr "Identificador:"
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -6276,9 +6369,6 @@ msgstr "Format de fitxer no vàlid."
 msgid "Invalid login credentials."
 msgstr "Credencials d'inici de sessió no vàlides."
 
-msgid "Invalid username or password."
-msgstr "Nom d'usuari o contrasenya incorrectes."
-
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
@@ -6496,6 +6586,9 @@ msgstr "Idioma utilitzar en el panell frontal"
 msgid "Large Read/Write"
 msgstr "Ampliació de lectura / escriptura"
 
+msgid "Last month"
+msgstr "Darrer mes"
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6518,6 +6611,9 @@ msgstr ""
 "cicle de potència, saturat al seu valor màxim. Valor normalitzat es posa a 1 "
 "en cas de fallada de prova o 11 si el condensador ha estat provat en una "
 "condició d'excés de temperatura, en cas contrari  dona valor 100."
+
+msgid "Last week"
+msgstr "Darrera setmana"
 
 msgid "Latency"
 msgstr "Latència"
@@ -6690,6 +6786,9 @@ msgstr ""
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "Carga quan la SAI commuta a condició de sobrecarga (\"OVER\")"
+
+msgid "Load:"
+msgstr "Carga:"
 
 msgid "Loadbalance"
 msgstr "Equilibri de carga"
@@ -7413,6 +7512,9 @@ msgstr "Nom de la variable."
 msgid "Native - store characters with their native ASCII value."
 msgstr "Nativa: emmagatzema caràcters amb el seu valor ASCII natiu."
 
+msgid "Navigation Bar"
+msgstr "Barra de navegació"
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr ""
 "Ni les dades d'usuari ni les metadades s'emmagatzemen en memòria cau en "
@@ -7584,6 +7686,9 @@ msgstr "No s'ha trobat cap informació de RAID5."
 msgid "No RSYNC Client configured."
 msgstr "Sense RSYNC client configurat."
 
+msgid "No access to the user portal"
+msgstr "No té accés al portal d’usuari"
+
 msgid "No additional parameters"
 msgstr "No hi ha paràmetres addicionals"
 
@@ -7613,9 +7718,6 @@ msgstr "No hi ha informació de conjunt de dades disponible."
 
 msgid "No devices have been selected"
 msgstr "No s'han seleccionat dispositius"
-
-msgid "No disk configured"
-msgstr "Disc no configurat"
 
 msgid "No disks available."
 msgstr "No hi ha discos disponibles."
@@ -7880,6 +7982,21 @@ msgstr "Controlador de descàrrega"
 
 msgid "Old Passphrase"
 msgstr "Contrasenya antiga"
+
+msgid "Older than last month"
+msgstr "Més antic que el mes passat"
+
+msgid "Older than last week"
+msgstr "Més antic que la setmana passada"
+
+msgid "Older than previous quarter"
+msgstr "Més antic que el trimestre anterior"
+
+msgid "Older than previous year"
+msgstr "Més antic que l'any anterior"
+
+msgid "Older than yesterday"
+msgstr "Més antic que ahir"
 
 msgid "On"
 msgstr "ON"
@@ -8317,6 +8434,10 @@ msgstr "Si us plau, consulteu els arxius de registre"
 msgid "Please read the documentation"
 msgstr "Llegeix la documentació"
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+"Actualitzeu el navegador o utilitzeu Internet Explorer 10 o superior."
+
 msgid "Polling Time"
 msgstr "Temps de cicle"
 
@@ -8334,6 +8455,9 @@ msgstr "Informació sobre la piscina"
 
 msgid "Pool Information & Status"
 msgstr "Informació i estat de piscina"
+
+msgid "Pool Space Usage"
+msgstr "Ús de l’espai de la piscina"
 
 msgid "Pool State"
 msgstr "Estat de la piscina"
@@ -8530,6 +8654,12 @@ msgstr "Preservar temps de modificació."
 
 msgid "Prevent deep discharge of battery"
 msgstr "Evitar descàrrega profunda de la bateria"
+
+msgid "Previous quarter"
+msgstr "Trimestre anterior"
+
+msgid "Previous year"
+msgstr "Any anterior"
 
 msgid "Primary"
 msgstr "Primari"
@@ -8751,6 +8881,126 @@ msgstr "Informació RAW"
 
 msgid "RPM"
 msgstr "RPM"
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr "RRDGraphs Diari gràfic ARC"
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr "RRDGraphs Diagrama gràfic de freqüència de la CPU"
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr "RRDGraphs Diagrama gràfic de temperatura de la CPU"
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr "RRDGraphs Diari gràfic d’ús de la CPU"
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr "RRDGraphs Diari L2ARC Gràfic"
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr "RRDGraphs Diagrama de mitjanes de càrrega diària"
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr "RRDGraphs Diari gràfic de latència de la xarxa"
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr "RRDGraphs Diagrama de processos diaris"
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr "RRDGraphs Diari gràfic SAI"
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr "RRDGraphs Diagrama d’actualizació Diària"
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr "RRDGraphs Diagrama d’Uptime Mensual"
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr "RRDGraphs Grafic mensual de freqüència de la CPU"
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr "RRDGraphs Grafic mensual de temperatura de la CPU"
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr "RRDGraphs Grafic mensual de us de la CPU"
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr "RRDGraphs Grafic mensual L2ARC"
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr "RRDGraphs Grafic mitjà de càrrega mensual"
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr "RRDGraphs Gràfic de latència de la xarxa mensual"
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr "RRDGraphs Gràfic de processos mensuals"
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr "RRDGraphs Grafic SAI mensual"
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr "RRDGraphs Grafic d'funcionament mensual"
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr "RRDGraphs Grafic ARC setmanal"
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr "RRDGraphs Grafic de freqüència de la CPU setmanal"
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr "RRDGraphs Grafic de temperatura de la CPU setmanal"
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr "RRDGraphs Grafic d'us de la CPU setmanal"
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr "RRDGraphs Grafic setmanal L2ARC"
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr "RRDGraphs Grafic mitjà de càrrega setmanal"
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr "RRDGraphs Grafic de latència de la xarxa setmanal"
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr "RRDGraphs Gràfic de processos setmanals"
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr "RRDGraphs Grafic SAI setmanal"
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr "RRDGraphs Grafic setmanal d'horaris"
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr "RRDGraphs Grafic anual ARC"
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr "RRDGraphs Gràfic de freqüència de CPU anual"
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr "RRDGraphs Gràfic de temperatura de CPU anual"
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr "RRDGraphs Gràfic d'us de CPU anual"
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr "RRDGraphs Gràfic L2ARC anual"
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr "RRDGraphs Gràfic de carga mitja anual"
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr "RRDGraphs Gràfic de làtencia de xarxa anual"
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr "RRDGraphs Gràfic de processos anuals"
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr "RRDGraphs Gràfic de SAI anual"
+
+msgid "RRDGraphs Yearly Uptime Graph"
+msgstr "RRDGraphs Gràfic de temps d'us anual"
 
 #, php-format
 msgid ""
@@ -9044,6 +9294,9 @@ msgstr "Remplazar Bateria del SAI"
 
 msgid "Replace a device"
 msgstr "Substituir un dispositiu"
+
+msgid "Replace the default CSS file"
+msgstr "Substituïu el fitxer CSS predeterminat"
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -9551,6 +9804,31 @@ msgstr "Selecciona en quina etapa s'ha d'executar l'ordre."
 msgid "Select configuration file:"
 msgstr "Selecciona arxiu de configuració:"
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr "Seleccioneu el mode de fitxer del fitxer GUI CSS personalitzat."
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+"Seleccioneu el mode de fitxer del fitxer CSS de selecció personalitzada del "
+"fitxer."
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+"Seleccioneu el mode de fitxer del fitxer CSS de gestor de fitxers "
+"personalitzat."
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+"Seleccioneu el mode de fitxer del fitxer CSS d'inici de sessió personalitzat."
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+"Seleccioneu el mode de fitxer del fitxer CSS de la barra de navegació "
+"personalitzada."
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr "Seleccioneu el mode de fitxer de les pestanyes personalitzades."
+
 msgid "Select file system format."
 msgstr "Seleccionar el format de sistema de fitxers."
 
@@ -9622,6 +9900,9 @@ msgstr ""
 
 msgid "Selected"
 msgstr "Seleccionat"
+
+msgid "Selected UPS"
+msgstr "SAI seleccionat"
 
 msgid "Selected device or label does not exist."
 msgstr "dispositiu seleccionat o etiqueta no existeix."
@@ -10407,6 +10688,9 @@ msgstr "Inicia"
 msgid "Start TLS from within the session."
 msgstr "Inicieu TLS des de dins de la sessió."
 
+msgid "State: "
+msgstr "Estat: "
+
 msgid "Static"
 msgstr "Estàtic"
 
@@ -10424,6 +10708,9 @@ msgstr "Estat i Informació"
 
 msgid "Status report successfully sent."
 msgstr "Informe d'estat enviat amb èxit."
+
+msgid "Status:"
+msgstr "Condició:"
 
 msgid "Step"
 msgstr "Pas"
@@ -10550,14 +10837,17 @@ msgstr "Sincronitza"
 msgid "Syncthing"
 msgstr "Sincronitzant"
 
-msgid "Sysctl variable is locked"
-msgstr "La variable Sysctl està bloquejada"
+msgid "Sysctl Setting"
+msgstr "Configuració de Sysctl"
 
-msgid "Sysctl variable is marked for deletion"
-msgstr "La variable Sysctl està marcada per esborrar"
+msgid "Sysctl setting is locked"
+msgstr "La configuració de Sysctl està bloquejada"
 
-msgid "Sysctl variable is unlocked"
-msgstr "La variable Sysctl està desbloquejada"
+msgid "Sysctl setting is marked for deletion"
+msgstr "La configuració de Sysctl està marcada per esborrar"
+
+msgid "Sysctl setting is unlocked"
+msgstr "La configuració de Sysctl està desbloquejada"
 
 msgid "Syslog Level"
 msgstr "Nivell del registre de sistema"
@@ -10676,6 +10966,9 @@ msgstr "Comprovar certificat de servidor TLS"
 
 msgid "TLS Trust File"
 msgstr "Fitxer de confiança de TLS"
+
+msgid "Tabs"
+msgstr "Pestanyes"
 
 msgid "Tag"
 msgstr "Marcador"
@@ -11693,6 +11986,9 @@ msgstr "El fitxer només s'ha pogut desar parcialment al servidor."
 msgid "The value is invalid."
 msgstr "El valor no és vàlid."
 
+msgid "The value of the setting."
+msgstr "El valor de la configuració."
+
 msgid "The value of the variable."
 msgstr "El valor de la variable."
 
@@ -11819,11 +12115,11 @@ msgid "These parameters will be added to this target."
 msgstr "Aquests paràmetres s'afegiran a aquest objetiu."
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
-"Aquestes variables sysctl s'afegiran a /etc/sysctl.conf. Això us permet fer "
-"canvis en un sistema en execució."
+"Aquestes variables sysctl s’afegiran a /etc/sysctl.conf. Permet fer canvis "
+"en un sistema en funcionament."
 
 msgid "Thin Provisioning"
 msgstr "Aprovisionament lleuger."
@@ -11941,6 +12237,9 @@ msgstr ""
 
 msgid "This is not a valid IP Address."
 msgstr "Aquesta no és una adreça IP vàlida."
+
+msgid "This month"
+msgstr "Aquest mes"
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr ""
@@ -12204,6 +12503,9 @@ msgstr "Aquest usuari ja existeix."
 msgid "This virtual device name already exists."
 msgstr "Aquest nom de dispositiu virtual ja existeix."
 
+msgid "This week"
+msgstr "Aquesta setmana"
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -12358,6 +12660,9 @@ msgstr ""
 msgid "To use subdirectories, you must mount each directory."
 msgstr "Per utilitzar subdirectoris, heu de muntar cada directori."
 
+msgid "Today"
+msgstr "Avui"
+
 msgid "Toggle Mode"
 msgstr "Mode de commutació"
 
@@ -12426,6 +12731,9 @@ msgstr "Alternar treballs Rsync seleccionats"
 
 msgid "Toggle Selected Rsync Modules"
 msgstr "Alternar mòduls Rsync seleccionats"
+
+msgid "Toggle Selected Sysctl Settings"
+msgstr "Commuta la configuració de Sysctl seleccionada"
 
 msgid "Toggle Selected Targets"
 msgstr "Commuta els objectius seleccionats"
@@ -12504,14 +12812,6 @@ msgstr ""
 "El temps total de càrrega en l'actuador del capçals magnètiques (temps fora "
 "de l'àrea d'estacionament)."
 
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "Total: %s | %s: %s | %s: %s | Estat: %s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "Total: %s | Usats: %s | Lliure: %s"
-
 msgid "Traceroute"
 msgstr "Traça una ruta"
 
@@ -12581,9 +12881,6 @@ msgstr "Dm"
 
 msgid "Tuesday"
 msgstr "Dimarts"
-
-msgid "Tuning"
-msgstr "Afinament"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "Posa el monitor en mode d'espera després de N segons"
@@ -12680,9 +12977,6 @@ msgstr "Estat del bip del SAI"
 
 msgid "UPS coldstarts from battery"
 msgstr "Arranque en fred des de bateria del SAI"
-
-msgid "UPS disabled"
-msgstr "SAI deshabiltat"
 
 msgid "UPS external contact sensors"
 msgstr "Sensors de contacte extern del SAI"
@@ -13040,6 +13334,9 @@ msgstr "Recursos d'usuari"
 msgid "User Suffix"
 msgstr "Sufix d'usuari"
 
+msgid "User access"
+msgstr "Accés d’usuari"
+
 msgid "User account is marked for deletion"
 msgstr "El compte del usuari està marcat per ser esborrat"
 
@@ -13048,6 +13345,9 @@ msgstr "El compte d'usuari està protegit"
 
 msgid "User account is unlocked"
 msgstr "El compte d'usuari està desbloquejat"
+
+msgid "User portal permission."
+msgstr "Permís del portal d’usuaris."
 
 msgid "Username"
 msgstr "Nom d'usuari"
@@ -13487,6 +13787,9 @@ msgstr "Si"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "Sí: habilita el suport de Tiem Machine per a aquesta acció."
 
+msgid "Yesterday"
+msgstr "Ahir"
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -13611,6 +13914,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "Us ZFS ARC"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr "Memòria cau de reemplaçament adaptada ZFS (ARC)"
+
 msgid "ZFS Dataset Information & Status"
 msgstr "Informació del conjunt de dades i estat de ZFS"
 
@@ -13622,6 +13928,9 @@ msgstr "ZFS L2ARC"
 
 msgid "ZFS L2ARC Usage"
 msgstr "Ús de ZFS L2ARC"
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
+msgstr "Memòria cau de reemplaçament adaptativa del nivell 2 de ZFS (L2ARC)"
 
 msgid "ZFS Pool I/O Statistics"
 msgstr "Estadístiques de E/S de la piscina ZFS"
@@ -13665,17 +13974,8 @@ msgstr ""
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "assignat de"
-
 msgid "and"
 msgstr "i"
-
-msgid "available"
-msgstr "disponible"
-
-msgid "available of"
-msgstr "disponible de"
 
 msgid "bash - Bourne Again Shell"
 msgstr "bash - Bourne Again Shell"
@@ -13702,9 +14002,6 @@ msgstr "e.x. %s"
 
 msgid "filechooser"
 msgstr "selector de fitxers"
-
-msgid "free of"
-msgstr "lliure de"
 
 msgid "get target info failed."
 msgstr "obtenir informació del objectiu ha fallat."
@@ -13859,9 +14156,6 @@ msgstr "no hi ha piscines disponibles"
 msgid "none"
 msgstr "cap"
 
-msgid "of"
-msgstr "de"
-
 msgid "off"
 msgstr "desactivat"
 
@@ -13924,9 +14218,6 @@ msgstr "desmontar"
 
 msgid "unknown"
 msgstr "desconegut"
-
-msgid "used of"
-msgstr "usat de"
 
 msgid "visible"
 msgstr "visible"

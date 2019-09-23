@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: XigmaNAS\n"
 "Report-Msgid-Bugs-To: zoon01 <zoon01@xigmanas.com>\n"
-"POT-Creation-Date: 2019-06-19 19:58+0000\n"
+"POT-Creation-Date: 2019-09-20 04:19+0000\n"
 "PO-Revision-Date: 2018-07-17 02:47+0000\n"
 "Last-Translator: tianmo <Unknown>\n"
 "Language-Team: XigmaNAS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-06-30 13:57+0000\n"
-"X-Generator: Launchpad (build 18991)\n"
+"X-Launchpad-Export-Date: 2019-09-22 18:48+0000\n"
+"X-Generator: Launchpad (build 19048)\n"
 "Language: zh_TW\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,128,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -25,12 +25,24 @@ msgid " was assigned to "
 msgstr " 被指派為 "
 
 #, php-format
-msgid "%1$s %3$s %2$s"
-msgstr "%1$s %3$s %2$s"
-
-#, php-format
 msgid "%1$s is used to create %2$s volumes."
 msgstr "%1$s已被用於創建%2$s卷"
+
+#, php-format
+msgid "%1$s managed, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s allocated, %3$s free"
+msgstr ""
+
+#, php-format
+msgid "%1$s total, %2$s used, %3$s available"
+msgstr ""
+
+#, php-format
+msgid "%2$s used, %3$s available"
+msgstr ""
 
 #, php-format
 msgid "%d days"
@@ -51,10 +63,6 @@ msgstr "%d 年"
 #, php-format
 msgid "%d years"
 msgstr "%d 年"
-
-#, php-format
-msgid "%d%% of %s"
-msgstr "%d%% of %s"
 
 #, php-format
 msgid "%dB / block"
@@ -686,7 +694,7 @@ msgstr "添加規則"
 msgid "Add self-test"
 msgstr "添加自我檢測"
 
-msgid "Add sysctl variable"
+msgid "Add sysctl setting"
 msgstr ""
 
 msgid "Add target"
@@ -727,6 +735,9 @@ msgstr "遠程hastd守護進程的地址。 它必須是靜態IP地址。"
 
 msgid "Admin Password"
 msgstr "管理密碼"
+
+msgid "Admin access"
+msgstr ""
 
 msgid "Administration Password"
 msgstr "管理員密碼"
@@ -770,9 +781,6 @@ msgid ""
 "After you click \"Save\" you must reboot the server to make the changes take "
 "effect."
 msgstr "點擊保存後必須重啟伺服器來讓改變生效。"
-
-msgid "Age"
-msgstr "時間"
 
 msgid "Aggregation Protocol"
 msgstr "聚合協議"
@@ -1023,6 +1031,9 @@ msgstr "任何"
 
 msgid "Any service using these disks might become invalid or inaccessible!"
 msgstr "所有使用這些磁碟的服務可能會不可用或不可訪問"
+
+msgid "Append content to the default CSS file"
+msgstr ""
 
 msgid "Append user defined shares"
 msgstr "追加用戶自定義的用戶共用"
@@ -1315,8 +1326,8 @@ msgstr "當啟動時沒有'iqn.' ，會自動添加基本名稱。"
 msgid "Battery Details"
 msgstr "電池資訊"
 
-msgid "Battery Level"
-msgstr "電池電量"
+msgid "Battery Level:"
+msgstr ""
 
 msgid "Battery Low"
 msgstr "電力不足"
@@ -1625,6 +1636,9 @@ msgstr "CRC錯誤計數。統計CRC錯誤數量（讀寫FIS數據CRC錯誤）。
 msgid "CRC32C"
 msgstr ""
 
+msgid "CSS Settings"
+msgstr ""
+
 msgid "CTL LUN"
 msgstr ""
 
@@ -1791,6 +1805,9 @@ msgstr "收集初始數據，請稍候..."
 msgid "Collisions"
 msgstr "封包衝撞"
 
+msgid "Colorful Meters"
+msgstr ""
+
 msgid "Cols"
 msgstr "欄"
 
@@ -1845,6 +1862,9 @@ msgstr "注釋"
 
 msgid "Common Internet File System"
 msgstr "通用網路檔系統(CIFS)"
+
+msgid "Communication Error"
+msgstr ""
 
 msgid "Community"
 msgstr "社群"
@@ -2286,6 +2306,12 @@ msgstr ""
 msgid "Current Version"
 msgstr "當前版本"
 
+msgid "Current and previous month"
+msgstr ""
+
+msgid "Current and previous year"
+msgstr ""
+
 msgid "Current internal temperature."
 msgstr "當前的內部溫度。"
 
@@ -2294,6 +2320,9 @@ msgstr "當前密碼"
 
 msgid "Current password is incorrectly entered."
 msgstr "輸入的當前密碼錯誤"
+
+msgid "Current quarter"
+msgstr ""
 
 msgid "Current state of drive operation based upon the Life Curve."
 msgstr "基於壽命曲線的驅動器操作的當前狀態。"
@@ -2308,6 +2337,9 @@ msgstr "當前的視在功率（伏安）"
 
 msgid "Current value of real power (Watts)"
 msgstr "當前的實際功率（瓦特）"
+
+msgid "Current year"
+msgstr ""
 
 msgid "Custom"
 msgstr "自定"
@@ -2649,6 +2681,9 @@ msgstr "刪除選中的共用"
 
 msgid "Delete Selected Snapshots"
 msgstr "刪除選中的快照"
+
+msgid "Delete Selected Sysctl Settings"
+msgstr ""
 
 msgid "Delete Selected Targets"
 msgstr ""
@@ -3000,6 +3035,9 @@ msgstr "禁用選中的Rsync任務"
 
 msgid "Disable Selected Rsync Modules"
 msgstr "禁用選中的Rsync模組"
+
+msgid "Disable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Disable Selected Targets"
 msgstr ""
@@ -3390,6 +3428,9 @@ msgstr "要刪除所選共用嗎？"
 msgid "Do you want to delete selected snapshots?"
 msgstr "要刪除所選快照嗎？"
 
+msgid "Do you want to delete selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to delete selected targets?"
 msgstr ""
 
@@ -3480,6 +3521,9 @@ msgstr "是否要禁用所選的rsync任務？"
 msgid "Do you want to disable selected rsync modules?"
 msgstr "是否要禁用所選的rsync模組？"
 
+msgid "Do you want to disable selected sysctl settings?"
+msgstr ""
+
 msgid "Do you want to disable selected targets?"
 msgstr ""
 
@@ -3560,6 +3604,9 @@ msgstr "是否要啟用所選的rsync任務？"
 
 msgid "Do you want to enable selected rsync modules?"
 msgstr "是否要啟用所選的rsync模組？"
+
+msgid "Do you want to enable selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to enable selected targets?"
 msgstr ""
@@ -3650,6 +3697,9 @@ msgstr "您要切換所選的rsync任務嗎？"
 
 msgid "Do you want to toggle selected rsync modules?"
 msgstr "您要切換所選的rsync模組嗎？"
+
+msgid "Do you want to toggle selected sysctl settings?"
+msgstr ""
 
 msgid "Do you want to toggle selected targets?"
 msgstr ""
@@ -3943,7 +3993,7 @@ msgstr "編輯規則"
 msgid "Edit self-test"
 msgstr "編輯自我檢測流程"
 
-msgid "Edit sysctl variable"
+msgid "Edit sysctl setting"
 msgstr ""
 
 msgid "Edit target"
@@ -4091,6 +4141,9 @@ msgstr "啟用選中的Rsync任務"
 
 msgid "Enable Selected Rsync Modules"
 msgstr "啟用選中的Rsync模組"
+
+msgid "Enable Selected Sysctl Settings"
+msgstr ""
 
 msgid "Enable Selected Targets"
 msgstr ""
@@ -4276,6 +4329,9 @@ msgstr "啟用 ident 協議（RFC1413）。"
 msgid "Enable the server power control utility."
 msgstr "啟用伺服器電源控制工具。"
 
+msgid "Enable this option if you want to display colorful meter states."
+msgstr ""
+
 msgid ""
 "Enable this option if you want to edit configuration pages directly without "
 "the need to switch to edit mode."
@@ -4309,9 +4365,6 @@ msgstr "啟用轉碼功能。"
 
 msgid "Enable traps."
 msgstr "啟用 traps。"
-
-msgid "Enable tuning of some kernel variables."
-msgstr "啟用調整一些內核變數。"
 
 msgid "Enable tuning switch"
 msgstr "啟用調諧開關"
@@ -4386,9 +4439,6 @@ msgstr ""
 
 msgid "Enter Identifier"
 msgstr "輸入標識符"
-
-msgid "Enter Name"
-msgstr ""
 
 msgid "Enter Password"
 msgstr "輸入密碼"
@@ -4807,6 +4857,9 @@ msgid ""
 "File (default) - use a ._ AppleDouble file compatible with OS X and Netatalk."
 msgstr "文件（默認） - 使用與OS X和Netatalk兼容的._ AppleDouble文件。"
 
+msgid "File Chooser"
+msgstr ""
+
 msgid "File Editor"
 msgstr "檔編輯器"
 
@@ -4815,6 +4868,9 @@ msgstr "檔管理器"
 
 msgid "File Mask"
 msgstr "檔掩碼"
+
+msgid "File Mode"
+msgstr ""
 
 msgid "File Path"
 msgstr "檔路徑"
@@ -4984,6 +5040,24 @@ msgstr "額滿"
 msgid "Full Name"
 msgstr "全名"
 
+msgid "Fully qualified file name of a custom GUI CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file chooser CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom file manager CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom login CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom navigation bar CSS file."
+msgstr ""
+
+msgid "Fully qualified file name of a custom tabs CSS file."
+msgstr ""
+
 msgid "Fuppes"
 msgstr "Fuppes"
 
@@ -5032,6 +5106,9 @@ msgstr "GPT 分區"
 msgid "GSSAPI Authentication"
 msgstr ""
 
+msgid "GUI"
+msgstr ""
+
 msgid "Gateway"
 msgstr "網關（Gateway）"
 
@@ -5077,14 +5154,15 @@ msgstr ""
 msgid "Global numeric identifier to use for a given LUN inside CTL."
 msgstr ""
 
-msgid "Grant access to the user portal."
-msgstr "授予用戶門戶網站的訪問權。"
-
 msgid "Grant shell access to user"
 msgstr ""
 
 msgid "Graph shows last 120 seconds"
 msgstr "圖表顯示最近120秒"
+
+#, php-format
+msgid "Graph shows recent 120 seconds."
+msgstr ""
 
 #, php-format
 msgid "Graph updates every %d seconds."
@@ -5439,6 +5517,9 @@ msgstr "Ident查找"
 
 msgid "Identifier"
 msgstr "識別符"
+
+msgid "Identifier:"
+msgstr ""
 
 msgid ""
 "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the "
@@ -5812,9 +5893,6 @@ msgstr "檔格式無效。"
 msgid "Invalid login credentials."
 msgstr "無效的登錄憑證。"
 
-msgid "Invalid username or password."
-msgstr "無效的用戶名或密碼。"
-
 msgid "Invert Selection"
 msgstr "反向選擇"
 
@@ -6020,6 +6098,9 @@ msgstr "前置面板的語言"
 msgid "Large Read/Write"
 msgstr "大型讀/寫"
 
+msgid "Last month"
+msgstr ""
+
 msgid ""
 "Last test result as microseconds to discharge cap, saturated at its maximum "
 "value. Also logs minutes since last test and lifetime number of tests. Raw "
@@ -6035,6 +6116,9 @@ msgstr ""
 "1：上次測試結果以毫秒為單位的放電上限，飽和在最大值。 測試結果預期在範圍25 <=結果<= 5000000，下表示特定錯誤代碼。 位元組2-"
 "3：自上次測試以來的分鐘數，飽和在最大值。 位元組4-5：測試的生命週期數，在電源週期不增加，飽和在最大值。 "
 "標準化值在測試失敗時設置為1，如果電容器在過高的溫度條件下測試，則設置為11，否則設置為100。"
+
+msgid "Last week"
+msgstr ""
 
 msgid "Latency"
 msgstr "延遲"
@@ -6184,6 +6268,9 @@ msgstr ""
 
 msgid "Load when UPS switches to overload condition (\"OVER\")"
 msgstr "UPS切換到超載的情況時的加載（“OVER”）"
+
+msgid "Load:"
+msgstr ""
 
 msgid "Loadbalance"
 msgstr "負載平衡"
@@ -6882,6 +6969,9 @@ msgstr "改名名稱。"
 msgid "Native - store characters with their native ASCII value."
 msgstr "原生 - 使用其原生ASCII值存儲字符。"
 
+msgid "Navigation Bar"
+msgstr ""
+
 msgid "Neither user data nor metadata will be cached in ARC."
 msgstr "用戶數據和元數據都不會緩存在ARC中。"
 
@@ -7041,6 +7131,9 @@ msgstr ""
 msgid "No RSYNC Client configured."
 msgstr "未配置RSYNC客戶端。"
 
+msgid "No access to the user portal"
+msgstr ""
+
 msgid "No additional parameters"
 msgstr ""
 
@@ -7070,9 +7163,6 @@ msgstr "沒有可用的數據集信息。"
 
 msgid "No devices have been selected"
 msgstr "未選擇任何設備"
-
-msgid "No disk configured"
-msgstr "尚未配置硬碟"
 
 msgid "No disks available."
 msgstr "沒有磁片可用"
@@ -7327,6 +7417,21 @@ msgstr ""
 
 msgid "Old Passphrase"
 msgstr "舊密碼短語"
+
+msgid "Older than last month"
+msgstr ""
+
+msgid "Older than last week"
+msgstr ""
+
+msgid "Older than previous quarter"
+msgstr ""
+
+msgid "Older than previous year"
+msgstr ""
+
+msgid "Older than yesterday"
+msgstr ""
 
 msgid "On"
 msgstr "開"
@@ -7745,6 +7850,9 @@ msgstr "請查看日誌檔"
 msgid "Please read the documentation"
 msgstr ""
 
+msgid "Please update your browser or use Internet Explorer 10 or higher."
+msgstr ""
+
 msgid "Polling Time"
 msgstr "輪詢時間"
 
@@ -7762,6 +7870,9 @@ msgstr "池信息"
 
 msgid "Pool Information & Status"
 msgstr "存儲池資訊和狀態"
+
+msgid "Pool Space Usage"
+msgstr ""
 
 msgid "Pool State"
 msgstr "池狀態"
@@ -7945,6 +8056,12 @@ msgstr "保留更改次數。"
 
 msgid "Prevent deep discharge of battery"
 msgstr "防止電池深度漏電"
+
+msgid "Previous quarter"
+msgstr ""
+
+msgid "Previous year"
+msgstr ""
 
 msgid "Primary"
 msgstr "主要"
@@ -8159,6 +8276,126 @@ msgid "RAW info"
 msgstr "RAW 資訊"
 
 msgid "RPM"
+msgstr ""
+
+msgid "RRDGraphs Daily ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Daily Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Monthly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Weekly Uptime Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Frequency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Temperature Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly CPU Usage Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly L2ARC Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Load Averages Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Network Latency Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Processes Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly UPS Graph"
+msgstr ""
+
+msgid "RRDGraphs Yearly Uptime Graph"
 msgstr ""
 
 #, php-format
@@ -8437,6 +8674,9 @@ msgstr "更換UPS電池"
 
 msgid "Replace a device"
 msgstr "更換設備"
+
+msgid "Replace the default CSS file"
+msgstr ""
 
 msgid ""
 "Report if the temperature had changed by at least N degrees Celsius since "
@@ -8919,6 +9159,24 @@ msgstr "選擇命令應在哪個階段執行。"
 msgid "Select configuration file:"
 msgstr "選擇配置文件："
 
+msgid "Select file mode of the custom GUI CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file chooser CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom file manager CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom login CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom navigation bar CSS file."
+msgstr ""
+
+msgid "Select file mode of the custom tabs CSS file."
+msgstr ""
+
 msgid "Select file system format."
 msgstr "選擇檔系統格式。"
 
@@ -8978,6 +9236,9 @@ msgstr "選擇要用於給定加密演算法的密鑰長度。"
 
 msgid "Selected"
 msgstr "已選擇"
+
+msgid "Selected UPS"
+msgstr ""
 
 msgid "Selected device or label does not exist."
 msgstr "選定的設備或標籤不存在。"
@@ -9655,6 +9916,9 @@ msgstr "啟動"
 msgid "Start TLS from within the session."
 msgstr "從會話中啟動TLS。"
 
+msgid "State: "
+msgstr ""
+
 msgid "Static"
 msgstr "靜態"
 
@@ -9672,6 +9936,9 @@ msgstr "狀態和資訊"
 
 msgid "Status report successfully sent."
 msgstr "狀態報告已成功傳送。"
+
+msgid "Status:"
+msgstr ""
 
 msgid "Step"
 msgstr "Step"
@@ -9794,13 +10061,16 @@ msgstr "同步"
 msgid "Syncthing"
 msgstr "Syncthing"
 
-msgid "Sysctl variable is locked"
+msgid "Sysctl Setting"
 msgstr ""
 
-msgid "Sysctl variable is marked for deletion"
+msgid "Sysctl setting is locked"
 msgstr ""
 
-msgid "Sysctl variable is unlocked"
+msgid "Sysctl setting is marked for deletion"
+msgstr ""
+
+msgid "Sysctl setting is unlocked"
 msgstr ""
 
 msgid "Syslog Level"
@@ -9918,6 +10188,9 @@ msgstr "TLS伺服器證書檢查"
 
 msgid "TLS Trust File"
 msgstr "TLS信任文件"
+
+msgid "Tabs"
+msgstr ""
 
 msgid "Tag"
 msgstr "標籤"
@@ -10787,6 +11060,9 @@ msgstr "只上傳了部分的檔。"
 msgid "The value is invalid."
 msgstr "該值無效。"
 
+msgid "The value of the setting."
+msgstr ""
+
 msgid "The value of the variable."
 msgstr "變數的數值。"
 
@@ -10900,7 +11176,7 @@ msgid "These parameters will be added to this target."
 msgstr ""
 
 msgid ""
-"These sysctl variables will be added to /etc/sysctl.conf. This allows you to "
+"These sysctl variables will be added to /etc/sysctl.conf. It allows you to "
 "make changes to a running system."
 msgstr ""
 
@@ -10997,6 +11273,9 @@ msgstr "此伺服器名稱被用於Zeroconf/Bonjour/Rendezvous，也是通過DAA
 
 msgid "This is not a valid IP Address."
 msgstr "這不是有效的IP位址。"
+
+msgid "This month"
+msgstr ""
 
 msgid "This name is used to uniquely identify your UPS on this system."
 msgstr "此名稱用來識別這個系統的 UPS。"
@@ -11189,6 +11468,9 @@ msgstr "此用戶已經存在。"
 msgid "This virtual device name already exists."
 msgstr "此虛擬設備的名稱已經存在。"
 
+msgid "This week"
+msgstr ""
+
 msgid ""
 "This will allow server-side downscaling of very large JPEG images, it can "
 "impact JPEG serving performance on some DLNA devices."
@@ -11324,6 +11606,9 @@ msgstr "要使用Active Directory，也將啟用CIFS / SMB服務。"
 msgid "To use subdirectories, you must mount each directory."
 msgstr ""
 
+msgid "Today"
+msgstr ""
+
 msgid "Toggle Mode"
 msgstr "切換模式"
 
@@ -11393,6 +11678,9 @@ msgstr "切換所選Rsync任務"
 msgid "Toggle Selected Rsync Modules"
 msgstr "切換所選Rsync模組"
 
+msgid "Toggle Selected Sysctl Settings"
+msgstr ""
+
 msgid "Toggle Selected Targets"
 msgstr ""
 
@@ -11454,14 +11742,6 @@ msgid ""
 "Total time of loading on the magnetic heads actuator (time not spent in "
 "parking area)."
 msgstr "磁頭致動器上的總加載時間（停止區域不花費時間）。"
-
-#, php-format
-msgid "Total: %s | %s: %s | %s: %s | State: %s"
-msgstr "總計： %s | %s: %s | %s: %s | 狀態：%s"
-
-#, php-format
-msgid "Total: %s | Used: %s | Free: %s"
-msgstr "總共： %s | 已使用： %s | 空閒： %s"
 
 msgid "Traceroute"
 msgstr "路由追蹤（Traceroute）"
@@ -11530,9 +11810,6 @@ msgstr "週二"
 
 msgid "Tuesday"
 msgstr "週二"
-
-msgid "Tuning"
-msgstr "微調"
 
 msgid "Turn the monitor to standby after N seconds."
 msgstr "N 秒後，顯示器進入待機。"
@@ -11626,9 +11903,6 @@ msgstr "UPS的蜂鳴器狀態"
 
 msgid "UPS coldstarts from battery"
 msgstr "UPS由電池冷啟動"
-
-msgid "UPS disabled"
-msgstr "UPS 關閉"
 
 msgid "UPS external contact sensors"
 msgstr "UPS外置接觸式感測器"
@@ -11952,6 +12226,9 @@ msgstr "用戶共用"
 msgid "User Suffix"
 msgstr "用戶尾碼"
 
+msgid "User access"
+msgstr ""
+
 msgid "User account is marked for deletion"
 msgstr "用戶帳戶標記為刪除"
 
@@ -11960,6 +12237,9 @@ msgstr "用戶帳戶被保護"
 
 msgid "User account is unlocked"
 msgstr "用戶帳號被解鎖"
+
+msgid "User portal permission."
+msgstr ""
 
 msgid "Username"
 msgstr "用戶名"
@@ -12372,6 +12652,9 @@ msgstr "是"
 msgid "Yes - Enables Time Machine support for this share."
 msgstr "是 - 啟用此共享的Time Machine支持。"
 
+msgid "Yesterday"
+msgstr ""
+
 msgid ""
 "You can also install a package via SSH or console using the pkg install "
 "command."
@@ -12480,6 +12763,9 @@ msgstr "ZFS ARC"
 msgid "ZFS ARC Usage"
 msgstr "ZFS ARC使用"
 
+msgid "ZFS Adaptive Replacement Cache (ARC)"
+msgstr ""
+
 msgid "ZFS Dataset Information & Status"
 msgstr "ZFS 數據集資訊和狀態"
 
@@ -12490,6 +12776,9 @@ msgid "ZFS L2ARC"
 msgstr ""
 
 msgid "ZFS L2ARC Usage"
+msgstr ""
+
+msgid "ZFS Level 2 Adaptive Replacement Cache (L2ARC)"
 msgstr ""
 
 msgid "ZFS Pool I/O Statistics"
@@ -12532,17 +12821,8 @@ msgstr "ZFS卷大小。 你可以使用可讀的後綴，如K，KB，M，GB。"
 msgid "Zeroconf/Bonjour"
 msgstr "Zeroconf/Bonjour"
 
-msgid "allocated of"
-msgstr "已分配"
-
 msgid "and"
 msgstr "and"
-
-msgid "available"
-msgstr "可用的"
-
-msgid "available of"
-msgstr "可用的"
 
 msgid "bash - Bourne Again Shell"
 msgstr ""
@@ -12567,9 +12847,6 @@ msgstr "例如：%s"
 
 msgid "filechooser"
 msgstr "filechooser"
-
-msgid "free of"
-msgstr "空閒"
 
 msgid "get target info failed."
 msgstr "獲取目標資訊失敗。"
@@ -12713,9 +12990,6 @@ msgstr ""
 msgid "none"
 msgstr "無"
 
-msgid "of"
-msgstr "/"
-
 msgid "off"
 msgstr "關閉"
 
@@ -12778,9 +13052,6 @@ msgstr "卸載"
 
 msgid "unknown"
 msgstr ""
-
-msgid "used of"
-msgstr "已用的"
 
 msgid "visible"
 msgstr "可見"
