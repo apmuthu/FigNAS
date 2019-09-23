@@ -1,7 +1,7 @@
 # FigNAS
 * This fork initially tries to keep abreast of XigmaNAS codebase consolidating commits to the same file
 * The name change was done to avoid misrepresentation and a missive from the Trademark owner on 2019-09-23
-* This fork primarily ame into being since the original XigmaNAS code base could not be compiled by me
+* This fork primarily came into being since the original XigmaNAS code base could not be compiled by me
 * It serves me as a base for understanding code changes by organising whitespace and code block movement changes from the actual code changes
 * It also provides for code extensions by indicating which files need to be changed for what functionality class
 
